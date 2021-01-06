@@ -1,0 +1,135 @@
+/*
+	uxmhf main uobj json manifest
+	author: ethan joseph (ethanj217@gmail.com)
+*/
+{
+	/* manifest header */
+	"uberspark-manifest": {
+		"manifest_node_types": [
+			"uberspark-uobj"
+		],
+		"uberspark_min_version": "6.0.0",
+		"uberspark_max_version": "any"
+	},
+	/* uobj declaration */
+	"uberspark-uobj": {
+		"namespace": "uberspark/uobjcoll/platform/st/stm32mp1/main",
+		"platform": "st",
+		"arch": "armv7_32",
+		"cpu": "generic",
+		/* sources */
+		"sources": {
+			"h-files": [
+				"stm32mp1_def.h",
+				"include/boot_api.h",
+				"include/platform_def.h",
+				"include/stm32mp1_context.h",
+				"include/stm32mp1_dbgmcu.h",
+				"include/stm32mp1_private.h",
+				"include/stm32mp1_shared_resources.h",
+				"include/stm32mp1_smc.h",
+				"services/bsec_svc.h"
+			],
+			"c-files": [
+				"bl2_plat_setup.c",
+				"plat_bl2_mem_params_desc.c",
+				"plat_image_load.c",
+				"stm32mp1_boot_device.c",
+				"stm32mp1_context.c",
+				"stm32mp1_dbgmcu.c",
+				"stm32mp1_gic.c",
+				"stm32mp1_pm.c",
+				"stm32mp1_private.c",
+				"stm32mp1_scmi.c",
+				"stm32mp1_security.c",
+				"stm32mp1_shared_resources.c",
+				"stm32mp1_stack_protector.c",
+				"stm32mp1_syscfg.c",
+				"stm32mp1_topology.c",
+				"sp_min/sp_min_setup.c",
+				"services/bsec_svc.c",
+				"services/stm32mp1_svc_setup.c"
+			],
+			"asm-files": [
+				"stm32mp1_helper.S",
+				"stm32mp1.ld.S",
+				"stm32mp1.S"
+			]
+		},
+		/* public methods */
+		"publicmethods": {
+			"main": [
+				"void",
+				"(void)",
+				"1"
+			]
+		},
+		/* public methods of other uobjs that this uobj invokes 
+         within the same collection
+     */
+		"intrauobjcoll-callees": {},
+		/* public methods of other uobjs that this uobj invokes 
+         across other collection(s)
+     */
+		"interuobjcoll-callees": {},
+		/* legacy CoSS functions/code that this uobj invokes */
+		"legacy-callees": [],
+		/* uobj binary sectioning parameters */
+		// "sections": [
+		// 	{ 
+		// 		"name": "uobj_code",
+		// 		"size": "0x1C00000"  // 0x200000 * 14
+		// 		// "output_names": [
+		// 		// 	".text"
+		// 		// ]
+		// 	},
+		// 	{
+		// 		"name": "uobj_rwdata",
+		// 		"size": "0x9A00000"  // 0x200000 * 11 + 0xA00000 + 0x4200000 + 0x3800000
+		// 		// "output_names": [
+		// 		// 	".data"
+		// 		// ]
+		// 	},
+		// 	{ 
+		// 		"name": "uobj_tstack",
+		// 		"size": "0x5C00000"  // 0x600000 * 13 + 0xe00000
+		// 		// "output_names": [
+		// 		// 	".stack"
+		// 		// ]
+		// 	},
+		// 	{ 
+		// 		"name": "uobj_dmadata",
+		// 		"size": "0x1C00000"  // 0x200000 * 14
+		// 		// "output_names": [
+		// 		// 	".dmadata"
+		// 		// ]
+		// 	},
+		// 	{
+		// 		"name": "rwdatahdr",
+		// 		"size": "0x19000",
+		// 		"output_names": [
+		// 			".rwdatahdr"
+		// 		]
+		// 	},
+		// 	{
+		// 		"name": "slab_dmadata",
+		// 		"size": "0x13000",
+		// 		"output_names": [
+		// 			".slab_dmadata"
+		// 		]
+		// 	}
+		// ],
+		/* uobjrtl */
+		"uobjrtl": [
+			{
+				"namespace": "uberspark/uobjrtl/crt"
+			},
+			{
+				"namespace": "uberspark/uobjrtl/crypto"
+			},
+			{
+				"namespace": "uberspark/uobjrtl/hw"
+			}
+		]
+	}
+}
