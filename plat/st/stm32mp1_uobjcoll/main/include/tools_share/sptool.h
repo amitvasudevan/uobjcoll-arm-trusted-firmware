@@ -7,7 +7,7 @@
 #ifndef SPTOOL_H
 #define SPTOOL_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /* 4 Byte magic name "SPKG" */
 #define SECURE_PARTITION_MAGIC		0x474B5053

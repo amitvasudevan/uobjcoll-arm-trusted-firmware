@@ -11,7 +11,7 @@
 #ifndef TIME_H
 #define TIME_H
 
-#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
 typedef long int time_t;
 

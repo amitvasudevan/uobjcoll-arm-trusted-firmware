@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/sp804_delay_timer.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>

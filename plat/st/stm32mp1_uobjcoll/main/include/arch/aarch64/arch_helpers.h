@@ -7,9 +7,9 @@
 #ifndef ARCH_HELPERS_H
 #define ARCH_HELPERS_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
-#include <uberspark/uobjrtl/crt/include/stdbool.h>
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 #include <uberspark/uobjrtl/crt/include/string.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>

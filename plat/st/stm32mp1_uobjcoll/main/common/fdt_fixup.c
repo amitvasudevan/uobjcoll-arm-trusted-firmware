@@ -14,8 +14,8 @@
  * that.
  */
 
-#include <uberspark/uobjrtl/crt/include/errno.h>
-#include <uberspark/uobjrtl/crt/include/stdio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
 #include <uberspark/uobjrtl/crt/include/string.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>

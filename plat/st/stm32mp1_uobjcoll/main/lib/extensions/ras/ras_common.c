@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl31/ea_handle.h>

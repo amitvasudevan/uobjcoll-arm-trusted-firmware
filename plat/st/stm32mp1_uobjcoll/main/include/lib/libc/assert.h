@@ -7,7 +7,7 @@
 #ifndef ASSERT_H
 #define ASSERT_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 

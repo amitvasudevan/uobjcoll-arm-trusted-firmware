@@ -7,8 +7,8 @@
 #ifndef SF_H
 #define SF_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
-#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
 #ifdef SPI_DEBUG
 #define SPI_DEBUG(fmt, ...)	INFO(fmt, ##__VA_ARGS__)

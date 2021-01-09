@@ -7,7 +7,7 @@
 #ifndef SPE_H
 #define SPE_H
 
-#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 bool spe_supported(void);
 void spe_enable(bool el2_unused);

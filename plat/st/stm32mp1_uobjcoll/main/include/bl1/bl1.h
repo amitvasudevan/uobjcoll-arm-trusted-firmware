@@ -63,7 +63,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 struct entry_point_info;
 

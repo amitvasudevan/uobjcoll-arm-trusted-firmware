@@ -5,7 +5,7 @@
  * https://spdx.org/licenses
  */
 
-#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>

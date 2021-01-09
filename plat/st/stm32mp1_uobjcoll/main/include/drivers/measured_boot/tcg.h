@@ -7,7 +7,7 @@
 #ifndef TCG_H
 #define TCG_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #define TCG_ID_EVENT_SIGNATURE_03	"Spec ID Event03"
 #define TCG_STARTUP_LOCALITY_SIGNATURE	"StartupLocality"

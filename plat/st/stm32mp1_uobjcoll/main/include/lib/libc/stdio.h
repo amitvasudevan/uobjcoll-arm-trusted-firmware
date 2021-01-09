@@ -11,8 +11,8 @@
 #ifndef STDIO_H
 #define STDIO_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
-#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stdio_.h>
 
 #define EOF            -1

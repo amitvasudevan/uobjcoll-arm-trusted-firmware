@@ -7,7 +7,7 @@
 #ifndef PSCI_PRIVATE_H
 #define PSCI_PRIVATE_H
 
-#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>

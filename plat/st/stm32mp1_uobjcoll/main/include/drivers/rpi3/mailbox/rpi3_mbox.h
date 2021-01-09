@@ -7,7 +7,7 @@
 #ifndef RPI3_MBOX_H
 #define RPI3_MBOX_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /* This struct must be aligned to 16 bytes */
 typedef struct __packed __aligned(16) rpi3_mbox_request {

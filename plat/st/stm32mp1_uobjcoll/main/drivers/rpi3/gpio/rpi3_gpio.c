@@ -6,7 +6,7 @@
  */
 
 #include <uberspark/uobjrtl/crt/include/string.h>
-#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/rpi3/gpio/rpi3_gpio.h>

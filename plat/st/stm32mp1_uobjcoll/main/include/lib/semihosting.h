@@ -7,7 +7,7 @@
 #ifndef SEMIHOSTING_H
 #define SEMIHOSTING_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 #include <stdio.h> /* For ssize_t */
 
 

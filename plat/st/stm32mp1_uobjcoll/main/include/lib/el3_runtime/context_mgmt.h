@@ -7,9 +7,9 @@
 #ifndef CONTEXT_MGMT_H
 #define CONTEXT_MGMT_H
 
-#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/context.h>
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
 

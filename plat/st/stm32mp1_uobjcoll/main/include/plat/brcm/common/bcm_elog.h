@@ -9,7 +9,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #if defined(BCM_ELOG) && (defined(IMAGE_BL2) || defined(IMAGE_BL31))
 int bcm_elog_init(void *base, uint32_t size, unsigned int level);

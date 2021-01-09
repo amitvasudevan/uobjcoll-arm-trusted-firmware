@@ -7,7 +7,7 @@
 #ifndef SVE_H
 #define SVE_H
 
-#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 bool sve_supported(void);
 void sve_enable(bool el2_unused);

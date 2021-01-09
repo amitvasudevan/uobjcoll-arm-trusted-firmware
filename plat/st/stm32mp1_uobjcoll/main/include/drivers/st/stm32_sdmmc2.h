@@ -7,7 +7,7 @@
 #ifndef STM32_SDMMC2_H
 #define STM32_SDMMC2_H
 
-#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/mmc.h>
 

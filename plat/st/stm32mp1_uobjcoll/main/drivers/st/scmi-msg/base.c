@@ -3,7 +3,7 @@
  * Copyright (c) 2015-2019, Arm Limited and Contributors. All rights reserved.
  * Copyright (c) 2019-2020, Linaro Limited
  */
-#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjrtl/crt/include/string.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi-msg.h>

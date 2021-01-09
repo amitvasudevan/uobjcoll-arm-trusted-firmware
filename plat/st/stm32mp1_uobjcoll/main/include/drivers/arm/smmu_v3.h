@@ -7,7 +7,7 @@
 #ifndef SMMU_V3_H
 #define SMMU_V3_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* SMMUv3 register offsets from device base */

@@ -319,7 +319,7 @@ struct inflate_state FAR *state;
 }
 
 #ifdef MAKEFIXED
-#include <uberspark/uobjrtl/crt/include/stdio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
 
 /*
    Write out the inffixed.h that is #include'd above.  Defining MAKEFIXED also

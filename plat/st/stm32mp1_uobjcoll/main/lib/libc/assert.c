@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjrtl/crt/include/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
-#include <uberspark/uobjrtl/crt/include/stdio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>

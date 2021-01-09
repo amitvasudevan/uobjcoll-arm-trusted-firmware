@@ -9,7 +9,7 @@
  * for Marvell SoCs in AP806, AP807, and AP810
  */
 
-#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/cache_llc.h>

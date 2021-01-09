@@ -12,9 +12,9 @@
 #define BAKERY_LOCK_MAX_CPUS		PLATFORM_CORE_COUNT
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
-#include <uberspark/uobjrtl/crt/include/stdbool.h>
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 

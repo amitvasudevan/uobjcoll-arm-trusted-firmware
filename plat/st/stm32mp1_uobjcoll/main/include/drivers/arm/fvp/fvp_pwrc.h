@@ -37,7 +37,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /*******************************************************************************
  * Function & variable prototypes

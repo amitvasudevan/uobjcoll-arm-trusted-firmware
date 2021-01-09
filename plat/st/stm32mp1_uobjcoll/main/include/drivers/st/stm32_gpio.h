@@ -46,7 +46,7 @@
 #define GPIO_PULL_MASK		U(0x03)
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 int dt_set_pinctrl_config(int node);
 void set_gpio(uint32_t bank, uint32_t pin, uint32_t mode, uint32_t speed,

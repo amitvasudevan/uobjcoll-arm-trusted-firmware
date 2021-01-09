@@ -42,7 +42,7 @@
 #define CORTEX_A75_AMU_GROUP1_MASK	(U(0) << 3)
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 uint64_t cortex_a75_amu_cnt_read(int idx);
 void cortex_a75_amu_cnt_write(int idx, uint64_t val);

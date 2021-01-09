@@ -7,7 +7,7 @@
 
 /* Marvell CP110 SoC COMPHY unit driver */
 
-#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>

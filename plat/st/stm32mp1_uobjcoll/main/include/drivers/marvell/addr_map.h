@@ -10,7 +10,7 @@
 #ifndef ADDR_MAP_H
 #define ADDR_MAP_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 struct addr_map_win {
 	uint64_t base_addr;

@@ -6,8 +6,8 @@
 #ifndef ARM_DYN_CFG_HELPERS_H
 #define ARM_DYN_CFG_HELPERS_H
 
-#include <uberspark/uobjrtl/crt/include/stddef.h>
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /* Function declarations */
 int arm_dyn_tb_fw_cfg_init(void *dtb, int *node);

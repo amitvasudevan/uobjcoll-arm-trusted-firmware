@@ -59,8 +59,8 @@
 #define SDS_REGION_DESC_SIZE			0x8
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjrtl/crt/include/stddef.h>
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /* Header containing Shared Data Structure metadata */
 typedef struct structure_header {

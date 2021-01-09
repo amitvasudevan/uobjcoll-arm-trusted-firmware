@@ -7,9 +7,9 @@
 #ifndef SCMI_MSG_H
 #define SCMI_MSG_H
 
-#include <uberspark/uobjrtl/crt/include/stdbool.h>
-#include <uberspark/uobjrtl/crt/include/stddef.h>
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /* Minimum size expected for SMT based shared memory message buffers */
 #define SMT_BUF_SLOT_SIZE	128U

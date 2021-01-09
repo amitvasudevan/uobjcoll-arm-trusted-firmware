@@ -7,7 +7,7 @@
 #ifndef BL2_H
 #define BL2_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 void bl2_setup(u_register_t arg0, u_register_t arg1, u_register_t arg2,
 	       u_register_t arg3);

@@ -7,14 +7,14 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
-#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/rpi3/sdhost/rpi3_sdhost.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/mmc.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/rpi3/gpio/rpi3_gpio.h>
-#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjrtl/crt/include/string.h>
 
 static void rpi3_sdhost_initialize(void);

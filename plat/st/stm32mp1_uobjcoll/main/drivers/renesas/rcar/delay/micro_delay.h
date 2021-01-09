@@ -8,7 +8,7 @@
 #define MICRO_DELAY_H
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 void rcar_micro_delay(uint64_t micro_sec);
 #endif
 

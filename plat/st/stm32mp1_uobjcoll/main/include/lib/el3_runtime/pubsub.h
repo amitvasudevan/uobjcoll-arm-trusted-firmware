@@ -40,9 +40,9 @@
 
 /* For the compiler ... */
 
-#include <uberspark/uobjrtl/crt/include/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
-#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
 

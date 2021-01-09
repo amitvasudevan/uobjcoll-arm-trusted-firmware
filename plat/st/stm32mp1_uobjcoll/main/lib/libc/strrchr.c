@@ -29,7 +29,7 @@
  * SUCH DAMAGE.
  */
 
-#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 #include <uberspark/uobjrtl/crt/include/string.h>
 
 char *

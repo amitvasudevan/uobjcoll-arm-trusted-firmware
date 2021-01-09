@@ -7,7 +7,7 @@
 #ifndef STM32MP1_DBGMCU_H
 #define STM32MP1_DBGMCU_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /* Get chip version and ID from DBGMCU registers */
 int stm32mp1_dbgmcu_get_chip_version(uint32_t *chip_version);

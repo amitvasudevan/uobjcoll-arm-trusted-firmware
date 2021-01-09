@@ -11,7 +11,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
 
 int setjmp(jmp_buf env);
 __dead2 void longjmp(jmp_buf env, int val);

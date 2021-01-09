@@ -66,10 +66,10 @@
 #ifndef __ASSEMBLER__
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
-#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /* Offsets for the cpu_data structure */
 #define CPU_DATA_PSCI_LOCK_OFFSET	__builtin_offsetof\

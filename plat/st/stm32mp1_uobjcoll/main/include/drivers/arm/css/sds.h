@@ -71,8 +71,8 @@
 #define SDS_ERR_STRUCT_NOT_FINALIZED	-4
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjrtl/crt/include/stddef.h>
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 typedef enum {
 	SDS_ACCESS_MODE_NON_CACHED,

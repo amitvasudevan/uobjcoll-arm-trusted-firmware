@@ -7,7 +7,7 @@
 #ifndef CSS_MHU_H
 #define CSS_MHU_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 void mhu_secure_message_start(unsigned int slot_id);
 void mhu_secure_message_send(unsigned int slot_id);

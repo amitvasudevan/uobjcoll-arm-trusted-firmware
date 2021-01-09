@@ -7,7 +7,7 @@
 #ifndef GIC600_MULTICHIP_H
 #define GIC600_MULTICHIP_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /*
  * GIC-600 microarchitecture supports coherent multichip environments containing

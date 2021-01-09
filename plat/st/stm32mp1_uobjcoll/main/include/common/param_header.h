@@ -7,10 +7,10 @@
 #ifndef PARAM_HEADER_H
 #define PARAM_HEADER_H
 
-#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 #endif /*__ASSEMBLER__*/
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/export/common/param_header_exp.h>

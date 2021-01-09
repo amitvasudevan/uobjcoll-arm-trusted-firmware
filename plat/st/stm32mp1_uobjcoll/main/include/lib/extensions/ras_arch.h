@@ -186,10 +186,10 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
-#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /*
  * Standard Error Record accessors for memory-mapped registers.

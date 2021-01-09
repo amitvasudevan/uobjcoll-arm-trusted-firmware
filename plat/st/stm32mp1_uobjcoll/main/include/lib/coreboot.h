@@ -7,7 +7,7 @@
 #ifndef COREBOOT_H
 #define COREBOOT_H
 
-#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 typedef struct {
 	uint32_t type;			/* always 2 (memory-mapped) on ARM */
