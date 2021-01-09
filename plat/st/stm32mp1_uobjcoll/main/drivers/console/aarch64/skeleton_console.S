@@ -3,8 +3,8 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/console_macros.S>
+#include <asm_macros.S>
+#include <console_macros.S>
 
 	/*
 	 * This file contains a skeleton console driver that can be used as a

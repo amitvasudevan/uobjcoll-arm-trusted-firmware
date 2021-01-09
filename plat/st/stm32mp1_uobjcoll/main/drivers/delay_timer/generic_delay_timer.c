@@ -5,16 +5,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <assert.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_features.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/generic_delay_timer.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <arch_features.h>
+#include <arch_helpers.h>
+#include <common/bl_common.h>
+#include <common/debug.h>
+#include <drivers/delay_timer.h>
+#include <drivers/generic_delay_timer.h>
+#include <lib/utils_def.h>
+#include <plat/common/platform.h>
 
 static timer_ops_t ops;
 

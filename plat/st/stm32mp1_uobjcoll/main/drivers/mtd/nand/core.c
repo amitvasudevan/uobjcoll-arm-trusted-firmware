@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
+#include <assert.h>
+#include <errno.h>
+#include <stddef.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/nand.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
+#include <common/debug.h>
+#include <drivers/delay_timer.h>
+#include <drivers/nand.h>
+#include <lib/utils.h>
 
 /*
  * Define a single nand_device used by specific NAND frameworks.

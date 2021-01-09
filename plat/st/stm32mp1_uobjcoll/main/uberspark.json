@@ -129,6 +129,58 @@
 				"include/services/bsec_svc.h"
 			],
 			"c-files": [
+				// from makefile
+				"common/bl_common.c",
+				"common/tf_log.c",
+				"drivers/console/multi_console.c",
+				"plat/common/plat_bl_common.c",
+				"plat/common/plat_log_common.c",
+				"plat/common/aarch32/plat_common.c",
+				"plat/common/ubsan.c",
+				// from platform.mk
+				"common/desc_image_load.c",
+				"drivers/arm/tzc/tzc400.c",
+				"drivers/delay_timer/delay_timer.c",
+				"drivers/delay_timer/generic_delay_timer.c",
+				"drivers/io/io_block.c",
+				"drivers/io/io_dummy.c",
+				"drivers/io/io_mtd.c",
+				"drivers/io/io_storage.c",
+				"drivers/mmc/mmc.c",
+				"drivers/mtd/nand/core.c",
+				"drivers/mtd/nand/raw_nand.c",
+				"drivers/mtd/nand/spi_nand.c",
+				"drivers/mtd/nor/spi_nor.c",
+				"drivers/mtd/spi-mem/spi_mem.c",
+				"drivers/partition/gpt.c",
+				"drivers/partition/partition.c",
+				"drivers/st/bsec/bsec.c",
+				"drivers/st/clk/stm32mp1_clk.c",
+				"drivers/st/clk/stm32mp_clkfunc.c",
+				"drivers/st/crypto/stm32_hash.c",
+				"drivers/st/ddr/stm32mp1_ddr.c",
+				"drivers/st/ddr/stm32mp1_ddr_helpers.c",
+				"drivers/st/ddr/stm32mp1_ram.c",
+				"drivers/st/fmc/stm32_fmc2_nand.c",
+				"drivers/st/gpio/stm32_gpio.c",
+				"drivers/st/i2c/stm32_i2c.c",
+				"drivers/st/io/io_mmc.c",
+				"drivers/st/io/io_stm32image.c",
+				"drivers/st/iwdg/stm32_iwdg.c",
+				"drivers/st/mmc/stm32_sdmmc2.c",
+				"drivers/st/pmic/stm32mp_pmic.c",
+				"drivers/st/pmic/stpmic1.c",
+				"drivers/st/reset/stm32mp1_reset.c",
+				"drivers/st/spi/stm32_qspi.c",
+				"lib/optee/optee_utils.c",
+				"plat/st/common/bl2_io_storage.c",
+				"plat/st/common/stm32mp_auth.c",
+				"plat/st/common/stm32mp_common.c",
+				"plat/st/common/stm32mp_dt.c",
+
+				// sp_min
+				"sp_min/sp_min_setup.c",
+				// stm32mp1
 				"bl2_plat_setup.c",
 				"plat_bl2_mem_params_desc.c",
 				"plat_image_load.c",
@@ -144,16 +196,23 @@
 				"stm32mp1_stack_protector.c",
 				"stm32mp1_syscfg.c",
 				"stm32mp1_topology.c",
-				"sp_min/sp_min_setup.c",
+				// services
 				"services/bsec_svc.c",
 				"services/stm32mp1_svc_setup.c"
 			],
 			"asm-files": [
+				"common/aarch32/debug.S",
+				"lib/aarch32/cache_helpers.S",
+				"lib/aarch32/misc_helpers.S",
+				"plat/common/aarch32/platform_helpers.S",
+				"lib/aarch32/armclang_printf.S",
+				
 				"arch/asm_macros.S",
 				"common/asm_macros_common.S",
 				"stm32mp1_helper.S",
 				"stm32mp1.ld.S",
-				"stm32mp1.S"
+				"stm32mp1.S",
+				"lib/cpus/aarch32/cortex_a7.S"
 			]
 		},
 		/* public methods */
