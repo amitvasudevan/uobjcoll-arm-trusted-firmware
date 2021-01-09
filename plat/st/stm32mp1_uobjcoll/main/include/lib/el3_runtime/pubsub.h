@@ -44,7 +44,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 
 #if defined(USE_ARM_LINK)
 #define __pubsub_start_sym(event)	Load$$__pubsub_##event##_start$$Base

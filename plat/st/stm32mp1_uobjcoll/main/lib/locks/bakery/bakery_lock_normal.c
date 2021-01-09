@@ -6,9 +6,9 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjrtl/crt/include/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>

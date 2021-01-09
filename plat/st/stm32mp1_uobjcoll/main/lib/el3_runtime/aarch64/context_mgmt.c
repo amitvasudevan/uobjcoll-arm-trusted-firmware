@@ -6,12 +6,12 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
-#include <uberspark/uobjrtl/crt/include/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_features.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl31/interrupt_mgmt.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>

@@ -8,8 +8,8 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables.h>

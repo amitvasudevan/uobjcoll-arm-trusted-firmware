@@ -6,7 +6,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
-#include <uberspark/uobjrtl/crt/include/stdlib.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdlib.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
 

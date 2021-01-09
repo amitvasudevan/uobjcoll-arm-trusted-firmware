@@ -5,7 +5,7 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
-#include <uberspark/uobjrtl/crt/include/limits.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/limits.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 

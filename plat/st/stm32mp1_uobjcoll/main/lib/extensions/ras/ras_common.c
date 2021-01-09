@@ -7,7 +7,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl31/ea_handle.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl31/ehf.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>

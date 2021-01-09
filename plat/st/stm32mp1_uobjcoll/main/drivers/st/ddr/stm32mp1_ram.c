@@ -10,7 +10,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_ddr.h>

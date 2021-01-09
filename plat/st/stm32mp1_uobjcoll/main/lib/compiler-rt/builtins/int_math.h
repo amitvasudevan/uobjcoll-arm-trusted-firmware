@@ -27,7 +27,7 @@
 
 #if defined(_MSC_VER) && !defined(__clang__)
 #include <uberspark/uobjrtl/crt/include/math.h>
-#include <uberspark/uobjrtl/crt/include/stdlib.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdlib.h>
 #include <uberspark/uobjrtl/crt/include/math.h>
 #endif
 

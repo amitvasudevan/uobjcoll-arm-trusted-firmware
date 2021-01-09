@@ -5,9 +5,9 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjrtl/crt/include/limits.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/limits.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
-#include <uberspark/uobjrtl/crt/include/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_common.h>

@@ -7,7 +7,7 @@
 #ifndef INTERRUPT_MGMT_H
 #define INTERRUPT_MGMT_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*******************************************************************************

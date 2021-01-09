@@ -6,7 +6,7 @@
 #ifndef CPU_MACROS_S
 #define CPU_MACROS_S
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/errata_report.h>
 

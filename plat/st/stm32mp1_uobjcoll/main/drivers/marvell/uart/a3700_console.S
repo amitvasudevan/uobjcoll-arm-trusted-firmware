@@ -5,7 +5,7 @@
  * https://spdx.org/licenses
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/console_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/uart/a3700_console.h>

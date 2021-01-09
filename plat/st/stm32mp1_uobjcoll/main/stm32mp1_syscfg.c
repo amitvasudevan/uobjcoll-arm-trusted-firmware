@@ -11,7 +11,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stpmic1.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_dt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_dt.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_private.h>
 
 /*

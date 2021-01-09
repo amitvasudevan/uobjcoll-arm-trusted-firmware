@@ -13,7 +13,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/etzpc.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_gpio.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_shared_resources.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shared_resources.h>
 
 /*
  * Once one starts to get the resource registering state, one cannot register

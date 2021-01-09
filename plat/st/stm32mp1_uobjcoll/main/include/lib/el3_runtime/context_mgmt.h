@@ -11,7 +11,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 
 /*******************************************************************************
  * Forward declarations

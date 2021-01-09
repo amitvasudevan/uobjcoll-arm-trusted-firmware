@@ -20,7 +20,102 @@
 		/* sources */
 		"sources": {
 			"h-files": [
-				"stm32mp1_def.h",
+				// libc
+				"include/lib/libc/assert.h",
+				"include/lib/libc/cdefs.h",
+				"include/lib/libc/errno.h",
+				"include/lib/libc/limits.h",
+				"include/lib/libc/stdarg.h",
+				"include/lib/libc/stdbool.h",
+				"include/lib/libc/stddef.h",
+				"include/lib/libc/stdint.h",
+				"include/lib/libc/stdio.h",
+				"include/lib/libc/string.h",
+				// arch
+				"include/arch/arch.h",
+				"include/arch/arch_helpers.h",
+				// sp_min
+				"include/bl32/sp_min/platform_sp_min.h",
+				// common
+				"include/common/bl_common.h",
+				"include/common/debug.h",
+				"include/common/desc_image_load.h",
+				"include/common/ep_info.h",
+				"include/common/interrupt_props.h",
+				"include/common/param_header.h",
+				"include/common/runtime_svc.h",
+				"include/common/tbbr/tbbr_img_def.h",
+				// drivers
+				"include/drivers/arm/gic_common.h",
+				"include/drivers/arm/gicv2.h",
+				"include/drivers/arm/tzc400.h",
+				"include/drivers/arm/tzc_common.h",
+				"include/drivers/console.h",
+				"include/drivers/console_assertions.h",
+				"include/drivers/delay_timer.h",
+				"include/drivers/generic_delay_timer.h",
+				"include/drivers/nand.h",
+				"include/drivers/raw_nand.h",
+				"include/drivers/spi_mem.h",
+				"include/drivers/spi_nand.h",
+				"include/drivers/spi_nor.h",
+				"include/drivers/st/bsec.h",
+				"include/drivers/st/etzpc.h",
+				"include/drivers/st/scmi-msg.h",
+				"include/drivers/st/scmi.h",
+				"include/drivers/st/stm32_console.h",
+				"include/drivers/st/stm32_gpio.h",
+				"include/drivers/st/stm32_i2c.h",
+				"include/drivers/st/stm32_iwdg.h",
+				"include/drivers/st/stm32mp1_clk.h",
+				"include/drivers/st/stm32mp1_pwr.h",
+				"include/drivers/st/stm32mp1_ram.h",
+				"include/drivers/st/stm32mp1_rcc.h",
+				"include/drivers/st/stm32mp_pmic.h",
+				"include/drivers/st/stm32mp_reset.h",
+				"include/drivers/st/stpmic1.h",
+				// dt-bindings
+				"include/dt-bindings/clock/stm32mp1-clks.h",
+				"include/dt-bindings/interrupt-controller/arm-gic.h",
+				"include/dt-bindings/reset/stm32mp1-resets.h",
+				// exports
+				"include/export/common/bl_common_exp.h",
+				"include/export/common/ep_info_exp.h",
+				"include/export/common/param_header_exp.h",
+				"include/export/common/tbbr/tbbr_img_def_exp.h",
+				"include/export/lib/utils_def_exp.h",
+				// el3_runtime
+				"include/lib/el3_runtime/aarch32/context.h",
+				"include/lib/el3_runtime/context_mgmt.h",
+				// fdt
+				"include/lib/libfdt/fdt.h",
+				"include/lib/libfdt/libfdt.h",
+				"include/lib/libfdt/libfdt_env.h",
+				// xlat
+				"include/lib/xlat_tables/xlat_mmu_helpers.h",
+				"include/lib/xlat_tables/xlat_tables_arch.h",
+				"include/lib/xlat_tables/xlat_tables_defs.h",
+				"include/lib/xlat_tables/xlat_tables_v2.h",
+				"include/lib/xlat_tables/xlat_tables_v2_helpers.h",
+				// misc libs
+				"include/lib/bakery_lock.h",
+				"include/lib/mmio.h",
+				"include/lib/optee_utils.h",
+				"include/lib/psci/psci.h",
+				"include/lib/spinlock.h",
+				"include/lib/utils.h",
+				"include/lib/utils_def.h",
+				// common platform
+				"include/plat/common/common_def.h",
+				"include/plat/common/platform.h",
+				"include/plat/st/common/stm32mp_auth.h",
+				"include/plat/st/common/stm32mp_common.h",
+				"include/plat/st/common/stm32mp_dt.h",
+				"include/plat/st/common/stm32mp_shared_resources.h",
+				"include/plat/st/common/stm32mp_shres_helpers.h",
+				// tools
+				"include/tools_share/uuid.h",
+				// stm32mp1
 				"include/boot_api.h",
 				"include/platform_def.h",
 				"include/stm32mp1_context.h",
@@ -28,7 +123,10 @@
 				"include/stm32mp1_private.h",
 				"include/stm32mp1_shared_resources.h",
 				"include/stm32mp1_smc.h",
-				"services/bsec_svc.h"
+				"include/stm32mp1_def.h",
+				// services
+				"include/services/spm_core_manifest.h",
+				"include/services/bsec_svc.h"
 			],
 			"c-files": [
 				"bl2_plat_setup.c",
@@ -51,6 +149,8 @@
 				"services/stm32mp1_svc_setup.c"
 			],
 			"asm-files": [
+				"arch/asm_macros.S",
+				"common/asm_macros_common.S",
 				"stm32mp1_helper.S",
 				"stm32mp1.ld.S",
 				"stm32mp1.S"

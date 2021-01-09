@@ -7,7 +7,7 @@
 #ifndef BRCM_DEF_H
 #define BRCM_DEF_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables.h>

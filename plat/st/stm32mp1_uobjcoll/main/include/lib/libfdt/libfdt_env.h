@@ -10,9 +10,9 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
-#include <uberspark/uobjrtl/crt/include/stdlib.h>
-#include <uberspark/uobjrtl/crt/include/string.h>
-#include <uberspark/uobjrtl/crt/include/limits.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdlib.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/limits.h>
 
 #ifdef __CHECKER__
 #define FDT_FORCE __attribute__((force))

@@ -5,7 +5,7 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
-#include <uberspark/uobjrtl/crt/include/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
 int memcmp(const void *s1, const void *s2, size_t len)
 {

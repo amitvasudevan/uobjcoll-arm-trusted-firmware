@@ -6,7 +6,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
-#include <uberspark/uobjrtl/crt/include/setjmp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/setjmp.h>
 
 	.globl	setjmp
 	.globl	longjmp

@@ -19,7 +19,7 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
-#include <uberspark/uobjrtl/crt/include/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
 /*
  * Copy string src to buffer dst of size dsize.  At most dsize-1

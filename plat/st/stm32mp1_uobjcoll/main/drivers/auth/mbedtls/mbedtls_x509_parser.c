@@ -15,14 +15,14 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
-#include <uberspark/uobjrtl/crt/include/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
 /* mbed TLS headers */
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/asn1.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/oid.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/platform.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/img_parser_mod.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/mbedtls/mbedtls_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>

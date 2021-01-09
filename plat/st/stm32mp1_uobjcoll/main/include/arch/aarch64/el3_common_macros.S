@@ -7,7 +7,7 @@
 #ifndef EL3_COMMON_MACROS_S
 #define EL3_COMMON_MACROS_S
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>

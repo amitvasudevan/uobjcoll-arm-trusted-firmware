@@ -6,7 +6,7 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/a8k_plat_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mss_scp_bl2_format.h>

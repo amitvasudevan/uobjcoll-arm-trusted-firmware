@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjrtl/crt/include/stdlib.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdlib.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 

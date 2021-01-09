@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv2.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>

@@ -11,7 +11,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/cache_llc.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/ccu.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>

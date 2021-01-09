@@ -9,7 +9,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_features.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>

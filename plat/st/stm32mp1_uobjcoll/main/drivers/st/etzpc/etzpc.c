@@ -8,7 +8,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/etzpc.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/soc/st,stm32-etzpc.h>

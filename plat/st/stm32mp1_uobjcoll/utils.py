@@ -135,11 +135,11 @@ def modify_includes():
         with open(path, "w") as f:
             f.write(replace)
     
-    for path in tqdm(files):
-        with open(path, "r") as f:
-            replace = re.sub(r"(?<=#include <).*(" + stdh_reg + r").*(?=>\n)", r"uberspark/uobjrtl/crt/include/\1", f.read())
-        with open(path, "w") as f:
-            f.write(replace)
+    # for path in tqdm(files):
+    #     with open(path, "r") as f:
+    #         replace = re.sub(r"(?<=#include <).*(" + stdh_reg + r").*(?=>\n)", r"uberspark/uobjrtl/crt/include/\1", f.read())
+    #     with open(path, "w") as f:
+    #         f.write(replace)
 
 # def get_all_includes(start_includes, itr):
 #     if itr == 0:

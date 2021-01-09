@@ -19,10 +19,10 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_clk.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/boot_api.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_auth.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_dt.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_shres_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_auth.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_dt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_dbgmcu.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_private.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_shared_resources.h>

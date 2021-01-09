@@ -26,7 +26,7 @@
 #define PCR		p15, 0, c15, c0, 0
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 DEFINE_COPROCR_RW_FUNCS(pcr, PCR)
 #endif
 

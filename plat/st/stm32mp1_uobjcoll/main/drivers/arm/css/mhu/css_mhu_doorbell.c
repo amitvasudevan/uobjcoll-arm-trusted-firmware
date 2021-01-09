@@ -6,7 +6,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/css/css_mhu_doorbell.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/css/scmi.h>
 
