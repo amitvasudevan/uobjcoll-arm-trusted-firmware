@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
 #include <libfdt.h>
 
