@@ -6,10 +6,10 @@
 #ifndef SCMI_MSG_COMMON_H
 #define SCMI_MSG_COMMON_H
 
-#include <assert.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
 #include "base.h"
 #include "clock.h"

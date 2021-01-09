@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch.h>
-#include <asm_macros.S>
-#include <cortex_a75.h>
-#include <cpuamu.h>
-#include <cpu_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cortex_a75.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpuamu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
 
 /* Hardware handled coherency */
 #if HW_ASSISTED_COHERENCY == 0

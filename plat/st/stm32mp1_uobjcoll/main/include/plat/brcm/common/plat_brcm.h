@@ -7,13 +7,13 @@
 #ifndef PLAT_BRCM_H
 #define PLAT_BRCM_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/cassert.h>
-#include <lib/utils_def.h>
-#include <lib/xlat_tables/xlat_tables.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 struct image_info;
 

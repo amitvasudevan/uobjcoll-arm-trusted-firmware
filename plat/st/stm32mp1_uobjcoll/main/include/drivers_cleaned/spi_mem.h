@@ -7,9 +7,9 @@
 #ifndef DRIVERS_SPI_MEM_H
 #define DRIVERS_SPI_MEM_H
 
-#include <errno.h>
-#include <stdbool.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 #define SPI_MEM_BUSWIDTH_1_LINE		1U
 #define SPI_MEM_BUSWIDTH_2_LINE		2U

@@ -7,9 +7,9 @@
 #ifndef MEASURED_BOOT_H
 #define MEASURED_BOOT_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <drivers/measured_boot/event_log.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/measured_boot/event_log.h>
 
 /* Platform specific table of image IDs, names and PCRs */
 extern const image_data_t images_data[];

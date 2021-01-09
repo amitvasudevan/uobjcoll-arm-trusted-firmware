@@ -7,8 +7,8 @@
 #ifndef CSS_SCPI_H
 #define CSS_SCPI_H
 
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*
  * An SCPI command consists of a header and a payload.

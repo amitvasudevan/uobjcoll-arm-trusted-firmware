@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <cdefs.h>
-#include <common/debug.h>
-#include <lib/debugfs.h>
-#include <string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/debugfs.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
 #include "dev.h"
 

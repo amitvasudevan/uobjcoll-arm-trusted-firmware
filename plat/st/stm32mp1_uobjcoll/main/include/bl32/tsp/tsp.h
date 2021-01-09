@@ -86,7 +86,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 
 typedef uint32_t tsp_vector_isn_t;

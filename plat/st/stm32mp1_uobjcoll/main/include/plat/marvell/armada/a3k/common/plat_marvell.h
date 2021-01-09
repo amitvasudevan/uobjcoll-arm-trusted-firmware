@@ -8,12 +8,12 @@
 #ifndef PLAT_MARVELL_H
 #define PLAT_MARVELL_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <common/bl_common.h>
-#include <lib/cassert.h>
-#include <lib/el3_runtime/cpu_data.h>
-#include <lib/xlat_tables/xlat_tables_v2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
 
 /*
  * Extern declarations common to Marvell standard platforms

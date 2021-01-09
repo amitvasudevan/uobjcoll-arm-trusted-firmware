@@ -7,16 +7,16 @@
 #ifndef BAKERY_LOCK_H
 #define BAKERY_LOCK_H
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #define BAKERY_LOCK_MAX_CPUS		PLATFORM_CORE_COUNT
 
 #ifndef __ASSEMBLER__
-#include <cdefs.h>
-#include <stdbool.h>
-#include <stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*****************************************************************************
  * Internal helpers used by the bakery lock implementation.

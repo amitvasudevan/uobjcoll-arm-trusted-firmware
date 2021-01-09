@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <lib/debugfs.h>
-#include <limits.h>
-#include <plat/arm/common/plat_arm.h>
-#include <stdlib.h>
-#include <string.h>
-#include <tools_share/firmware_image_package.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/debugfs.h>
+#include <uberspark/uobjrtl/crt/include/limits.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/arm/common/plat_arm.h>
+#include <uberspark/uobjrtl/crt/include/stdlib.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/firmware_image_package.h>
 
 #include "dev.h"
 

@@ -7,7 +7,7 @@
 #ifndef CBMEM_CONSOLE_H
 #define CBMEM_CONSOLE_H
 
-#include <drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 #define CONSOLE_T_CBMC_SIZE	CONSOLE_T_DRVDATA
 

@@ -7,10 +7,10 @@
 #ifndef CSS_PM_H
 #define CSS_PM_H
 
-#include <cdefs.h>
-#include <stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
 
 /* Macros to read the CSS power domain state */
 #define CSS_CORE_PWR_STATE(state)	(state)->pwr_domain_state[ARM_PWR_LVL0]

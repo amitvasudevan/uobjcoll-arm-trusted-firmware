@@ -7,7 +7,7 @@
 #ifndef IMX_GPT_H
 #define IMX_GPT_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 void imx_gpt_ops_init(uintptr_t reg_base);
 

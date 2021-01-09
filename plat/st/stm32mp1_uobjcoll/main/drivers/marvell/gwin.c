@@ -7,13 +7,13 @@
 
 /* GWIN unit device driver for Marvell AP810 SoC */
 
-#include <common/debug.h>
-#include <drivers/marvell/gwin.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/gwin.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <armada_common.h>
-#include <mvebu.h>
-#include <mvebu_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/armada_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu_def.h>
 
 #if LOG_LEVEL >= LOG_LEVEL_INFO
 #define DEBUG_ADDR_MAP

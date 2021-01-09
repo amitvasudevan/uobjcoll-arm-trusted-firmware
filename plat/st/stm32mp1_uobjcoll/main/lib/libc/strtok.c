@@ -34,7 +34,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
 char *
 strtok_r(char *s, const char *delim, char **last)

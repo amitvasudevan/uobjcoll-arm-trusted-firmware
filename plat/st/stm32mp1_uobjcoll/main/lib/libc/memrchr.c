@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
 #undef memrchr
 

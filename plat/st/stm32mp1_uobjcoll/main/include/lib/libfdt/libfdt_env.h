@@ -7,12 +7,12 @@
  * Copyright 2012 Kim Phillips, Freescale Semiconductor.
  */
 
-#include <stdbool.h>
-#include <stddef.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
-#include <limits.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdlib.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
+#include <uberspark/uobjrtl/crt/include/limits.h>
 
 #ifdef __CHECKER__
 #define FDT_FORCE __attribute__((force))
@@ -67,7 +67,7 @@ static inline fdt64_t cpu_to_fdt64(uint64_t x)
 #undef EXTRACT_BYTE
 
 #ifdef __APPLE__
-#include <AvailabilityMacros.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/AvailabilityMacros.h>
 
 /* strnlen() is not available on Mac OS < 10.7 */
 # if !defined(MAC_OS_X_VERSION_10_7) || (MAC_OS_X_VERSION_MAX_ALLOWED < \

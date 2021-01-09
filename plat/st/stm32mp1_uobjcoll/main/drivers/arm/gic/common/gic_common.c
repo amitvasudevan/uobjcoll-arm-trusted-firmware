@@ -6,10 +6,10 @@
 
 #pragma message __FILE__ " is deprecated, use gicv2.mk instead"
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <drivers/arm/gic_common.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
 #include "gic_common_private.h"
 

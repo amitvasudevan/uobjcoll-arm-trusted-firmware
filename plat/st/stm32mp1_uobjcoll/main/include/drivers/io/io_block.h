@@ -7,7 +7,7 @@
 #ifndef IO_BLOCK_H
 #define IO_BLOCK_H
 
-#include <drivers/io/io_storage.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_storage.h>
 
 /* block devices ops */
 typedef struct io_block_ops {

@@ -7,8 +7,8 @@
 #ifndef SOC_CSS_DEF_H
 #define SOC_CSS_DEF_H
 
-#include <lib/utils_def.h>
-#include <plat/common/common_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/common_def.h>
 
 /*
  * Definitions common to all ARM CSS SoCs

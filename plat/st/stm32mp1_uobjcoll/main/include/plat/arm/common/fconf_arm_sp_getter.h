@@ -7,8 +7,8 @@
 #ifndef FCONF_ARM_SP_GETTER_H
 #define FCONF_ARM_SP_GETTER_H
 
-#include <lib/fconf/fconf.h>
-#include <tools_share/uuid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/uuid.h>
 
 /* arm_sp getter */
 #define arm__sp_getter(prop)	arm_sp.prop

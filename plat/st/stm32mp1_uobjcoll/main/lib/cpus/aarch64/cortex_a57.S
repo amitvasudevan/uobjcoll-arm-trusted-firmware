@@ -4,14 +4,14 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-#include <arch.h>
-#include <asm_macros.S>
-#include <assert_macros.S>
-#include <common/bl_common.h>
-#include <common/debug.h>
-#include <cortex_a57.h>
-#include <cpu_macros.S>
-#include <plat_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cortex_a57.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>
 
 	/* ---------------------------------------------
 	 * Disable L1 data cache and unified L2 cache

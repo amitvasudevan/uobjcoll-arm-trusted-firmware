@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <common/debug.h>
-#include <drivers/delay_timer.h>
-#include <lib/mmio.h>
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #define RNG_CTRL_REG		(RNG_BASE_ADDR + 0x00)
 #define RNG_CTRL_MASK		0x00001FFF

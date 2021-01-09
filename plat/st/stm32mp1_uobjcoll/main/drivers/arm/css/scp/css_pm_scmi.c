@@ -4,17 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <drivers/arm/css/css_scp.h>
-#include <drivers/arm/css/scmi.h>
-#include <plat/arm/common/plat_arm.h>
-#include <plat/arm/css/common/css_pm.h>
-#include <plat/common/platform.h>
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/css/css_scp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/css/scmi.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/arm/common/plat_arm.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/arm/css/common/css_pm.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 /*
  * This file implements the SCP helper functions using SCMI protocol.

@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdlib.h>
+#include <uberspark/uobjrtl/crt/include/stdlib.h>
 
 static void (*exitfun)(void);
 

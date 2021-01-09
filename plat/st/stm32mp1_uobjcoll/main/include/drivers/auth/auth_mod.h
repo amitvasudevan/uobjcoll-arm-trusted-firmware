@@ -9,12 +9,12 @@
 
 #if TRUSTED_BOARD_BOOT
 
-#include <common/tbbr/cot_def.h>
-#include <common/tbbr/tbbr_img_def.h>
-#include <drivers/auth/auth_common.h>
-#include <drivers/auth/img_parser_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/cot_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/img_parser_mod.h>
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * Image flags

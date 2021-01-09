@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <asm_macros.S>
-#include <neoverse_n_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/neoverse_n_common.h>
 
 	.global is_scu_present_in_dsu
 

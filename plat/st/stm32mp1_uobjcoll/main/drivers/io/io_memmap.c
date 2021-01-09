@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <common/debug.h>
-#include <drivers/io/io_driver.h>
-#include <drivers/io/io_memmap.h>
-#include <drivers/io/io_storage.h>
-#include <lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_driver.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_memmap.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_storage.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 
 /* As we need to be able to keep state for seek, only one file can be open
  * at a time. Make this a structure and point to the entity->info. When we

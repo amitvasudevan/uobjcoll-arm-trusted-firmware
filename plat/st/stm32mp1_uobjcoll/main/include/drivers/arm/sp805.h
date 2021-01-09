@@ -7,7 +7,7 @@
 #ifndef SP805_H
 #define SP805_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* SP805 register offset */
 #define SP805_WDOG_LOAD_OFF		UL(0x000)
@@ -23,7 +23,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* Public high level API */
 

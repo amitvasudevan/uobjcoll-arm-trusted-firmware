@@ -4,20 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <errno.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <arch.h>
-#include <arch_features.h>
-#include <arch_helpers.h>
-#include <common/bl_common.h>
-#include <common/debug.h>
-#include <drivers/auth/auth_mod.h>
-#include <drivers/io/io_storage.h>
-#include <lib/utils.h>
-#include <lib/xlat_tables/xlat_tables_defs.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_features.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_storage.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 #if TRUSTED_BOARD_BOOT
 # ifdef DYN_DISABLE_AUTH

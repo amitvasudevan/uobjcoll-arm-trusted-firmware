@@ -7,7 +7,7 @@
 #ifndef	CHAL_SD_H
 #define	CHAL_SD_H
 
-#include <stddef.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
 
 #define BASE_CLK_FREQ   (200 * 1000 * 1000)
 #define INIT_CLK_FREQ   (400 * 1000)

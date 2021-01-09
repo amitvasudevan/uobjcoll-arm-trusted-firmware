@@ -7,9 +7,9 @@
 #ifndef DEV_H
 #define DEV_H
 
-#include <cdefs.h>
-#include <lib/debugfs.h>
-#include <stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/debugfs.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
 
 /* FIXME: need configurability */
 #define NR_CHANS  10

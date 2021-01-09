@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include "bcm_emmc.h"
 #include "emmc_chal_types.h"

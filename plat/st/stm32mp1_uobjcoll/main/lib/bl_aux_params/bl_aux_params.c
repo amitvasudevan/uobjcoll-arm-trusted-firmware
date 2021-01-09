@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <common/debug.h>
-#include <lib/coreboot.h>
-#include <lib/bl_aux_params/bl_aux_params.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/coreboot.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bl_aux_params/bl_aux_params.h>
 
 void bl_aux_params_parse(u_register_t head,
 			 bl_aux_param_handler_t handler)

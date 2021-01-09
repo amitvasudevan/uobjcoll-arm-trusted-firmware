@@ -7,7 +7,7 @@
 #ifndef AARCH64_GENERIC_H
 #define AARCH64_GENERIC_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * 0x0 value on the MIDR implementer value is reserved for software use,

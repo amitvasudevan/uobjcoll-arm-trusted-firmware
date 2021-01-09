@@ -7,7 +7,7 @@
 #ifndef SMCCC_H
 #define SMCCC_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #define SMCCC_VERSION_MAJOR_SHIFT	U(16)
 #define SMCCC_VERSION_MAJOR_MASK	U(0x7FFF)
@@ -97,9 +97,9 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/cassert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
 #define is_caller_non_secure(_f)	(((_f) & SMC_FROM_NON_SECURE) != U(0))
 #define is_caller_secure(_f)		(!is_caller_non_secure(_f))

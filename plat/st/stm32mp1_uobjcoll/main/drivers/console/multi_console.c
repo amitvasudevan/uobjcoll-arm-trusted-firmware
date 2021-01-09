@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 console_t *console_list;
 uint8_t console_state = CONSOLE_FLAG_BOOT;

@@ -7,9 +7,9 @@
 #ifndef STM32_I2C_H
 #define STM32_I2C_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* Bit definition for I2C_CR1 register */
 #define I2C_CR1_PE			BIT(0)

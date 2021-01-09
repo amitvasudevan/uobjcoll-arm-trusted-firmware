@@ -7,7 +7,7 @@
 #ifndef CORTEX_A75_H
 #define CORTEX_A75_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* Cortex-A75 MIDR */
 #define CORTEX_A75_MIDR		U(0x410fd0a0)
@@ -42,7 +42,7 @@
 #define CORTEX_A75_AMU_GROUP1_MASK	(U(0) << 3)
 
 #ifndef __ASSEMBLER__
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 uint64_t cortex_a75_amu_cnt_read(int idx);
 void cortex_a75_amu_cnt_write(int idx, uint64_t val);

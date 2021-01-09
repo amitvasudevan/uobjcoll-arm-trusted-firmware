@@ -10,9 +10,9 @@
 #ifndef CP110_SETUP_H
 #define CP110_SETUP_H
 
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <mvebu_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu_def.h>
 
 #define MVEBU_DEVICE_ID_REG		(MVEBU_CP_DFX_OFFSET + 0x40)
 #define MVEBU_DEVICE_ID_OFFSET		(0)

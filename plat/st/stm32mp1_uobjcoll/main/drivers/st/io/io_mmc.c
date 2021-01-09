@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <errno.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <common/debug.h>
-#include <drivers/io/io_driver.h>
-#include <drivers/io/io_storage.h>
-#include <drivers/mmc.h>
-#include <drivers/st/io_mmc.h>
-#include <drivers/st/stm32_sdmmc2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_driver.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_storage.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/mmc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/io_mmc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_sdmmc2.h>
 
 /* SDMMC device functions */
 static int mmc_dev_open(const uintptr_t init_params, io_dev_info_t **dev_info);

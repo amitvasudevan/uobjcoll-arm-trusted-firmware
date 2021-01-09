@@ -6,7 +6,7 @@
 
 #include <stdint.h>		/* for uint32_t */
 
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
 #include "pfc_init_m3n.h"
 #include "rcar_def.h"

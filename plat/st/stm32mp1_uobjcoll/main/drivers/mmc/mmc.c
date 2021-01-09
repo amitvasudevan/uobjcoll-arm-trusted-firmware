@@ -6,16 +6,16 @@
 
 /* Define a simple and generic interface to access eMMC and SD-card devices. */
 
-#include <assert.h>
-#include <errno.h>
-#include <stdbool.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <drivers/delay_timer.h>
-#include <drivers/mmc.h>
-#include <lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/mmc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 
 #define MMC_DEFAULT_MAX_RETRIES		5
 #define SEND_OP_COND_MAX_RETRIES	100

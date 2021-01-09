@@ -8,10 +8,10 @@
 #ifndef ARMADA_COMMON_H
 #define ARMADA_COMMON_H
 
-#include <drivers/marvell/amb_adec.h>
-#include <drivers/marvell/ccu.h>
-#include <drivers/marvell/io_win.h>
-#include <drivers/marvell/iob.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/amb_adec.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/ccu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/io_win.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/iob.h>
 
 /*
  * This struct supports skip image request

@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <asm_macros.S>
-#include <console_macros.S>
-#include <drivers/coreboot/cbmem_console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/console_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/coreboot/cbmem_console.h>
 
 /*
  * This driver implements access to coreboot's in-memory console

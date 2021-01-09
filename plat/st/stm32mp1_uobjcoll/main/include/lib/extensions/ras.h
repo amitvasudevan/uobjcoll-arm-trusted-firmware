@@ -71,9 +71,9 @@
 
 #ifndef __ASSEMBLER__
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <lib/extensions/ras_arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/extensions/ras_arch.h>
 
 struct err_record_info;
 

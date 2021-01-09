@@ -39,7 +39,7 @@
 #ifndef ENDIAN__H
 #define ENDIAN__H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*
  * Definitions for byte order, according to byte significance from low

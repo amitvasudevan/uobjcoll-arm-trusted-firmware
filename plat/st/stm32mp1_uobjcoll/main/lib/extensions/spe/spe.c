@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
-#include <arch.h>
-#include <arch_helpers.h>
-#include <lib/el3_runtime/pubsub.h>
-#include <lib/extensions/spe.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/pubsub.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/extensions/spe.h>
 
 static inline void psb_csync(void)
 {

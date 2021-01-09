@@ -7,13 +7,13 @@
 
 /* CP110 Marvell SoC driver */
 
-#include <common/debug.h>
-#include <drivers/delay_timer.h>
-#include <drivers/marvell/amb_adec.h>
-#include <drivers/marvell/iob.h>
-#include <drivers/marvell/mochi/cp110_setup.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/amb_adec.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/iob.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/mochi/cp110_setup.h>
 
-#include <plat_marvell.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_marvell.h>
 
 /*
  * AXI Configuration.

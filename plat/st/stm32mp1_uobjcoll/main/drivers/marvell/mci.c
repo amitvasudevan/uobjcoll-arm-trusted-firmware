@@ -7,14 +7,14 @@
 
 /* MCI bus driver for Marvell ARMADA 8K and 8K+ SoCs */
 
-#include <common/debug.h>
-#include <drivers/delay_timer.h>
-#include <drivers/marvell/mci.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/mci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <mvebu.h>
-#include <mvebu_def.h>
-#include <plat_marvell.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_marvell.h>
 
 /* /HB /Units /Direct_regs /Direct regs
  * /Configuration Register Write/Read Data Register

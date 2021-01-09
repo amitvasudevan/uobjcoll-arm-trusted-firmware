@@ -7,7 +7,7 @@
 #ifndef SPI_H
 #define SPI_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 #define SPI_XFER_BEGIN (1 << 0)	/* Assert CS before transfer */
 #define SPI_XFER_END   (1 << 1)	/* De-assert CS after transfer */

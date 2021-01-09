@@ -7,8 +7,8 @@
 #ifndef STPMIC1_H
 #define STPMIC1_H
 
-#include <drivers/st/stm32_i2c.h>
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_i2c.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #define TURN_ON_REG			0x1U
 #define TURN_OFF_REG			0x2U

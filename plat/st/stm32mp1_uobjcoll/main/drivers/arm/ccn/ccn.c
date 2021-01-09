@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
-#include <arch.h>
-#include <common/debug.h>
-#include <drivers/arm/ccn.h>
-#include <lib/bakery_lock.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/ccn.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
 #include "ccn_private.h"
 

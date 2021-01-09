@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <arch_helpers.h>
-#include <drivers/arm/css/css_mhu_doorbell.h>
-#include <drivers/arm/css/scmi.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/css/css_mhu_doorbell.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/css/scmi.h>
 
 void mhu_ring_doorbell(struct scmi_channel_plat_info *plat_info)
 {

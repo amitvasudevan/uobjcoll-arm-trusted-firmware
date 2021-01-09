@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <rpi_hw.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/rpi_hw.h>
 
-#include <drivers/rpi3/mailbox/rpi3_mbox.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/rpi3/mailbox/rpi3_mbox.h>
 
 #define RPI3_MAILBOX_MAX_RETRIES	U(1000000)
 

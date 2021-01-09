@@ -47,7 +47,7 @@
 #define CCN_GET_RUN_STATE(pstate)	(pstate & 0xf)
 
 #ifndef __ASSEMBLER__
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*
  * This structure describes some of the implementation defined attributes of the

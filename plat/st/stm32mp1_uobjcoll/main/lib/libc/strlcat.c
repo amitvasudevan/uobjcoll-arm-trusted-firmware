@@ -18,7 +18,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
 /*
  * Appends src to string dst of size dsize (unlike strncat, dsize is the

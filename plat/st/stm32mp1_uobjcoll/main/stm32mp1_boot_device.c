@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <errno.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
 
-#include <drivers/nand.h>
-#include <drivers/raw_nand.h>
-#include <drivers/spi_nand.h>
-#include <drivers/spi_nor.h>
-#include <lib/utils.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/nand.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/raw_nand.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/spi_nand.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/spi_nor.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 #define SZ_512		0x200U
 #define SZ_64M		0x4000000U

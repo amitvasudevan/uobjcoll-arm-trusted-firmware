@@ -52,11 +52,11 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdbool.h>
-#include <stdint.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
 
 /*
  * Return the values that the MMU configuration registers must contain for the

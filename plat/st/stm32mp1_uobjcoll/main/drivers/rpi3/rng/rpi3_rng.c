@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <rpi_hw.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/rpi_hw.h>
 
 /* Initial amount of values to discard */
 #define RNG_WARMUP_COUNT	U(0x40000)

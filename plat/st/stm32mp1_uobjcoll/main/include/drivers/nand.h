@@ -7,10 +7,10 @@
 #ifndef DRIVERS_NAND_H
 #define DRIVERS_NAND_H
 
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #define PSEC_TO_MSEC(x)	div_round_up((x), 1000000000ULL)
 

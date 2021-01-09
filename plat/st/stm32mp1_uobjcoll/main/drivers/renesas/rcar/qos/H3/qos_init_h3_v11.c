@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 
-#include <rcar_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/rcar_def.h>
 
 #include "../qos_common.h"
 #include "../qos_reg.h"

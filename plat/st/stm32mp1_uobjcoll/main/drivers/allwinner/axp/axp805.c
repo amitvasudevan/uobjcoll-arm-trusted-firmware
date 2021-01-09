@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <drivers/allwinner/axp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/allwinner/axp.h>
 
 const uint8_t axp_chip_id = AXP805_CHIP_ID;
 const char *const axp_compatible = "x-powers,axp805";

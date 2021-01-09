@@ -4,32 +4,32 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <arch_helpers.h>
-#include <common/bl_common.h>
-#include <common/debug.h>
-#include <common/desc_image_load.h>
-#include <drivers/delay_timer.h>
-#include <drivers/generic_delay_timer.h>
-#include <drivers/st/bsec.h>
-#include <drivers/st/stm32_console.h>
-#include <drivers/st/stm32_iwdg.h>
-#include <drivers/st/stm32mp_pmic.h>
-#include <drivers/st/stm32mp_reset.h>
-#include <drivers/st/stm32mp1_clk.h>
-#include <drivers/st/stm32mp1_pwr.h>
-#include <drivers/st/stm32mp1_ram.h>
-#include <lib/mmio.h>
-#include <lib/optee_utils.h>
-#include <lib/xlat_tables/xlat_tables_v2.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/desc_image_load.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/generic_delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/bsec.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_iwdg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp_pmic.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp_reset.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_clk.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_pwr.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_ram.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/optee_utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#include <stm32mp1_context.h>
-#include <stm32mp1_dbgmcu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_dbgmcu.h>
 
 #define RESET_TIMEOUT_US_1MS		1000U
 

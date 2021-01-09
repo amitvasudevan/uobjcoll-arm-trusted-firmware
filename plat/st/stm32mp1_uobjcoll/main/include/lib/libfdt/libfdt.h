@@ -6,8 +6,8 @@
  * Copyright (C) 2006 David Gibson, IBM Corporation.
  */
 
-#include <libfdt_env.h>
-#include <fdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt_env.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/fdt.h>
 
 #ifdef __cplusplus
 extern "C" {

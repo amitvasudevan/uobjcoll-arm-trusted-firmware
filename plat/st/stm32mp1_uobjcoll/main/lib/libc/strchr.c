@@ -34,8 +34,8 @@
  * All rights reserved.
  */
 
-#include <stddef.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
 char *
 strchr(const char *p, int ch)

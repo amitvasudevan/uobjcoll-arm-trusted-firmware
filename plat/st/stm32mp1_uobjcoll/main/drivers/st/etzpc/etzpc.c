@@ -4,19 +4,19 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <errno.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <drivers/st/etzpc.h>
-#include <dt-bindings/soc/st,stm32-etzpc.h>
-#include <lib/mmio.h>
-#include <lib/utils_def.h>
-#include <libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/etzpc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/soc/st,stm32-etzpc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 /* Device Tree related definitions */
 #define ETZPC_COMPAT			"st,stm32-etzpc"

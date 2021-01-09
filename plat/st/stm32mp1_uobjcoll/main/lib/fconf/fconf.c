@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <common/debug.h>
-#include <common/fdt_wrappers.h>
-#include <lib/fconf/fconf.h>
-#include <lib/fconf/fconf_dyn_cfg_getter.h>
-#include <libfdt.h>
-#include <plat/common/platform.h>
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf_dyn_cfg_getter.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 int fconf_load_config(unsigned int image_id)
 {

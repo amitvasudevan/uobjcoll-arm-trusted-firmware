@@ -7,9 +7,9 @@
 #ifndef SDEI_H
 #define SDEI_H
 
-#include <lib/spinlock.h>
-#include <lib/utils_def.h>
-#include <services/sdei_flags.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/sdei_flags.h>
 
 /* Range 0xC4000020 - 0xC400003F reserved for SDE 64bit smc calls */
 #define SDEI_VERSION				0xC4000020U

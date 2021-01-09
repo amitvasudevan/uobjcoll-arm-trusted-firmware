@@ -37,7 +37,7 @@
  * All rights reserved.
  */
 
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
 /*
  * Compare strings.

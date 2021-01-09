@@ -7,7 +7,7 @@
 #ifndef SEMIHOSTING_H
 #define SEMIHOSTING_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 #include <stdio.h> /* For ssize_t */
 
 

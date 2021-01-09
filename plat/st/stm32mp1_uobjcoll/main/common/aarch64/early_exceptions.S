@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <asm_macros.S>
-#include <common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 
 /* -----------------------------------------------------------------------------
  * Very simple stackless exception handlers used by BL2 and BL31 stages.

@@ -7,7 +7,7 @@
 #ifndef PL011_H
 #define PL011_H
 
-#include <drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 /* PL011 Registers */
 #define UARTDR                    0x000
@@ -83,7 +83,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*
  * Initialize a new PL011 console instance and register it with the console

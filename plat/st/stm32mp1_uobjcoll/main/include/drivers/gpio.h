@@ -7,7 +7,7 @@
 #ifndef GPIO_H
 #define GPIO_H
 
-#include <export/drivers/gpio_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/export/drivers/gpio_exp.h>
 
 #define GPIO_DIR_OUT		ARM_TF_GPIO_DIR_OUT
 #define GPIO_DIR_IN		ARM_TF_GPIO_DIR_IN

@@ -8,7 +8,7 @@
 #ifndef MARVELL_PLAT_PRIV_H
 #define MARVELL_PLAT_PRIV_H
 
-#include <lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 
 /*****************************************************************************
  * Function and variable prototypes

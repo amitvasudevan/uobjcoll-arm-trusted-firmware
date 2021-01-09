@@ -7,9 +7,9 @@
 #ifndef ARM_FCONF_GETTER
 #define ARM_FCONF_GETTER
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <lib/fconf/fconf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
 
 /* ARM io policies */
 #define arm__io_policies_getter(id) __extension__ ({	\

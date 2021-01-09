@@ -4,10 +4,10 @@
  * Copyright (c) 2019-2020, Linaro Limited
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <drivers/st/scmi-msg.h>
-#include <drivers/st/scmi.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi-msg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi.h>
 
 #include "common.h"
 

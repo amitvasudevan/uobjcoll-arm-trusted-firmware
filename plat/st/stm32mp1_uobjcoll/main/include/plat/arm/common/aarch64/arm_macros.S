@@ -6,10 +6,10 @@
 #ifndef ARM_MACROS_S
 #define ARM_MACROS_S
 
-#include <drivers/arm/gic_common.h>
-#include <drivers/arm/gicv2.h>
-#include <drivers/arm/gicv3.h>
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv3.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 .section .rodata.gic_reg_name, "aS"
 /* Applicable only to GICv2 and GICv3 with SRE disabled (legacy mode) */

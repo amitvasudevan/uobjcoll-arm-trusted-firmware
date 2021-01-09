@@ -7,13 +7,13 @@
 #ifndef PARAM_HEADER_H
 #define PARAM_HEADER_H
 
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
 #ifndef __ASSEMBLER__
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 #endif /*__ASSEMBLER__*/
 
-#include <export/common/param_header_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/export/common/param_header_exp.h>
 
 #define VERSION_1	PARAM_VERSION_1
 #define VERSION_2	PARAM_VERSION_2

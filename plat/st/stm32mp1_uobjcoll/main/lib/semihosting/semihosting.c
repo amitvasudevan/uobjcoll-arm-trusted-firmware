@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <errno.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <lib/semihosting.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/semihosting.h>
 
 #ifndef SEMIHOSTING_SUPPORTED
 #define SEMIHOSTING_SUPPORTED  1

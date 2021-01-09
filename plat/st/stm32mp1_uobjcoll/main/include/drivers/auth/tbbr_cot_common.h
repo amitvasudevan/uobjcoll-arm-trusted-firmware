@@ -7,7 +7,7 @@
 #ifndef TBBR_COT_COMMON_H
 #define TBBR_COT_COMMON_H
 
-#include <drivers/auth/auth_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_mod.h>
 
 extern unsigned char tb_fw_hash_buf[HASH_DER_LEN];
 extern unsigned char scp_fw_hash_buf[HASH_DER_LEN];

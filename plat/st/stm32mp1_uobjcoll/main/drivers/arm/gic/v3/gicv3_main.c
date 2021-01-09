@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <arch.h>
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <common/interrupt_props.h>
-#include <drivers/arm/gicv3.h>
-#include <lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/interrupt_props.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv3.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
 
 #include "gicv3_private.h"
 

@@ -7,7 +7,7 @@
 #ifndef CASSERT_H
 #define CASSERT_H
 
-#include <cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
 
 /*******************************************************************************
  * Macro to flag a compile time assertion. It uses the preprocessor to generate

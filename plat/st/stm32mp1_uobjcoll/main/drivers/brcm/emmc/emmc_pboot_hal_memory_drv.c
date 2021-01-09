@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <emmc_api.h>
-#include <cmn_plat_util.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/emmc_api.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cmn_plat_util.h>
 
 #define MAX_CMD_RETRY      10
 

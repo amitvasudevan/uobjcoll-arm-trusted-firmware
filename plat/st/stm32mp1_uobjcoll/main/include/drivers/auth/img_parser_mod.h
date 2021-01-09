@@ -7,7 +7,7 @@
 #ifndef IMG_PARSER_MOD_H
 #define IMG_PARSER_MOD_H
 
-#include <drivers/auth/auth_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_common.h>
 
 /*
  * Return values

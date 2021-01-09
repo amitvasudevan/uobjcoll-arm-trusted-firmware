@@ -7,10 +7,10 @@
 #ifndef BSEC_H
 #define BSEC_H
 
-#include <stdbool.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * IP configuration

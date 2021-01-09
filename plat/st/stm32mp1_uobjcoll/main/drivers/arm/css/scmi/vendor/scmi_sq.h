@@ -7,10 +7,10 @@
 #ifndef SCMI_SQ_H
 #define SCMI_SQ_H
 
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <sq_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/sq_common.h>
 
 /* Structure to represent available DRAM region */
 struct dram_info_resp {

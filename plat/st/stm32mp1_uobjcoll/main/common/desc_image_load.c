@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <arch_helpers.h>
-#include <common/bl_common.h>
-#include <common/desc_image_load.h>
-#include <common/tbbr/tbbr_img_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/desc_image_load.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
 
 static bl_load_info_t bl_load_info;
 static bl_params_t next_bl_params;

@@ -7,7 +7,7 @@
 #ifndef STM32MP1_CLK_H
 #define STM32MP1_CLK_H
 
-#include <arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
 
 enum stm32mp_osc_id {
 	_HSI,

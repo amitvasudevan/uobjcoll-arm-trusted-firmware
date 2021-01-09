@@ -4,29 +4,29 @@
  * SPDX-License-Identifier: GPL-2.0+ OR BSD-3-Clause
  */
 
-#include <assert.h>
-#include <errno.h>
-#include <stdint.h>
-#include <stdio.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdio.h>
 
-#include <libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <arch.h>
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <common/fdt_wrappers.h>
-#include <drivers/delay_timer.h>
-#include <drivers/generic_delay_timer.h>
-#include <drivers/st/stm32mp_clkfunc.h>
-#include <drivers/st/stm32mp1_clk.h>
-#include <drivers/st/stm32mp1_rcc.h>
-#include <dt-bindings/clock/stm32mp1-clksrc.h>
-#include <lib/mmio.h>
-#include <lib/spinlock.h>
-#include <lib/utils_def.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/generic_delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp_clkfunc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_clk.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_rcc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/clock/stm32mp1-clksrc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 #define MAX_HSI_HZ		64000000
 #define USB_PHY_48_MHZ		48000000

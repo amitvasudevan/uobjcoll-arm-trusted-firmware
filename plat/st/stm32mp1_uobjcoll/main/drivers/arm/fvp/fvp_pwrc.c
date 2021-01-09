@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <drivers/arm/fvp/fvp_pwrc.h>
-#include <lib/bakery_lock.h>
-#include <lib/mmio.h>
-#include <plat/arm/common/plat_arm.h>
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/fvp/fvp_pwrc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/arm/common/plat_arm.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 /*
  * TODO: Someday there will be a generic power controller api. At the moment

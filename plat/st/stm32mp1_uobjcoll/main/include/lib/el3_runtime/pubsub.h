@@ -40,11 +40,11 @@
 
 /* For the compiler ... */
 
-#include <assert.h>
-#include <cdefs.h>
-#include <stddef.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
 
-#include <arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
 
 #if defined(USE_ARM_LINK)
 #define __pubsub_start_sym(event)	Load$$__pubsub_##event##_start$$Base

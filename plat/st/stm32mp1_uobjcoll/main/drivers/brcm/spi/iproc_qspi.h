@@ -7,7 +7,7 @@
 #ifndef IPROC_QSPI_H
 #define IPROC_QSPI_H
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 /*SPI configuration enable*/
 #define IPROC_QSPI_CLK_SPEED	62500000

@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <lib/el3_runtime/pubsub.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/pubsub.h>
 
 /*
  * This file defines a list of pubsub events, declared using

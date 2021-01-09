@@ -7,7 +7,7 @@
 #ifndef RAINIER_H
 #define RAINIER_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* RAINIER MIDR for revision 0 */
 #define RAINIER_MIDR			U(0x3f0f4120)

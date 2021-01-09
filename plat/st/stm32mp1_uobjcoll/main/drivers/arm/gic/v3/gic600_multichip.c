@@ -8,11 +8,11 @@
  * GIC-600 driver extension for multichip setup
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <common/debug.h>
-#include <drivers/arm/gic600_multichip.h>
-#include <drivers/arm/gicv3.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic600_multichip.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv3.h>
 
 #include "../common/gic_common_private.h"
 #include "gic600_multichip_private.h"

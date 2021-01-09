@@ -66,7 +66,7 @@ def modify_includes():
     
     for path in tqdm(files):
         with open(path, "r") as f:
-            replace = re.sub(r"(?<=#include <)(.*" + stdh_reg + r".*)(?=>\n)", r"uberspark/uobjrtl/crt/include/\1", f.read())
+            replace = re.sub(r"(?<=#include <).*(" + stdh_reg + r").*(?=>\n)", r"uberspark/uobjrtl/crt/include/\1", f.read())
         with open(path, "w") as f:
             f.write(replace)
 

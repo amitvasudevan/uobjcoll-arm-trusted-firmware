@@ -7,7 +7,7 @@
 #ifndef PLATFORM_SP_MIN_H
 #define PLATFORM_SP_MIN_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*******************************************************************************
  * Mandatory SP_MIN functions

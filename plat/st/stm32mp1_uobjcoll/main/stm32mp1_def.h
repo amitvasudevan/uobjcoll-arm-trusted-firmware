@@ -7,25 +7,25 @@
 #ifndef STM32MP1_DEF_H
 #define STM32MP1_DEF_H
 
-#include <common/tbbr/tbbr_img_def.h>
-#include <drivers/st/stm32mp1_rcc.h>
-#include <dt-bindings/clock/stm32mp1-clks.h>
-#include <dt-bindings/reset/stm32mp1-resets.h>
-#include <lib/utils_def.h>
-#include <lib/xlat_tables/xlat_tables_defs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_rcc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/clock/stm32mp1-clks.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/reset/stm32mp1-resets.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 
 #ifndef __ASSEMBLER__
-#include <drivers/st/bsec.h>
-#include <drivers/st/stm32mp1_clk.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/bsec.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_clk.h>
 
-#include <boot_api.h>
-#include <stm32mp_auth.h>
-#include <stm32mp_common.h>
-#include <stm32mp_dt.h>
-#include <stm32mp_shres_helpers.h>
-#include <stm32mp1_dbgmcu.h>
-#include <stm32mp1_private.h>
-#include <stm32mp1_shared_resources.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/boot_api.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_auth.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_dt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_shres_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_dbgmcu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_private.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_shared_resources.h>
 #endif
 
 /*******************************************************************************

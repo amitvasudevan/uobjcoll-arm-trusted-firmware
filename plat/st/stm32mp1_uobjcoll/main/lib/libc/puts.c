@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdio.h>
+#include <uberspark/uobjrtl/crt/include/stdio.h>
 
 int puts(const char *s)
 {

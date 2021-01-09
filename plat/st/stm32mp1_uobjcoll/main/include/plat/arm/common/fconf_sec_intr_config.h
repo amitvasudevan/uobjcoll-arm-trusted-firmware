@@ -7,9 +7,9 @@
 #ifndef FCONF_SEC_INTR_CONFIG_H
 #define FCONF_SEC_INTR_CONFIG_H
 
-#include <lib/fconf/fconf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #define hw_config__sec_intr_prop_getter(id)	sec_intr_prop.id
 

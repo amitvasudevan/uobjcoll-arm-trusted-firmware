@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdbool.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <common/debug.h>
-#include <common/runtime_svc.h>
-#include <drivers/st/scmi-msg.h>
-#include <lib/psci/psci.h>
-#include <tools_share/uuid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/runtime_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi-msg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/uuid.h>
 
-#include <stm32mp1_smc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_smc.h>
 
 #include "bsec_svc.h"
 

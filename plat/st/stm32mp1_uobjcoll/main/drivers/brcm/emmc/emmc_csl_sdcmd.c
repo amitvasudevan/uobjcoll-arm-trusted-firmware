@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdlib.h>
-#include <stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdlib.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
 
 #include "bcm_emmc.h"
 #include "emmc_chal_types.h"

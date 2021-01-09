@@ -7,7 +7,7 @@
 #ifndef TWED_H
 #define TWED_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 #define TWED_DISABLED U(0xFFFFFFFF)
 

@@ -8,9 +8,9 @@
 #ifndef RPI3_SDHOST_H
 #define	RPI3_SDHOST_H
 
-#include <drivers/mmc.h>
-#include <stdint.h>
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/mmc.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 struct rpi3_sdhost_params {
 	uintptr_t	reg_base;

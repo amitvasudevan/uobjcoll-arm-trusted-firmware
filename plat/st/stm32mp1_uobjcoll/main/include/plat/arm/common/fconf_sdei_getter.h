@@ -7,9 +7,9 @@
 #ifndef FCONF_SDEI_GETTER_H
 #define FCONF_SDEI_GETTER_H
 
-#include <lib/fconf/fconf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #define sdei__dyn_config_getter(id)	sdei_dyn_config.id
 

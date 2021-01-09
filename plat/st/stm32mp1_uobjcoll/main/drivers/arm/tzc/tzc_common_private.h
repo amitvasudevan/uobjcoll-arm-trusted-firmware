@@ -7,10 +7,10 @@
 #ifndef TZC_COMMON_PRIVATE_H
 #define TZC_COMMON_PRIVATE_H
 
-#include <arch.h>
-#include <arch_helpers.h>
-#include <drivers/arm/tzc_common.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
 #define DEFINE_TZC_COMMON_WRITE_ACTION(fn_name, macro_name)		\
 	static inline void _tzc##fn_name##_write_action(		\

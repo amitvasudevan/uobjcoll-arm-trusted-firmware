@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <common/debug.h>
-#include <drivers/auth/crypto_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/crypto_mod.h>
 
 /* Variable exported by the crypto library through REGISTER_CRYPTO_LIB() */
 

@@ -7,7 +7,7 @@
 #ifndef FCONF_H
 #define FCONF_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* Public API */
 #define FCONF_GET_PROPERTY(a, b, c)	a##__##b##_getter(c)

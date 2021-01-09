@@ -8,15 +8,15 @@
  *
  */
 
-#include <assert.h>
-#include <errno.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
 
-#include <common/debug.h>
-#include <drivers/arm/pl061_gpio.h>
-#include <drivers/gpio.h>
-#include <lib/cassert.h>
-#include <lib/mmio.h>
-#include <lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/pl061_gpio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/gpio.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 
 #if !PLAT_PL061_MAX_GPIOS
 # define PLAT_PL061_MAX_GPIOS	32

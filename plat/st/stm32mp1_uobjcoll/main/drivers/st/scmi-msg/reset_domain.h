@@ -6,10 +6,10 @@
 #ifndef SCMI_MSG_RESET_DOMAIN_H
 #define SCMI_MSG_RESET_DOMAIN_H
 
-#include <stdbool.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #define SCMI_PROTOCOL_VERSION_RESET_DOMAIN	0x10000U
 

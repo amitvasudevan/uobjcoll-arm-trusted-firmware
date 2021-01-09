@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stdio.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stdio.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <common/debug.h>
-#include <drivers/io/io_storage.h>
-#include <drivers/partition/partition.h>
-#include <drivers/partition/gpt.h>
-#include <drivers/partition/mbr.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_storage.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/partition/partition.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/partition/gpt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/partition/mbr.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 static uint8_t mbr_sector[PLAT_PARTITION_BLOCK_SIZE];
 static partition_entry_list_t list;

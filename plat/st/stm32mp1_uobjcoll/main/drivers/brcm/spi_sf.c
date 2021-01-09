@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 
-#include <spi.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/spi.h>
 
 #define BITS_PER_BYTE		8
 #define CMD_LEN1		1

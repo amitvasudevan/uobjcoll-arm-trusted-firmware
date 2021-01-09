@@ -5,10 +5,10 @@
  * https://spdx.org/licenses
  */
 
-#include <arch.h>
-#include <asm_macros.S>
-#include <console_macros.S>
-#include <drivers/marvell/uart/a3700_console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/console_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/uart/a3700_console.h>
 
 	/*
 	 * "core" functions are low-level implementations that don't require

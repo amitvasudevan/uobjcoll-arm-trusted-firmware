@@ -7,7 +7,7 @@
 #ifndef SUNXI_RSB_H
 #define SUNXI_RSB_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 int rsb_init_controller(void);
 int rsb_set_bus_speed(uint32_t source_freq, uint32_t bus_freq);

@@ -7,8 +7,8 @@
 #ifndef INTERRUPT_MGMT_H
 #define INTERRUPT_MGMT_H
 
-#include <arch.h>
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*******************************************************************************
  * Constants for the types of interrupts recognised by the IM framework
@@ -81,8 +81,8 @@
 
 #ifndef __ASSEMBLER__
 
-#include <errno.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*******************************************************************************
  * Helpers to validate the routing model bits in the 'flags' for a type

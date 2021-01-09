@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <neoverse_n1.h>
-#include <cpuamu.h>
-#include <lib/el3_runtime/pubsub_events.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/neoverse_n1.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpuamu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/pubsub_events.h>
 
 static void *neoverse_n1_context_save(const void *arg)
 {

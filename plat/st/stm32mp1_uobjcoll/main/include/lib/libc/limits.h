@@ -11,7 +11,7 @@
 #ifndef LIMITS_H
 #define LIMITS_H
 
-#include <limits_.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/limits_.h>
 
 #define CHAR_BIT   8
 #define MB_LEN_MAX 1

@@ -7,7 +7,7 @@
 #ifndef CORTEX_A17_H
 #define CORTEX_A17_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*******************************************************************************
  * Cortex-A17 midr with version/revision set to 0

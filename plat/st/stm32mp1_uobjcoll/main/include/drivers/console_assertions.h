@@ -7,7 +7,7 @@
 #ifndef CONSOLE_ASSERTIONS_H
 #define CONSOLE_ASSERTIONS_H
 
-#include <lib/cassert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
 /*
  * This file contains some separate assertions about console_t, moved here to

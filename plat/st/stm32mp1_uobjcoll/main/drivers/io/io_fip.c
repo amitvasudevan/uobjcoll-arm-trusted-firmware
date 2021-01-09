@@ -4,22 +4,22 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <errno.h>
-#include <stdint.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <common/bl_common.h>
-#include <common/debug.h>
-#include <drivers/io/io_driver.h>
-#include <drivers/io/io_fip.h>
-#include <drivers/io/io_storage.h>
-#include <lib/utils.h>
-#include <plat/common/platform.h>
-#include <tools_share/firmware_image_package.h>
-#include <tools_share/uuid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_driver.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_fip.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_storage.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/firmware_image_package.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/uuid.h>
 
 #ifndef MAX_FIP_DEVICES
 #define MAX_FIP_DEVICES		1

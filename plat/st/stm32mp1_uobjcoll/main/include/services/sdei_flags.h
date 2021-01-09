@@ -7,7 +7,7 @@
 #ifndef SDEI_FLAGS_H
 #define SDEI_FLAGS_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* Internal: SDEI flag bit positions */
 #define SDEI_MAPF_DYNAMIC_SHIFT_	1U

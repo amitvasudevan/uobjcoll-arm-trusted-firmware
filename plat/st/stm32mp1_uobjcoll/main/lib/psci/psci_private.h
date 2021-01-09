@@ -7,15 +7,15 @@
 #ifndef PSCI_PRIVATE_H
 #define PSCI_PRIVATE_H
 
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
-#include <arch.h>
-#include <arch_helpers.h>
-#include <common/bl_common.h>
-#include <lib/bakery_lock.h>
-#include <lib/el3_runtime/cpu_data.h>
-#include <lib/psci/psci.h>
-#include <lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
 
 /*
  * The PSCI capability which are provided by the generic code but does not

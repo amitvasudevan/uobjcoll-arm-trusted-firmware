@@ -7,9 +7,9 @@
 #ifndef XLAT_TABLES_AARCH32_H
 #define XLAT_TABLES_AARCH32_H
 
-#include <arch.h>
-#include <lib/utils_def.h>
-#include <lib/xlat_tables/xlat_tables_defs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 
 #if !defined(PAGE_SIZE)
 #error "PAGE_SIZE is not defined."

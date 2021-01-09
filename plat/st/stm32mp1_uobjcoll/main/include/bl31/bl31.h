@@ -7,7 +7,7 @@
 #ifndef BL31_H
 #define BL31_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*******************************************************************************
  * Function prototypes

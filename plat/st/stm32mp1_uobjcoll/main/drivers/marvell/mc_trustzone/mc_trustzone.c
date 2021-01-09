@@ -5,11 +5,11 @@
  * https://spdx.org/licenses
  */
 
-#include <common/debug.h>
-#include <drivers/marvell/addr_map.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/addr_map.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <mvebu_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu_def.h>
 
 #include "mc_trustzone.h"
 

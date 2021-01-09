@@ -7,7 +7,7 @@
 #ifndef CONTEXT_H
 #define CONTEXT_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*******************************************************************************
  * Constants that allow assembler code to access members of and the 'gp_regs'
@@ -325,9 +325,9 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/cassert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
 /*
  * Common constants to help define the 'cpu_context' structure and its

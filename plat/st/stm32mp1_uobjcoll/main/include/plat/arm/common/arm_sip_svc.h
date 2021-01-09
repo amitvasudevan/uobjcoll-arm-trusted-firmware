@@ -7,7 +7,7 @@
 #ifndef ARM_SIP_SVC_H
 #define ARM_SIP_SVC_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* SMC function IDs for SiP Service queries */
 

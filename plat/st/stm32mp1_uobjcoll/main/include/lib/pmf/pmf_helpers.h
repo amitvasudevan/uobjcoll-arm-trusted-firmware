@@ -7,13 +7,13 @@
 #ifndef PMF_HELPERS_H
 #define PMF_HELPERS_H
 
-#include <assert.h>
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <arch_helpers.h>
-#include <common/bl_common.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 /*
  * Prototype for PMF service functions.

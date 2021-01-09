@@ -3,11 +3,11 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-#include <asm_macros.S>
-#include <assert_macros.S>
-#include <console_macros.S>
-#include <drivers/st/stm32_console.h>
-#include <drivers/st/stm32_uart_regs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/console_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_uart_regs.h>
 
 #define USART_TIMEOUT		0x1000
 

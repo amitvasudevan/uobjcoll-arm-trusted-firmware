@@ -7,9 +7,9 @@
 #ifndef IO_DRIVER_H
 #define IO_DRIVER_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <drivers/io/io_storage.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_storage.h>
 
 /* Generic IO entity structure,representing an accessible IO construct on the
  * device, such as a file */

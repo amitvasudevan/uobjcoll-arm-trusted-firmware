@@ -7,10 +7,10 @@
 #ifndef SOTP_H
 #define SOTP_H
 
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <platform_sotp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_sotp.h>
 
 #define SOTP_ROW_NO_ECC 0
 #define SOTP_ROW_ECC 1

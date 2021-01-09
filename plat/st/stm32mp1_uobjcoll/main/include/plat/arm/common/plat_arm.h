@@ -6,16 +6,16 @@
 #ifndef PLAT_ARM_H
 #define PLAT_ARM_H
 
-#include <stdbool.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <drivers/arm/tzc_common.h>
-#include <lib/bakery_lock.h>
-#include <lib/cassert.h>
-#include <lib/el3_runtime/cpu_data.h>
-#include <lib/spinlock.h>
-#include <lib/utils_def.h>
-#include <lib/xlat_tables/xlat_tables_compat.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_compat.h>
 
 /*******************************************************************************
  * Forward declarations

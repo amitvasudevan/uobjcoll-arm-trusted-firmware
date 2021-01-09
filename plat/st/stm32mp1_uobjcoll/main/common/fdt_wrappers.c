@@ -6,13 +6,13 @@
 
 /* Helper functions to offer easier navigation of Device Tree Blob */
 
-#include <assert.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
 
-#include <common/debug.h>
-#include <common/fdt_wrappers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
 
 /*
  * Read cells from a given property of the given node. Any number of 32-bit

@@ -7,7 +7,7 @@
 #ifndef CORTEX_A5_H
 #define CORTEX_A5_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*******************************************************************************
  * Cortex-A8 midr with version/revision set to 0

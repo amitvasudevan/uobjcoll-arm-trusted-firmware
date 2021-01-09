@@ -6,10 +6,10 @@
 #ifndef LIB_BL_AUX_PARAMS_H
 #define LIB_BL_AUX_PARAMS_H
 
-#include <stdbool.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <export/lib/bl_aux_params/bl_aux_params_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/export/lib/bl_aux_params/bl_aux_params_exp.h>
 
 /*
  * Handler function that handles an individual aux parameter. Return true if

@@ -7,7 +7,7 @@
 #ifndef CCI_H
 #define CCI_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* Slave interface offsets from PERIPHBASE */
 #define SLAVE_IFACE6_OFFSET		UL(0x7000)
@@ -102,7 +102,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* Function declarations */
 

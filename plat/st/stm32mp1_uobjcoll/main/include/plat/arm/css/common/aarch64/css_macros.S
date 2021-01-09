@@ -6,8 +6,8 @@
 #ifndef CSS_MACROS_S
 #define CSS_MACROS_S
 
-#include <arm_macros.S>
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 	/* ---------------------------------------------
 	 * The below required platform porting macro

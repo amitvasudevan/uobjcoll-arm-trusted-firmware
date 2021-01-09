@@ -4,20 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stdint.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <common/debug.h>
-#include <common/tbbr/cot_def.h>
-#include <drivers/auth/auth_common.h>
-#include <drivers/auth/auth_mod.h>
-#include <drivers/auth/crypto_mod.h>
-#include <drivers/auth/img_parser_mod.h>
-#include <lib/fconf/fconf_tbbr_getter.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/cot_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/crypto_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/img_parser_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf_tbbr_getter.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 /* ASN.1 tags */
 #define ASN1_INTEGER                 0x02

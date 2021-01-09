@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <drivers/arm/css/css_scp.h>
-#include <drivers/arm/css/sds.h>
-#include <drivers/delay_timer.h>
-#include <plat/common/platform.h>
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/css/css_scp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/css/sds.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 int css_scp_boot_image_xfer(void *image, unsigned int image_size)
 {

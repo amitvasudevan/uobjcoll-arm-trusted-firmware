@@ -7,7 +7,7 @@
 #ifndef SPM_MM_SVC_H
 #define SPM_MM_SVC_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * The MM_VERSION_XXX definitions are used when responding to the
@@ -90,7 +90,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 int32_t spm_mm_setup(void);
 

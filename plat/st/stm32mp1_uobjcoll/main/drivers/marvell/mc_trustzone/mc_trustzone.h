@@ -8,7 +8,7 @@
 #ifndef MC_TRUSTZONE_H
 #define MC_TRUSTZONE_H
 
-#include <drivers/marvell/addr_map.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/addr_map.h>
 
 #define MVEBU_TZ_MAX_WINS	16
 

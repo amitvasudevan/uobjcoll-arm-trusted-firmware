@@ -7,7 +7,7 @@
 #ifndef STM32MP_RESET_H
 #define STM32MP_RESET_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*
  * Assert target reset, if @to_us non null, wait until reset is asserted

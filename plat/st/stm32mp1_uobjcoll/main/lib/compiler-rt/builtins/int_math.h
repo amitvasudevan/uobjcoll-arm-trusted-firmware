@@ -26,9 +26,9 @@
 #endif
 
 #if defined(_MSC_VER) && !defined(__clang__)
-#include <math.h>
-#include <stdlib.h>
-#include <ymath.h>
+#include <uberspark/uobjrtl/crt/include/math.h>
+#include <uberspark/uobjrtl/crt/include/stdlib.h>
+#include <uberspark/uobjrtl/crt/include/math.h>
 #endif
 
 #if defined(_MSC_VER) && !defined(__clang__)

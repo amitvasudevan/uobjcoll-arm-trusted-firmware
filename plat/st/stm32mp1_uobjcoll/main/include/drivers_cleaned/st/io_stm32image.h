@@ -7,8 +7,8 @@
 #ifndef IO_STM32IMAGE_H
 #define IO_STM32IMAGE_H
 
-#include <drivers/io/io_driver.h>
-#include <drivers/partition/partition.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_driver.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/partition/partition.h>
 
 #define MAX_LBA_SIZE		512
 #define MAX_PART_NAME_SIZE	(EFI_NAMELEN + 1)

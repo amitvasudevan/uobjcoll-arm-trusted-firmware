@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <common/debug.h>
-#include <common/fdt_wrappers.h>
-#include <lib/fconf/fconf_dyn_cfg_getter.h>
-#include <lib/object_pool.h>
-#include <libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf_dyn_cfg_getter.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/object_pool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
 
 /* We currently use FW, TB_FW, SOC_FW, TOS_FW, NT_FW and HW configs  */
 #define MAX_DTB_INFO	U(6)

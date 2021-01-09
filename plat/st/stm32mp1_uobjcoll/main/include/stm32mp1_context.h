@@ -7,7 +7,7 @@
 #ifndef STM32MP1_CONTEXT_H
 #define STM32MP1_CONTEXT_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 int stm32_save_boot_interface(uint32_t interface, uint32_t instance);
 

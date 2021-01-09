@@ -7,12 +7,12 @@
 #ifndef SCMI_H
 #define SCMI_H
 
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/bakery_lock.h>
-#include <lib/psci/psci.h>
-#include <lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
 
 /* Supported SCMI Protocol Versions */
 #define SCMI_AP_CORE_PROTO_VER			MAKE_SCMI_VERSION(1, 0)

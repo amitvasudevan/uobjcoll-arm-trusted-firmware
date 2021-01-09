@@ -11,14 +11,14 @@
  * for Marvell and Allwinner SoCs in ATF.
  */
 
-#include <errno.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
 
-#include <common/debug.h>
-#include <drivers/delay_timer.h>
-#include <drivers/mentor/mi2cv.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/mentor/mi2cv.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <mentor_i2c_plat.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mentor_i2c_plat.h>
 
 #if LOG_LEVEL >= LOG_LEVEL_VERBOSE
 #define DEBUG_I2C

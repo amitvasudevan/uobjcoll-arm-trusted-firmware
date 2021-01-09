@@ -8,7 +8,7 @@
 #ifndef FIRMWARE_ENCRYPTED_H
 #define FIRMWARE_ENCRYPTED_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* This is used as a signature to validate the encryption header */
 #define ENC_HEADER_MAGIC		0xAA640001U

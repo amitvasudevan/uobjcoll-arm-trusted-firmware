@@ -86,7 +86,7 @@ COMPILER_RT_ABI tu_int __udivmodti4(tu_int a, tu_int b, tu_int* rem);
 
 /* Definitions for builtins unavailable on MSVC */
 #if defined(_MSC_VER) && !defined(__clang__)
-#include <intrin.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/intrin.h>
 
 uint32_t __inline __builtin_ctz(uint32_t value) {
   unsigned long trailing_zero = 0;

@@ -7,8 +7,8 @@
 #ifndef TZC_DMC500_H
 #define TZC_DMC500_H
 
-#include <drivers/arm/tzc_common.h>
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #define SI_STATUS_OFFSET				U(0x000)
 #define SI_STATE_CTRL_OFFSET				U(0x030)
@@ -123,7 +123,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*
  * Contains the base addresses of all the DMC instances.

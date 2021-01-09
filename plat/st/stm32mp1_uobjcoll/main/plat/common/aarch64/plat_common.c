@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <arch_helpers.h>
-#include <drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 #if RAS_EXTENSION
-#include <lib/extensions/ras.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/extensions/ras.h>
 #endif
-#include <lib/extensions/twed.h>
-#include <lib/xlat_tables/xlat_mmu_helpers.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/extensions/twed.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_mmu_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 /*
  * The following platform setup functions are weakly defined. They

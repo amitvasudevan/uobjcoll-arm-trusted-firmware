@@ -7,7 +7,7 @@
 #ifndef UFS_H
 #define UFS_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* register map of UFSHCI */
 /* Controller Capabilities */

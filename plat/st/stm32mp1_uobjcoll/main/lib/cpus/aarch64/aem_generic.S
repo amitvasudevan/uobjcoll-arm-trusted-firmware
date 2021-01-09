@@ -3,10 +3,10 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-#include <aem_generic.h>
-#include <arch.h>
-#include <asm_macros.S>
-#include <cpu_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/aem_generic.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
 
 func aem_generic_core_pwr_dwn
 	/* ---------------------------------------------

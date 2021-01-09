@@ -7,7 +7,7 @@
 #ifndef TBBR_IMG_DEF_H
 #define TBBR_IMG_DEF_H
 
-#include <export/common/tbbr/tbbr_img_def_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/export/common/tbbr/tbbr_img_def_exp.h>
 
 #if defined(SPD_spmd)
 #define SIP_SP_CONTENT_CERT_ID		MAX_IMAGE_IDS

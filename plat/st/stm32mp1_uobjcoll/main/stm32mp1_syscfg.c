@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <common/debug.h>
-#include <drivers/st/bsec.h>
-#include <drivers/st/stpmic1.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/bsec.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stpmic1.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <stm32mp_dt.h>
-#include <stm32mp1_private.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp_dt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_private.h>
 
 /*
  * SYSCFG REGISTER OFFSET (base relative)

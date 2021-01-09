@@ -7,9 +7,9 @@
 #ifndef SCMI_MSG_CLOCK_H
 #define SCMI_MSG_CLOCK_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #define SCMI_PROTOCOL_VERSION_CLOCK	0x20000U
 

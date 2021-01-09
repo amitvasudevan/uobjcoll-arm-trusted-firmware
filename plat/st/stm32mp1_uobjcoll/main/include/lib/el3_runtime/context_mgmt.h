@@ -7,11 +7,11 @@
 #ifndef CONTEXT_MGMT_H
 #define CONTEXT_MGMT_H
 
-#include <assert.h>
-#include <context.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/context.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
 
 /*******************************************************************************
  * Forward declarations

@@ -9,10 +9,10 @@
  *
  */
 
-#include <assert.h>
-#include <errno.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
 
-#include <drivers/gpio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/gpio.h>
 
 /*
  * The gpio implementation

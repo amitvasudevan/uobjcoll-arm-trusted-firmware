@@ -7,7 +7,7 @@
 #ifndef ROM_API_H
 #define ROM_API_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 #define SBROM_OK				(0x00000000U)
 #define SBROM_ILLEGAL_INPUT_PARAM_ERR		(0x0B000001U)

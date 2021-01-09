@@ -12,20 +12,20 @@
  * extensions field, such as an image hash or a public key.
  */
 
-#include <assert.h>
-#include <stddef.h>
-#include <stdint.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
 /* mbed TLS headers */
-#include <mbedtls/asn1.h>
-#include <mbedtls/oid.h>
-#include <mbedtls/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/asn1.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/oid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/platform.h>
 
-#include <arch_helpers.h>
-#include <drivers/auth/img_parser_mod.h>
-#include <drivers/auth/mbedtls/mbedtls_common.h>
-#include <lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/img_parser_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/mbedtls/mbedtls_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 
 /* Maximum OID string length ("a.b.c.d.e.f ...") */
 #define MAX_OID_STR_LEN			64

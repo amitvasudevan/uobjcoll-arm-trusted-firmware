@@ -7,10 +7,10 @@
 #ifndef EVENT_LOG_H
 #define EVENT_LOG_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <common/debug.h>
-#include <drivers/measured_boot/tcg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/measured_boot/tcg.h>
 
 /*
  * Set Event Log debug level to one of:

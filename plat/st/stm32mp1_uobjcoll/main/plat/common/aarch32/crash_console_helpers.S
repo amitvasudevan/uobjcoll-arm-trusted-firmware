@@ -9,8 +9,8 @@
  * the Makefile of the platform. It is not included in the common Makefile.
  */
 
-#include <asm_macros.S>
-#include <drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 	.globl	plat_crash_console_init
 	.globl	plat_crash_console_putc

@@ -6,9 +6,9 @@
 #ifndef ASM_MACROS_S
 #define ASM_MACROS_S
 
-#include <arch.h>
-#include <common/asm_macros_common.S>
-#include <lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/asm_macros_common.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
 
 /*
  * TLBI instruction with type specifier that implements the workaround for

@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <common/debug.h>
-#include <lib/mmio.h>
-#include <sotp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/sotp.h>
 
-#include <platform_def.h>
-#include <platform_sotp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_sotp.h>
 
 #ifdef USE_SOFT_SOTP
 extern uint64_t soft_sotp[];

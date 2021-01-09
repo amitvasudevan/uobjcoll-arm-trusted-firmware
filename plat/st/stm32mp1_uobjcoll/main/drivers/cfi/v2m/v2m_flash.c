@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <errno.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
 
-#include <drivers/cfi/v2m_flash.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/cfi/v2m_flash.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
 /*
  * This file supplies a low level interface to the vexpress NOR flash

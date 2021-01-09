@@ -14,19 +14,19 @@
  * that.
  */
 
-#include <errno.h>
-#include <stdio.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
+#include <uberspark/uobjrtl/crt/include/stdio.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
 
-#include <arch.h>
-#include <common/debug.h>
-#include <common/fdt_fixup.h>
-#include <common/fdt_wrappers.h>
-#include <drivers/console.h>
-#include <lib/psci/psci.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_fixup.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 
 static int append_psci_compatible(void *fdt, int offs, const char *str)

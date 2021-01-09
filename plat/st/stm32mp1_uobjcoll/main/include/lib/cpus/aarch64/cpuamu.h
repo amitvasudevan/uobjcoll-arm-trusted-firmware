@@ -30,7 +30,7 @@
 #define CPUAMEVTYPER4_EL0	S3_3_C15_C10_4
 
 #ifndef __ASSEMBLER__
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 uint64_t cpuamu_cnt_read(unsigned int idx);
 void cpuamu_cnt_write(unsigned int idx, uint64_t val);

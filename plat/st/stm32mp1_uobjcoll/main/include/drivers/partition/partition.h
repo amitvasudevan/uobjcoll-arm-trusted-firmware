@@ -7,9 +7,9 @@
 #ifndef PARTITION_H
 #define PARTITION_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/cassert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
 #if !PLAT_PARTITION_MAX_ENTRIES
 # define PLAT_PARTITION_MAX_ENTRIES	128

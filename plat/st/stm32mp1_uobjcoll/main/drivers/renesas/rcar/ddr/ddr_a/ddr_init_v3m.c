@@ -5,9 +5,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <lib/mmio.h>
-#include <lib/utils_def.h>
-#include <stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 #include "boot_init_dram.h"
 #include "rcar_def.h"
 #include "../ddr_regs.h"

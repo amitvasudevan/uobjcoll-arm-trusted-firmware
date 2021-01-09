@@ -7,10 +7,10 @@
 #ifndef XLAT_TABLES_PRIVATE_H
 #define XLAT_TABLES_PRIVATE_H
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <lib/cassert.h>
-#include <lib/xlat_tables/xlat_tables_arch.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_arch.h>
 
 #if HW_ASSISTED_COHERENCY
 #error xlat tables v2 must be used with HW_ASSISTED_COHERENCY

@@ -7,9 +7,9 @@
 #ifndef CSS_MHU_DOORBELL_H
 #define CSS_MHU_DOORBELL_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
 /* MHUv2 Frame Base Mask */
 #define MHU_V2_FRAME_BASE_MASK			UL(~0xFFF)

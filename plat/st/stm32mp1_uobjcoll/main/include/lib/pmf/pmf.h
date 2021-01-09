@@ -7,9 +7,9 @@
 #ifndef PMF_H
 #define PMF_H
 
-#include <lib/cassert.h>
-#include <lib/pmf/pmf_helpers.h>
-#include <lib/utils_def.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/pmf/pmf_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * Constants used for/by PMF services.

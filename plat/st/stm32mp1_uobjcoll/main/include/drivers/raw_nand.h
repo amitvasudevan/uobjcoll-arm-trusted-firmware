@@ -7,10 +7,10 @@
 #ifndef DRIVERS_RAW_NAND_H
 #define DRIVERS_RAW_NAND_H
 
-#include <cdefs.h>
-#include <stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <drivers/nand.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/nand.h>
 
 /* NAND ONFI default value mode 0 in picosecond */
 #define NAND_TADL_MIN			400000UL

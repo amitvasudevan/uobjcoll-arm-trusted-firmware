@@ -7,9 +7,9 @@
 #ifndef ARCH_FEATURES_H
 #define ARCH_FEATURES_H
 
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
-#include <arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
 
 static inline bool is_armv7_gentimer_present(void)
 {

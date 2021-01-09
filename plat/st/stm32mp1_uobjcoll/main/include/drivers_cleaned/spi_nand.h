@@ -7,8 +7,8 @@
 #ifndef DRIVERS_SPI_NAND_H
 #define DRIVERS_SPI_NAND_H
 
-#include <drivers/nand.h>
-#include <drivers/spi_mem.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/nand.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/spi_mem.h>
 
 #define SPI_NAND_OP_GET_FEATURE		0x0FU
 #define SPI_NAND_OP_SET_FEATURE		0x1FU

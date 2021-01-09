@@ -9,10 +9,10 @@
 
 #include <platform_def.h>	/* for PLAT_NUM_PWR_DOMAINS */
 
-#include <common/bl_common.h>
-#include <lib/bakery_lock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
 #include <lib/psci/psci_lib.h>	/* To maintain compatibility for SPDs */
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*******************************************************************************
  * Number of power domains whose state this PSCI implementation can track
@@ -168,7 +168,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* Function to help build the psci capabilities bitfield */
 

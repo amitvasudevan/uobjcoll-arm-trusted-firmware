@@ -4,17 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
-#include <arch.h>
-#include <arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
 
-#include <lib/el3_runtime/pubsub_events.h>
-#include <lib/extensions/amu.h>
-#include <lib/extensions/amu_private.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/pubsub_events.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/extensions/amu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/extensions/amu_private.h>
 
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 static struct amu_ctx amu_ctxs[PLATFORM_CORE_COUNT];
 

@@ -7,7 +7,7 @@
 #ifndef AXP_H
 #define AXP_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 #define NA 0xff
 

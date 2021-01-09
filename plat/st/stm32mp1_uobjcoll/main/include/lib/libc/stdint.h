@@ -11,7 +11,7 @@
 #ifndef STDINT_H
 #define STDINT_H
 
-#include <limits.h>
+#include <uberspark/uobjrtl/crt/include/limits.h>
 
 #define INT8_MAX  CHAR_MAX
 #define INT8_MIN  CHAR_MIN

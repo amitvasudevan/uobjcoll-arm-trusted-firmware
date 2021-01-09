@@ -7,8 +7,8 @@
 #ifndef BOOT_API_H
 #define BOOT_API_H
 
-#include <stdint.h>
-#include <stdio.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdio.h>
 
 /*
  * Possible value of boot context field 'auth_status'

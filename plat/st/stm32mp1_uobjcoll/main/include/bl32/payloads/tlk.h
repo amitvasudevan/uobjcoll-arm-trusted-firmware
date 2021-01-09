@@ -8,7 +8,7 @@
 #ifndef TLK_H
 #define TLK_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * Generate function IDs for the Trusted OS/Apps

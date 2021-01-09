@@ -7,11 +7,11 @@
 #ifndef CSS_SCP_H
 #define CSS_SCP_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <lib/cassert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
 /* Forward declarations */
 struct psci_power_state;

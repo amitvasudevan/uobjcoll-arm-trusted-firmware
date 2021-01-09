@@ -7,17 +7,17 @@
 #ifndef BL_COMMON_H
 #define BL_COMMON_H
 
-#include <common/ep_info.h>
-#include <common/param_header.h>
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/ep_info.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/param_header.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #ifndef __ASSEMBLER__
-#include <stddef.h>
-#include <stdint.h>
-#include <lib/cassert.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 #endif /* __ASSEMBLER__ */
 
-#include <export/common/bl_common_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/export/common/bl_common_exp.h>
 
 #define UP	U(1)
 #define DOWN	U(0)

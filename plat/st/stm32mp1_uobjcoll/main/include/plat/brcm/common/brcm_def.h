@@ -7,13 +7,13 @@
 #ifndef BRCM_DEF_H
 #define BRCM_DEF_H
 
-#include <arch.h>
-#include <common/tbbr/tbbr_img_def.h>
-#include <lib/utils_def.h>
-#include <lib/xlat_tables/xlat_tables.h>
-#include <plat/common/common_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/common_def.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #define PLAT_PHY_ADDR_SPACE_SIZE	BIT_64(32)
 #define PLAT_VIRT_ADDR_SPACE_SIZE	BIT_64(32)

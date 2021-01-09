@@ -8,8 +8,8 @@
 #ifndef RPI3_GPIO_H
 #define RPI3_GPIO_H
 
-#include <stdint.h>
-#include <drivers/gpio.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/gpio.h>
 
 void rpi3_gpio_init(void);
 int rpi3_gpio_get_select(int gpio);

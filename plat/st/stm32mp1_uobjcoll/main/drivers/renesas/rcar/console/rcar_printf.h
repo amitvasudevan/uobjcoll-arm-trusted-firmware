@@ -7,7 +7,7 @@
 #ifndef RCAR_PRINTF_H
 #define RCAR_PRINTF_H
 
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
 int32_t rcar_set_log_data(int32_t c);
 int32_t rcar_log_init(void);

@@ -7,7 +7,7 @@
 #ifndef SPM_CORE_MANIFEST_H
 #define SPM_CORE_MANIFEST_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*******************************************************************************
  * Attribute Section

@@ -7,7 +7,7 @@
 #ifndef SPI_FLASH_H
 #define SPI_FLASH_H
 
-#include <sf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/sf.h>
 
 int spi_flash_probe(struct spi_flash *flash);
 int spi_flash_erase(struct spi_flash *flash, uint32_t offset, uint32_t len);

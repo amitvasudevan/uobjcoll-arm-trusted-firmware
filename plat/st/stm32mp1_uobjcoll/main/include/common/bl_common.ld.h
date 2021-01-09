@@ -7,7 +7,7 @@
 #ifndef BL_COMMON_LD_H
 #define BL_COMMON_LD_H
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #ifdef __aarch64__
 #define STRUCT_ALIGN	8

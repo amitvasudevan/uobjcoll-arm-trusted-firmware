@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <drivers/delay_timer.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <imx_gpt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/imx_gpt.h>
 
 #define GPTCR_SWR		BIT(15)		/* Software reset */
 #define GPTCR_24MEN		BIT(10)		/* Enable 24MHz clock input */

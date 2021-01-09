@@ -4,17 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stddef.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
 
-#include <common/fdt_wrappers.h>
-#include <drivers/auth/mbedtls/mbedtls_config.h>
-#include <drivers/auth/auth_mod.h>
-#include <lib/fconf/fconf.h>
-#include <lib/object_pool.h>
-#include <libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/mbedtls/mbedtls_config.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/object_pool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
 
-#include <tools_share/tbbr_oid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/tbbr_oid.h>
 
 /* static structures used during authentication process */
 static auth_param_type_desc_t sig = AUTH_PARAM_TYPE_DESC(

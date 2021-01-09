@@ -7,7 +7,7 @@
 #ifndef MMIO_H
 #define MMIO_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 static inline void mmio_write_8(uintptr_t addr, uint8_t value)
 {

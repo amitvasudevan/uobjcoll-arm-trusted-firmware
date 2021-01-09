@@ -7,7 +7,7 @@
 #ifndef CORTEX_A76_H
 #define CORTEX_A76_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* Cortex-A76 MIDR for revision 0 */
 #define CORTEX_A76_MIDR		U(0x410fd0b0)

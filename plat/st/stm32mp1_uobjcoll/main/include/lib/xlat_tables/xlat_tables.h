@@ -7,13 +7,13 @@
 #ifndef XLAT_TABLES_H
 #define XLAT_TABLES_H
 
-#include <lib/xlat_tables/xlat_tables_defs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 
 #ifndef __ASSEMBLER__
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/xlat_tables/xlat_mmu_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_mmu_helpers.h>
 
 /* Helper macro to define entries for mmap_region_t. It creates
  * identity mappings for each region.

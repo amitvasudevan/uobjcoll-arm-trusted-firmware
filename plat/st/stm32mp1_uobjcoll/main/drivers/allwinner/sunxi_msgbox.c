@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
-#include <drivers/delay_timer.h>
-#include <lib/bakery_lock.h>
-#include <lib/mmio.h>
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
-#include <sunxi_mmap.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/sunxi_mmap.h>
 
 #define REMOTE_IRQ_EN_REG	0x0040
 #define REMOTE_IRQ_STAT_REG	0x0050

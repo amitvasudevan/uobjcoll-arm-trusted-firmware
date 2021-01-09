@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
 
-#include <chimp.h>
-#include <chimp_nv_defs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/chimp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/chimp_nv_defs.h>
 
 #define CHIMP_DEFAULT_STARTUP_ADDR 0xb4300000
 

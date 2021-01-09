@@ -7,7 +7,7 @@
 #ifndef DW_UFS_H
 #define DW_UFS_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* Bus Throtting */
 #define BUSTHRTL				0xC0

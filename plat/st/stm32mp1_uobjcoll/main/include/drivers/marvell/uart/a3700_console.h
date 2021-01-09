@@ -8,7 +8,7 @@
 #ifndef A3700_CONSOLE_H
 #define A3700_CONSOLE_H
 
-#include <drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 /* MVEBU UART Registers */
 #define UART_RX_REG		0x00
@@ -56,7 +56,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*
  * Initialize a new a3700 console instance and register it with the console

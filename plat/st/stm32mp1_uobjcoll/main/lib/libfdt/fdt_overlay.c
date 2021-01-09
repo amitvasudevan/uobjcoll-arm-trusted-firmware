@@ -6,8 +6,8 @@
  */
 #include "libfdt_env.h"
 
-#include <fdt.h>
-#include <libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/fdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
 
 #include "libfdt_internal.h"
 

@@ -7,11 +7,11 @@
 #ifndef SR_CHIMP_H
 #define SR_CHIMP_H
 
-#include <common/bl_common.h>
-#include <common/debug.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #define CHIMP_WINDOW_SIZE 0x400000
 #define CHIMP_ERROR_OFFSET 28

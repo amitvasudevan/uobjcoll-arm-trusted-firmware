@@ -9,14 +9,14 @@
  * for Marvell SoCs in AP806, AP807, and AP810
  */
 
-#include <assert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
-#include <arch_helpers.h>
-#include <drivers/marvell/cache_llc.h>
-#include <drivers/marvell/ccu.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/cache_llc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/ccu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <mvebu_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu_def.h>
 
 #define CCU_HTC_CR(ap_index)		(MVEBU_CCU_BASE(ap_index) + 0x200)
 #define CCU_SET_POC_OFFSET		5

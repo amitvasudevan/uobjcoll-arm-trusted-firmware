@@ -7,7 +7,7 @@
 #ifndef AMU_PRIVATE_H
 #define AMU_PRIVATE_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 uint64_t amu_group0_cnt_read_internal(unsigned int idx);
 void amu_group0_cnt_write_internal(unsigned int idx, uint64_t val);

@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <errno.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <drivers/st/stm32mp1_clk.h>
-#include <dt-bindings/clock/stm32mp1-clks.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_clk.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/clock/stm32mp1-clks.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <stm32mp1_context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_context.h>
 
 #define TAMP_BOOT_ITF_BACKUP_REG_ID	U(20)
 #define TAMP_BOOT_ITF_MASK		U(0x0000FF00)

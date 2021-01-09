@@ -7,9 +7,9 @@
 #ifndef CSS_DEF_H
 #define CSS_DEF_H
 
-#include <common/interrupt_props.h>
-#include <drivers/arm/gic_common.h>
-#include <drivers/arm/tzc400.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/interrupt_props.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc400.h>
 
 /*************************************************************************
  * Definitions common to all ARM Compute SubSystems (CSS)

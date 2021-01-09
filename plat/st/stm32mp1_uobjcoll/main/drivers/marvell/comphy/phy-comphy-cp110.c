@@ -7,15 +7,15 @@
 
 /* Marvell CP110 SoC COMPHY unit driver */
 
-#include <errno.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
 
-#include <common/debug.h>
-#include <drivers/delay_timer.h>
-#include <mg_conf_cm3/mg_conf_cm3.h>
-#include <lib/mmio.h>
-#include <lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mg_conf_cm3/mg_conf_cm3.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
 
-#include <mvebu_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu_def.h>
 #include "mvebu.h"
 #include "comphy-cp110.h"
 #include "phy-comphy-cp110.h"

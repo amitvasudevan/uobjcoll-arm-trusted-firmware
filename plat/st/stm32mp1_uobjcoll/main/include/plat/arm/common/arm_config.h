@@ -6,9 +6,9 @@
 #ifndef ARM_CONFIG_H
 #define ARM_CONFIG_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* Whether Base memory map is in use */
 #define ARM_CONFIG_BASE_MMAP		BIT(1)

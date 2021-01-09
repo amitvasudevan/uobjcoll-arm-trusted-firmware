@@ -9,7 +9,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 typedef struct spinlock {
 	volatile uint32_t lock;

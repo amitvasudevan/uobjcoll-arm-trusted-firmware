@@ -7,7 +7,7 @@
 #ifndef CDNS_UART_H
 #define CDNS_UART_H
 
-#include <drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 /* This is very minimalistic and will only work in QEMU.  */
 
@@ -27,7 +27,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*
  * Initialize a new Cadence console instance and register it with the console

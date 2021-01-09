@@ -11,7 +11,7 @@
 #ifndef STRING_H
 #define STRING_H
 
-#include <stddef.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
 
 void *memcpy(void *dst, const void *src, size_t len);
 void *memmove(void *dst, const void *src, size_t len);

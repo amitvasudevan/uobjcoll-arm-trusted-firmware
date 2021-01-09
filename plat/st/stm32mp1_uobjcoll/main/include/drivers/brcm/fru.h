@@ -7,8 +7,8 @@
 #ifndef FRU_H
 #define FRU_H
 
-#include <stdbool.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* max string length */
 #define FRU_MAX_STR_LEN      32

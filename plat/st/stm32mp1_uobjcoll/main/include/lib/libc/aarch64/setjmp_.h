@@ -20,7 +20,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
 
 /* Jump buffer hosting x18 - x30 and sp_el0 registers */
 typedef uint64_t jmp_buf[JMP_SIZE] __aligned(16);

@@ -8,12 +8,12 @@
 #ifndef MARVELL_DEF_H
 #define MARVELL_DEF_H
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <arch.h>
-#include <common/tbbr/tbbr_img_def.h>
-#include <lib/xlat_tables/xlat_tables_v2.h>
-#include <plat/common/common_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/common_def.h>
 
 /******************************************************************************
  * Definitions common to all MARVELL standard platforms

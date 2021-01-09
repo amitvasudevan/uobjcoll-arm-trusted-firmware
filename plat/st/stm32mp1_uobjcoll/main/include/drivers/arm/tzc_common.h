@@ -7,7 +7,7 @@
 #ifndef TZC_COMMON_H
 #define TZC_COMMON_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * Offset of core registers from the start of the base of configuration

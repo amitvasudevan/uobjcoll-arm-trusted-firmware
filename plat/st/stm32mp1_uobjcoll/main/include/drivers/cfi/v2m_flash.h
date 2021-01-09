@@ -7,7 +7,7 @@
 #ifndef V2M_FLASH_H
 #define V2M_FLASH_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* First bus cycle */
 #define NOR_CMD_READ_ARRAY		0xFF

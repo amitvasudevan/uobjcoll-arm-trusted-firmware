@@ -4,17 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stddef.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
 
-#include <platform_def.h>
-#include <drivers/auth/mbedtls/mbedtls_config.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/mbedtls/mbedtls_config.h>
 
-#include <drivers/auth/auth_mod.h>
-#include <drivers/auth/tbbr_cot_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/tbbr_cot_common.h>
 #if USE_TBBR_DEFS
-#include <tools_share/tbbr_oid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/tbbr_oid.h>
 #else
-#include <platform_oid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_oid.h>
 #endif
 
 static unsigned char soc_fw_hash_buf[HASH_DER_LEN];

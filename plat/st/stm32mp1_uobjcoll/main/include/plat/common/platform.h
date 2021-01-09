@@ -7,11 +7,11 @@
 #ifndef PLATFORM_H
 #define PLATFORM_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
 #if defined(SPD_spmd)
- #include <services/spm_core_manifest.h>
+ #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/spm_core_manifest.h>
 #endif
 
 /*******************************************************************************

@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdint.h>
-#include <stdbool.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <lib/debugfs.h>
-#include <lib/smccc.h>
-#include <lib/spinlock.h>
-#include <lib/xlat_tables/xlat_tables_v2.h>
-#include <smccc_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/debugfs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/smccc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/smccc_helpers.h>
 
 #define MAX_PATH_LEN	256
 

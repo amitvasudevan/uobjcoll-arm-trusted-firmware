@@ -7,7 +7,7 @@
 #ifndef FIRMWARE_IMAGE_PACKAGE_H
 #define FIRMWARE_IMAGE_PACKAGE_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 #include "uuid.h"
 

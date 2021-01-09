@@ -7,12 +7,12 @@
 #ifndef ARCH_HELPERS_H
 #define ARCH_HELPERS_H
 
-#include <cdefs.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
 
 /**********************************************************************
  * Macros which create inline functions to read or write CPU system

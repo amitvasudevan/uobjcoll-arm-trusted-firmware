@@ -11,7 +11,7 @@
 #ifndef MI2CV_H
 #define MI2CV_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*
  * Initialization, must be called once on start up, may be called

@@ -6,14 +6,14 @@
 #ifndef ARM_DEF_H
 #define ARM_DEF_H
 
-#include <arch.h>
-#include <common/interrupt_props.h>
-#include <common/tbbr/tbbr_img_def.h>
-#include <drivers/arm/gic_common.h>
-#include <lib/utils_def.h>
-#include <lib/xlat_tables/xlat_tables_defs.h>
-#include <plat/arm/common/smccc_def.h>
-#include <plat/common/common_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/interrupt_props.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/arm/common/smccc_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/common_def.h>
 
 /******************************************************************************
  * Definitions common to all ARM standard platforms

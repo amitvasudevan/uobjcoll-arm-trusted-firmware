@@ -7,8 +7,8 @@
 #ifndef IMAGE_DECOMPRESS_H
 #define IMAGE_DECOMPRESS_H
 
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 struct image_info;
 

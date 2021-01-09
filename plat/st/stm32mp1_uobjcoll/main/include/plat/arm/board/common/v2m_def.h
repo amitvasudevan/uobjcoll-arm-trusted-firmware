@@ -6,7 +6,7 @@
 #ifndef V2M_DEF_H
 #define V2M_DEF_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* V2M motherboard system registers & offsets */
 #define V2M_SYSREGS_BASE		UL(0x1c010000)

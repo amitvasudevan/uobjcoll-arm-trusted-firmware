@@ -7,7 +7,7 @@
 #ifndef SBSA_H
 #define SBSA_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* Register Offsets */
 #define SBSA_WDOG_WCS_OFFSET		UL(0x000)

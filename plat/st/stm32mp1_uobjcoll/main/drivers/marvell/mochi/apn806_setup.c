@@ -7,15 +7,15 @@
 
 /* AP806 Marvell SoC driver */
 
-#include <common/debug.h>
-#include <drivers/marvell/ccu.h>
-#include <drivers/marvell/cache_llc.h>
-#include <drivers/marvell/io_win.h>
-#include <drivers/marvell/mci.h>
-#include <drivers/marvell/mochi/ap_setup.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/ccu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/cache_llc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/io_win.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/mci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/mochi/ap_setup.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <mvebu_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu_def.h>
 
 #define SMMU_sACR				(MVEBU_SMMU_BASE + 0x10)
 #define SMMU_sACR_PG_64K			(1 << 16)

@@ -6,7 +6,7 @@
 #ifndef IMX_UART_H
 #define IMX_UART_H
 
-#include <drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 #define IMX_UART_RXD_OFFSET	0x00
 #define IMX_UART_RXD_CHARRDY	BIT(15)

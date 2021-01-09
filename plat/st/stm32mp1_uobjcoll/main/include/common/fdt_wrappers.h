@@ -9,7 +9,7 @@
 #ifndef FDT_WRAPPERS_H
 #define FDT_WRAPPERS_H
 
-#include <libfdt_env.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt_env.h>
 
 /* Number of cells, given total length in bytes. Each cell is 4 bytes long */
 #define NCELLS(len) ((len) / 4U)

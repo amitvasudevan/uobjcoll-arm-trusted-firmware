@@ -5,15 +5,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
-#include <arch_helpers.h>
-#include <bl31/ea_handle.h>
-#include <bl31/ehf.h>
-#include <common/debug.h>
-#include <lib/extensions/ras.h>
-#include <lib/extensions/ras_arch.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl31/ea_handle.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl31/ehf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/extensions/ras.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/extensions/ras_arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 #ifndef PLAT_RAS_PRI
 # error Platform must define RAS priority value

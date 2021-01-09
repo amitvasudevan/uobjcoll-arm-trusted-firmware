@@ -4,25 +4,25 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stddef.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <drivers/arm/cryptocell/712/crypto_driver.h>
-#include <drivers/arm/cryptocell/712/rsa.h>
-#include <drivers/arm/cryptocell/712/sbrom_bsv_api.h>
-#include <drivers/arm/cryptocell/712/secureboot_base_func.h>
-#include <drivers/arm/cryptocell/712/secureboot_gen_defs.h>
-#include <drivers/arm/cryptocell/712/util.h>
-#include <drivers/auth/crypto_mod.h>
-#include <drivers/auth/mbedtls/mbedtls_common.h>
-#include <lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/712/crypto_driver.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/712/rsa.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/712/sbrom_bsv_api.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/712/secureboot_base_func.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/712/secureboot_gen_defs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/712/util.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/crypto_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/mbedtls/mbedtls_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 
-#include <mbedtls/oid.h>
-#include <mbedtls/x509.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/oid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/x509.h>
 
 #define LIB_NAME		"CryptoCell 712 SBROM"
 #define RSA_SALT_LEN		32

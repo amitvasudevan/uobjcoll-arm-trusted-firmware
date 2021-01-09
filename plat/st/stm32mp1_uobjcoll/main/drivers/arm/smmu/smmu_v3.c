@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <common/debug.h>
-#include <cdefs.h>
-#include <drivers/arm/smmu_v3.h>
-#include <drivers/delay_timer.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/smmu_v3.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
 /* SMMU poll number of retries */
 #define SMMU_POLL_TIMEOUT_US	U(1000)

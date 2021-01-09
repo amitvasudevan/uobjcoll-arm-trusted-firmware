@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <errno.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
 
-#include <common/debug.h>
-#include <drivers/delay_timer.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <sunxi_mmap.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/sunxi_mmap.h>
 
 #define RSB_CTRL	0x00
 #define RSB_CCR		0x04

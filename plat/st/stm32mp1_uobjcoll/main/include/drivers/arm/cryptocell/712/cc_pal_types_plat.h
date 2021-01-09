@@ -11,8 +11,8 @@
 #define _CC_PAL_TYPES_PLAT_H
 /* Host specific types for standard (ISO-C99) compilant platforms */
 
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 typedef uint32_t CCStatus;
 

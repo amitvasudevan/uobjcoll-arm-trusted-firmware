@@ -6,8 +6,8 @@
 #ifndef CPU_MACROS_S
 #define CPU_MACROS_S
 
-#include <arch.h>
-#include <lib/cpus/errata_report.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/errata_report.h>
 
 #if defined(IMAGE_BL1) || defined(IMAGE_BL32)  || (defined(IMAGE_BL2) && BL2_AT_EL3)
 #define IMAGE_AT_EL3

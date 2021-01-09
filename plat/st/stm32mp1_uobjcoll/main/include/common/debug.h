@@ -7,7 +7,7 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * The log output macros print output to the console. These macros produce
@@ -29,12 +29,12 @@
 
 #ifndef __ASSEMBLER__
 
-#include <cdefs.h>
-#include <stdarg.h>
-#include <stdbool.h>
-#include <stdio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjrtl/crt/include/stdarg.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdio.h>
 
-#include <drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 /*
  * Define Log Markers corresponding to each log level which will

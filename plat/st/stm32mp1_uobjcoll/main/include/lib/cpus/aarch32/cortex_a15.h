@@ -7,7 +7,7 @@
 #ifndef CORTEX_A15_H
 #define CORTEX_A15_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*******************************************************************************
  * Auxiliary Control Register 2 specific definitions.

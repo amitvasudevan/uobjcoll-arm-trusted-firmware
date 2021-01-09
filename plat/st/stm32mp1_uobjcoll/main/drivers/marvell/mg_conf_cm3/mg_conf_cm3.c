@@ -5,11 +5,11 @@
  * https://spdx.org/licenses
  */
 
-#include <a8k_plat_def.h>
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <lib/mmio.h>
-#include <mss_scp_bl2_format.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/a8k_plat_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mss_scp_bl2_format.h>
 
 /* CONFI REGISTERS */
 #define MG_CM3_CONFI_BASE(CP)		(MVEBU_CP_REGS_BASE(CP) + 0x100000)

@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stddef.h>
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
-#include <drivers/arm/cryptocell/713/bsv_api.h>
-#include <drivers/arm/cryptocell/713/bsv_crypto_asym_api.h>
-#include <drivers/auth/crypto_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/713/bsv_api.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/713/bsv_crypto_asym_api.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/crypto_mod.h>
 
-#include <mbedtls/oid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/oid.h>
 
 #define LIB_NAME		"CryptoCell 713 SBROM"
 #define RSA_SALT_LEN		32

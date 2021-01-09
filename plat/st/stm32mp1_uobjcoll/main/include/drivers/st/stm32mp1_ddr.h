@@ -7,8 +7,8 @@
 #ifndef STM32MP1_DDR_H
 #define STM32MP1_DDR_H
 
-#include <stdbool.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 #define DT_DDR_COMPAT	"st,stm32mp1-ddr"
 

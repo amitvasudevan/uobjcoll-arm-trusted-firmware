@@ -8,7 +8,7 @@
 #ifndef UTILS_DEF_H
 #define UTILS_DEF_H
 
-#include <export/lib/utils_def_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/export/lib/utils_def_exp.h>
 
 /* Compute the number of elements in the given array */
 #define ARRAY_SIZE(a)				\

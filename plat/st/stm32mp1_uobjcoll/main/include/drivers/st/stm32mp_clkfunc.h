@@ -7,11 +7,11 @@
 #ifndef STM32MP_CLKFUNC_H
 #define STM32MP_CLKFUNC_H
 
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
-#include <libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 int fdt_osc_read_freq(const char *name, uint32_t *freq);
 bool fdt_osc_read_bool(enum stm32mp_osc_id osc_id, const char *prop_name);

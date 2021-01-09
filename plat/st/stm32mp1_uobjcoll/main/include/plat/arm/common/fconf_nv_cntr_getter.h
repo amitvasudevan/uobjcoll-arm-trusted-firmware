@@ -7,8 +7,8 @@
 #ifndef FCONF_NV_CNTR_GETTER_H
 #define FCONF_NV_CNTR_GETTER_H
 
-#include <common/nv_cntr_ids.h>
-#include <lib/fconf/fconf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/nv_cntr_ids.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
 
 #define cot__nv_cntr_addr_getter(id)		nv_cntr_base_addr[id]
 

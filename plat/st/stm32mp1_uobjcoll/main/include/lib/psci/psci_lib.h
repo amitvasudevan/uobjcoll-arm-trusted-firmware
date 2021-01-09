@@ -7,12 +7,12 @@
 #ifndef PSCI_LIB_H
 #define PSCI_LIB_H
 
-#include <common/ep_info.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/ep_info.h>
 
 #ifndef __ASSEMBLER__
 
-#include <cdefs.h>
-#include <stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /*******************************************************************************
  * Optional structure populated by the Secure Payload Dispatcher to be given a

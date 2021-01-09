@@ -9,10 +9,10 @@
 
 #ifndef __ASSEMBLER__
 
-#include <arch.h>
-#include <arch_helpers.h>
-#include <lib/spinlock.h>
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #if DEBUG
 void print_errata_status(void);

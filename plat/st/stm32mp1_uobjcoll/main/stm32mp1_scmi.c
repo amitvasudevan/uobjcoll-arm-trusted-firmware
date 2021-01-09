@@ -3,17 +3,17 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-#include <assert.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <drivers/st/scmi-msg.h>
-#include <drivers/st/scmi.h>
-#include <drivers/st/stm32mp1_clk.h>
-#include <drivers/st/stm32mp_reset.h>
-#include <dt-bindings/clock/stm32mp1-clks.h>
-#include <dt-bindings/reset/stm32mp1-resets.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi-msg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_clk.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp_reset.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/clock/stm32mp1-clks.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/reset/stm32mp1-resets.h>
 
 #define TIMEOUT_US_1MS		1000U
 

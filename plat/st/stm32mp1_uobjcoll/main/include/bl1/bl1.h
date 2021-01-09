@@ -7,7 +7,7 @@
 #ifndef BL1_H
 #define BL1_H
 
-#include <common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 
 /*
  * Defines for BL1 SMC function ids.
@@ -63,7 +63,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <lib/cassert.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 
 struct entry_point_info;
 

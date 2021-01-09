@@ -7,9 +7,9 @@
 #ifndef XLAT_TABLES_DEFS_H
 #define XLAT_TABLES_DEFS_H
 
-#include <arch.h>
-#include <lib/utils_def.h>
-#include <lib/xlat_tables/xlat_mmu_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_mmu_helpers.h>
 
 /* Miscellaneous MMU related constants */
 #define NUM_2MB_IN_GB		(U(1) << 9)

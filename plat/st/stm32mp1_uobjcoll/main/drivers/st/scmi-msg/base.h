@@ -7,7 +7,7 @@
 #ifndef SCMI_MSG_BASE_H
 #define SCMI_MSG_BASE_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 #define SCMI_PROTOCOL_VERSION_BASE	0x20000U
 

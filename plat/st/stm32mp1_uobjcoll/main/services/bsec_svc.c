@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <common/debug.h>
-#include <drivers/st/bsec.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/bsec.h>
 
-#include <stm32mp1_smc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_smc.h>
 
 #include "bsec_svc.h"
 

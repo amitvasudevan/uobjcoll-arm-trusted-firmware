@@ -7,7 +7,7 @@
 #ifndef GENERIC_DELAY_TIMER_H
 #define GENERIC_DELAY_TIMER_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 void generic_delay_timer_init_args(uint32_t mult, uint32_t div);
 

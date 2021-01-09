@@ -7,11 +7,11 @@
 #ifndef EMMC_H
 #define EMMC_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include "emmc_chal_types.h"
 #include "emmc_chal_sd.h"

@@ -7,11 +7,11 @@
 #ifndef ASSERT_H
 #define ASSERT_H
 
-#include <cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 
 #ifndef PLAT_LOG_LEVEL_ASSERT
 #define PLAT_LOG_LEVEL_ASSERT	LOG_LEVEL

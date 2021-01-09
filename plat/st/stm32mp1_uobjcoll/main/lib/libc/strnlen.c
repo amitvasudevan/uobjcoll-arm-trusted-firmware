@@ -31,7 +31,7 @@
  * All rights reserved.
  */
 
-#include <string.h>
+#include <uberspark/uobjrtl/crt/include/string.h>
 
 size_t
 strnlen(const char *s, size_t maxlen)

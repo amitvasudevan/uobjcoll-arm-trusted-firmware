@@ -7,14 +7,14 @@
 #ifndef EP_INFO_H
 #define EP_INFO_H
 
-#include <common/param_header.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/param_header.h>
 
 #ifndef __ASSEMBLER__
-#include <stdint.h>
-#include <lib/cassert.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjrtl/crt/include/assert.h>
 #endif /* __ASSEMBLER__ */
 
-#include <export/common/ep_info_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/export/common/ep_info_exp.h>
 
 #define SECURE		EP_SECURE
 #define NON_SECURE	EP_NON_SECURE

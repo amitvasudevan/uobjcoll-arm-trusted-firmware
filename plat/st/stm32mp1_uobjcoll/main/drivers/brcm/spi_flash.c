@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdbool.h>
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <common/debug.h>
-#include <drivers/delay_timer.h>
-#include <errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
+#include <uberspark/uobjrtl/crt/include/errno.h>
 
-#include <sf.h>
-#include <spi.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/sf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/spi.h>
 
 #define SPI_FLASH_CMD_LEN	4
 #define QSPI_WAIT_TIMEOUT_US	200000U /* usec */

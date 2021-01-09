@@ -7,9 +7,9 @@
 #ifndef STM32MP_PMIC_H
 #define STM32MP_PMIC_H
 
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 /*
  * dt_pmic_status - Check PMIC status from device tree

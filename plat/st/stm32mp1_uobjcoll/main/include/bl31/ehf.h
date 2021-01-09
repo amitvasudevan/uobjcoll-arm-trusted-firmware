@@ -9,10 +9,10 @@
 
 #ifndef __ASSEMBLER__
 
-#include <cdefs.h>
-#include <stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* Valid priorities set bit 0 of the priority handler. */
 #define EHF_PRI_VALID_	BIT(0)

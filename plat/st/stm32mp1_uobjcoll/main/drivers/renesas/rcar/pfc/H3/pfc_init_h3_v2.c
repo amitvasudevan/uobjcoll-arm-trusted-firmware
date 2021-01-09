@@ -5,7 +5,7 @@
  */
 
 #include <stdint.h>		/* for uint32_t */
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 #include "pfc_init_h3_v2.h"
 #include "rcar_def.h"
 #include "../pfc_regs.h"

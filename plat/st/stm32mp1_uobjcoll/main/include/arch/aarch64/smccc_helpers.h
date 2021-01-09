@@ -7,13 +7,13 @@
 #ifndef SMCCC_HELPERS_H
 #define SMCCC_HELPERS_H
 
-#include <lib/smccc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/smccc.h>
 
 #ifndef __ASSEMBLER__
 
-#include <stdbool.h>
+#include <uberspark/uobjrtl/crt/include/stdbool.h>
 
-#include <context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/context.h>
 
 /* Convenience macros to return from SMC handler */
 #define SMC_RET0(_h)	{					\

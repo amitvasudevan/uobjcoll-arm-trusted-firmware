@@ -7,7 +7,7 @@
 #ifndef BSEC_SVC_H
 #define BSEC_SVC_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* version of this service */
 /* must be increase at each structure modification */

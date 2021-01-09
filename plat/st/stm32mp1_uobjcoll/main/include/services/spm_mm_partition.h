@@ -7,9 +7,9 @@
 #ifndef SPM_MM_PARTITION_H
 #define SPM_MM_PARTITION_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * Flags used by the spm_mm_mp_info structure to describe the

@@ -7,10 +7,10 @@
 #ifndef OBJECT_POOL_H
 #define OBJECT_POOL_H
 
-#include <stdlib.h>
+#include <uberspark/uobjrtl/crt/include/stdlib.h>
 
-#include <common/debug.h>
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * Pool of statically allocated objects.

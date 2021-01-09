@@ -7,7 +7,7 @@
 #ifndef AEM_GENERIC_H
 #define AEM_GENERIC_H
 
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* BASE AEM midr for revision 0 */
 #define BASE_AEM_MIDR		U(0x410FD0F0)

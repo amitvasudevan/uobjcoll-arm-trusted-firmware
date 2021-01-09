@@ -7,7 +7,7 @@
 #ifndef SCMI_PRIVATE_H
 #define SCMI_PRIVATE_H
 
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
 /*
  * SCMI power domain management protocol message and response lengths. It is

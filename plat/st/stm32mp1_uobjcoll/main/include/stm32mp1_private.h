@@ -7,7 +7,7 @@
 #ifndef STM32MP1_PRIVATE_H
 #define STM32MP1_PRIVATE_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 void configure_mmu(void);
 

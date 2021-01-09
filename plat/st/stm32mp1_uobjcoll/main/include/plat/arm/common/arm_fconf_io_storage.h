@@ -6,7 +6,7 @@
 #ifndef ARM_FCONF_IO_STORAGE_H
 #define ARM_FCONF_IO_STORAGE_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 /* IO devices handle */
 extern uintptr_t memmap_dev_handle;

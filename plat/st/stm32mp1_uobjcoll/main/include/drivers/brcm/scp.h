@@ -7,7 +7,7 @@
 #ifndef SCP_H
 #define SCP_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 int download_scp_patch(void *image, unsigned int image_size);
 

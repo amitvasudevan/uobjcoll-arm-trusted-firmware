@@ -35,9 +35,9 @@
 #ifndef ENDIAN_H
 #define ENDIAN_H
 
-#include <cdefs.h>
-#include <stdint.h>
-#include <endian_.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cdefs.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/endian_.h>
 
 /*
  * General byte order swapping functions.

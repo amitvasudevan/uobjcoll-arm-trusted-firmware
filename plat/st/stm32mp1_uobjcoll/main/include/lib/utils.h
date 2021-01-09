@@ -13,8 +13,8 @@
  */
 #if !(defined(__LINKER__) || defined(__ASSEMBLER__))
 
-#include <stddef.h>
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stddef.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 typedef struct mem_region {
 	uintptr_t base;

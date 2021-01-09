@@ -6,8 +6,8 @@
 #ifndef CCI_MACROS_S
 #define CCI_MACROS_S
 
-#include <drivers/arm/cci.h>
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 .section .rodata.cci_reg_name, "aS"
 cci_iface_regs:

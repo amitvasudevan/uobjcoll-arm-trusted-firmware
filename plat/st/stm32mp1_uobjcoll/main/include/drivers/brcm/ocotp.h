@@ -7,7 +7,7 @@
 #ifndef OCOTP_H
 #define OCOTP_H
 
-#include <stdint.h>
+#include <uberspark/uobjrtl/crt/include/stdint.h>
 
 struct otpc_map {
 	/* in words. */

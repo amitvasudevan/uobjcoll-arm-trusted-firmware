@@ -7,12 +7,12 @@
 
 /* AXI to M-Bridge decoding unit driver for Marvell Armada 8K and 8K+ SoCs */
 
-#include <common/debug.h>
-#include <lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include <armada_common.h>
-#include <mvebu.h>
-#include <mvebu_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/armada_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu_def.h>
 
 #if LOG_LEVEL >= LOG_LEVEL_INFO
 #define DEBUG_ADDR_MAP

@@ -6,7 +6,7 @@
 #ifndef CONSOLE_MACROS_S
 #define CONSOLE_MACROS_S
 
-#include <drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 /*
  * This macro encapsulates the common setup that has to be done at the end of
