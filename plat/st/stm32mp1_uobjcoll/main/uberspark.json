@@ -4,291 +4,235 @@
 */
 {
 	/* manifest header */
-	"uberspark-manifest": {
-		"manifest_node_types": [
-			"uberspark-uobj"
-		],
-		"uberspark_min_version": "6.0.0",
-		"uberspark_max_version": "any"
-	},
+	"uberspark.manifest.namespace": [
+		"uberspark-uobj"
+	],
+	"uberspark.manifest.version_min": "6.0.0",
+	"uberspark.manifest.version_max": "any",
 	/* uobj declaration */
-	"uberspark-uobj": {
-		"namespace": "uberspark/uobjcoll/platform/st/stm32mp1/main",
-		"platform": "st",
-		"arch": "armv7_32",
-		"cpu": "generic",
-		/* sources */
-		"sources": {
-			"h-files": [
-				// libc
-				"include/lib/libc/assert.h",
-				"include/lib/libc/cdefs.h",
-				"include/lib/libc/errno.h",
-				"include/lib/libc/limits.h",
-				"include/lib/libc/stdarg.h",
-				"include/lib/libc/stdbool.h",
-				"include/lib/libc/stddef.h",
-				"include/lib/libc/stdint.h",
-				"include/lib/libc/stdio.h",
-				"include/lib/libc/string.h",
-				// arch
-				"include/arch/arch.h",
-				"include/arch/arch_helpers.h",
-				// sp_min
-				"include/bl32/sp_min/platform_sp_min.h",
-				// common
-				"include/common/bl_common.h",
-				"include/common/debug.h",
-				"include/common/desc_image_load.h",
-				"include/common/ep_info.h",
-				"include/common/interrupt_props.h",
-				"include/common/param_header.h",
-				"include/common/runtime_svc.h",
-				"include/common/tbbr/tbbr_img_def.h",
-				// drivers
-				"include/drivers/arm/gic_common.h",
-				"include/drivers/arm/gicv2.h",
-				"include/drivers/arm/tzc400.h",
-				"include/drivers/arm/tzc_common.h",
-				"include/drivers/console.h",
-				"include/drivers/console_assertions.h",
-				"include/drivers/delay_timer.h",
-				"include/drivers/generic_delay_timer.h",
-				"include/drivers/nand.h",
-				"include/drivers/raw_nand.h",
-				"include/drivers/spi_mem.h",
-				"include/drivers/spi_nand.h",
-				"include/drivers/spi_nor.h",
-				"include/drivers/st/bsec.h",
-				"include/drivers/st/etzpc.h",
-				"include/drivers/st/scmi-msg.h",
-				"include/drivers/st/scmi.h",
-				"include/drivers/st/stm32_console.h",
-				"include/drivers/st/stm32_gpio.h",
-				"include/drivers/st/stm32_i2c.h",
-				"include/drivers/st/stm32_iwdg.h",
-				"include/drivers/st/stm32mp1_clk.h",
-				"include/drivers/st/stm32mp1_pwr.h",
-				"include/drivers/st/stm32mp1_ram.h",
-				"include/drivers/st/stm32mp1_rcc.h",
-				"include/drivers/st/stm32mp_pmic.h",
-				"include/drivers/st/stm32mp_reset.h",
-				"include/drivers/st/stpmic1.h",
-				// dt-bindings
-				"include/dt-bindings/clock/stm32mp1-clks.h",
-				"include/dt-bindings/interrupt-controller/arm-gic.h",
-				"include/dt-bindings/reset/stm32mp1-resets.h",
-				// exports
-				"include/export/common/bl_common_exp.h",
-				"include/export/common/ep_info_exp.h",
-				"include/export/common/param_header_exp.h",
-				"include/export/common/tbbr/tbbr_img_def_exp.h",
-				"include/export/lib/utils_def_exp.h",
-				// el3_runtime
-				"include/lib/el3_runtime/aarch32/context.h",
-				"include/lib/el3_runtime/context_mgmt.h",
-				// fdt
-				"include/lib/libfdt/fdt.h",
-				"include/lib/libfdt/libfdt.h",
-				"include/lib/libfdt/libfdt_env.h",
-				// xlat
-				"include/lib/xlat_tables/xlat_mmu_helpers.h",
-				"include/lib/xlat_tables/xlat_tables_arch.h",
-				"include/lib/xlat_tables/xlat_tables_defs.h",
-				"include/lib/xlat_tables/xlat_tables_v2.h",
-				"include/lib/xlat_tables/xlat_tables_v2_helpers.h",
-				// misc libs
-				"include/lib/bakery_lock.h",
-				"include/lib/mmio.h",
-				"include/lib/optee_utils.h",
-				"include/lib/psci/psci.h",
-				"include/lib/spinlock.h",
-				"include/lib/utils.h",
-				"include/lib/utils_def.h",
-				// common platform
-				"include/plat/common/common_def.h",
-				"include/plat/common/platform.h",
-				"include/plat/st/common/stm32mp_auth.h",
-				"include/plat/st/common/stm32mp_common.h",
-				"include/plat/st/common/stm32mp_dt.h",
-				"include/plat/st/common/stm32mp_shared_resources.h",
-				"include/plat/st/common/stm32mp_shres_helpers.h",
-				// tools
-				"include/tools_share/uuid.h",
-				// stm32mp1
-				"include/boot_api.h",
-				"include/platform_def.h",
-				"include/stm32mp1_context.h",
-				"include/stm32mp1_dbgmcu.h",
-				"include/stm32mp1_private.h",
-				"include/stm32mp1_shared_resources.h",
-				"include/stm32mp1_smc.h",
-				"include/stm32mp1_def.h",
-				// services
-				"include/services/spm_core_manifest.h",
-				"include/services/bsec_svc.h"
-			],
-			"c-files": [
-				// from makefile
-				"common/bl_common.c",
-				"common/tf_log.c",
-				"drivers/console/multi_console.c",
-				"plat/common/plat_bl_common.c",
-				"plat/common/plat_log_common.c",
-				"plat/common/aarch32/plat_common.c",
-				"plat/common/ubsan.c",
-				// from platform.mk
-				"common/desc_image_load.c",
-				"drivers/arm/tzc/tzc400.c",
-				"drivers/delay_timer/delay_timer.c",
-				"drivers/delay_timer/generic_delay_timer.c",
-				"drivers/io/io_block.c",
-				"drivers/io/io_dummy.c",
-				"drivers/io/io_mtd.c",
-				"drivers/io/io_storage.c",
-				"drivers/mmc/mmc.c",
-				"drivers/mtd/nand/core.c",
-				"drivers/mtd/nand/raw_nand.c",
-				"drivers/mtd/nand/spi_nand.c",
-				"drivers/mtd/nor/spi_nor.c",
-				"drivers/mtd/spi-mem/spi_mem.c",
-				"drivers/partition/gpt.c",
-				"drivers/partition/partition.c",
-				"drivers/st/bsec/bsec.c",
-				"drivers/st/clk/stm32mp1_clk.c",
-				"drivers/st/clk/stm32mp_clkfunc.c",
-				"drivers/st/crypto/stm32_hash.c",
-				"drivers/st/ddr/stm32mp1_ddr.c",
-				"drivers/st/ddr/stm32mp1_ddr_helpers.c",
-				"drivers/st/ddr/stm32mp1_ram.c",
-				"drivers/st/fmc/stm32_fmc2_nand.c",
-				"drivers/st/gpio/stm32_gpio.c",
-				"drivers/st/i2c/stm32_i2c.c",
-				"drivers/st/io/io_mmc.c",
-				"drivers/st/io/io_stm32image.c",
-				"drivers/st/iwdg/stm32_iwdg.c",
-				"drivers/st/mmc/stm32_sdmmc2.c",
-				"drivers/st/pmic/stm32mp_pmic.c",
-				"drivers/st/pmic/stpmic1.c",
-				"drivers/st/reset/stm32mp1_reset.c",
-				"drivers/st/spi/stm32_qspi.c",
-				"lib/optee/optee_utils.c",
-				"plat/st/common/bl2_io_storage.c",
-				"plat/st/common/stm32mp_auth.c",
-				"plat/st/common/stm32mp_common.c",
-				"plat/st/common/stm32mp_dt.c",
-
-				// sp_min
-				"sp_min/sp_min_setup.c",
-				// stm32mp1
-				"bl2_plat_setup.c",
-				"plat_bl2_mem_params_desc.c",
-				"plat_image_load.c",
-				"stm32mp1_boot_device.c",
-				"stm32mp1_context.c",
-				"stm32mp1_dbgmcu.c",
-				"stm32mp1_gic.c",
-				"stm32mp1_pm.c",
-				"stm32mp1_private.c",
-				"stm32mp1_scmi.c",
-				"stm32mp1_security.c",
-				"stm32mp1_shared_resources.c",
-				"stm32mp1_stack_protector.c",
-				"stm32mp1_syscfg.c",
-				"stm32mp1_topology.c",
-				// services
-				"services/bsec_svc.c",
-				"services/stm32mp1_svc_setup.c"
-			],
-			"asm-files": [
-				"common/aarch32/debug.S",
-				"lib/aarch32/cache_helpers.S",
-				"lib/aarch32/misc_helpers.S",
-				"plat/common/aarch32/platform_helpers.S",
-				"lib/aarch32/armclang_printf.S",
-				
-				"arch/asm_macros.S",
-				"common/asm_macros_common.S",
-				"stm32mp1_helper.S",
-				"stm32mp1.ld.S",
-				"stm32mp1.S",
-				"lib/cpus/aarch32/cortex_a7.S"
-			]
-		},
-		/* public methods */
-		"publicmethods": {
-			"main": [
-				"void",
-				"(void)",
-				"1"
-			]
-		},
-		/* public methods of other uobjs that this uobj invokes 
+	"uberspark.uobj.namespace": "uberspark/uobjcoll/platform/st/stm32mp1/main",
+	"uberspark.uobj.platform": "st",
+	"uberspark.uobj.arch": "armv8_32",
+	"uberspark.uobj.cpu": "generic",
+	/* sources */
+	"uberspark.uobj.source_h_files": [
+		// libc
+		"include/lib/libc/assert.h",
+		"include/lib/libc/cdefs.h",
+		"include/lib/libc/errno.h",
+		"include/lib/libc/limits.h",
+		"include/lib/libc/stdarg.h",
+		"include/lib/libc/stdbool.h",
+		"include/lib/libc/stddef.h",
+		"include/lib/libc/stdint.h",
+		"include/lib/libc/stdio.h",
+		"include/lib/libc/string.h",
+		// arch
+		"include/arch/arch.h",
+		"include/arch/arch_helpers.h",
+		// sp_min
+		"include/bl32/sp_min/platform_sp_min.h",
+		// common
+		"include/common/bl_common.h",
+		"include/common/debug.h",
+		"include/common/desc_image_load.h",
+		"include/common/ep_info.h",
+		"include/common/interrupt_props.h",
+		"include/common/param_header.h",
+		"include/common/runtime_svc.h",
+		"include/common/tbbr/tbbr_img_def.h",
+		// drivers
+		"include/drivers/arm/gic_common.h",
+		"include/drivers/arm/gicv2.h",
+		"include/drivers/arm/tzc400.h",
+		"include/drivers/arm/tzc_common.h",
+		"include/drivers/console.h",
+		"include/drivers/console_assertions.h",
+		"include/drivers/delay_timer.h",
+		"include/drivers/generic_delay_timer.h",
+		"include/drivers/nand.h",
+		"include/drivers/raw_nand.h",
+		"include/drivers/spi_mem.h",
+		"include/drivers/spi_nand.h",
+		"include/drivers/spi_nor.h",
+		"include/drivers/st/bsec.h",
+		"include/drivers/st/etzpc.h",
+		"include/drivers/st/scmi-msg.h",
+		"include/drivers/st/scmi.h",
+		"include/drivers/st/stm32_console.h",
+		"include/drivers/st/stm32_gpio.h",
+		"include/drivers/st/stm32_i2c.h",
+		"include/drivers/st/stm32_iwdg.h",
+		"include/drivers/st/stm32mp1_clk.h",
+		"include/drivers/st/stm32mp1_pwr.h",
+		"include/drivers/st/stm32mp1_ram.h",
+		"include/drivers/st/stm32mp1_rcc.h",
+		"include/drivers/st/stm32mp_pmic.h",
+		"include/drivers/st/stm32mp_reset.h",
+		"include/drivers/st/stpmic1.h",
+		// dt-bindings
+		"include/dt-bindings/clock/stm32mp1-clks.h",
+		"include/dt-bindings/interrupt-controller/arm-gic.h",
+		"include/dt-bindings/reset/stm32mp1-resets.h",
+		// exports
+		"include/export/common/bl_common_exp.h",
+		"include/export/common/ep_info_exp.h",
+		"include/export/common/param_header_exp.h",
+		"include/export/common/tbbr/tbbr_img_def_exp.h",
+		"include/export/lib/utils_def_exp.h",
+		// el3_runtime
+		"include/lib/el3_runtime/aarch32/context.h",
+		"include/lib/el3_runtime/context_mgmt.h",
+		// fdt
+		"include/lib/libfdt/fdt.h",
+		"include/lib/libfdt/libfdt.h",
+		"include/lib/libfdt/libfdt_env.h",
+		// xlat
+		"include/lib/xlat_tables/xlat_mmu_helpers.h",
+		"include/lib/xlat_tables/xlat_tables_arch.h",
+		"include/lib/xlat_tables/xlat_tables_defs.h",
+		"include/lib/xlat_tables/xlat_tables_v2.h",
+		"include/lib/xlat_tables/xlat_tables_v2_helpers.h",
+		// misc libs
+		"include/lib/bakery_lock.h",
+		"include/lib/mmio.h",
+		"include/lib/optee_utils.h",
+		"include/lib/psci/psci.h",
+		"include/lib/spinlock.h",
+		"include/lib/utils.h",
+		"include/lib/utils_def.h",
+		// common platform
+		"include/plat/common/common_def.h",
+		"include/plat/common/platform.h",
+		"include/plat/st/common/stm32mp_auth.h",
+		"include/plat/st/common/stm32mp_common.h",
+		"include/plat/st/common/stm32mp_dt.h",
+		"include/plat/st/common/stm32mp_shared_resources.h",
+		"include/plat/st/common/stm32mp_shres_helpers.h",
+		// tools
+		"include/tools_share/uuid.h",
+		// stm32mp1
+		"include/boot_api.h",
+		"include/platform_def.h",
+		"include/stm32mp1_context.h",
+		"include/stm32mp1_dbgmcu.h",
+		"include/stm32mp1_private.h",
+		"include/stm32mp1_shared_resources.h",
+		"include/stm32mp1_smc.h",
+		"include/stm32mp1_def.h",
+		// services
+		"include/services/spm_core_manifest.h",
+		"include/services/bsec_svc.h"
+	],
+	"uberspark.uobj.source_c_files": [
+		// from makefile
+		"common/bl_common.c",
+		"common/tf_log.c",
+		"drivers/console/multi_console.c",
+		"plat/common/plat_bl_common.c",
+		"plat/common/plat_log_common.c",
+		"plat/common/aarch32/plat_common.c",
+		"plat/common/ubsan.c",
+		// from platform.mk
+		"common/desc_image_load.c",
+		"drivers/arm/tzc/tzc400.c",
+		"drivers/delay_timer/delay_timer.c",
+		"drivers/delay_timer/generic_delay_timer.c",
+		"drivers/io/io_block.c",
+		"drivers/io/io_dummy.c",
+		"drivers/io/io_mtd.c",
+		"drivers/io/io_storage.c",
+		"drivers/mmc/mmc.c",
+		"drivers/mtd/nand/core.c",
+		"drivers/mtd/nand/raw_nand.c",
+		"drivers/mtd/nand/spi_nand.c",
+		"drivers/mtd/nor/spi_nor.c",
+		"drivers/mtd/spi-mem/spi_mem.c",
+		"drivers/partition/gpt.c",
+		"drivers/partition/partition.c",
+		"drivers/st/bsec/bsec.c",
+		"drivers/st/clk/stm32mp1_clk.c",
+		"drivers/st/clk/stm32mp_clkfunc.c",
+		"drivers/st/crypto/stm32_hash.c",
+		"drivers/st/ddr/stm32mp1_ddr.c",
+		"drivers/st/ddr/stm32mp1_ddr_helpers.c",
+		"drivers/st/ddr/stm32mp1_ram.c",
+		"drivers/st/fmc/stm32_fmc2_nand.c",
+		"drivers/st/gpio/stm32_gpio.c",
+		"drivers/st/i2c/stm32_i2c.c",
+		"drivers/st/io/io_mmc.c",
+		"drivers/st/io/io_stm32image.c",
+		"drivers/st/iwdg/stm32_iwdg.c",
+		"drivers/st/mmc/stm32_sdmmc2.c",
+		"drivers/st/pmic/stm32mp_pmic.c",
+		"drivers/st/pmic/stpmic1.c",
+		"drivers/st/reset/stm32mp1_reset.c",
+		"drivers/st/spi/stm32_qspi.c",
+		"lib/optee/optee_utils.c",
+		"plat/st/common/bl2_io_storage.c",
+		"plat/st/common/stm32mp_auth.c",
+		"plat/st/common/stm32mp_common.c",
+		"plat/st/common/stm32mp_dt.c",
+		// sp_min
+		"sp_min/sp_min_setup.c",
+		// stm32mp1
+		"bl2_plat_setup.c",
+		"plat_bl2_mem_params_desc.c",
+		"plat_image_load.c",
+		"stm32mp1_boot_device.c",
+		"stm32mp1_context.c",
+		"stm32mp1_dbgmcu.c",
+		"stm32mp1_gic.c",
+		"stm32mp1_pm.c",
+		"stm32mp1_private.c",
+		"stm32mp1_scmi.c",
+		"stm32mp1_security.c",
+		"stm32mp1_shared_resources.c",
+		"stm32mp1_stack_protector.c",
+		"stm32mp1_syscfg.c",
+		"stm32mp1_topology.c",
+		"stm32image.c",
+		// services
+		"services/bsec_svc.c",
+		"services/stm32mp1_svc_setup.c"
+	],
+	"uberspark.uobj.source_asm_files": [
+		"common/aarch32/debug.S",
+		"lib/aarch32/cache_helpers.S",
+		"lib/aarch32/misc_helpers.S",
+		"plat/common/aarch32/platform_helpers.S",
+		"lib/aarch32/armclang_printf.S",
+		"arch/asm_macros.S",
+		"common/asm_macros_common.S",
+		"stm32mp1_helper.S",
+		"stm32mp1.ld.S",
+		"stm32mp1.S",
+		"lib/cpus/aarch32/cortex_a7.S"
+	],
+	/* public methods */
+	"uberspark.uobj.public_methods": {
+		"main": [
+			"void",
+			"(void)",
+			"1"
+		]
+	},
+	/* public methods of other uobjs that this uobj invokes 
          within the same collection
      */
-		"intrauobjcoll-callees": {},
-		/* public methods of other uobjs that this uobj invokes 
+	"uberspark.uobj.intra_uobjcoll_callees": {},
+	/* public methods of other uobjs that this uobj invokes 
          across other collection(s)
      */
-		"interuobjcoll-callees": {},
-		/* legacy CoSS functions/code that this uobj invokes */
-		"legacy-callees": [],
-		/* uobj binary sectioning parameters */
-		// "sections": [
-		// 	{ 
-		// 		"name": "uobj_code",
-		// 		"size": "0x1C00000"  // 0x200000 * 14
-		// 		// "output_names": [
-		// 		// 	".text"
-		// 		// ]
-		// 	},
-		// 	{
-		// 		"name": "uobj_rwdata",
-		// 		"size": "0x9A00000"  // 0x200000 * 11 + 0xA00000 + 0x4200000 + 0x3800000
-		// 		// "output_names": [
-		// 		// 	".data"
-		// 		// ]
-		// 	},
-		// 	{ 
-		// 		"name": "uobj_tstack",
-		// 		"size": "0x5C00000"  // 0x600000 * 13 + 0xe00000
-		// 		// "output_names": [
-		// 		// 	".stack"
-		// 		// ]
-		// 	},
-		// 	{ 
-		// 		"name": "uobj_dmadata",
-		// 		"size": "0x1C00000"  // 0x200000 * 14
-		// 		// "output_names": [
-		// 		// 	".dmadata"
-		// 		// ]
-		// 	},
-		// 	{
-		// 		"name": "rwdatahdr",
-		// 		"size": "0x19000",
-		// 		"output_names": [
-		// 			".rwdatahdr"
-		// 		]
-		// 	},
-		// 	{
-		// 		"name": "slab_dmadata",
-		// 		"size": "0x13000",
-		// 		"output_names": [
-		// 			".slab_dmadata"
-		// 		]
-		// 	}
-		// ],
-		/* uobjrtl */
-		"uobjrtl": [
-			{
-				"namespace": "uberspark/uobjrtl/crt"
-			},
-			{
-				"namespace": "uberspark/uobjrtl/crypto"
-			},
-			{
-				"namespace": "uberspark/uobjrtl/hw"
-			}
-		]
-	}
+	"uberspark.uobj.inter_uobjcoll_callees": {},
+	/* legacy CoSS functions/code that this uobj invokes */
+	"uberspark.uobj.legacy_callees": [],
+	/* uobj binary sectioning parameters */
+	"sections": [],
+	/* uobjrtl */
+	"uobjrtl": [
+		{
+			"namespace": "uberspark/uobjrtl/crt"
+		}
+	]
 }
