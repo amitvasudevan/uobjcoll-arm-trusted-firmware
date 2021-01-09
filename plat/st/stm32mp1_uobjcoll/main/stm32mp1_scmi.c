@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-#include <uberspark/uobjrtl/crt/include/assert.h>
+#include <assert.h>
 #include <stdint.h>
 
 #include <platform_def.h>
