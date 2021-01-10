@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
-#include <libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
 
-#include <drivers/spi_mem.h>
-#include <lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/spi_mem.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #define SPI_MEM_DEFAULT_SPEED_HZ 100000U
 

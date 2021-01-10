@@ -7,7 +7,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/el3_common_macros.S>
 
 #if CTX_INCLUDE_EL2_REGS

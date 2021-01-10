@@ -12,7 +12,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_mod.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/object_pool.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/tbbr_oid.h>
 

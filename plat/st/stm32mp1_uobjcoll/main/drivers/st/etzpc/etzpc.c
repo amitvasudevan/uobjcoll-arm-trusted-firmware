@@ -14,7 +14,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/soc/st,stm32-etzpc.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 

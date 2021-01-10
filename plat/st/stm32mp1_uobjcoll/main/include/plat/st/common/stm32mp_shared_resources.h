@@ -7,8 +7,8 @@
 #ifndef STM32MP_SHARED_RESOURCES_H
 #define STM32MP_SHARED_RESOURCES_H
 
-#include <stdbool.h>
-#include <stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #ifdef STM32MP_SHARED_RESOURCES
 enum stm32mp_shres;

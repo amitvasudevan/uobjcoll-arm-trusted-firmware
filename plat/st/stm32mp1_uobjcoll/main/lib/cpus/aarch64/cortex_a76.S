@@ -7,7 +7,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cortex_a76.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>

@@ -10,7 +10,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf_dyn_cfg_getter.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 

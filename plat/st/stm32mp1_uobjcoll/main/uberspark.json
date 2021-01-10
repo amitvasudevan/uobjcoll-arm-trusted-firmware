@@ -46,6 +46,7 @@
 		"include/drivers/arm/gicv2.h",
 		"include/drivers/arm/tzc400.h",
 		"include/drivers/arm/tzc_common.h",
+		"<uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc/tzc_common_private.h>drivers/arm/tzc/tzc_common_private.h",
 		"include/drivers/console.h",
 		"include/drivers/console_assertions.h",
 		"include/drivers/delay_timer.h",

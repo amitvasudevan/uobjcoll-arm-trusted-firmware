@@ -12,10 +12,10 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_features.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_features.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl31/interrupt_mgmt.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/context_mgmt.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/pubsub_events.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/extensions/amu.h>

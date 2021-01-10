@@ -12,7 +12,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv2.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc400.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/generic_delay_timer.h>
@@ -28,7 +28,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_sp_min.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl32/sp_min/platform_sp_min.h>
 
 /******************************************************************************
  * Placeholder variables for copying the arguments that have been passed to

@@ -15,7 +15,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_smc.h>
 
-#include "bsec_svc.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/bsec_svc.h>
 
 /* STM32 SiP Service UUID */
 DEFINE_SVC_UUID2(stm32_sip_svc_uid,

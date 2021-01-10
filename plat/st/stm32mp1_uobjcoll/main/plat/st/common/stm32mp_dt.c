@@ -4,20 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 
-#include <libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <common/debug.h>
-#include <common/fdt_wrappers.h>
-#include <drivers/st/stm32_gpio.h>
-#include <drivers/st/stm32mp1_ddr.h>
-#include <drivers/st/stm32mp1_ram.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_gpio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_ddr.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_ram.h>
 
-#include <stm32mp_dt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_dt.h>
 
 static int fdt_checked;
 

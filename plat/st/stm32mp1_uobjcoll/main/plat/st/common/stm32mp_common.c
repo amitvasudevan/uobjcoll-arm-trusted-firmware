@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <drivers/st/stm32mp_clkfunc.h>
-#include <lib/xlat_tables/xlat_tables_v2.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp_clkfunc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 uintptr_t plat_get_ns_image_entrypoint(void)
 {

@@ -7,11 +7,11 @@
 #ifndef PSCI_H
 #define PSCI_H
 
-#include <platform_def.h>	/* for PLAT_NUM_PWR_DOMAINS */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>	/* for PLAT_NUM_PWR_DOMAINS */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
-#include <lib/psci/psci_lib.h>	/* To maintain compatibility for SPDs */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_lib.h>	/* To maintain compatibility for SPDs */
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*******************************************************************************

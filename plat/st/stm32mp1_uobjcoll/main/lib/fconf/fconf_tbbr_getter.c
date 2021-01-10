@@ -9,7 +9,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf_tbbr_getter.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
 
 struct tbbr_dyn_config_t tbbr_dyn_config;
 

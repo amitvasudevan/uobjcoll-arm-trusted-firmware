@@ -22,7 +22,7 @@
  */
 
 #ifdef MAKECRCH
-#  include <stdio.h>
+#  include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
 #  ifndef DYNAMIC_CRC_TABLE
 #    define DYNAMIC_CRC_TABLE
 #  endif /* !DYNAMIC_CRC_TABLE */

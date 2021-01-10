@@ -8,7 +8,7 @@
 #define SEMIHOSTING_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
-#include <stdio.h> /* For ssize_t */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h> /* For ssize_t */
 
 
 #define SEMIHOSTING_SYS_OPEN            0x01

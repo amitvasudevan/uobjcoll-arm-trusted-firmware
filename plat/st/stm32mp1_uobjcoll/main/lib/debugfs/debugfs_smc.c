@@ -12,7 +12,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/smccc.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/smccc_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_helpers.h>
 
 #define MAX_PATH_LEN	256
 

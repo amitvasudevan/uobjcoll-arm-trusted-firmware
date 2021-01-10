@@ -11,7 +11,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_smc.h>
 
-#include "bsec_svc.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/bsec_svc.h>
 
 uint32_t bsec_main(uint32_t x1, uint32_t x2, uint32_t x3,
 		   uint32_t *ret_otp_value)

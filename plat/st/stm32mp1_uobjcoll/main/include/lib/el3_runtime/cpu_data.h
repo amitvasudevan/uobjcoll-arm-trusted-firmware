@@ -7,7 +7,7 @@
 #ifndef CPU_DATA_H
 #define CPU_DATA_H
 
-#include <platform_def.h>	/* CACHE_WRITEBACK_GRANULE required */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>	/* CACHE_WRITEBACK_GRANULE required */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl31/ehf.h>
 

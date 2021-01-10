@@ -10,7 +10,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf_dyn_cfg_getter.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/object_pool.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
 
 /* We currently use FW, TB_FW, SOC_FW, TOS_FW, NT_FW and HW configs  */
 #define MAX_DTB_INFO	U(6)

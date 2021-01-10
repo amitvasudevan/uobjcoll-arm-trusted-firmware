@@ -7,9 +7,9 @@
 #ifndef STM32MP_SHRES_HELPERS_H
 #define STM32MP_SHRES_HELPERS_H
 
-#include <stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
-#include <common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 
 /*
  * Shared reference counter: increments by 2 on secure increment

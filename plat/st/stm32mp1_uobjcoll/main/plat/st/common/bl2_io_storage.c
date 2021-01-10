@@ -4,31 +4,31 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <arch_helpers.h>
-#include <common/debug.h>
-#include <drivers/io/io_block.h>
-#include <drivers/io/io_driver.h>
-#include <drivers/io/io_dummy.h>
-#include <drivers/io/io_mtd.h>
-#include <drivers/io/io_storage.h>
-#include <drivers/mmc.h>
-#include <drivers/partition/partition.h>
-#include <drivers/raw_nand.h>
-#include <drivers/spi_nand.h>
-#include <drivers/spi_nor.h>
-#include <drivers/st/io_mmc.h>
-#include <drivers/st/io_stm32image.h>
-#include <drivers/st/stm32_fmc2_nand.h>
-#include <drivers/st/stm32_qspi.h>
-#include <drivers/st/stm32_sdmmc2.h>
-#include <lib/mmio.h>
-#include <lib/utils.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_block.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_driver.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_dummy.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_mtd.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_storage.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/mmc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/partition/partition.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/raw_nand.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/spi_nand.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/spi_nor.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/io_mmc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/io_stm32image.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_fmc2_nand.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_qspi.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_sdmmc2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 /* IO devices */
 static const io_dev_connector_t *dummy_dev_con;

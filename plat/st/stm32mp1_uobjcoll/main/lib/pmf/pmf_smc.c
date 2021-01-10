@@ -9,7 +9,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/pmf/pmf.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/smccc_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_helpers.h>
 
 /*
  * This function is responsible for handling all PMF SMC calls.

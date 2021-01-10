@@ -12,7 +12,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_compat.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/arm_arch_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/smccc_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/firmware_encrypted.h>
 
 /*

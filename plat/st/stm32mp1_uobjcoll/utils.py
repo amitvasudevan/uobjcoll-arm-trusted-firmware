@@ -25,8 +25,8 @@ def get_includes():
     includes.sort()
     return includes
 
-def modify_includes():
-    files = get_files(path="main/drivers")
+def modify_includes(path="."):
+    files = get_files(path=path)
     # stdh_reg = '|'.join([re.escape(x) for x in STD_HEADERS])
     
     for path in tqdm(files):
@@ -58,5 +58,5 @@ def get_include_refs():
 
 if __name__ == "__main__":
     # print("\n".join(get_includes()))
-    modify_includes()
+    modify_includes(path="main/plat/st/common/")
     # print("\n".join(get_include_refs()))

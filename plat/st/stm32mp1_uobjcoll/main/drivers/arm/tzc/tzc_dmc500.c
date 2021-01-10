@@ -11,7 +11,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include "tzc_common_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/drivers/arm/tzc/tzc_common_private.h>
 
 /*
  * Macros which will be used by common core functions.
