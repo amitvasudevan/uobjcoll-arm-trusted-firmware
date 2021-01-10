@@ -37,7 +37,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/endian_.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/aarch32/endian_.h>
 
 /*
  * General byte order swapping functions.

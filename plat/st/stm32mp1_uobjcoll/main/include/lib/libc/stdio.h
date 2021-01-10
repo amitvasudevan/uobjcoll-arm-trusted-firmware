@@ -13,7 +13,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stdio_.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/aarch32/stdio_.h>
 
 #define EOF            -1
 

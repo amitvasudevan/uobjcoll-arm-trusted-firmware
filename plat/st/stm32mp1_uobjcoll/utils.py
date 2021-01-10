@@ -5,9 +5,9 @@ from tqdm import tqdm
 import json
 from jsoncomment import JsonComment
 
-def get_files():
+def get_files(path="."):
     files = []
-    for root, dir, file in os.walk("."):
+    for root, dir, file in os.walk(path):
         for x in file:
             if x.endswith(('.h', '.c', '.S')):
                 files.append(os.path.join(root, x))
@@ -26,8 +26,8 @@ def get_includes():
     return includes
 
 def modify_includes():
-    files = get_files()
-    stdh_reg = '|'.join([re.escape(x) for x in STD_HEADERS])
+    files = get_files(path="main/drivers")
+    # stdh_reg = '|'.join([re.escape(x) for x in STD_HEADERS])
     
     for path in tqdm(files):
         with open(path, "r") as f:
@@ -58,5 +58,5 @@ def get_include_refs():
 
 if __name__ == "__main__":
     # print("\n".join(get_includes()))
-    # modify_includes()
-    print("\n".join(get_include_refs()))
+    modify_includes()
+    # print("\n".join(get_include_refs()))

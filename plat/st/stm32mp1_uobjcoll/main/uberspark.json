@@ -197,17 +197,17 @@
 		"services/stm32mp1_svc_setup.c"
 	],
 	"uberspark.uobj.source_asm_files": [
+		"include/arch/asm_macros.S",
+		"include/common/asm_macros_common.S",
 		"common/aarch32/debug.S",
 		"lib/aarch32/cache_helpers.S",
 		"lib/aarch32/misc_helpers.S",
-		"plat/common/aarch32/platform_helpers.S",
 		"lib/aarch32/armclang_printf.S",
-		"arch/asm_macros.S",
-		"common/asm_macros_common.S",
+		"lib/cpus/aarch32/cortex_a7.S",
+		"plat/common/aarch32/platform_helpers.S",
 		"stm32mp1_helper.S",
 		"stm32mp1.ld.S",
-		"stm32mp1.S",
-		"lib/cpus/aarch32/cortex_a7.S"
+		"stm32mp1.S"
 	],
 	/* public methods */
 	"uberspark.uobj.public_methods": {
