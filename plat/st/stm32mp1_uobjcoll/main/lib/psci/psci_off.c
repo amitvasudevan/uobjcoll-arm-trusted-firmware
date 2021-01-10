@@ -14,7 +14,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/runtime_instr.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#include "psci_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_private.h>
 
 /******************************************************************************
  * Construct the psci_power_state to request power OFF at all power levels.

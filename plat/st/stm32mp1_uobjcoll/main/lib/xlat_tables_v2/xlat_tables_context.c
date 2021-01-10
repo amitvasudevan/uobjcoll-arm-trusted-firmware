@@ -13,7 +13,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
 
-#include "xlat_tables_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/lib/xlat_tables_v2/xlat_tables_private.h>
 
 /*
  * MMU configuration register values for the active translation context. Used

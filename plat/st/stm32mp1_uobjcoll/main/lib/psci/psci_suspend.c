@@ -19,7 +19,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/runtime_instr.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#include "psci_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_private.h>
 
 /*******************************************************************************
  * This function does generic and platform specific operations after a wake-up

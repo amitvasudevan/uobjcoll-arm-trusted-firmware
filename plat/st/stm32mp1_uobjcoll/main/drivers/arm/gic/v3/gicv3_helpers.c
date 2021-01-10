@@ -12,7 +12,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/interrupt_props.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic_common.h>
 
-#include "../common/gic_common_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/drivers/arm/gic/common/gic_common_private.h>
 #include "gicv3_private.h"
 
 /******************************************************************************

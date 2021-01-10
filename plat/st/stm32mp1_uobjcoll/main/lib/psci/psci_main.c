@@ -16,7 +16,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/arm_arch_svc.h>
 
-#include "psci_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_private.h>
 
 /*******************************************************************************
  * PSCI frontend api for servicing SMCs. Described in the PSCI spec.

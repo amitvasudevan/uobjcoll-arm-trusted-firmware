@@ -14,7 +14,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic600_multichip.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv3.h>
 
-#include "../common/gic_common_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/drivers/arm/gic/common/gic_common_private.h>
 #include "gic600_multichip_private.h"
 
 #warning "GIC-600 Multichip driver is currently experimental and the API may change in future."

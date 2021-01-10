@@ -11,7 +11,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
-#include "common.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/drivers/st/scmi-msg/common.h>
 
 static bool message_id_is_supported(unsigned int message_id);
 

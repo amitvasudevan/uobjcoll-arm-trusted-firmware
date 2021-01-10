@@ -9,7 +9,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi-msg.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi.h>
 
-#include "common.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/drivers/st/scmi-msg/common.h>
 
 void scmi_status_response(struct scmi_msg *msg, int32_t status)
 {

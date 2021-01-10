@@ -19,7 +19,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
 
-#include "xlat_tables_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/lib/xlat_tables_v2/xlat_tables_private.h>
 
 /* Helper function that cleans the data cache only if it is enabled. */
 static inline __attribute__((unused)) void xlat_clean_dcache_range(uintptr_t addr, size_t size)

@@ -15,7 +15,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/pubsub_events.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#include "psci_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_private.h>
 
 /*
  * Helper functions for the CPU level spinlocks

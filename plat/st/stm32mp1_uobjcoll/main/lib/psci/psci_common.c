@@ -17,7 +17,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#include "psci_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_private.h>
 
 /*
  * SPD power management operations, expected to be supplied by the registered

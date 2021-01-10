@@ -9,7 +9,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 
-#include "psci_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_private.h>
 
 u_register_t psci_mem_protect(unsigned int enable)
 {

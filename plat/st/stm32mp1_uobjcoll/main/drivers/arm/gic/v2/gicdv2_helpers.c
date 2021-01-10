@@ -9,7 +9,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
-#include "../common/gic_common_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/drivers/arm/gic/common/gic_common_private.h>
 
 /*******************************************************************************
  * GIC Distributor interface accessors for reading entire registers

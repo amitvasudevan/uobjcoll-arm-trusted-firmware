@@ -4,12 +4,12 @@
  * Copyright (C) 2016 Free Electrons
  * Copyright (C) 2016 NextThing Co.
  */
-#include "libfdt_env.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt_env.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/fdt.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
 
-#include "libfdt_internal.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt_internal.h>
 
 /**
  * overlay_get_target_phandle - retrieves the target phandle of a fragment

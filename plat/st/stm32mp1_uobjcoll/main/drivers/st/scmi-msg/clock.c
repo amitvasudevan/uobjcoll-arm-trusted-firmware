@@ -10,7 +10,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
-#include "common.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/drivers/st/scmi-msg/common.h>
 
 #pragma weak plat_scmi_clock_count
 #pragma weak plat_scmi_clock_get_name

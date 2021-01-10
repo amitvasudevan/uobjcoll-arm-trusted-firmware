@@ -20,7 +20,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables.h>
 
-#include "../xlat_tables_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/lib/xlat_tables_v2/xlat_tables_private.h>
 
 #ifdef ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING
 #error "ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING flag is set. \

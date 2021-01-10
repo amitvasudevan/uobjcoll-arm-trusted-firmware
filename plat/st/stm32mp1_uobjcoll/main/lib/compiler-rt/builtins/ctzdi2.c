@@ -12,7 +12,7 @@
  * ===----------------------------------------------------------------------===
  */
 
-#include "int_lib.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/int_lib.h>
 
 /* Returns: the number of trailing 0-bits  */
 

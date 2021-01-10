@@ -3,12 +3,12 @@
  * libfdt - Flat Device Tree manipulation
  * Copyright (C) 2012 David Gibson, IBM Corporation.
  */
-#include "libfdt_env.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt_env.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/fdt.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
 
-#include "libfdt_internal.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt_internal.h>
 
 int fdt_create_empty_tree(void *buf, int bufsize)
 {

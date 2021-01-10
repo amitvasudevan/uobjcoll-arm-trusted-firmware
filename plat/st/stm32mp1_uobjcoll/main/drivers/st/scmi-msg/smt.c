@@ -16,7 +16,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#include "common.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/drivers/st/scmi-msg/common.h>
 
 /* Legacy SMT/SCMI messages are 128 bytes at most including SMT header */
 #define SCMI_PLAYLOAD_MAX		92U

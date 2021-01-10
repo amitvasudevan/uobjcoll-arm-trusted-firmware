@@ -12,7 +12,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#include "psci_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_private.h>
 
 void __dead2 psci_system_off(void)
 {

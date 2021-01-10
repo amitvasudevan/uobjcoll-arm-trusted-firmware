@@ -16,7 +16,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
 
-#include "../xlat_tables_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/lib/xlat_tables_v2/xlat_tables_private.h>
 
 #if (ARM_ARCH_MAJOR == 7) && !defined(ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING)
 #error ARMv7 target does not support LPAE MMU descriptors

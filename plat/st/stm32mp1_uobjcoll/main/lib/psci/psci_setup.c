@@ -15,7 +15,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/errata_report.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#include "psci_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_private.h>
 
 /*******************************************************************************
  * Per cpu non-secure contexts used to program the architectural state prior

@@ -12,8 +12,8 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv2.h>
 
-#include "../common/gic_common_private.h"
-#include "gicv2_private.h"
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/drivers/arm/gic/common/gic_common_private.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/drivers/arm/gic/v2/gicv2_private.h>
 
 /*
  * Accessor to read the GIC Distributor ITARGETSR corresponding to the
