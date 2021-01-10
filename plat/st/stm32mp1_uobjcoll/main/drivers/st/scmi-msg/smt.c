@@ -10,7 +10,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi-msg.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>

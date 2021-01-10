@@ -46,6 +46,7 @@
 "include/arch/smcc_helpers.h",
 "bl32/sp_min/sp_min_private.h",
 "drivers/arm/gic/v2/gicv2_private.h",
+"include/lib/cassert.h",
 		//
 		// arch
 		"include/arch/arch.h",

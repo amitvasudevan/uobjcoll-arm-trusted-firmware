@@ -1,5 +1,5 @@
 /*
-	uberxmhf uobj collection JSON manifest
+	stm32_mp1 trustzone uobj collection JSON manifest
 	author: ethan joseph (ethanj217@gmail.com)
 */
 {
@@ -14,7 +14,7 @@
     "uberspark.uobjcoll.platform": "st",
     "uberspark.uobjcoll.arch": "armv8_32",
     "uberspark.uobjcoll.cpu": "generic",
-    "uberspark.uobjcoll.hpl": "any", //"hyp",
+    "uberspark.uobjcoll.hpl": "any", 
     "uberspark.uobjcoll.sentinels_intra_uobjcoll": [
         "generic/generic/any/call"
     ],

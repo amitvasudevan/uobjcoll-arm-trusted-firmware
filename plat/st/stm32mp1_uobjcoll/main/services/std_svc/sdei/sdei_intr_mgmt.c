@@ -13,7 +13,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/runtime_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/sdei.h>
 
 #include "sdei_private.h"

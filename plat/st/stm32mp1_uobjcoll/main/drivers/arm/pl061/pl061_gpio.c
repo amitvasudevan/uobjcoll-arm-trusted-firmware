@@ -14,7 +14,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/pl061_gpio.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/gpio.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
 

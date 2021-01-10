@@ -11,7 +11,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>

@@ -8,7 +8,7 @@
 #define RUNTIME_SVC_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>		/* to include exception types */
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_helpers.h>	/* to include SMCCC definitions */
 

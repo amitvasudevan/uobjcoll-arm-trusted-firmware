@@ -11,7 +11,7 @@
 
 #ifndef __ASSEMBLER__
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
 #endif /* __ASSEMBLER__ */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/export/common/ep_info_exp.h>

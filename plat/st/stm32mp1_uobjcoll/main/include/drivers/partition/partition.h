@@ -9,7 +9,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
 
 #if !PLAT_PARTITION_MAX_ENTRIES
 # define PLAT_PARTITION_MAX_ENTRIES	128
