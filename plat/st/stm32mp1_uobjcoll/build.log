@@ -36,7 +36,7 @@ uberspark >> created uobj collection uobjcoll_public_methods and intrauobjcoll s
 uberspark >> loading cc-bridge settings from file: /home/yeeb16/uberspark/bridges/container/amd64/cc-bridge/armv8_32/generic/gcc/v5.4.0/uberspark.json
 uberspark >> loaded cc_bridge settings
 uberspark >> building cc-bridge: uberspark/bridges/container/amd64/cc-bridge/armv8_32/generic/gcc/v5.4.0
-uberspark >> [docker] Sending build context to Docker daemon  19.97kB
+uberspark >> [docker] Sending build context to Docker daemon  20.48kB
 uberspark >> [docker] Step 1/16 : FROM amd64/ubuntu:16.04
 uberspark >> [docker]  ---> 9499db781771
 uberspark >> [docker] Step 2/16 : LABEL maintainer="Amit Vasudevan <amitvasudevan@acm.org>, Matt McCormack <matthew.mccormack@live.com>" author="Matt McCormack <matthew.mccormack@live.com>"
@@ -438,7 +438,7 @@ uberspark >> initializing uobj 'main'...
 uberspark >> uobj target spec => ::
 uberspark >> uobj target definition => st:armv8_32:generic
 uberspark >> json_node_uberspark_uobj_to_var: retval=true
-uberspark >> total sources: h files=103, c files=132, casm files=0, asm files=11
+uberspark >> total sources: h files=103, c files=132, casm files=0, asm files=20
 uberspark >> total public methods:1,1
 uberspark >> list of uobj-intrauobjcoll-callees follows:
 uberspark >> total interuobjcoll callees=0
@@ -554,7 +554,7 @@ uberspark >> initializing bridges with uobj manifest override...
 uberspark >> loading cc-bridge settings from file: /home/yeeb16/uberspark/bridges/container/amd64/cc-bridge/armv8_32/generic/gcc/v5.4.0/uberspark.json
 uberspark >> loaded cc_bridge settings
 uberspark >> building cc-bridge: uberspark/bridges/container/amd64/cc-bridge/armv8_32/generic/gcc/v5.4.0
-uberspark >> [docker] Sending build context to Docker daemon  19.97kB
+uberspark >> [docker] Sending build context to Docker daemon  20.48kB
 uberspark >> [docker] Step 1/16 : FROM amd64/ubuntu:16.04
 uberspark >> [docker]  ---> 9499db781771
 uberspark >> [docker] Step 2/16 : LABEL maintainer="Amit Vasudevan <amitvasudevan@acm.org>, Matt McCormack <matthew.mccormack@live.com>" author="Matt McCormack <matthew.mccormack@live.com>"
@@ -945,9 +945,9 @@ uberspark >> [docker] Successfully built 47e34a7d99ca
 uberspark >> [docker] Successfully tagged uberspark/bridges/container/amd64/vf-bridge/generic/generic/uberspark/v6.0.0:latest
 uberspark >> uberspark vf_bridge build success
 uberspark >> proceeding to compile c files...
-uberspark >> d_cmd=export var_bridge_include_dirs_with_prefix && export var_bridge_input_files && var_bridge_include_dirs_with_prefix="  -I. -I/home/yeeb16/uberspark/staging/stm32mp1 " && var_bridge_input_files="  bl2/aarch32/bl2_arch_setup.c bl2/bl2_image_load_v2.c bl2/bl2_main.c bl32/sp_min/sp_min_main.c common/bl_common.c common/desc_image_load.c common/fdt_wrappers.c common/runtime_svc.c common/tf_log.c drivers/arm/gic/v2/gicdv2_helpers.c drivers/arm/gic/v2/gicv2_helpers.c drivers/arm/gic/v2/gicv2_main.c drivers/arm/tzc/tzc400.c drivers/console/multi_console.c drivers/delay_timer/delay_timer.c drivers/delay_timer/generic_delay_timer.c drivers/io/io_block.c drivers/io/io_dummy.c drivers/io/io_mtd.c drivers/io/io_storage.c drivers/mmc/mmc.c drivers/mtd/nand/core.c drivers/mtd/nand/raw_nand.c drivers/mtd/nand/spi_nand.c drivers/mtd/nor/spi_nor.c drivers/mtd/spi-mem/spi_mem.c drivers/partition/gpt.c drivers/partition/partition.c drivers/st/bsec/bsec.c drivers/st/clk/stm32mp1_clk.c drivers/st/clk/stm32mp_clkfunc.c drivers/st/crypto/stm32_hash.c drivers/st/ddr/stm32mp1_ddr.c drivers/st/ddr/stm32mp1_ddr_helpers.c drivers/st/ddr/stm32mp1_ram.c drivers/st/etzpc/etzpc.c drivers/st/fmc/stm32_fmc2_nand.c drivers/st/gpio/stm32_gpio.c drivers/st/i2c/stm32_i2c.c drivers/st/io/io_mmc.c drivers/st/io/io_stm32image.c drivers/st/iwdg/stm32_iwdg.c drivers/st/mmc/stm32_sdmmc2.c drivers/st/pmic/stm32mp_pmic.c drivers/st/pmic/stpmic1.c drivers/st/reset/stm32mp1_reset.c drivers/st/scmi-msg/base.c drivers/st/scmi-msg/clock.c drivers/st/scmi-msg/entry.c drivers/st/scmi-msg/reset_domain.c drivers/st/scmi-msg/smt.c drivers/st/spi/stm32_qspi.c lib/compiler-rt/builtins/ctzdi2.c lib/compiler-rt/builtins/divdi3.c lib/compiler-rt/builtins/divmoddi4.c lib/compiler-rt/builtins/lshrdi3.c lib/compiler-rt/builtins/popcountdi2.c lib/compiler-rt/builtins/popcountsi2.c lib/compiler-rt/builtins/udivmoddi4.c lib/cpus/errata_report.c lib/el3_runtime/aarch32/context_mgmt.c lib/el3_runtime/cpu_data_array.c lib/libc/abort.c lib/libc/assert.c lib/libc/exit.c lib/libc/memchr.c lib/libc/memcmp.c lib/libc/memcpy.c lib/libc/memmove.c lib/libc/memrchr.c lib/libc/memset.c lib/libc/printf.c lib/libc/putchar.c lib/libc/puts.c lib/libc/snprintf.c lib/libc/strchr.c lib/libc/strcmp.c lib/libc/strlcpy.c lib/libc/strlen.c lib/libc/strncmp.c lib/libc/strnlen.c lib/libc/strrchr.c lib/libfdt/fdt.c lib/libfdt/fdt_addresses.c lib/libfdt/fdt_empty_tree.c lib/libfdt/fdt_ro.c lib/libfdt/fdt_rw.c lib/libfdt/fdt_strerror.c lib/libfdt/fdt_sw.c lib/libfdt/fdt_wip.c lib/locks/bakery/bakery_lock_normal.c lib/psci/psci_common.c lib/psci/psci_main.c lib/psci/psci_mem_protect.c lib/psci/psci_off.c lib/psci/psci_on.c lib/psci/psci_setup.c lib/psci/psci_suspend.c lib/psci/psci_system_off.c lib/xlat_tables_v2/aarch32/xlat_tables_arch.c lib/xlat_tables_v2/xlat_tables_context.c lib/xlat_tables_v2/xlat_tables_core.c lib/xlat_tables_v2/xlat_tables_utils.c plat/common/aarch32/plat_common.c plat/common/aarch32/plat_sp_min_common.c plat/common/plat_bl_common.c plat/common/plat_gicv2.c plat/common/plat_log_common.c plat/common/plat_psci_common.c plat/st/common/bl2_io_storage.c plat/st/common/stm32mp_auth.c plat/st/common/stm32mp_common.c plat/st/common/stm32mp_dt.c services/arm_arch_svc/arm_arch_svc_setup.c services/std_svc/std_svc_setup.c bl2_plat_setup.c plat_bl2_mem_params_desc.c plat_image_load.c services/bsec_svc.c services/stm32mp1_svc_setup.c sp_min/sp_min_setup.c stm32mp1_boot_device.c stm32mp1_context.c stm32mp1_dbgmcu.c stm32mp1_gic.c stm32mp1_pm.c stm32mp1_private.c stm32mp1_scmi.c stm32mp1_security.c stm32mp1_shared_resources.c stm32mp1_syscfg.c stm32mp1_topology.c " && vararray_bridge_input_files=$(echo $var_bridge_input_files | tr " " "\n") && for input_file_name in $vararray_bridge_input_files; do echo "Compiling ${input_file_name} ..." && arm-linux-gnueabihf-gcc-5  -nostartfiles -ffreestanding -marm -march=armv8-a -mno-thumb-interwork -c ${var_bridge_include_dirs_with_prefix} ${input_file_name} -o ${input_file_name}.o ; done && cp -f /usr/lib/gcc-cross/arm-linux-gnueabihf/5/libgcc.a /home/uberspark/src/cclib.a
+uberspark >> d_cmd=export var_bridge_include_dirs_with_prefix && export var_bridge_input_files && var_bridge_include_dirs_with_prefix="  -I. -I/home/yeeb16/uberspark/staging/stm32mp1 " && var_bridge_input_files="  bl2/aarch32/bl2_arch_setup.c bl2/bl2_image_load_v2.c bl2/bl2_main.c bl32/sp_min/sp_min_main.c common/bl_common.c common/desc_image_load.c common/fdt_wrappers.c common/runtime_svc.c common/tf_log.c drivers/arm/gic/v2/gicdv2_helpers.c drivers/arm/gic/v2/gicv2_helpers.c drivers/arm/gic/v2/gicv2_main.c drivers/arm/tzc/tzc400.c drivers/console/multi_console.c drivers/delay_timer/delay_timer.c drivers/delay_timer/generic_delay_timer.c drivers/io/io_block.c drivers/io/io_dummy.c drivers/io/io_mtd.c drivers/io/io_storage.c drivers/mmc/mmc.c drivers/mtd/nand/core.c drivers/mtd/nand/raw_nand.c drivers/mtd/nand/spi_nand.c drivers/mtd/nor/spi_nor.c drivers/mtd/spi-mem/spi_mem.c drivers/partition/gpt.c drivers/partition/partition.c drivers/st/bsec/bsec.c drivers/st/clk/stm32mp1_clk.c drivers/st/clk/stm32mp_clkfunc.c drivers/st/crypto/stm32_hash.c drivers/st/ddr/stm32mp1_ddr.c drivers/st/ddr/stm32mp1_ddr_helpers.c drivers/st/ddr/stm32mp1_ram.c drivers/st/etzpc/etzpc.c drivers/st/fmc/stm32_fmc2_nand.c drivers/st/gpio/stm32_gpio.c drivers/st/i2c/stm32_i2c.c drivers/st/io/io_mmc.c drivers/st/io/io_stm32image.c drivers/st/iwdg/stm32_iwdg.c drivers/st/mmc/stm32_sdmmc2.c drivers/st/pmic/stm32mp_pmic.c drivers/st/pmic/stpmic1.c drivers/st/reset/stm32mp1_reset.c drivers/st/scmi-msg/base.c drivers/st/scmi-msg/clock.c drivers/st/scmi-msg/entry.c drivers/st/scmi-msg/reset_domain.c drivers/st/scmi-msg/smt.c drivers/st/spi/stm32_qspi.c lib/compiler-rt/builtins/ctzdi2.c lib/compiler-rt/builtins/divdi3.c lib/compiler-rt/builtins/divmoddi4.c lib/compiler-rt/builtins/lshrdi3.c lib/compiler-rt/builtins/popcountdi2.c lib/compiler-rt/builtins/popcountsi2.c lib/compiler-rt/builtins/udivmoddi4.c lib/cpus/errata_report.c lib/el3_runtime/aarch32/context_mgmt.c lib/el3_runtime/cpu_data_array.c lib/libc/abort.c lib/libc/assert.c lib/libc/exit.c lib/libc/memchr.c lib/libc/memcmp.c lib/libc/memcpy.c lib/libc/memmove.c lib/libc/memrchr.c lib/libc/memset.c lib/libc/printf.c lib/libc/putchar.c lib/libc/puts.c lib/libc/snprintf.c lib/libc/strchr.c lib/libc/strcmp.c lib/libc/strlcpy.c lib/libc/strlen.c lib/libc/strncmp.c lib/libc/strnlen.c lib/libc/strrchr.c lib/libfdt/fdt.c lib/libfdt/fdt_addresses.c lib/libfdt/fdt_empty_tree.c lib/libfdt/fdt_ro.c lib/libfdt/fdt_rw.c lib/libfdt/fdt_strerror.c lib/libfdt/fdt_sw.c lib/libfdt/fdt_wip.c lib/locks/bakery/bakery_lock_normal.c lib/psci/psci_common.c lib/psci/psci_main.c lib/psci/psci_mem_protect.c lib/psci/psci_off.c lib/psci/psci_on.c lib/psci/psci_setup.c lib/psci/psci_suspend.c lib/psci/psci_system_off.c lib/xlat_tables_v2/aarch32/xlat_tables_arch.c lib/xlat_tables_v2/xlat_tables_context.c lib/xlat_tables_v2/xlat_tables_core.c lib/xlat_tables_v2/xlat_tables_utils.c plat/common/aarch32/plat_common.c plat/common/aarch32/plat_sp_min_common.c plat/common/plat_bl_common.c plat/common/plat_gicv2.c plat/common/plat_log_common.c plat/common/plat_psci_common.c plat/st/common/bl2_io_storage.c plat/st/common/stm32mp_auth.c plat/st/common/stm32mp_common.c plat/st/common/stm32mp_dt.c services/arm_arch_svc/arm_arch_svc_setup.c services/std_svc/std_svc_setup.c bl2_plat_setup.c plat_bl2_mem_params_desc.c plat_image_load.c services/bsec_svc.c services/stm32mp1_svc_setup.c sp_min/sp_min_setup.c stm32mp1_boot_device.c stm32mp1_context.c stm32mp1_dbgmcu.c stm32mp1_gic.c stm32mp1_pm.c stm32mp1_private.c stm32mp1_scmi.c stm32mp1_security.c stm32mp1_shared_resources.c stm32mp1_syscfg.c stm32mp1_topology.c " && vararray_bridge_input_files=$(echo $var_bridge_input_files | tr " " "\n") && for input_file_name in $vararray_bridge_input_files; do echo "Compiling ${input_file_name} ..." && arm-linux-gnueabihf-gcc-5  -nostdinc -Werror -Wall -Wmissing-include-dirs -Wunused -Wdisabled-optimization	-Wvla -Wshadow -Wno-unused-parameter -Wredundant-decls -Wunused-but-set-variable -Wmaybe-uninitialized -Wpacked-bitfield-compat -Wlogical-op -Wno-error=deprecated-declarations -Wno-error=cpp -mcpu=cortex-a7 -mfpu=neon -mthumb -mno-unaligned-access -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-common -Os -std=gnu99 -mfloat-abi=soft -fno-stack-protector -nostartfiles -ffreestanding -marm -mno-thumb-interwork -c ${var_bridge_include_dirs_with_prefix} ${input_file_name} -o ${input_file_name}.o ; done && cp -f /usr/lib/gcc-cross/arm-linux-gnueabihf/5/libgcc.a /home/uberspark/src/cclib.a
 uberspark >> context_path=/home/yeeb16/uobjcoll-arm-trusted-firmware/plat/st/stm32mp1_uobjcoll/_build/main/_build
-uberspark >> exec=run --rm -e D_CMD="cd /home/uberspark/src && export var_bridge_include_dirs_with_prefix && export var_bridge_input_files && var_bridge_include_dirs_with_prefix="  -I. -I/home/yeeb16/uberspark/staging/stm32mp1 " && var_bridge_input_files="  bl2/aarch32/bl2_arch_setup.c bl2/bl2_image_load_v2.c bl2/bl2_main.c bl32/sp_min/sp_min_main.c common/bl_common.c common/desc_image_load.c common/fdt_wrappers.c common/runtime_svc.c common/tf_log.c drivers/arm/gic/v2/gicdv2_helpers.c drivers/arm/gic/v2/gicv2_helpers.c drivers/arm/gic/v2/gicv2_main.c drivers/arm/tzc/tzc400.c drivers/console/multi_console.c drivers/delay_timer/delay_timer.c drivers/delay_timer/generic_delay_timer.c drivers/io/io_block.c drivers/io/io_dummy.c drivers/io/io_mtd.c drivers/io/io_storage.c drivers/mmc/mmc.c drivers/mtd/nand/core.c drivers/mtd/nand/raw_nand.c drivers/mtd/nand/spi_nand.c drivers/mtd/nor/spi_nor.c drivers/mtd/spi-mem/spi_mem.c drivers/partition/gpt.c drivers/partition/partition.c drivers/st/bsec/bsec.c drivers/st/clk/stm32mp1_clk.c drivers/st/clk/stm32mp_clkfunc.c drivers/st/crypto/stm32_hash.c drivers/st/ddr/stm32mp1_ddr.c drivers/st/ddr/stm32mp1_ddr_helpers.c drivers/st/ddr/stm32mp1_ram.c drivers/st/etzpc/etzpc.c drivers/st/fmc/stm32_fmc2_nand.c drivers/st/gpio/stm32_gpio.c drivers/st/i2c/stm32_i2c.c drivers/st/io/io_mmc.c drivers/st/io/io_stm32image.c drivers/st/iwdg/stm32_iwdg.c drivers/st/mmc/stm32_sdmmc2.c drivers/st/pmic/stm32mp_pmic.c drivers/st/pmic/stpmic1.c drivers/st/reset/stm32mp1_reset.c drivers/st/scmi-msg/base.c drivers/st/scmi-msg/clock.c drivers/st/scmi-msg/entry.c drivers/st/scmi-msg/reset_domain.c drivers/st/scmi-msg/smt.c drivers/st/spi/stm32_qspi.c lib/compiler-rt/builtins/ctzdi2.c lib/compiler-rt/builtins/divdi3.c lib/compiler-rt/builtins/divmoddi4.c lib/compiler-rt/builtins/lshrdi3.c lib/compiler-rt/builtins/popcountdi2.c lib/compiler-rt/builtins/popcountsi2.c lib/compiler-rt/builtins/udivmoddi4.c lib/cpus/errata_report.c lib/el3_runtime/aarch32/context_mgmt.c lib/el3_runtime/cpu_data_array.c lib/libc/abort.c lib/libc/assert.c lib/libc/exit.c lib/libc/memchr.c lib/libc/memcmp.c lib/libc/memcpy.c lib/libc/memmove.c lib/libc/memrchr.c lib/libc/memset.c lib/libc/printf.c lib/libc/putchar.c lib/libc/puts.c lib/libc/snprintf.c lib/libc/strchr.c lib/libc/strcmp.c lib/libc/strlcpy.c lib/libc/strlen.c lib/libc/strncmp.c lib/libc/strnlen.c lib/libc/strrchr.c lib/libfdt/fdt.c lib/libfdt/fdt_addresses.c lib/libfdt/fdt_empty_tree.c lib/libfdt/fdt_ro.c lib/libfdt/fdt_rw.c lib/libfdt/fdt_strerror.c lib/libfdt/fdt_sw.c lib/libfdt/fdt_wip.c lib/locks/bakery/bakery_lock_normal.c lib/psci/psci_common.c lib/psci/psci_main.c lib/psci/psci_mem_protect.c lib/psci/psci_off.c lib/psci/psci_on.c lib/psci/psci_setup.c lib/psci/psci_suspend.c lib/psci/psci_system_off.c lib/xlat_tables_v2/aarch32/xlat_tables_arch.c lib/xlat_tables_v2/xlat_tables_context.c lib/xlat_tables_v2/xlat_tables_core.c lib/xlat_tables_v2/xlat_tables_utils.c plat/common/aarch32/plat_common.c plat/common/aarch32/plat_sp_min_common.c plat/common/plat_bl_common.c plat/common/plat_gicv2.c plat/common/plat_log_common.c plat/common/plat_psci_common.c plat/st/common/bl2_io_storage.c plat/st/common/stm32mp_auth.c plat/st/common/stm32mp_common.c plat/st/common/stm32mp_dt.c services/arm_arch_svc/arm_arch_svc_setup.c services/std_svc/std_svc_setup.c bl2_plat_setup.c plat_bl2_mem_params_desc.c plat_image_load.c services/bsec_svc.c services/stm32mp1_svc_setup.c sp_min/sp_min_setup.c stm32mp1_boot_device.c stm32mp1_context.c stm32mp1_dbgmcu.c stm32mp1_gic.c stm32mp1_pm.c stm32mp1_private.c stm32mp1_scmi.c stm32mp1_security.c stm32mp1_shared_resources.c stm32mp1_syscfg.c stm32mp1_topology.c " && vararray_bridge_input_files=$(echo $var_bridge_input_files | tr " " "\n") && for input_file_name in $vararray_bridge_input_files; do echo "Compiling ${input_file_name} ..." && arm-linux-gnueabihf-gcc-5  -nostartfiles -ffreestanding -marm -march=armv8-a -mno-thumb-interwork -c ${var_bridge_include_dirs_with_prefix} ${input_file_name} -o ${input_file_name}.o ; done && cp -f /usr/lib/gcc-cross/arm-linux-gnueabihf/5/libgcc.a /home/uberspark/src/cclib.a" -v /home/yeeb16:/home/yeeb16 -v /home/yeeb16/uobjcoll-arm-trusted-firmware/plat/st/stm32mp1_uobjcoll/_build/main/_build:/home/uberspark/src -t uberspark/bridges/container/amd64/cc-bridge/armv8_32/generic/gcc/v5.4.0
+uberspark >> exec=run --rm -e D_CMD="cd /home/uberspark/src && export var_bridge_include_dirs_with_prefix && export var_bridge_input_files && var_bridge_include_dirs_with_prefix="  -I. -I/home/yeeb16/uberspark/staging/stm32mp1 " && var_bridge_input_files="  bl2/aarch32/bl2_arch_setup.c bl2/bl2_image_load_v2.c bl2/bl2_main.c bl32/sp_min/sp_min_main.c common/bl_common.c common/desc_image_load.c common/fdt_wrappers.c common/runtime_svc.c common/tf_log.c drivers/arm/gic/v2/gicdv2_helpers.c drivers/arm/gic/v2/gicv2_helpers.c drivers/arm/gic/v2/gicv2_main.c drivers/arm/tzc/tzc400.c drivers/console/multi_console.c drivers/delay_timer/delay_timer.c drivers/delay_timer/generic_delay_timer.c drivers/io/io_block.c drivers/io/io_dummy.c drivers/io/io_mtd.c drivers/io/io_storage.c drivers/mmc/mmc.c drivers/mtd/nand/core.c drivers/mtd/nand/raw_nand.c drivers/mtd/nand/spi_nand.c drivers/mtd/nor/spi_nor.c drivers/mtd/spi-mem/spi_mem.c drivers/partition/gpt.c drivers/partition/partition.c drivers/st/bsec/bsec.c drivers/st/clk/stm32mp1_clk.c drivers/st/clk/stm32mp_clkfunc.c drivers/st/crypto/stm32_hash.c drivers/st/ddr/stm32mp1_ddr.c drivers/st/ddr/stm32mp1_ddr_helpers.c drivers/st/ddr/stm32mp1_ram.c drivers/st/etzpc/etzpc.c drivers/st/fmc/stm32_fmc2_nand.c drivers/st/gpio/stm32_gpio.c drivers/st/i2c/stm32_i2c.c drivers/st/io/io_mmc.c drivers/st/io/io_stm32image.c drivers/st/iwdg/stm32_iwdg.c drivers/st/mmc/stm32_sdmmc2.c drivers/st/pmic/stm32mp_pmic.c drivers/st/pmic/stpmic1.c drivers/st/reset/stm32mp1_reset.c drivers/st/scmi-msg/base.c drivers/st/scmi-msg/clock.c drivers/st/scmi-msg/entry.c drivers/st/scmi-msg/reset_domain.c drivers/st/scmi-msg/smt.c drivers/st/spi/stm32_qspi.c lib/compiler-rt/builtins/ctzdi2.c lib/compiler-rt/builtins/divdi3.c lib/compiler-rt/builtins/divmoddi4.c lib/compiler-rt/builtins/lshrdi3.c lib/compiler-rt/builtins/popcountdi2.c lib/compiler-rt/builtins/popcountsi2.c lib/compiler-rt/builtins/udivmoddi4.c lib/cpus/errata_report.c lib/el3_runtime/aarch32/context_mgmt.c lib/el3_runtime/cpu_data_array.c lib/libc/abort.c lib/libc/assert.c lib/libc/exit.c lib/libc/memchr.c lib/libc/memcmp.c lib/libc/memcpy.c lib/libc/memmove.c lib/libc/memrchr.c lib/libc/memset.c lib/libc/printf.c lib/libc/putchar.c lib/libc/puts.c lib/libc/snprintf.c lib/libc/strchr.c lib/libc/strcmp.c lib/libc/strlcpy.c lib/libc/strlen.c lib/libc/strncmp.c lib/libc/strnlen.c lib/libc/strrchr.c lib/libfdt/fdt.c lib/libfdt/fdt_addresses.c lib/libfdt/fdt_empty_tree.c lib/libfdt/fdt_ro.c lib/libfdt/fdt_rw.c lib/libfdt/fdt_strerror.c lib/libfdt/fdt_sw.c lib/libfdt/fdt_wip.c lib/locks/bakery/bakery_lock_normal.c lib/psci/psci_common.c lib/psci/psci_main.c lib/psci/psci_mem_protect.c lib/psci/psci_off.c lib/psci/psci_on.c lib/psci/psci_setup.c lib/psci/psci_suspend.c lib/psci/psci_system_off.c lib/xlat_tables_v2/aarch32/xlat_tables_arch.c lib/xlat_tables_v2/xlat_tables_context.c lib/xlat_tables_v2/xlat_tables_core.c lib/xlat_tables_v2/xlat_tables_utils.c plat/common/aarch32/plat_common.c plat/common/aarch32/plat_sp_min_common.c plat/common/plat_bl_common.c plat/common/plat_gicv2.c plat/common/plat_log_common.c plat/common/plat_psci_common.c plat/st/common/bl2_io_storage.c plat/st/common/stm32mp_auth.c plat/st/common/stm32mp_common.c plat/st/common/stm32mp_dt.c services/arm_arch_svc/arm_arch_svc_setup.c services/std_svc/std_svc_setup.c bl2_plat_setup.c plat_bl2_mem_params_desc.c plat_image_load.c services/bsec_svc.c services/stm32mp1_svc_setup.c sp_min/sp_min_setup.c stm32mp1_boot_device.c stm32mp1_context.c stm32mp1_dbgmcu.c stm32mp1_gic.c stm32mp1_pm.c stm32mp1_private.c stm32mp1_scmi.c stm32mp1_security.c stm32mp1_shared_resources.c stm32mp1_syscfg.c stm32mp1_topology.c " && vararray_bridge_input_files=$(echo $var_bridge_input_files | tr " " "\n") && for input_file_name in $vararray_bridge_input_files; do echo "Compiling ${input_file_name} ..." && arm-linux-gnueabihf-gcc-5  -nostdinc -Werror -Wall -Wmissing-include-dirs -Wunused -Wdisabled-optimization	-Wvla -Wshadow -Wno-unused-parameter -Wredundant-decls -Wunused-but-set-variable -Wmaybe-uninitialized -Wpacked-bitfield-compat -Wlogical-op -Wno-error=deprecated-declarations -Wno-error=cpp -mcpu=cortex-a7 -mfpu=neon -mthumb -mno-unaligned-access -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -fno-common -Os -std=gnu99 -mfloat-abi=soft -fno-stack-protector -nostartfiles -ffreestanding -marm -mno-thumb-interwork -c ${var_bridge_include_dirs_with_prefix} ${input_file_name} -o ${input_file_name}.o ; done && cp -f /usr/lib/gcc-cross/arm-linux-gnueabihf/5/libgcc.a /home/uberspark/src/cclib.a" -v /home/yeeb16:/home/yeeb16 -v /home/yeeb16/uobjcoll-arm-trusted-firmware/plat/st/stm32mp1_uobjcoll/_build/main/_build:/home/uberspark/src -t uberspark/bridges/container/amd64/cc-bridge/armv8_32/generic/gcc/v5.4.0
 uberspark >> [docker] Removing user `uberspark' ...
 uberspark >> [docker] Warning: group `uberspark' has no more members.
 uberspark >> [docker] Done.
@@ -1206,6 +1206,9 @@ uberspark >> [docker]    assert_entrypoint_and_spsr_should_be_adjacent);
 uberspark >> [docker]    ^
 uberspark >> [docker] Compiling bl2/bl2_image_load_v2.c ...
 uberspark >> [docker] Compiling bl2/bl2_main.c ...
+uberspark >> [docker] In file included from bl2/bl2_main.c:10:0:
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/features.h:443:25: fatal error: stdc-predef.h: No such file or directory
+uberspark >> [docker] compilation terminated.
 uberspark >> [docker] Compiling bl32/sp_min/sp_min_main.c ...
 uberspark >> [docker] Compiling common/bl_common.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
@@ -10209,7 +10212,7 @@ uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37,
 uberspark >> [docker]                  from drivers/st/pmic/stpmic1.c:9:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h: In function 'stm32mp_incr_shrefcnt':
-uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: warning: implicit declaration of function 'panic' [-Wimplicit-function-declaration]
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: error: implicit declaration of function 'panic' [-Werror=implicit-function-declaration]
 uberspark >> [docker]     panic();
 uberspark >> [docker]     ^
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37:0,
@@ -10297,6 +10300,7 @@ uberspark >> [docker]                  from drivers/st/pmic/stpmic1.c:9:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console_assertions.h:27:2: error: unknown type name 'assert_console_t_drvdata_offset_mismatch'
 uberspark >> [docker]   assert_console_t_drvdata_offset_mismatch);
 uberspark >> [docker]   ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling drivers/st/reset/stm32mp1_reset.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h:14,
@@ -11829,12 +11833,33 @@ uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll
 uberspark >> [docker]    assert_entrypoint_and_spsr_should_be_adjacent);
 uberspark >> [docker]    ^
 uberspark >> [docker] Compiling lib/compiler-rt/builtins/ctzdi2.c ...
+uberspark >> [docker] In file included from lib/compiler-rt/builtins/ctzdi2.c:15:0:
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/int_lib.h:67:22: fatal error: limits.h: No such file or directory
+uberspark >> [docker] compilation terminated.
 uberspark >> [docker] Compiling lib/compiler-rt/builtins/divdi3.c ...
+uberspark >> [docker] In file included from lib/compiler-rt/builtins/divdi3.c:15:0:
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/int_lib.h:67:22: fatal error: limits.h: No such file or directory
+uberspark >> [docker] compilation terminated.
 uberspark >> [docker] Compiling lib/compiler-rt/builtins/divmoddi4.c ...
+uberspark >> [docker] In file included from lib/compiler-rt/builtins/divmoddi4.c:15:0:
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/int_lib.h:67:22: fatal error: limits.h: No such file or directory
+uberspark >> [docker] compilation terminated.
 uberspark >> [docker] Compiling lib/compiler-rt/builtins/lshrdi3.c ...
+uberspark >> [docker] In file included from lib/compiler-rt/builtins/lshrdi3.c:15:0:
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/int_lib.h:67:22: fatal error: limits.h: No such file or directory
+uberspark >> [docker] compilation terminated.
 uberspark >> [docker] Compiling lib/compiler-rt/builtins/popcountdi2.c ...
+uberspark >> [docker] In file included from lib/compiler-rt/builtins/popcountdi2.c:15:0:
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/int_lib.h:67:22: fatal error: limits.h: No such file or directory
+uberspark >> [docker] compilation terminated.
 uberspark >> [docker] Compiling lib/compiler-rt/builtins/popcountsi2.c ...
+uberspark >> [docker] In file included from lib/compiler-rt/builtins/popcountsi2.c:15:0:
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/int_lib.h:67:22: fatal error: limits.h: No such file or directory
+uberspark >> [docker] compilation terminated.
 uberspark >> [docker] Compiling lib/compiler-rt/builtins/udivmoddi4.c ...
+uberspark >> [docker] In file included from lib/compiler-rt/builtins/udivmoddi4.c:15:0:
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/int_lib.h:67:22: fatal error: limits.h: No such file or directory
+uberspark >> [docker] compilation terminated.
 uberspark >> [docker] Compiling lib/cpus/errata_report.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h:10,
@@ -12670,7 +12695,7 @@ uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37,
 uberspark >> [docker]                  from lib/libc/abort.c:9:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h: In function 'stm32mp_incr_shrefcnt':
-uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: warning: implicit declaration of function 'panic' [-Wimplicit-function-declaration]
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: error: implicit declaration of function 'panic' [-Werror=implicit-function-declaration]
 uberspark >> [docker]     panic();
 uberspark >> [docker]     ^
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37:0,
@@ -12758,6 +12783,7 @@ uberspark >> [docker]                  from lib/libc/abort.c:9:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console_assertions.h:27:2: error: unknown type name 'assert_console_t_drvdata_offset_mismatch'
 uberspark >> [docker]   assert_console_t_drvdata_offset_mismatch);
 uberspark >> [docker]   ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling lib/libc/assert.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h:10,
@@ -13283,7 +13309,7 @@ uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h:52,
 uberspark >> [docker]                  from lib/libc/putchar.c:9:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h: In function 'stm32mp_incr_shrefcnt':
-uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:104:3: warning: implicit declaration of function 'console_flush' [-Wimplicit-function-declaration]
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:104:3: error: implicit declaration of function 'console_flush' [-Werror=implicit-function-declaration]
 uberspark >> [docker]    console_flush(); \
 uberspark >> [docker]    ^
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: note: in expansion of macro 'panic'
@@ -13363,7 +13389,7 @@ uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll
 uberspark >> [docker]   assert_console_t_drvdata_offset_mismatch);
 uberspark >> [docker]   ^
 uberspark >> [docker] In file included from lib/libc/putchar.c:9:0:
-uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h:79:6: warning: conflicting types for 'console_flush'
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h:79:6: error: conflicting types for 'console_flush' [-Werror]
 uberspark >> [docker]  void console_flush(void);
 uberspark >> [docker]       ^
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:12:0,
@@ -13379,6 +13405,7 @@ uberspark >> [docker]    ^
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: note: in expansion of macro 'panic'
 uberspark >> [docker]     panic();
 uberspark >> [docker]     ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling lib/libc/puts.c ...
 uberspark >> [docker] Compiling lib/libc/snprintf.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
@@ -16299,6 +16326,16 @@ uberspark >> [docker]                                         ^
 uberspark >> [docker] lib/xlat_tables_v2/xlat_tables_context.c:28:1: note: in expansion of macro 'REGISTER_XLAT_CONTEXT'
 uberspark >> [docker]  REGISTER_XLAT_CONTEXT(tf, MAX_MMAP_REGIONS, MAX_XLAT_TABLES,
 uberspark >> [docker]  ^
+uberspark >> [docker] lib/xlat_tables_v2/xlat_tables_context.c:28:23: error: 'tf_mmap' defined but not used [-Werror=unused-variable]
+uberspark >> [docker]  REGISTER_XLAT_CONTEXT(tf, MAX_MMAP_REGIONS, MAX_XLAT_TABLES,
+uberspark >> [docker]                        ^
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2_helpers.h:144:23: note: in definition of macro 'REGISTER_XLAT_CONTEXT_FULL_SPEC'
+uberspark >> [docker]   static mmap_region_t _ctx_name##_mmap[_mmap_count + 1];  \
+uberspark >> [docker]                        ^
+uberspark >> [docker] lib/xlat_tables_v2/xlat_tables_context.c:28:1: note: in expansion of macro 'REGISTER_XLAT_CONTEXT'
+uberspark >> [docker]  REGISTER_XLAT_CONTEXT(tf, MAX_MMAP_REGIONS, MAX_XLAT_TABLES,
+uberspark >> [docker]  ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling lib/xlat_tables_v2/xlat_tables_core.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h:10,
@@ -17070,7 +17107,7 @@ uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h:52,
 uberspark >> [docker]                  from plat/common/aarch32/plat_sp_min_common.c:7:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h: In function 'stm32mp_incr_shrefcnt':
-uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:104:3: warning: implicit declaration of function 'console_flush' [-Wimplicit-function-declaration]
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:104:3: error: implicit declaration of function 'console_flush' [-Werror=implicit-function-declaration]
 uberspark >> [docker]    console_flush(); \
 uberspark >> [docker]    ^
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: note: in expansion of macro 'panic'
@@ -17150,7 +17187,7 @@ uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll
 uberspark >> [docker]   assert_console_t_drvdata_offset_mismatch);
 uberspark >> [docker]   ^
 uberspark >> [docker] In file included from plat/common/aarch32/plat_sp_min_common.c:7:0:
-uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h:79:6: warning: conflicting types for 'console_flush'
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h:79:6: error: conflicting types for 'console_flush' [-Werror]
 uberspark >> [docker]  void console_flush(void);
 uberspark >> [docker]       ^
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:12:0,
@@ -17166,6 +17203,7 @@ uberspark >> [docker]    ^
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: note: in expansion of macro 'panic'
 uberspark >> [docker]     panic();
 uberspark >> [docker]     ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling plat/common/plat_bl_common.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h:10,
@@ -17882,7 +17920,7 @@ uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37,
 uberspark >> [docker]                  from plat/common/plat_log_common.c:7:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h: In function 'stm32mp_incr_shrefcnt':
-uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: warning: implicit declaration of function 'panic' [-Wimplicit-function-declaration]
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: error: implicit declaration of function 'panic' [-Werror=implicit-function-declaration]
 uberspark >> [docker]     panic();
 uberspark >> [docker]     ^
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37:0,
@@ -17970,6 +18008,7 @@ uberspark >> [docker]                  from plat/common/plat_log_common.c:7:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console_assertions.h:27:2: error: unknown type name 'assert_console_t_drvdata_offset_mismatch'
 uberspark >> [docker]   assert_console_t_drvdata_offset_mismatch);
 uberspark >> [docker]   ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling plat/common/plat_psci_common.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h:10,
@@ -18654,12 +18693,13 @@ uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll
 uberspark >> [docker]    assert_entrypoint_and_spsr_should_be_adjacent);
 uberspark >> [docker]    ^
 uberspark >> [docker] plat/st/common/stm32mp_auth.c: In function 'stm32mp_auth_image':
-uberspark >> [docker] plat/st/common/stm32mp_auth.c:49:8: warning: implicit declaration of function 'mmap_add_dynamic_region' [-Wimplicit-function-declaration]
+uberspark >> [docker] plat/st/common/stm32mp_auth.c:49:8: error: implicit declaration of function 'mmap_add_dynamic_region' [-Werror=implicit-function-declaration]
 uberspark >> [docker]   ret = mmap_add_dynamic_region(STM32MP_ROM_BASE, STM32MP_ROM_BASE,
 uberspark >> [docker]         ^
-uberspark >> [docker] plat/st/common/stm32mp_auth.c:88:2: warning: implicit declaration of function 'mmap_remove_dynamic_region' [-Wimplicit-function-declaration]
+uberspark >> [docker] plat/st/common/stm32mp_auth.c:88:2: error: implicit declaration of function 'mmap_remove_dynamic_region' [-Werror=implicit-function-declaration]
 uberspark >> [docker]   mmap_remove_dynamic_region(STM32MP_ROM_BASE, STM32MP_ROM_SIZE);
 uberspark >> [docker]   ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling plat/st/common/stm32mp_common.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h:10,
@@ -18875,13 +18915,14 @@ uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll
 uberspark >> [docker]   assert_console_t_drvdata_offset_mismatch);
 uberspark >> [docker]   ^
 uberspark >> [docker] plat/st/common/stm32mp_common.c: In function 'stm32mp_map_ddr_non_cacheable':
-uberspark >> [docker] plat/st/common/stm32mp_common.c:104:10: warning: implicit declaration of function 'mmap_add_dynamic_region' [-Wimplicit-function-declaration]
+uberspark >> [docker] plat/st/common/stm32mp_common.c:104:10: error: implicit declaration of function 'mmap_add_dynamic_region' [-Werror=implicit-function-declaration]
 uberspark >> [docker]   return  mmap_add_dynamic_region(STM32MP_DDR_BASE, STM32MP_DDR_BASE,
 uberspark >> [docker]           ^
 uberspark >> [docker] plat/st/common/stm32mp_common.c: In function 'stm32mp_unmap_ddr':
-uberspark >> [docker] plat/st/common/stm32mp_common.c:111:10: warning: implicit declaration of function 'mmap_remove_dynamic_region' [-Wimplicit-function-declaration]
+uberspark >> [docker] plat/st/common/stm32mp_common.c:111:10: error: implicit declaration of function 'mmap_remove_dynamic_region' [-Werror=implicit-function-declaration]
 uberspark >> [docker]   return  mmap_remove_dynamic_region(STM32MP_DDR_BASE,
 uberspark >> [docker]           ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling plat/st/common/stm32mp_dt.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h:10,
@@ -19189,7 +19230,7 @@ uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37,
 uberspark >> [docker]                  from services/arm_arch_svc/arm_arch_svc_setup.c:7:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h: In function 'stm32mp_incr_shrefcnt':
-uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: warning: implicit declaration of function 'panic' [-Wimplicit-function-declaration]
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: error: implicit declaration of function 'panic' [-Werror=implicit-function-declaration]
 uberspark >> [docker]     panic();
 uberspark >> [docker]     ^
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37:0,
@@ -19508,6 +19549,7 @@ uberspark >> [docker] In file included from services/arm_arch_svc/arm_arch_svc_s
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/runtime_svc.h:98:2: error: unknown type name 'assert_rt_svc_desc_handle_offset_mismatch'
 uberspark >> [docker]   assert_rt_svc_desc_handle_offset_mismatch);
 uberspark >> [docker]   ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling services/std_svc/std_svc_setup.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h:10,
@@ -20212,9 +20254,10 @@ uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll
 uberspark >> [docker]   assert_console_t_drvdata_offset_mismatch);
 uberspark >> [docker]   ^
 uberspark >> [docker] bl2_plat_setup.c: In function 'bl2_platform_setup':
-uberspark >> [docker] bl2_plat_setup.c:151:8: warning: implicit declaration of function 'mmap_add_dynamic_region' [-Wimplicit-function-declaration]
+uberspark >> [docker] bl2_plat_setup.c:151:8: error: implicit declaration of function 'mmap_add_dynamic_region' [-Werror=implicit-function-declaration]
 uberspark >> [docker]   ret = mmap_add_dynamic_region(STM32MP_DDR_BASE, STM32MP_DDR_BASE,
 uberspark >> [docker]         ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling plat_bl2_mem_params_desc.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h:14,
@@ -20968,7 +21011,7 @@ uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37,
 uberspark >> [docker]                  from services/stm32mp1_svc_setup.c:10:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h: In function 'stm32mp_incr_shrefcnt':
-uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: warning: implicit declaration of function 'panic' [-Wimplicit-function-declaration]
+uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shres_helpers.h:34:4: error: implicit declaration of function 'panic' [-Werror=implicit-function-declaration]
 uberspark >> [docker]     panic();
 uberspark >> [docker]     ^
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37:0,
@@ -21302,6 +21345,7 @@ uberspark >> [docker]    ^
 uberspark >> [docker] services/stm32mp1_svc_setup.c:21:1: note: in expansion of macro 'DEFINE_SVC_UUID2'
 uberspark >> [docker]  DEFINE_SVC_UUID2(stm32_sip_svc_uid,
 uberspark >> [docker]  ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling sp_min/sp_min_setup.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h:11:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h:10,
@@ -21556,9 +21600,10 @@ uberspark >> [docker] sp_min/sp_min_setup.c:92:2: error: unknown type name 'asse
 uberspark >> [docker]   assert_non_secure_sysram_base_is_4kbyte_aligned);
 uberspark >> [docker]   ^
 uberspark >> [docker] sp_min/sp_min_setup.c: In function 'sp_min_platform_setup':
-uberspark >> [docker] sp_min/sp_min_setup.c:199:2: warning: implicit declaration of function 'stm32mp_lock_periph_registering' [-Wimplicit-function-declaration]
+uberspark >> [docker] sp_min/sp_min_setup.c:199:2: error: implicit declaration of function 'stm32mp_lock_periph_registering' [-Werror=implicit-function-declaration]
 uberspark >> [docker]   stm32mp_lock_periph_registering();
 uberspark >> [docker]   ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling stm32mp1_boot_device.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h:14,
@@ -23120,13 +23165,14 @@ uberspark >> [docker] stm32mp1_scmi.c:52:2: error: unknown type name 'assert_scm
 uberspark >> [docker]   assert_scmi_non_secure_shm_fits_scmi_overall_buffer_size);
 uberspark >> [docker]   ^
 uberspark >> [docker] stm32mp1_scmi.c: In function 'plat_scmi_clock_get_name':
-uberspark >> [docker] stm32mp1_scmi.c:254:7: warning: implicit declaration of function 'stm32mp_nsec_can_access_clock' [-Wimplicit-function-declaration]
+uberspark >> [docker] stm32mp1_scmi.c:254:7: error: implicit declaration of function 'stm32mp_nsec_can_access_clock' [-Werror=implicit-function-declaration]
 uberspark >> [docker]       !stm32mp_nsec_can_access_clock(clock->clock_id)) {
 uberspark >> [docker]        ^
 uberspark >> [docker] stm32mp1_scmi.c: In function 'plat_scmi_rstd_autonomous':
-uberspark >> [docker] stm32mp1_scmi.c:391:7: warning: implicit declaration of function 'stm32mp_nsec_can_access_reset' [-Wimplicit-function-declaration]
+uberspark >> [docker] stm32mp1_scmi.c:391:7: error: implicit declaration of function 'stm32mp_nsec_can_access_reset' [-Werror=implicit-function-declaration]
 uberspark >> [docker]   if (!stm32mp_nsec_can_access_reset(rstd->reset_id)) {
 uberspark >> [docker]        ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling stm32mp1_security.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h:14,
@@ -23562,7 +23608,7 @@ uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll
 uberspark >> [docker]   assert_console_t_drvdata_offset_mismatch);
 uberspark >> [docker]   ^
 uberspark >> [docker] stm32mp1_shared_resources.c: In function 'register_periph':
-uberspark >> [docker] stm32mp1_shared_resources.c:221:3: warning: implicit declaration of function 'stm32mp1_register_clock_parents_secure' [-Wimplicit-function-declaration]
+uberspark >> [docker] stm32mp1_shared_resources.c:221:3: error: implicit declaration of function 'stm32mp1_register_clock_parents_secure' [-Werror=implicit-function-declaration]
 uberspark >> [docker]    stm32mp1_register_clock_parents_secure(clock_res_id);
 uberspark >> [docker]    ^
 uberspark >> [docker] stm32mp1_shared_resources.c: At top level:
@@ -23610,6 +23656,7 @@ uberspark >> [docker]                  from stm32mp1_shared_resources.c:7:
 uberspark >> [docker] /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shared_resources.h:53:20: note: previous definition of 'stm32mp_register_non_secure_gpio' was here
 uberspark >> [docker]  static inline void stm32mp_register_non_secure_gpio(unsigned int bank __unused,
 uberspark >> [docker]                     ^
+uberspark >> [docker] cc1: all warnings being treated as errors
 uberspark >> [docker] Compiling stm32mp1_syscfg.c ...
 uberspark >> [docker] In file included from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h:37:0,
 uberspark >> [docker]                  from /home/yeeb16/uberspark/staging/stm32mp1/uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h:14,
@@ -24055,7 +24102,7 @@ uberspark >> ERROR: could not compile one or more uobj c files!
 uberspark >> loading cc-bridge settings from file: /home/yeeb16/uberspark/bridges/container/amd64/cc-bridge/armv8_32/generic/gcc/v5.4.0/uberspark.json
 uberspark >> loaded cc_bridge settings
 uberspark >> building cc-bridge: uberspark/bridges/container/amd64/cc-bridge/armv8_32/generic/gcc/v5.4.0
-uberspark >> [docker] Sending build context to Docker daemon  19.97kB
+uberspark >> [docker] Sending build context to Docker daemon  20.48kB
 uberspark >> [docker] Step 1/16 : FROM amd64/ubuntu:16.04
 uberspark >> [docker]  ---> 9499db781771
 uberspark >> [docker] Step 2/16 : LABEL maintainer="Amit Vasudevan <amitvasudevan@acm.org>, Matt McCormack <matthew.mccormack@live.com>" author="Matt McCormack <matthew.mccormack@live.com>"
