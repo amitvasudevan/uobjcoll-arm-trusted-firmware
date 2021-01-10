@@ -3,6 +3,7 @@
  * Copyright (c) 2015-2020, Arm Limited and Contributors. All rights reserved.
  * Copyright (c) 2019-2020, Linaro Limited
  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 

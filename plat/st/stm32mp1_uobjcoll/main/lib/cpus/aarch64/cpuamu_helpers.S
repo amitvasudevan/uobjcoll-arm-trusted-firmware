@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpuamu.h>
@@ -24,7 +25,7 @@
 func cpuamu_cnt_read
 	adr	x1, 1f
 	add	x1, x1, x0, lsl #3	/* each mrs/ret sequence is 8 bytes */
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	add	x1, x1, x0, lsl #2	/* + "bti j" instruction */
 #endif
 	br	x1
@@ -44,7 +45,7 @@ endfunc cpuamu_cnt_read
 func cpuamu_cnt_write
 	adr	x2, 1f
 	add	x2, x2, x0, lsl #3	/* each msr/ret sequence is 8 bytes */
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	add	x2, x2, x0, lsl #2	/* + "bti j" instruction */
 #endif
 	br	x2

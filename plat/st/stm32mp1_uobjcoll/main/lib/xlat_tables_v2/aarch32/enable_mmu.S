@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
@@ -14,7 +15,7 @@
 	/* void enable_mmu_direct_svc_mon(unsigned int flags) */
 func enable_mmu_direct_svc_mon
 	/* Assert that MMU is turned off */
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	ldcopr  r1, SCTLR
 	tst	r1, #SCTLR_M_BIT
 	ASM_ASSERT(eq)
@@ -71,7 +72,7 @@ endfunc enable_mmu_direct_svc_mon
 	/* void enable_mmu_direct_hyp(unsigned int flags) */
 func enable_mmu_direct_hyp
 	/* Assert that MMU is turned off */
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	ldcopr  r1, HSCTLR
 	tst	r1, #HSCTLR_M_BIT
 	ASM_ASSERT(eq)

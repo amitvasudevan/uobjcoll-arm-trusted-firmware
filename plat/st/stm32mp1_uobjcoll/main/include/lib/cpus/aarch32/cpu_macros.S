@@ -6,10 +6,11 @@
 #ifndef CPU_MACROS_S
 #define CPU_MACROS_S
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/errata_report.h>
 
-#if defined(IMAGE_BL1) || defined(IMAGE_BL32)  || (defined(IMAGE_BL2) && BL2_AT_EL3)
+#if defined(IMAGE_BL1) || defined(IMAGE_BL32)  || (defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__) && __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__)
 #define IMAGE_AT_EL3
 #endif
 
@@ -29,7 +30,7 @@
  * Whether errata status needs reporting. Errata status is printed in debug
  * builds for both BL1 and BL32 images.
  */
-#if (defined(IMAGE_BL1) || defined(IMAGE_BL32)) && DEBUG
+#if (defined(IMAGE_BL1) || defined(IMAGE_BL32)) && __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 # define REPORT_ERRATA	1
 #else
 # define REPORT_ERRATA	0

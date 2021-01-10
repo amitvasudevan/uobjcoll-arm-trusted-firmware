@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -79,7 +80,7 @@ func bl2_entrypoint
 	sub	x1, x1, x0
 	bl	zeromem
 
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 	adrp	x0, __COHERENT_RAM_START__
 	add	x0, x0, :lo12:__COHERENT_RAM_START__
 	adrp	x1, __COHERENT_RAM_END_UNALIGNED__
@@ -103,7 +104,7 @@ func bl2_entrypoint
 	 * any C code is called.
 	 * ---------------------------------------------
 	 */
-#if STACK_PROTECTOR_ENABLED
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STACK_PROTECTOR_ENABLED__
 	bl	update_stack_protector_canary
 #endif
 
@@ -117,14 +118,14 @@ func bl2_entrypoint
 	mov	x3, x23
 	bl	bl2_setup
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* ---------------------------------------------
 	 * Program APIAKey_EL1
 	 * and enable pointer authentication.
 	 * ---------------------------------------------
 	 */
 	bl	pauth_init_enable_el1
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 
 	/* ---------------------------------------------
 	 * Jump to main function.

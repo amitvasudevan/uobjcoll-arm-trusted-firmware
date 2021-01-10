@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
@@ -126,7 +127,7 @@ void css_scp_suspend(const struct psci_power_state *target_state)
 		}
 		return;
 	}
-#if !HW_ASSISTED_COHERENCY
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 	unsigned int lvl, channel_id, domain_id;
 	uint32_t scmi_pwr_state = 0;
 	/*
@@ -332,7 +333,7 @@ void __dead2 css_scp_sys_reboot(void)
 
 static int scmi_ap_core_init(scmi_channel_t *ch)
 {
-#if PROGRAMMABLE_RESET_ADDRESS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PROGRAMMABLE_RESET_ADDRESS__
 	uint32_t version;
 	int ret;
 
@@ -449,7 +450,7 @@ int css_system_reset2(int is_vendor, int reset_type, u_register_t cookie)
 	return 0;
 }
 
-#if PROGRAMMABLE_RESET_ADDRESS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PROGRAMMABLE_RESET_ADDRESS__
 void plat_arm_program_trusted_mailbox(uintptr_t address)
 {
 	int ret, i;

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
@@ -73,7 +74,7 @@ void spm_sp_setup(sp_context_t *sp_ctx)
 	 * ------------------------
 	 */
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 
 	/* Get max granularity supported by the platform. */
 	unsigned int max_granule = xlat_arch_get_max_supported_granule_size();
@@ -89,7 +90,7 @@ void spm_sp_setup(sp_context_t *sp_ctx)
 	/* Size must be a multiple of the max granularity */
 	assert((PLAT_SP_IMAGE_NS_BUF_SIZE & max_granule_mask) == 0);
 
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 
 	/* This region contains the exception vectors used at S-EL1. */
 	const mmap_region_t sel1_exception_vectors =

@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -99,7 +100,7 @@ endfunc check_errata_859971
 
 func check_errata_cve_2017_5715
 	cpu_check_csv2	x0, 1f
-#if WORKAROUND_CVE_2017_5715
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -111,7 +112,7 @@ func check_errata_cve_2017_5715
 endfunc check_errata_cve_2017_5715
 
 func check_errata_cve_2018_3639
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -125,7 +126,7 @@ endfunc check_errata_cve_2018_3639
 	 * --------------------------------------------------
 	 */
 func check_errata_1319367
-#if ERRATA_A72_1319367
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A72_1319367__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -142,12 +143,12 @@ func cortex_a72_reset_func
 	bl	cpu_get_rev_var
 	mov	x18, x0
 
-#if ERRATA_A72_859971
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A72_859971__
 	mov	x0, x18
 	bl	errata_a72_859971_wa
 #endif
 
-#if IMAGE_BL31 && WORKAROUND_CVE_2017_5715
+#if IMAGE_BL31 && __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	cpu_check_csv2	x0, 1f
 	adr	x0, wa_cve_2017_5715_mmu_vbar
 	msr	vbar_el3, x0
@@ -155,7 +156,7 @@ func cortex_a72_reset_func
 1:
 #endif
 
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	mrs	x0, CORTEX_A72_CPUACTLR_EL1
 	orr	x0, x0, #CORTEX_A72_CPUACTLR_EL1_DIS_LOAD_PASS_STORE
 	msr	CORTEX_A72_CPUACTLR_EL1, x0
@@ -295,10 +296,10 @@ func cortex_a72_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_A72_859971, cortex_a72, 859971
-	report_errata ERRATA_A72_1319367, cortex_a72, 1319367
-	report_errata WORKAROUND_CVE_2017_5715, cortex_a72, cve_2017_5715
-	report_errata WORKAROUND_CVE_2018_3639, cortex_a72, cve_2018_3639
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A72_859971__, cortex_a72, 859971
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A72_1319367__, cortex_a72, 1319367
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__, cortex_a72, cve_2017_5715
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__, cortex_a72, cve_2018_3639
 
 	ldp	x8, x30, [sp], #16
 	ret

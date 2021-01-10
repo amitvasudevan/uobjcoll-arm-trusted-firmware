@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -93,7 +94,7 @@ func check_errata_cve_2017_5715
 endfunc check_errata_cve_2017_5715
 
 func check_errata_cve_2018_3639
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	mov	r0, #ERRATA_APPLIES
 #else
 	mov	r0, #ERRATA_MISSING
@@ -110,12 +111,12 @@ func cortex_a72_reset_func
 	bl	cpu_get_rev_var
 	mov	r4, r0
 
-#if ERRATA_A72_859971
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A72_859971__
 	mov	r0, r4
 	bl	errata_a72_859971_wa
 #endif
 
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	ldcopr16	r0, r1, CORTEX_A72_CPUACTLR
 	orr64_imm	r0, r1, CORTEX_A72_CPUACTLR_DIS_LOAD_PASS_STORE
 	stcopr16	r0, r1, CORTEX_A72_CPUACTLR
@@ -142,7 +143,7 @@ func cortex_a72_core_pwr_dwn
 	push	{r12, lr}
 
 	/* Assert if cache is enabled */
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	ldcopr	r0, SCTLR
 	tst	r0, #SCTLR_C_BIT
 	ASM_ASSERT(eq)
@@ -189,7 +190,7 @@ func cortex_a72_cluster_pwr_dwn
 	push	{r12, lr}
 
 	/* Assert if cache is enabled */
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	ldcopr	r0, SCTLR
 	tst	r0, #SCTLR_C_BIT
 	ASM_ASSERT(eq)
@@ -257,9 +258,9 @@ func cortex_a72_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_A72_859971, cortex_a72, 859971
-	report_errata WORKAROUND_CVE_2017_5715, cortex_a72, cve_2017_5715
-	report_errata WORKAROUND_CVE_2018_3639, cortex_a72, cve_2018_3639
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A72_859971__, cortex_a72, 859971
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__, cortex_a72, cve_2017_5715
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__, cortex_a72, cve_2018_3639
 
 	pop	{r12, lr}
 	bx	lr

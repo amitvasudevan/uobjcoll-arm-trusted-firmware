@@ -6,6 +6,7 @@
 
 /* Runtime firmware routines to report errata status for the current CPU. */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
@@ -21,7 +22,7 @@
 # define BL_STRING	"BL31"
 #elif !defined(__arch64__) && defined(IMAGE_BL32)
 # define BL_STRING	"BL32"
-#elif defined(IMAGE_BL2) && BL2_AT_EL3
+#elif defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__) && __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__
 # define BL_STRING "BL2"
 #else
 # error This image should not be printing errata status

@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -71,7 +72,7 @@ int fconf_populate_tbbr_dyn_config(uintptr_t config)
 	}
 	tbbr_dyn_config.mbedtls_heap_size = val32;
 
-#if MEASURED_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__
 	/* Retrieve BL2 hash data details from the DTB */
 	err = fdtw_read_bytes(dtb, node, "bl2_hash_data", TCG_DIGEST_SIZE,
 				&tbbr_dyn_config.bl2_hash_data);
@@ -87,7 +88,7 @@ int fconf_populate_tbbr_dyn_config(uintptr_t config)
 		"` cell found with value =", tbbr_dyn_config.mbedtls_heap_addr);
 	VERBOSE("%s%s%s %zu\n", "FCONF: `tbbr.", "mbedtls_heap_size",
 		"` cell found with value =", tbbr_dyn_config.mbedtls_heap_size);
-#if MEASURED_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__
 	VERBOSE("%s%s%s %p\n", "FCONF: `tbbr.", "bl2_hash_data",
 		"` array found at address =", tbbr_dyn_config.bl2_hash_data);
 #endif

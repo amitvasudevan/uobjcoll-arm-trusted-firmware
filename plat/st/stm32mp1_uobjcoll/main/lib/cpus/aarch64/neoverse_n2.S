@@ -4,19 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/neoverse_n2.h>
 
 /* Hardware handled coherency */
-#if HW_ASSISTED_COHERENCY == 0
-#error "Neoverse N2 must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
+#error "Neoverse N2 must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 /* 64-bit only core */
-#if CTX_INCLUDE_AARCH32_REGS == 1
-#error "Neoverse-N2 supports only AArch64. Compile with CTX_INCLUDE_AARCH32_REGS=0"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__ == 1
+#error "Neoverse-N2 supports only AArch64. Compile with __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__=0"
 #endif
 
 	/* -------------------------------------------------
@@ -37,7 +38,7 @@ func neoverse_n2_reset_func
 	orr	x0, x0, #NEOVERSE_N2_CPUACTLR2_EL1_BIT_2
 	msr	NEOVERSE_N2_CPUACTLR2_EL1, x0
 
-#if ENABLE_AMU
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_AMU__
 	/* Make sure accesses from EL0/EL1 and EL2 are not trapped to EL3 */
 	mrs	x0, cptr_el3
 	orr	x0, x0, #TAM_BIT
@@ -51,7 +52,7 @@ func neoverse_n2_reset_func
 	/* No need to enable the counters as this would be done at el3 exit */
 #endif
 
-#if NEOVERSE_Nx_EXTERNAL_LLC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_NEOVERSE_NX_EXTERNAL_LLC__
 	/* Some systems may have External LLC, core needs to be made aware */
 	mrs     x0, NEOVERSE_N2_CPUECTLR_EL1
 	orr     x0, x0, NEOVERSE_N2_CPUECTLR_EL1_EXTLLC_BIT

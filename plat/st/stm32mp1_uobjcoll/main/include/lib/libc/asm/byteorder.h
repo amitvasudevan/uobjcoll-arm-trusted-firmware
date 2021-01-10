@@ -17,6 +17,7 @@
 #define __ASM_ARM_BYTEORDER_H
 
 #ifdef __ARMEB__
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <linux/byteorder/big_endian.h>
 #else
 #include <linux/byteorder/little_endian.h>

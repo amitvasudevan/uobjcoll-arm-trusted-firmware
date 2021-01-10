@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -72,9 +73,9 @@ void sve_enable(bool el2_unused)
 	if (!sve_supported())
 		return;
 
-#if CTX_INCLUDE_FPREGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__
 	/*
-	 * CTX_INCLUDE_FPREGS is not supported on SVE enabled systems.
+	 * __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__ is not supported on SVE enabled systems.
 	 */
 	assert(0);
 #endif

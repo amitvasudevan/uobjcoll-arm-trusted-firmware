@@ -7,11 +7,12 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*
  * The log output macros print output to the console. These macros produce
- * compiled log output only if the LOG_LEVEL defined in the makefile (or the
+ * compiled log output only if the __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ defined in the makefile (or the
  * make command line) is greater or equal than the level required for that
  * type of log output.
  *
@@ -59,37 +60,37 @@
 		}					\
 	} while (false)
 
-#if LOG_LEVEL >= LOG_LEVEL_ERROR
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_ERROR
 # define ERROR(...)	tf_log(LOG_MARKER_ERROR __VA_ARGS__)
 #else
 # define ERROR(...)	no_tf_log(LOG_MARKER_ERROR __VA_ARGS__)
 #endif
 
-#if LOG_LEVEL >= LOG_LEVEL_NOTICE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_NOTICE
 # define NOTICE(...)	tf_log(LOG_MARKER_NOTICE __VA_ARGS__)
 #else
 # define NOTICE(...)	no_tf_log(LOG_MARKER_NOTICE __VA_ARGS__)
 #endif
 
-#if LOG_LEVEL >= LOG_LEVEL_WARNING
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_WARNING
 # define WARN(...)	tf_log(LOG_MARKER_WARNING __VA_ARGS__)
 #else
 # define WARN(...)	no_tf_log(LOG_MARKER_WARNING __VA_ARGS__)
 #endif
 
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 # define INFO(...)	tf_log(LOG_MARKER_INFO __VA_ARGS__)
 #else
 # define INFO(...)	no_tf_log(LOG_MARKER_INFO __VA_ARGS__)
 #endif
 
-#if LOG_LEVEL >= LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE
 # define VERBOSE(...)	tf_log(LOG_MARKER_VERBOSE __VA_ARGS__)
 #else
 # define VERBOSE(...)	no_tf_log(LOG_MARKER_VERBOSE __VA_ARGS__)
 #endif
 
-#if ENABLE_BACKTRACE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BACKTRACE__
 void backtrace(const char *cookie);
 const char *get_el_str(unsigned int el);
 #else

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -83,7 +84,7 @@ func bl2_entrypoint
 	ldr	r1, =__BSS_SIZE__
 	bl	zeromem
 
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 	ldr	r0, =__COHERENT_RAM_START__
 	ldr	r1, =__COHERENT_RAM_UNALIGNED_SIZE__
 	bl	zeromem
@@ -104,7 +105,7 @@ func bl2_entrypoint
 	 * any C code is called.
 	 * ---------------------------------------------
 	 */
-#if STACK_PROTECTOR_ENABLED
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STACK_PROTECTOR_ENABLED__
 	bl	update_stack_protector_canary
 #endif
 

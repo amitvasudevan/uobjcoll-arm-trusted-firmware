@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
@@ -108,7 +109,7 @@ void cm_setup_context(cpu_context_t *ctx, const entry_point_info_t *ep)
 	if (EP_GET_ST(ep->h.attr) != 0U)
 		scr_el3 |= SCR_ST_BIT;
 
-#if RAS_TRAP_LOWER_EL_ERR_ACCESS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_RAS_TRAP_LOWER_EL_ERR_ACCESS__
 	/*
 	 * SCR_EL3.TERR: Trap Error record accesses. Accesses to the RAS ERR
 	 * and RAS ERX registers from EL1 and EL2 are trapped to EL3.
@@ -116,7 +117,7 @@ void cm_setup_context(cpu_context_t *ctx, const entry_point_info_t *ep)
 	scr_el3 |= SCR_TERR_BIT;
 #endif
 
-#if !HANDLE_EA_EL3_FIRST
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_HANDLE_EA_EL3_FIRST__
 	/*
 	 * SCR_EL3.EA: Do not route External Abort and SError Interrupt External
 	 *  to EL3 when executing at a lower EL. When executing at EL3, External
@@ -125,12 +126,12 @@ void cm_setup_context(cpu_context_t *ctx, const entry_point_info_t *ep)
 	scr_el3 &= ~SCR_EA_BIT;
 #endif
 
-#if FAULT_INJECTION_SUPPORT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_FAULT_INJECTION_SUPPORT__
 	/* Enable fault injection from lower ELs */
 	scr_el3 |= SCR_FIEN_BIT;
 #endif
 
-#if !CTX_INCLUDE_PAUTH_REGS
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
 	/*
 	 * If the pointer authentication registers aren't saved during world
 	 * switches the value of the registers can be leaked from the Secure to
@@ -138,22 +139,22 @@ void cm_setup_context(cpu_context_t *ctx, const entry_point_info_t *ep)
 	 * authentication everywhere, we only enable it in the Non-secure world.
 	 *
 	 * If the Secure world wants to use pointer authentication,
-	 * CTX_INCLUDE_PAUTH_REGS must be set to 1.
+	 * __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__ must be set to 1.
 	 */
 	if (security_state == NON_SECURE)
 		scr_el3 |= SCR_API_BIT | SCR_APK_BIT;
-#endif /* !CTX_INCLUDE_PAUTH_REGS */
+#endif /* !__UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__ */
 
-#if !CTX_INCLUDE_MTE_REGS || ENABLE_ASSERTIONS
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/* Get Memory Tagging Extension support level */
 	unsigned int mte = get_armv8_5_mte_support();
 #endif
 	/*
 	 * Enable MTE support. Support is enabled unilaterally for the normal
-	 * world, and only for the secure world when CTX_INCLUDE_MTE_REGS is
+	 * world, and only for the secure world when __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__ is
 	 * set.
 	 */
-#if CTX_INCLUDE_MTE_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__
 	assert((mte == MTE_IMPLEMENTED_ELX) || (mte == MTE_IMPLEMENTED_ASY));
 	scr_el3 |= SCR_ATA_BIT;
 #else
@@ -170,7 +171,7 @@ void cm_setup_context(cpu_context_t *ctx, const entry_point_info_t *ep)
 	    (security_state == NON_SECURE))) {
 		scr_el3 |= SCR_ATA_BIT;
 	}
-#endif	/* CTX_INCLUDE_MTE_REGS */
+#endif	/* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__ */
 
 #ifdef IMAGE_BL31
 	/*
@@ -248,7 +249,7 @@ void cm_setup_context(cpu_context_t *ctx, const entry_point_info_t *ep)
 					| SCTLR_NTWI_BIT | SCTLR_NTWE_BIT;
 	}
 
-#if ERRATA_A75_764081
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A75_764081__
 	/*
 	 * If workaround of errata 764081 for Cortex-A75 is used then set
 	 * SCTLR_EL1.IESB to enable Implicit Error Synchronization Barrier.
@@ -316,19 +317,19 @@ void cm_setup_context(cpu_context_t *ctx, const entry_point_info_t *ep)
 static void enable_extensions_nonsecure(bool el2_unused)
 {
 #if IMAGE_BL31
-#if ENABLE_SPE_FOR_LOWER_ELS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_SPE_FOR_LOWER_ELS__
 	spe_enable(el2_unused);
 #endif
 
-#if ENABLE_AMU
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_AMU__
 	amu_enable(el2_unused);
 #endif
 
-#if ENABLE_SVE_FOR_NS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_SVE_FOR_NS__
 	sve_enable(el2_unused);
 #endif
 
-#if ENABLE_MPAM_FOR_LOWER_ELS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_MPAM_FOR_LOWER_ELS__
 	mpam_enable(el2_unused);
 #endif
 #endif
@@ -385,7 +386,7 @@ void cm_prepare_el3_exit(uint32_t security_state)
 							   CTX_SCTLR_EL1);
 			sctlr_elx &= SCTLR_EE_BIT;
 			sctlr_elx |= SCTLR_EL2_RES1;
-#if ERRATA_A75_764081
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A75_764081__
 			/*
 			 * If workaround of errata 764081 for Cortex-A75 is used
 			 * then set SCTLR_EL2.IESB to enable Implicit Error
@@ -575,7 +576,7 @@ void cm_prepare_el3_exit(uint32_t security_state)
 	cm_set_next_eret_context(security_state);
 }
 
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 /*******************************************************************************
  * Save EL2 sysreg context
  ******************************************************************************/
@@ -619,7 +620,7 @@ void cm_el2_sysregs_context_restore(uint32_t security_state)
 		el2_sysregs_context_restore(get_el2_sysregs_ctx(ctx));
 	}
 }
-#endif /* CTX_INCLUDE_EL2_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__ */
 
 /*******************************************************************************
  * The next four functions are used by runtime services to save and restore

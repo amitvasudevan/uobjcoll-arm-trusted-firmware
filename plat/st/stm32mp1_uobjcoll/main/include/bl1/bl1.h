@@ -7,6 +7,7 @@
 #ifndef BL1_H
 #define BL1_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 
 /*
@@ -46,7 +47,7 @@
  */
 #define FWU_NUM_SMC_CALLS		7
 
-#if TRUSTED_BOARD_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__
 # define BL1_NUM_SMC_CALLS		(FWU_NUM_SMC_CALLS + 4)
 #else
 # define BL1_NUM_SMC_CALLS		4

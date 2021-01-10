@@ -4,6 +4,7 @@
  * Copyright (C) 2016 Free Electrons
  * Copyright (C) 2016 NextThing Co.
  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt_env.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/fdt.h>

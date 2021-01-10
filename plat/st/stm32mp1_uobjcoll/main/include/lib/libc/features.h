@@ -440,6 +440,7 @@
 
 /* Get definitions of __STDC_* predefined macros, if the compiler has
    not preincluded this header automatically.  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <stdc-predef.h>
 
 /* This macro indicates that the installed library is the GNU C Library.

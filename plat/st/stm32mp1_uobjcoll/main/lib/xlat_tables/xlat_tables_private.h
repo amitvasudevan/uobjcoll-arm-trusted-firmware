@@ -7,13 +7,14 @@
 #ifndef XLAT_TABLES_PRIVATE_H
 #define XLAT_TABLES_PRIVATE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_arch.h>
 
-#if HW_ASSISTED_COHERENCY
-#error xlat tables v2 must be used with HW_ASSISTED_COHERENCY
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
+#error xlat tables v2 must be used with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 #endif
 
 CASSERT(CHECK_PHY_ADDR_SPACE_SIZE(PLAT_PHY_ADDR_SPACE_SIZE),

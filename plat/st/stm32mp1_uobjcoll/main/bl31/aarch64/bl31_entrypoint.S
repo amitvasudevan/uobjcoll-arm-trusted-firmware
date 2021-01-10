@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -32,9 +33,9 @@ func bl31_entrypoint
 	mov	x22, x2
 	mov	x23, x3
 
-#if !RESET_TO_BL31
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_BL31__
 	/* ---------------------------------------------------------------------
-	 * For !RESET_TO_BL31 systems, only the primary CPU ever reaches
+	 * For !__UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_BL31__ systems, only the primary CPU ever reaches
 	 * bl31_entrypoint() during the cold boot flow, so the cold/warm boot
 	 * and primary/secondary CPU logic should not be executed in this case.
 	 *
@@ -53,22 +54,22 @@ func bl31_entrypoint
 #else
 
 	/* ---------------------------------------------------------------------
-	 * For RESET_TO_BL31 systems which have a programmable reset address,
+	 * For __UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_BL31__ systems which have a programmable reset address,
 	 * bl31_entrypoint() is executed only on the cold boot path so we can
 	 * skip the warm boot mailbox mechanism.
 	 * ---------------------------------------------------------------------
 	 */
 	el3_entrypoint_common					\
 		_init_sctlr=1					\
-		_warm_boot_mailbox=!PROGRAMMABLE_RESET_ADDRESS	\
-		_secondary_cold_boot=!COLD_BOOT_SINGLE_CPU	\
+		_warm_boot_mailbox=!__UBERSPARK_UOBJCOLL_CONFIGDEF_PROGRAMMABLE_RESET_ADDRESS__	\
+		_secondary_cold_boot=!__UBERSPARK_UOBJCOLL_CONFIGDEF_COLD_BOOT_SINGLE_CPU__	\
 		_init_memory=1					\
 		_init_c_runtime=1				\
 		_exception_vectors=runtime_exceptions		\
 		_pie_fixup_size=BL31_LIMIT - BL31_BASE
 
 	/* ---------------------------------------------------------------------
-	 * For RESET_TO_BL31 systems, BL31 is the first bootloader to run so
+	 * For __UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_BL31__ systems, BL31 is the first bootloader to run so
 	 * there's no argument to relay from a previous bootloader. Zero the
 	 * arguments passed to the platform layer to reflect that.
 	 * ---------------------------------------------------------------------
@@ -77,7 +78,7 @@ func bl31_entrypoint
 	mov	x21, 0
 	mov	x22, 0
 	mov	x23, 0
-#endif /* RESET_TO_BL31 */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_BL31__ */
 
 	/* --------------------------------------------------------------------
 	 * Perform BL31 setup
@@ -89,13 +90,13 @@ func bl31_entrypoint
 	mov	x3, x23
 	bl	bl31_setup
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* --------------------------------------------------------------------
 	 * Program APIAKey_EL1 and enable pointer authentication
 	 * --------------------------------------------------------------------
 	 */
 	bl	pauth_init_enable_el3
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 
 	/* --------------------------------------------------------------------
 	 * Jump to main function
@@ -134,7 +135,7 @@ endfunc bl31_entrypoint
 	 * --------------------------------------------------------------------
 	 */
 func bl31_warm_entrypoint
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 
 	/*
 	 * This timestamp update happens with cache off.  The next
@@ -164,7 +165,7 @@ func bl31_warm_entrypoint
 	 *    it has been done once and for all on the cold boot path.
 	 */
 	el3_entrypoint_common					\
-		_init_sctlr=PROGRAMMABLE_RESET_ADDRESS		\
+		_init_sctlr=__UBERSPARK_UOBJCOLL_CONFIGDEF_PROGRAMMABLE_RESET_ADDRESS__		\
 		_warm_boot_mailbox=0				\
 		_secondary_cold_boot=0				\
 		_init_memory=0					\
@@ -188,24 +189,24 @@ func bl31_warm_entrypoint
 	 * enter coherency (as CPUs already are); and there's no reason to have
 	 * caches disabled either.
 	 */
-#if HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY
 	mov	x0, xzr
 #else
 	mov	x0, #DISABLE_DCACHE
 #endif
 	bl	bl31_plat_enable_mmu
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* --------------------------------------------------------------------
 	 * Program APIAKey_EL1 and enable pointer authentication
 	 * --------------------------------------------------------------------
 	 */
 	bl	pauth_init_enable_el3
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 
 	bl	psci_warmboot_entrypoint
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 	pmf_calc_timestamp_addr rt_instr_svc, RT_INSTR_EXIT_PSCI
 	mov	x19, x0
 

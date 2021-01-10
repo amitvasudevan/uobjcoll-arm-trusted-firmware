@@ -7,6 +7,7 @@
 #ifndef MMIO_H
 #define MMIO_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 static inline void mmio_write_8(uintptr_t addr, uint8_t value)

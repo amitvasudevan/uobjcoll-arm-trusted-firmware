@@ -4,6 +4,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -60,7 +61,7 @@ func cortex_a57_disable_ext_debug
 	mov	x0, #1
 	msr	osdlr_el1, x0
 	isb
-#if ERRATA_A57_817169
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_817169__
 	/*
 	 * Invalidate any TLB address
 	 */
@@ -379,7 +380,7 @@ func check_errata_859972
 endfunc check_errata_859972
 
 func check_errata_cve_2017_5715
-#if WORKAROUND_CVE_2017_5715
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -388,7 +389,7 @@ func check_errata_cve_2017_5715
 endfunc check_errata_cve_2017_5715
 
 func check_errata_cve_2018_3639
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -402,7 +403,7 @@ endfunc check_errata_cve_2018_3639
 	 * --------------------------------------------------
 	 */
 func check_errata_1319537
-#if ERRATA_A57_1319537
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_1319537__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -420,63 +421,63 @@ func cortex_a57_reset_func
 	bl	cpu_get_rev_var
 	mov	x18, x0
 
-#if ERRATA_A57_806969
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_806969__
 	mov	x0, x18
 	bl	errata_a57_806969_wa
 #endif
 
-#if ERRATA_A57_813420
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_813420__
 	mov	x0, x18
 	bl	errata_a57_813420_wa
 #endif
 
-#if ERRATA_A57_814670
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_814670__
 	mov	x0, x18
 	bl	errata_a57_814670_wa
 #endif
 
-#if A57_DISABLE_NON_TEMPORAL_HINT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_A57_DISABLE_NON_TEMPORAL_HINT__
 	mov	x0, x18
 	bl	a57_disable_ldnp_overread
 #endif
 
-#if ERRATA_A57_826974
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_826974__
 	mov	x0, x18
 	bl	errata_a57_826974_wa
 #endif
 
-#if ERRATA_A57_826977
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_826977__
 	mov	x0, x18
 	bl	errata_a57_826977_wa
 #endif
 
-#if ERRATA_A57_828024
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_828024__
 	mov	x0, x18
 	bl	errata_a57_828024_wa
 #endif
 
-#if ERRATA_A57_829520
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_829520__
 	mov	x0, x18
 	bl	errata_a57_829520_wa
 #endif
 
-#if ERRATA_A57_833471
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_833471__
 	mov	x0, x18
 	bl	errata_a57_833471_wa
 #endif
 
-#if ERRATA_A57_859972
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_859972__
 	mov	x0, x18
 	bl	errata_a57_859972_wa
 #endif
 
-#if IMAGE_BL31 && WORKAROUND_CVE_2017_5715
+#if IMAGE_BL31 && __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	adr	x0, wa_cve_2017_5715_mmu_vbar
 	msr	vbar_el3, x0
 	/* isb will be performed before returning from this function */
 #endif
 
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	mrs	x0, CORTEX_A57_CPUACTLR_EL1
 	orr	x0, x0, #CORTEX_A57_CPUACTLR_EL1_DIS_LOAD_PASS_STORE
 	msr	CORTEX_A57_CPUACTLR_EL1, x0
@@ -484,7 +485,7 @@ func cortex_a57_reset_func
 	dsb	sy
 #endif
 
-#if A57_ENABLE_NONCACHEABLE_LOAD_FWD
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_A57_ENABLE_NONCACHEABLE_LOAD_FWD__
 	/* ---------------------------------------------
 	 * Enable higher performance non-cacheable load
 	 * forwarding
@@ -565,7 +566,7 @@ func cortex_a57_cluster_pwr_dwn
 	 */
 	bl	cortex_a57_disable_l2_prefetch
 
-#if !SKIP_A57_L1_FLUSH_PWR_DWN
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_SKIP_A57_L1_FLUSH_PWR_DWN__
 	/* -------------------------------------------------
 	 * Flush the L1 caches.
 	 * -------------------------------------------------
@@ -614,22 +615,22 @@ func cortex_a57_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_A57_806969, cortex_a57, 806969
-	report_errata ERRATA_A57_813419, cortex_a57, 813419
-	report_errata ERRATA_A57_813420, cortex_a57, 813420
-	report_errata ERRATA_A57_814670, cortex_a57, 814670
-	report_errata ERRATA_A57_817169, cortex_a57, 817169
-	report_errata A57_DISABLE_NON_TEMPORAL_HINT, cortex_a57, \
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_806969__, cortex_a57, 806969
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_813419__, cortex_a57, 813419
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_813420__, cortex_a57, 813420
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_814670__, cortex_a57, 814670
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_817169__, cortex_a57, 817169
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_A57_DISABLE_NON_TEMPORAL_HINT__, cortex_a57, \
 		disable_ldnp_overread
-	report_errata ERRATA_A57_826974, cortex_a57, 826974
-	report_errata ERRATA_A57_826977, cortex_a57, 826977
-	report_errata ERRATA_A57_828024, cortex_a57, 828024
-	report_errata ERRATA_A57_829520, cortex_a57, 829520
-	report_errata ERRATA_A57_833471, cortex_a57, 833471
-	report_errata ERRATA_A57_859972, cortex_a57, 859972
-	report_errata ERRATA_A57_1319537, cortex_a57, 1319537
-	report_errata WORKAROUND_CVE_2017_5715, cortex_a57, cve_2017_5715
-	report_errata WORKAROUND_CVE_2018_3639, cortex_a57, cve_2018_3639
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_826974__, cortex_a57, 826974
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_826977__, cortex_a57, 826977
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_828024__, cortex_a57, 828024
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_829520__, cortex_a57, 829520
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_833471__, cortex_a57, 833471
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_859972__, cortex_a57, 859972
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_1319537__, cortex_a57, 1319537
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__, cortex_a57, cve_2017_5715
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__, cortex_a57, cve_2018_3639
 
 	ldp	x8, x30, [sp], #16
 	ret

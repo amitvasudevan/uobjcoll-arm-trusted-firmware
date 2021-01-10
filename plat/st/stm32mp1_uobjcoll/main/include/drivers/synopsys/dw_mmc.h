@@ -7,6 +7,7 @@
 #ifndef DW_MMC_H
 #define DW_MMC_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/mmc.h>
 
 typedef struct dw_mmc_params {

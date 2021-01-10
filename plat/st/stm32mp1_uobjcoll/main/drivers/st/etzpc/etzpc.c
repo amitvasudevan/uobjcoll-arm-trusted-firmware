@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -73,7 +74,7 @@ static struct etzpc_instance etzpc_dev;
 #define PERIPH_LOCK_BIT		BIT(7)
 #define PERIPH_ATTR_MASK	GENMASK(2, 0)
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 static bool valid_decprot_id(unsigned int id)
 {
 	return id < (unsigned int)etzpc_dev.num_per_sec;

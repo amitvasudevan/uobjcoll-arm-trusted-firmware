@@ -7,6 +7,7 @@
 #ifndef XLAT_TABLES_H
 #define XLAT_TABLES_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 
 #ifndef __ASSEMBLER__

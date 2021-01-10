@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -12,13 +13,13 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>
 
 /* Hardware handled coherency */
-#if HW_ASSISTED_COHERENCY == 0
-#error "Neoverse V1 must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
+#error "Neoverse V1 must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 /* 64-bit only core */
-#if CTX_INCLUDE_AARCH32_REGS == 1
-#error "Neoverse-V1 supports only AArch64. Compile with CTX_INCLUDE_AARCH32_REGS=0"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__ == 1
+#error "Neoverse-V1 supports only AArch64. Compile with __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__=0"
 #endif
 
 	/* ---------------------------------------------

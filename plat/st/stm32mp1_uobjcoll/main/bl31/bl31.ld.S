@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.ld.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 
@@ -14,7 +15,7 @@ ENTRY(bl31_entrypoint)
 
 MEMORY {
     RAM (rwx): ORIGIN = BL31_BASE, LENGTH = BL31_LIMIT - BL31_BASE
-#if SEPARATE_NOBITS_REGION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_NOBITS_REGION__
     NOBITS (rw!a): ORIGIN = BL31_NOBITS_BASE, LENGTH = BL31_NOBITS_LIMIT - BL31_NOBITS_BASE
 #else
 #define NOBITS RAM
@@ -33,7 +34,7 @@ SECTIONS
 
     __BL31_START__ = .;
 
-#if SEPARATE_CODE_AND_RODATA
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_CODE_AND_RODATA__
     .text . : {
         __TEXT_START__ = .;
         *bl31_entrypoint.o(.text*)
@@ -84,7 +85,7 @@ SECTIONS
     ASSERT(__CPU_OPS_END__ > __CPU_OPS_START__,
            "cpu_ops not defined for this platform.")
 
-#if SPM_MM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPM_MM__
 #ifndef SPM_SHIM_EXCEPTIONS_VMA
 #define SPM_SHIM_EXCEPTIONS_VMA         RAM
 #endif
@@ -121,7 +122,7 @@ SECTIONS
     ASSERT(. <= BL31_PROGBITS_LIMIT, "BL31 progbits has exceeded its limit.")
 #endif
 
-#if SEPARATE_NOBITS_REGION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_NOBITS_REGION__
     /*
      * Define a linker symbol to mark end of the RW memory area for this
      * image.
@@ -143,7 +144,7 @@ SECTIONS
     BSS_SECTION >NOBITS
     XLAT_TABLE_SECTION >NOBITS
 
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
     /*
      * The base address of the coherent memory section must be page-aligned (4K)
      * to guarantee that the coherent data are stored on their own pages and
@@ -170,7 +171,7 @@ SECTIONS
     } >NOBITS
 #endif
 
-#if SEPARATE_NOBITS_REGION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_NOBITS_REGION__
     /*
      * Define a linker symbol to mark end of the NOBITS memory area for this
      * image.

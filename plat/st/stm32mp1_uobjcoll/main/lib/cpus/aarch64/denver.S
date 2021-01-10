@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -209,7 +210,7 @@ endfunc denver_disable_dco
 
 func check_errata_cve_2017_5715
 	mov	x0, #ERRATA_MISSING
-#if WORKAROUND_CVE_2017_5715
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	/*
 	 * Check if the CPU supports the special instruction
 	 * required to flush the indirect branch predictor and
@@ -227,7 +228,7 @@ func check_errata_cve_2017_5715
 endfunc check_errata_cve_2017_5715
 
 func check_errata_cve_2018_3639
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -243,7 +244,7 @@ func denver_reset_func
 
 	mov	x19, x30
 
-#if IMAGE_BL31 && WORKAROUND_CVE_2017_5715
+#if IMAGE_BL31 && __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	/*
 	 * Check if the CPU supports the special instruction
 	 * required to flush the indirect branch predictor and
@@ -260,7 +261,7 @@ func denver_reset_func
 	msr	vbar_el3, x0
 #endif
 
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	/*
 	 * Denver CPUs with DENVER_MIDR_PN3 or earlier, use different
 	 * bits in the ACTLR_EL3 register to disable speculative
@@ -336,8 +337,8 @@ func denver_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata WORKAROUND_CVE_2017_5715, denver, cve_2017_5715
-	report_errata WORKAROUND_CVE_2018_3639, denver, cve_2018_3639
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__, denver, cve_2017_5715
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__, denver, cve_2018_3639
 
 	ldp	x8, x30, [sp], #16
 	ret

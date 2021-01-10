@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
@@ -54,7 +55,7 @@ unsigned int psci_plat_core_count;
  * Each node in the array 'psci_cpu_pd_nodes' corresponds to a cpu power domain
  ******************************************************************************/
 non_cpu_pd_node_t psci_non_cpu_pd_nodes[PSCI_NUM_NON_CPU_PWR_DOMAINS]
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 __section("tzfw_coherent_mem")
 #endif
 ;
@@ -256,13 +257,13 @@ static plat_local_state_t *psci_get_req_local_pwr_states(unsigned int pwrlvl,
  * psci_non_cpu_pd_nodes can be placed either in normal memory or coherent
  * memory.
  *
- * With !USE_COHERENT_MEM, psci_non_cpu_pd_nodes is placed in normal memory,
+ * With !__UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__, psci_non_cpu_pd_nodes is placed in normal memory,
  * it's accessed by both cached and non-cached participants. To serve the common
  * minimum, perform a cache flush before read and after write so that non-cached
  * participants operate on latest data in main memory.
  *
- * When USE_COHERENT_MEM is used, psci_non_cpu_pd_nodes is placed in coherent
- * memory. With HW_ASSISTED_COHERENCY, all PSCI participants are cache-coherent.
+ * When __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__ is used, psci_non_cpu_pd_nodes is placed in coherent
+ * memory. With __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__, all PSCI participants are cache-coherent.
  * In both cases, no cache operations are required.
  */
 
@@ -273,7 +274,7 @@ static plat_local_state_t *psci_get_req_local_pwr_states(unsigned int pwrlvl,
 static plat_local_state_t get_non_cpu_pd_node_local_state(
 		unsigned int parent_idx)
 {
-#if !(USE_COHERENT_MEM || HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY)
+#if !(__UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY)
 	flush_dcache_range(
 			(uintptr_t) &psci_non_cpu_pd_nodes[parent_idx],
 			sizeof(psci_non_cpu_pd_nodes[parent_idx]));
@@ -289,7 +290,7 @@ static void set_non_cpu_pd_node_local_state(unsigned int parent_idx,
 		plat_local_state_t state)
 {
 	psci_non_cpu_pd_nodes[parent_idx].local_state = state;
-#if !(USE_COHERENT_MEM || HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY)
+#if !(__UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY)
 	flush_dcache_range(
 			(uintptr_t) &psci_non_cpu_pd_nodes[parent_idx],
 			sizeof(psci_non_cpu_pd_nodes[parent_idx]));
@@ -483,7 +484,7 @@ void psci_do_state_coordination(unsigned int end_pwrlvl,
  * It also ensures that the state level X will enter is not shallower than the
  * state level X + 1 will enter.
  *
- * This validation will be enabled only for DEBUG builds as the platform is
+ * This validation will be enabled only for __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__ builds as the platform is
  * expected to perform these validations as well.
  *****************************************************************************/
 int psci_validate_suspend_req(const psci_power_state_t *state_info,
@@ -800,7 +801,7 @@ void psci_warmboot_entrypoint(void)
 
 	psci_get_target_local_pwr_states(end_pwrlvl, &state_info);
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 	plat_psci_stat_accounting_stop(&state_info);
 #endif
 
@@ -827,7 +828,7 @@ void psci_warmboot_entrypoint(void)
 	 */
 	psci_set_pwr_domains_to_run(end_pwrlvl);
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 	/*
 	 * Update PSCI stats.
 	 * Caches are off when writing stats data on the power down path.
@@ -891,7 +892,7 @@ int psci_spd_migrate_info(u_register_t *mpidr)
  ******************************************************************************/
 void psci_print_power_domain_map(void)
 {
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 	unsigned int idx;
 	plat_local_state_t state;
 	plat_local_state_type_t state_type;
@@ -956,7 +957,7 @@ int psci_secondaries_brought_up(void)
  ******************************************************************************/
 void psci_do_pwrdown_sequence(unsigned int power_level)
 {
-#if HW_ASSISTED_COHERENCY
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 	/*
 	 * With hardware-assisted coherency, the CPU drivers only initiate the
 	 * power down sequence, without performing cache-maintenance operations

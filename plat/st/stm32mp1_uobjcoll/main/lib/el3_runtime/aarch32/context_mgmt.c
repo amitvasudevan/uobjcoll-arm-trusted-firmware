@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
@@ -133,7 +134,7 @@ void cm_setup_context(cpu_context_t *ctx, const entry_point_info_t *ep)
 static void enable_extensions_nonsecure(bool el2_unused)
 {
 #if IMAGE_BL32
-#if ENABLE_AMU
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_AMU__
 	amu_enable(el2_unused);
 #endif
 #endif
@@ -292,7 +293,7 @@ void cm_prepare_el3_exit(uint32_t security_state)
 			 * HDCR.HPME: Set to zero to disable EL2 Event
 			 *  counters.
 			 */
-#if (ARM_ARCH_MAJOR > 7)
+#if (__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ > 7)
 			write_hdcr((HDCR_RESET_VAL | HDCR_HLP_BIT |
 				   ((read_pmcr() & PMCR_N_BITS) >>
 				    PMCR_N_SHIFT)) & ~HDCR_HPME_BIT);

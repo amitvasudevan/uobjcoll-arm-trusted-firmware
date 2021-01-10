@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -36,7 +37,7 @@
 	.endm
 
 	.macro clrex_on_monitor_entry
-#if (ARM_ARCH_MAJOR == 7)
+#if (__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7)
 	/*
 	 * ARMv7 architectures need to clear the exclusive access when
 	 * entering Monitor mode.
@@ -60,7 +61,7 @@ vector_base sp_min_vector_table
  * The Cold boot/Reset entrypoint for SP_MIN
  */
 func sp_min_entrypoint
-#if !RESET_TO_SP_MIN
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_SP_MIN__
 	/* ---------------------------------------------------------------
 	 * Preceding bootloader has populated r0 with a pointer to a
 	 * 'bl_params_t' structure & r1 with a pointer to platform
@@ -73,7 +74,7 @@ func sp_min_entrypoint
 	mov	r12, r3
 
 	/* ---------------------------------------------------------------------
-	 * For !RESET_TO_SP_MIN systems, only the primary CPU ever reaches
+	 * For !__UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_SP_MIN__ systems, only the primary CPU ever reaches
 	 * sp_min_entrypoint() during the cold boot flow, so the cold/warm boot
 	 * and primary/secondary CPU logic should not be executed in this case.
 	 *
@@ -95,21 +96,21 @@ func sp_min_entrypoint
 	 */
 #else
 	/* ---------------------------------------------------------------------
-	 * For RESET_TO_SP_MIN systems which have a programmable reset address,
+	 * For __UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_SP_MIN__ systems which have a programmable reset address,
 	 * sp_min_entrypoint() is executed only on the cold boot path so we can
 	 * skip the warm boot mailbox mechanism.
 	 * ---------------------------------------------------------------------
 	 */
 	el3_entrypoint_common					\
 		_init_sctlr=1					\
-		_warm_boot_mailbox=!PROGRAMMABLE_RESET_ADDRESS	\
-		_secondary_cold_boot=!COLD_BOOT_SINGLE_CPU	\
+		_warm_boot_mailbox=!__UBERSPARK_UOBJCOLL_CONFIGDEF_PROGRAMMABLE_RESET_ADDRESS__	\
+		_secondary_cold_boot=!__UBERSPARK_UOBJCOLL_CONFIGDEF_COLD_BOOT_SINGLE_CPU__	\
 		_init_memory=1					\
 		_init_c_runtime=1				\
 		_exception_vectors=sp_min_vector_table
 
 	/* ---------------------------------------------------------------------
-	 * For RESET_TO_SP_MIN systems, BL32 (SP_MIN) is the first bootloader
+	 * For __UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_SP_MIN__ systems, BL32 (SP_MIN) is the first bootloader
 	 * to run so there's no argument to relay from a previous bootloader.
 	 * Zero the arguments passed to the platform layer to reflect that.
 	 * ---------------------------------------------------------------------
@@ -119,9 +120,9 @@ func sp_min_entrypoint
 	mov	r11, #0
 	mov	r12, #0
 
-#endif /* RESET_TO_SP_MIN */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_SP_MIN__ */
 
-#if SP_MIN_WITH_SECURE_FIQ
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SP_MIN_WITH_SECURE_FIQ__
 	route_fiq_to_sp_min r4
 #endif
 
@@ -167,7 +168,7 @@ func sp_min_handle_smc
 	/* On SMC entry, `sp` points to `smc_ctx_t`. Save `lr`. */
 	str	lr, [sp, #SMC_CTX_LR_MON]
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 	/*
 	 * Read the timestamp value and store it on top of the C runtime stack.
 	 * The value will be saved to the per-cpu data once the C stack is
@@ -192,7 +193,7 @@ func sp_min_handle_smc
 	mov	r2, sp				/* handle */
 	ldr	sp, [r2, #SMC_CTX_SP_MON]
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 	/* Save handle to a callee saved register */
 	mov	r6, r2
 
@@ -239,7 +240,7 @@ endfunc sp_min_handle_smc
  * Secure Interrupts handling function for SP_MIN.
  */
 func sp_min_handle_fiq
-#if !SP_MIN_WITH_SECURE_FIQ
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_SP_MIN_WITH_SECURE_FIQ__
 	b plat_panic_handler
 #else
 	/* FIQ has a +4 offset for lr compared to preferred return address */
@@ -273,7 +274,7 @@ endfunc sp_min_handle_fiq
  * The Warm boot entrypoint for SP_MIN.
  */
 func sp_min_warm_entrypoint
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 	/*
 	 * This timestamp update happens with cache off.  The next
 	 * timestamp collection will need to do cache maintenance prior
@@ -301,7 +302,7 @@ func sp_min_warm_entrypoint
 	 *    it has been done once and for all on the cold boot path.
 	 */
 	el3_entrypoint_common					\
-		_init_sctlr=PROGRAMMABLE_RESET_ADDRESS		\
+		_init_sctlr=__UBERSPARK_UOBJCOLL_CONFIGDEF_PROGRAMMABLE_RESET_ADDRESS__		\
 		_warm_boot_mailbox=0				\
 		_secondary_cold_boot=0				\
 		_init_memory=0					\
@@ -324,14 +325,14 @@ func sp_min_warm_entrypoint
 	 * enter coherency (as CPUs already are); and there's no reason to have
 	 * caches disabled either.
 	 */
-#if HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY
 	mov	r0, #0
 #else
 	mov	r0, #DISABLE_DCACHE
 #endif
 	bl	bl32_plat_enable_mmu
 
-#if SP_MIN_WITH_SECURE_FIQ
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SP_MIN_WITH_SECURE_FIQ__
 	route_fiq_to_sp_min r0
 #endif
 
@@ -340,7 +341,7 @@ func sp_min_warm_entrypoint
 	/* r0 points to `smc_ctx_t` */
 	/* The PSCI cpu_context registers have been copied to `smc_ctx_t` */
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 	/* Save smc_ctx_t */
 	mov	r5, r0
 

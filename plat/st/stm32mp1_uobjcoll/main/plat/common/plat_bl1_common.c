@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 
@@ -27,7 +28,7 @@
 #pragma weak bl1_plat_fwu_done
 #pragma weak bl1_plat_handle_pre_image_load
 #pragma weak bl1_plat_handle_post_image_load
-#if MEASURED_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__
 #pragma weak bl1_plat_set_bl2_hash
 #endif
 
@@ -119,7 +120,7 @@ int bl1_plat_handle_post_image_load(unsigned int image_id)
 	return 0;
 }
 
-#if MEASURED_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__
 /*
  * Calculates and writes BL2 hash data to TB_FW_CONFIG DTB.
  */

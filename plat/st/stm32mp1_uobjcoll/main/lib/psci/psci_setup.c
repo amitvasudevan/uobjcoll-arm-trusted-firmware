@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
@@ -258,7 +259,7 @@ int __init psci_setup(const psci_lib_args_t *lib_args)
 	if (psci_plat_pm_ops->system_reset2 != NULL)
 		psci_caps |= define_psci_cap(PSCI_SYSTEM_RESET2_AARCH64);
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 	psci_caps |=  define_psci_cap(PSCI_STAT_RESIDENCY_AARCH64);
 	psci_caps |=  define_psci_cap(PSCI_STAT_COUNT_AARCH64);
 #endif
@@ -273,7 +274,7 @@ int __init psci_setup(const psci_lib_args_t *lib_args)
  ******************************************************************************/
 void psci_arch_setup(void)
 {
-#if (ARM_ARCH_MAJOR > 7) || defined(ARMV7_SUPPORTS_GENERIC_TIMER)
+#if (__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ > 7) || defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_GENERIC_TIMER__)
 	/* Program the counter frequency */
 	write_cntfrq_el0(plat_get_syscnt_freq2());
 #endif
@@ -284,11 +285,11 @@ void psci_arch_setup(void)
 	/* Having initialized cpu_ops, we can now print errata status */
 	print_errata_status();
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* Store APIAKey_EL1 key */
 	set_cpu_data(apiakey[0], read_apiakeylo_el1());
 	set_cpu_data(apiakey[1], read_apiakeyhi_el1());
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 }
 
 /******************************************************************************

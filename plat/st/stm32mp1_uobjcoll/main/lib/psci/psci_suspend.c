@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
@@ -43,7 +44,7 @@ static void psci_suspend_to_standby_finisher(unsigned int cpu_idx,
 	 */
 	psci_get_target_local_pwr_states(end_pwrlvl, &state_info);
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 	plat_psci_stat_accounting_stop(&state_info);
 	psci_stats_update_pwr_up(end_pwrlvl, &state_info);
 #endif
@@ -92,11 +93,11 @@ static void psci_suspend_to_pwrdown_start(unsigned int end_pwrlvl,
 	if ((psci_spd_pm != NULL) && (psci_spd_pm->svc_suspend != NULL))
 		psci_spd_pm->svc_suspend(max_off_lvl);
 
-#if !HW_ASSISTED_COHERENCY
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 	/*
 	 * Plat. management: Allow the platform to perform any early
 	 * actions required to power down the CPU. This might be useful for
-	 * HW_ASSISTED_COHERENCY = 0 platforms that can safely perform these
+	 * __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ = 0 platforms that can safely perform these
 	 * actions with data caches enabled.
 	 */
 	if (psci_plat_pm_ops->pwr_domain_suspend_pwrdown_early != NULL)
@@ -108,7 +109,7 @@ static void psci_suspend_to_pwrdown_start(unsigned int end_pwrlvl,
 	 */
 	cm_init_my_context(ep);
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 
 	/*
 	 * Flush cache line so that even if CPU power down happens
@@ -126,7 +127,7 @@ static void psci_suspend_to_pwrdown_start(unsigned int end_pwrlvl,
 	 */
 	psci_do_pwrdown_sequence(max_off_lvl);
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 	PMF_CAPTURE_TIMESTAMP(rt_instr_svc,
 		RT_INSTR_EXIT_CFLUSH,
 		PMF_NO_CACHE_MAINT);
@@ -194,7 +195,7 @@ void psci_cpu_suspend_start(const entry_point_info_t *ep,
 	 */
 	psci_do_state_coordination(end_pwrlvl, state_info);
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 	/* Update the last cpu for each level till end_pwrlvl */
 	psci_stats_update_pwr_down(end_pwrlvl, state_info);
 #endif
@@ -210,7 +211,7 @@ void psci_cpu_suspend_start(const entry_point_info_t *ep,
 	 */
 	psci_plat_pm_ops->pwr_domain_suspend(state_info);
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 	plat_psci_stat_accounting_start(state_info);
 #endif
 
@@ -225,7 +226,7 @@ exit:
 		return;
 
 	if (is_power_down_state != 0U) {
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 
 		/*
 		 * Update the timestamp with cache off.  We assume this
@@ -245,7 +246,7 @@ exit:
 			psci_power_down_wfi();
 	}
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 	PMF_CAPTURE_TIMESTAMP(rt_instr_svc,
 	    RT_INSTR_ENTER_HW_LOW_PWR,
 	    PMF_NO_CACHE_MAINT);
@@ -258,7 +259,7 @@ exit:
 	 */
 	wfi();
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 	PMF_CAPTURE_TIMESTAMP(rt_instr_svc,
 	    RT_INSTR_EXIT_HW_LOW_PWR,
 	    PMF_NO_CACHE_MAINT);
@@ -295,7 +296,7 @@ void psci_cpu_suspend_finish(unsigned int cpu_idx, const psci_power_state_t *sta
 	 */
 	psci_plat_pm_ops->pwr_domain_suspend_finish(state_info);
 
-#if !(HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY)
+#if !(__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY)
 	/* Arch. management: Enable the data cache, stack memory maintenance. */
 	psci_do_pwrup_cache_maintenance();
 #endif
@@ -304,11 +305,11 @@ void psci_cpu_suspend_finish(unsigned int cpu_idx, const psci_power_state_t *sta
 	counter_freq = plat_get_syscnt_freq2();
 	write_cntfrq_el0(counter_freq);
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* Store APIAKey_EL1 key */
 	set_cpu_data(apiakey[0], read_apiakeylo_el1());
 	set_cpu_data(apiakey[1], read_apiakeyhi_el1());
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 
 	/*
 	 * Call the cpu suspend finish handler registered by the Secure Payload

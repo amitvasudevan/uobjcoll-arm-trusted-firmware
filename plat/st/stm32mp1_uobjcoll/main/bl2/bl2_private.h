@@ -7,6 +7,7 @@
 #ifndef BL2_PRIVATE_H
 #define BL2_PRIVATE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 
 /******************************************

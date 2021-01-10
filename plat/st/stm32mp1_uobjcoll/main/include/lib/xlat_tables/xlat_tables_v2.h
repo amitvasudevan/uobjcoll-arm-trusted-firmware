@@ -7,6 +7,7 @@
 #ifndef XLAT_TABLES_V2_H
 #define XLAT_TABLES_V2_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2_helpers.h>
 
@@ -277,7 +278,7 @@ void mmap_add_region_alloc_va_ctx(xlat_ctx_t *ctx, mmap_region_t *mm);
  */
 void mmap_add_alloc_va(mmap_region_t *mm);
 
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 /*
  * Add a dynamic region with defined base PA and base VA. This type of region
  * can be added and removed even after the translation tables are initialized.
@@ -323,7 +324,7 @@ int mmap_remove_dynamic_region_ctx(xlat_ctx_t *ctx,
 				uintptr_t base_va,
 				size_t size);
 
-#endif /* PLAT_XLAT_TABLES_DYNAMIC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__ */
 
 /*
  * Change the memory attributes of the memory region starting from a given

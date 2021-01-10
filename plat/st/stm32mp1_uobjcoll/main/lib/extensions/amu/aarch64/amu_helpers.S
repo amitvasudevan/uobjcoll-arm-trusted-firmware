@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
@@ -22,7 +23,7 @@
  */
 func amu_group0_cnt_read_internal
 	adr	x1, 1f
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/*
 	 * It can be dangerous to call this function with an
 	 * out of bounds index.  Ensure `idx` is valid.
@@ -35,7 +36,7 @@ func amu_group0_cnt_read_internal
 	 * in the table below.
 	 */
 	add	x1, x1, x0, lsl #3	/* each mrs/ret sequence is 8 bytes */
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	add	x1, x1, x0, lsl #2	/* + "bti j" instruction */
 #endif
 	br	x1
@@ -53,7 +54,7 @@ endfunc amu_group0_cnt_read_internal
  */
 func amu_group0_cnt_write_internal
 	adr	x2, 1f
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/*
 	 * It can be dangerous to call this function with an
 	 * out of bounds index.  Ensure `idx` is valid.
@@ -66,7 +67,7 @@ func amu_group0_cnt_write_internal
 	 * in the table below.
 	 */
 	add	x2, x2, x0, lsl #3	/* each msr/ret sequence is 8 bytes */
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	add	x2, x2, x0, lsl #2	/* + "bti j" instruction */
 #endif
 	br	x2
@@ -85,7 +86,7 @@ endfunc amu_group0_cnt_write_internal
  */
 func amu_group1_cnt_read_internal
 	adr	x1, 1f
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/*
 	 * It can be dangerous to call this function with an
 	 * out of bounds index.  Ensure `idx` is valid.
@@ -98,7 +99,7 @@ func amu_group1_cnt_read_internal
 	 * in the table below.
 	 */
 	add	x1, x1, x0, lsl #3	/* each mrs/ret sequence is 8 bytes */
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	add	x1, x1, x0, lsl #2	/* + "bti j" instruction */
 #endif
 	br	x1
@@ -128,7 +129,7 @@ endfunc amu_group1_cnt_read_internal
  */
 func amu_group1_cnt_write_internal
 	adr	x2, 1f
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/*
 	 * It can be dangerous to call this function with an
 	 * out of bounds index.  Ensure `idx` is valid.
@@ -141,7 +142,7 @@ func amu_group1_cnt_write_internal
 	 * in the table below.
 	 */
 	add	x2, x2, x0, lsl #3	/* each msr/ret sequence is 8 bytes */
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	add	x2, x2, x0, lsl #2	/* + "bti j" instruction */
 #endif
 	br	x2
@@ -172,7 +173,7 @@ endfunc amu_group1_cnt_write_internal
  */
 func amu_group1_set_evtype_internal
 	adr	x2, 1f
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/*
 	 * It can be dangerous to call this function with an
 	 * out of bounds index.  Ensure `idx` is valid.
@@ -189,7 +190,7 @@ func amu_group1_set_evtype_internal
 	 * in the table below.
 	 */
 	add	x2, x2, x0, lsl #3	/* each msr/ret sequence is 8 bytes */
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	add	x2, x2, x0, lsl #2	/* + "bti j" instruction */
 #endif
 	br	x2

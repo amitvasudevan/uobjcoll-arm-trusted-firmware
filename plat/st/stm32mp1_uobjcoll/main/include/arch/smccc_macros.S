@@ -6,6 +6,7 @@
 #ifndef SMCCC_MACROS_S
 #define SMCCC_MACROS_S
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 
 /*
@@ -22,7 +23,7 @@
 	mov	r0, sp
 	add	r0, r0, #SMC_CTX_SP_USR
 
-#if ARM_ARCH_MAJOR == 7 && !defined(ARMV7_SUPPORTS_VIRTUALIZATION)
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7 && !defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_VIRTUALIZATION__)
 	/* Must be in secure state to restore Monitor mode */
 	ldcopr	r4, SCR
 	bic	r2, r4, #SCR_NS_BIT
@@ -85,7 +86,7 @@
 
 	ldcopr	r4, SCR
 
-#if ARM_ARCH_MAJOR > 7
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ > 7
 	/*
 	 * Check if earlier initialization of SDCR.SCCD to 1
 	 * failed, meaning that ARMv8-PMU is not implemented,
@@ -145,7 +146,7 @@
 	/*
 	 * Back to Non-secure state
 	 */
-#if ARM_ARCH_MAJOR > 7
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ > 7
 	/*
 	 * Check if earlier initialization SDCR.SCCD to 1
 	 * failed, meaning that ARMv8-PMU is not implemented and
@@ -164,7 +165,7 @@
 	/* Restore the banked registers including the current SPSR */
 	add	r1, r0, #SMC_CTX_SP_USR
 
-#if ARM_ARCH_MAJOR == 7 && !defined(ARMV7_SUPPORTS_VIRTUALIZATION)
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7 && !defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_VIRTUALIZATION__)
 	/* Must be in secure state to restore Monitor mode */
 	ldcopr	r4, SCR
 	bic	r2, r4, #SCR_NS_BIT

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
@@ -59,7 +60,7 @@ static inline void ccn_reg_write(uintptr_t periphbase,
 	mmio_write_64(region_base + register_offset, value);
 }
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 
 typedef struct rn_info {
 		unsigned char node_desc[MAX_RN_NODES];
@@ -202,7 +203,7 @@ static void __init ccn_validate_plat_params(const ccn_desc_t *plat_desc)
 		info.node_desc[node_id]--;
 	}
 }
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 
 /*******************************************************************************
  * This function validates parameters passed by the platform (in a debug build)
@@ -212,7 +213,7 @@ static void __init ccn_validate_plat_params(const ccn_desc_t *plat_desc)
  ******************************************************************************/
 void __init ccn_init(const ccn_desc_t *plat_desc)
 {
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	ccn_validate_plat_params(plat_desc);
 #endif
 

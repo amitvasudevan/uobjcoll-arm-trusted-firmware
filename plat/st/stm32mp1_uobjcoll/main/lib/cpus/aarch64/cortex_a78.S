@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -12,8 +13,8 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>
 
 /* Hardware handled coherency */
-#if HW_ASSISTED_COHERENCY == 0
-#error "cortex_a78 must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
+#error "cortex_a78 must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 
@@ -53,12 +54,12 @@ func cortex_a78_reset_func
 	bl	cpu_get_rev_var
 	mov	x18, x0
 
-#if ERRATA_A78_1688305
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A78_1688305__
 	mov     x0, x18
 	bl	errata_a78_1688305_wa
 #endif
 
-#if ENABLE_AMU
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_AMU__
 	/* Make sure accesses from EL0/EL1 and EL2 are not trapped to EL3 */
 	mrs	x0, actlr_el3
 	bic	x0, x0, #CORTEX_A78_ACTLR_TAM_BIT
@@ -112,7 +113,7 @@ func cortex_a78_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_A78_1688305, cortex_a78, 1688305
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A78_1688305__, cortex_a78, 1688305
 
 	ldp	x8, x30, [sp], #16
 	ret

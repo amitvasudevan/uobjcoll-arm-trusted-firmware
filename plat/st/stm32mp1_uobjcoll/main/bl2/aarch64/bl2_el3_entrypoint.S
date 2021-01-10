@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -15,7 +16,7 @@
 	.globl	bl2_el3_run_image
 	.globl	bl2_run_next_image
 
-#if BL2_IN_XIP_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_IN_XIP_MEM__
 #define FIXUP_SIZE	0
 #else
 #define FIXUP_SIZE	((BL2_LIMIT) - (BL2_BASE))
@@ -30,8 +31,8 @@ func bl2_entrypoint
 
 	el3_entrypoint_common                                   \
 		_init_sctlr=1                                   \
-		_warm_boot_mailbox=!PROGRAMMABLE_RESET_ADDRESS  \
-		_secondary_cold_boot=!COLD_BOOT_SINGLE_CPU      \
+		_warm_boot_mailbox=!__UBERSPARK_UOBJCOLL_CONFIGDEF_PROGRAMMABLE_RESET_ADDRESS__  \
+		_secondary_cold_boot=!__UBERSPARK_UOBJCOLL_CONFIGDEF_COLD_BOOT_SINGLE_CPU__      \
 		_init_memory=1                                  \
 		_init_c_runtime=1                               \
 		_exception_vectors=bl2_el3_exceptions		\
@@ -52,13 +53,13 @@ func bl2_entrypoint
 	 */
 	bl	bl2_el3_setup
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* ---------------------------------------------
 	 * Program APIAKey_EL1 and enable pointer authentication.
 	 * ---------------------------------------------
 	 */
 	bl	pauth_init_enable_el3
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 
 	/* ---------------------------------------------
 	 * Jump to main function.
@@ -86,14 +87,14 @@ func bl2_run_next_image
 	tlbi	alle3
 	bl	bl2_el3_plat_prepare_exit
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* ---------------------------------------------
 	 * Disable pointer authentication before jumping
 	 * to next boot image.
 	 * ---------------------------------------------
 	 */
 	bl	pauth_disable_el3
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 
 	ldp	x0, x1, [x20, #ENTRY_POINT_INFO_PC_OFFSET]
 	msr	elr_el3, x0

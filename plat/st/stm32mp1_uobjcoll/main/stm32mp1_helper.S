@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -31,7 +32,7 @@ func platform_mem_init
 endfunc platform_mem_init
 
 func plat_report_exception
-#if DEBUG
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 	mov	r8, lr
 
 	/* Test if an abort occurred */
@@ -241,7 +242,7 @@ func plat_panic_handler
 	b	.
 endfunc plat_panic_handler
 
-#if DEBUG
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 .section .rodata.rev_err_str, "aS"
 abort_str:
 	.asciz "\nAbort at: 0x"

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
@@ -21,7 +22,7 @@
  * and return it in `r0` and `r1`.
  */
 func amu_group0_cnt_read_internal
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/* `idx` should be between [0, 3] */
 	mov	r1, r0
 	lsr	r1, r1, #2
@@ -56,7 +57,7 @@ endfunc amu_group0_cnt_read_internal
  * `r1` is used as a scratch register.
  */
 func amu_group0_cnt_write_internal
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/* `idx` should be between [0, 3] */
 	mov	r1, r0
 	lsr	r1, r1, #2
@@ -91,7 +92,7 @@ endfunc amu_group0_cnt_write_internal
  * and return it in `r0` and `r1`.
  */
 func amu_group1_cnt_read_internal
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/* `idx` should be between [0, 15] */
 	mov	r1, r0
 	lsr	r1, r1, #4
@@ -151,7 +152,7 @@ endfunc amu_group1_cnt_read_internal
  * `r1` is used as a scratch register.
  */
 func amu_group1_cnt_write_internal
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/* `idx` should be between [0, 15] */
 	mov	r1, r0
 	lsr	r1, r1, #4
@@ -210,7 +211,7 @@ endfunc amu_group1_cnt_write_internal
  * with the value `val`.
  */
 func amu_group1_set_evtype_internal
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/* `idx` should be between [0, 15] */
 	mov	r2, r0
 	lsr	r2, r2, #4

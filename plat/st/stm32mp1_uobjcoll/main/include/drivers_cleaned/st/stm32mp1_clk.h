@@ -7,6 +7,7 @@
 #ifndef STM32MP1_CLK_H
 #define STM32MP1_CLK_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 
 enum stm32mp_osc_id {
@@ -59,7 +60,7 @@ void stm32mp1_clk_rcc_regs_unlock(void);
 
 void stm32mp1_stgen_increment(unsigned long long offset_in_ms);
 
-#ifdef STM32MP_SHARED_RESOURCES
+#ifdef __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SHARED_RESOURCES__
 void stm32mp1_register_clock_parents_secure(unsigned long id);
 #endif
 #endif /* STM32MP1_CLK_H */

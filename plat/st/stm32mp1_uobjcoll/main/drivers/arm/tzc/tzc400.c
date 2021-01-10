@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
@@ -118,7 +119,7 @@ void tzc400_set_action(unsigned int action)
 
 void tzc400_init(uintptr_t base)
 {
-#if DEBUG
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 	unsigned int tzc400_id;
 #endif
 	unsigned int tzc400_build;
@@ -126,7 +127,7 @@ void tzc400_init(uintptr_t base)
 	assert(base != 0U);
 	tzc400.base = base;
 
-#if DEBUG
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 	tzc400_id = _tzc_read_peripheral_id(base);
 	if (tzc400_id != TZC_400_PERIPHERAL_ID) {
 		ERROR("TZC-400 : Wrong device ID (0x%x).\n", tzc400_id);

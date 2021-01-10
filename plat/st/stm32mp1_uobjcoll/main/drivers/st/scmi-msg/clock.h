@@ -7,6 +7,7 @@
 #ifndef SCMI_MSG_CLOCK_H
 #define SCMI_MSG_CLOCK_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>

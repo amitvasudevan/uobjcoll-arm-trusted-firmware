@@ -7,8 +7,9 @@
 #ifndef AUTH_MOD_H
 #define AUTH_MOD_H
 
-#if TRUSTED_BOARD_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/cot_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_common.h>
@@ -21,7 +22,7 @@
  */
 #define IMG_FLAG_AUTHENTICATED		(1 << 0)
 
-#if COT_DESC_IN_DTB && !IMAGE_BL1
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_COT_DESC_IN_DTB__ && !IMAGE_BL1
 /*
  * Authentication image descriptor
  */
@@ -43,7 +44,7 @@ typedef struct auth_img_desc_s {
 	const auth_method_desc_t *const img_auth_methods;
 	const auth_param_desc_t *const authenticated_data;
 } auth_img_desc_t;
-#endif /* COT_DESC_IN_DTB && !IMAGE_BL1 */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_COT_DESC_IN_DTB__ && !IMAGE_BL1 */
 
 /* Public functions */
 void auth_mod_init(void);
@@ -85,6 +86,6 @@ extern unsigned int auth_img_flags[MAX_NUMBER_IDS];
 
 #endif
 
-#endif /* TRUSTED_BOARD_BOOT */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__ */
 
 #endif /* AUTH_MOD_H */

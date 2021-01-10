@@ -7,6 +7,7 @@
 #ifndef MESON_CONSOLE_H
 #define MESON_CONSOLE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 #ifndef __ASSEMBLER__

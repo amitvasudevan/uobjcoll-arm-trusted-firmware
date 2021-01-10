@@ -7,6 +7,7 @@
 #ifndef GICV3_PRIVATE_H
 #define GICV3_PRIVATE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
@@ -32,7 +33,7 @@
  * Calculate 8, 32 and 64-bit GICD register offset
  * corresponding to its interrupt ID
  */
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	/* GICv3.1 */
 #define	GICD_OFFSET_8(REG, id)				\
 	(((id) <= MAX_SPI_ID) ?				\
@@ -59,7 +60,7 @@
 
 #define	GICD_OFFSET_64(REG, id)	\
 	(GICD_##REG##R + (((uintptr_t)(id) >> REG##R_SHIFT) << 3))
-#endif	/* GIC_EXT_INTID */
+#endif	/* __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__ */
 
 /*
  * Read/Write 8, 32 and 64-bit GIC Distributor register
@@ -108,7 +109,7 @@
  * Calculate 8 and 32-bit GICR register offset
  * corresponding to its interrupt ID
  */
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	/* GICv3.1 */
 #define	GICR_OFFSET_8(REG, id)				\
 	(((id) <= MAX_PPI_ID) ?				\
@@ -126,7 +127,7 @@
 
 #define GICR_OFFSET(REG, id)	\
 	(GICR_##REG##R + (((uintptr_t)(id) >> REG##R_SHIFT) << 2))
-#endif /* GIC_EXT_INTID */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__ */
 
 /* Read/Write GIC Redistributor register corresponding to its interrupt ID */
 #define GICR_READ(REG, base, id)			\

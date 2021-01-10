@@ -7,6 +7,7 @@
 #ifndef PL061_GPIO_H
 #define PL061_GPIO_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/gpio.h>
 
 void pl061_gpio_register(uintptr_t base_addr, int gpio_dev);

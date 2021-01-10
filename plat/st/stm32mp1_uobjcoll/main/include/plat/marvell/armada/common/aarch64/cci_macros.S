@@ -8,6 +8,7 @@
 #ifndef CCI_MACROS_S
 #define CCI_MACROS_S
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cci.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 

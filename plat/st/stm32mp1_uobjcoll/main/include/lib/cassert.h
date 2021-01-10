@@ -7,6 +7,7 @@
 #ifndef CASSERT_H
 #define CASSERT_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
 
 /*******************************************************************************

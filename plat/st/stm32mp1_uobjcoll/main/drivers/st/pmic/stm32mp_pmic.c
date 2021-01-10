@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
@@ -128,7 +129,7 @@ int dt_pmic_configure_boot_on_regulators(void)
 		uint16_t voltage;
 		int status;
 
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 		if ((fdt_getprop(fdt, regulator_node, "regulator-boot-on",
 				 NULL) == NULL) &&
 		    (fdt_getprop(fdt, regulator_node, "regulator-always-on",
@@ -264,7 +265,7 @@ void initialize_pmic(void)
 	INFO("PMIC version = 0x%02lx\n", pmic_version);
 	stpmic1_dump_regulators();
 
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 	if (dt_pmic_configure_boot_on_regulators() != 0) {
 		panic();
 	};

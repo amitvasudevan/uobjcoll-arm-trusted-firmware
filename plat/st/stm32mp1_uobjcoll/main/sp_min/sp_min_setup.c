@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
@@ -171,7 +172,7 @@ void sp_min_early_platform_setup2(u_register_t arg0, u_register_t arg1,
 
 		console_flags = CONSOLE_FLAG_BOOT | CONSOLE_FLAG_CRASH |
 			CONSOLE_FLAG_TRANSLATE_CRLF;
-#ifdef DEBUG
+#ifdef __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 		console_flags |= CONSOLE_FLAG_RUNTIME;
 #endif
 		console_set_scope(&console, console_flags);

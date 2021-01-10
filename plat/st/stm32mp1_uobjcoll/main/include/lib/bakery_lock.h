@@ -7,6 +7,7 @@
 #ifndef BAKERY_LOCK_H
 #define BAKERY_LOCK_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #define BAKERY_LOCK_MAX_CPUS		PLATFORM_CORE_COUNT
@@ -51,7 +52,7 @@ static inline uint16_t make_bakery_data(unsigned int choosing, unsigned int num)
 /*****************************************************************************
  * External bakery lock interface.
  ****************************************************************************/
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 /*
  * Bakery locks are stored in coherent memory
  *

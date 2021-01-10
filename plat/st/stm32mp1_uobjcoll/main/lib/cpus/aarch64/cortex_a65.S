@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
@@ -13,13 +14,13 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>
 
 /* Hardware handled coherency */
-#if !HW_ASSISTED_COHERENCY
-#error "Cortex-A65 must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
+#error "Cortex-A65 must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 /* 64-bit only core */
-#if CTX_INCLUDE_AARCH32_REGS
-#error "Cortex-A65 supports only AArch64. Compile with CTX_INCLUDE_AARCH32_REGS=0"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
+#error "Cortex-A65 supports only AArch64. Compile with __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__=0"
 #endif
 
 /* -------------------------------------------------
@@ -30,7 +31,7 @@
 func cortex_a65_reset_func
 	mov	x19, x30
 
-#if ERRATA_DSU_936184
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_936184__
 	bl	errata_dsu_936184_wa
 #endif
 
@@ -59,7 +60,7 @@ func cortex_a65_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_DSU_936184, cortex_a65, dsu_936184
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_936184__, cortex_a65, dsu_936184
 
 	ldp	x8, x30, [sp], #16
 	ret

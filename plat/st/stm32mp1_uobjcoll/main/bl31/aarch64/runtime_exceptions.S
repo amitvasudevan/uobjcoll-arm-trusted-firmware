@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -41,15 +42,15 @@
 	/*
 	 * Macro that prepares entry to EL3 upon taking an exception.
 	 *
-	 * With RAS_EXTENSION, this macro synchronizes pending errors with an ESB
+	 * With __UBERSPARK_UOBJCOLL_CONFIGDEF_RAS_EXTENSION__, this macro synchronizes pending errors with an ESB
 	 * instruction. When an error is thus synchronized, the handling is
 	 * delegated to platform EA handler.
 	 *
-	 * Without RAS_EXTENSION, this macro just saves x30, and unmasks
+	 * Without __UBERSPARK_UOBJCOLL_CONFIGDEF_RAS_EXTENSION__, this macro just saves x30, and unmasks
 	 * Asynchronous External Aborts.
 	 */
 	.macro check_and_unmask_ea
-#if RAS_EXTENSION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_RAS_EXTENSION__
 	/* Synchronize pending External Aborts */
 	esb
 
@@ -92,7 +93,7 @@
 	 * ---------------------------------------------------------------------
 	 */
 	.macro	handle_sync_exception
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 	/*
 	 * Read the timestamp value and store it in per-cpu data. The value
 	 * will be extracted from per-cpu data by the C level SMC handler and
@@ -135,7 +136,7 @@
 	 */
 	bl	save_gp_pmcr_pauth_regs
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* Load and program APIAKey firmware key */
 	bl	pauth_load_bl31_apiakey
 #endif
@@ -377,7 +378,7 @@ smc_handler64:
 	 */
 	bl	save_gp_pmcr_pauth_regs
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* Load and program APIAKey firmware key */
 	bl	pauth_load_bl31_apiakey
 #endif
@@ -445,7 +446,7 @@ smc_handler64:
 	 * el3_exit() which will program any remaining architectural state
 	 * prior to issuing the ERET to the desired lower EL.
 	 */
-#if DEBUG
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 	cbz	x15, rt_svc_fw_critical_error
 #endif
 	blr	x15
@@ -470,7 +471,7 @@ smc_prohibited:
 	mov	x0, #SMC_UNK
 	exception_return
 
-#if DEBUG
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 rt_svc_fw_critical_error:
 	/* Switch to SP_ELx */
 	msr	spsel, #MODE_SP_ELX

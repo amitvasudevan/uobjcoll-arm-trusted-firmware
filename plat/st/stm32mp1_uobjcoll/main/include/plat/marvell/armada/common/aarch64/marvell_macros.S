@@ -8,6 +8,7 @@
 #ifndef MARVELL_MACROS_S
 #define MARVELL_MACROS_S
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cci.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv2.h>

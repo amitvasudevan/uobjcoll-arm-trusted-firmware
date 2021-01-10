@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.ld.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 
@@ -22,7 +23,7 @@ SECTIONS
     ASSERT(. == ALIGN(PAGE_SIZE),
            "BL2_BASE address is not aligned on a page boundary.")
 
-#if SEPARATE_CODE_AND_RODATA
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_CODE_AND_RODATA__
     .text . : {
         __TEXT_START__ = .;
         *bl2_entrypoint.o(.text*)
@@ -82,7 +83,7 @@ SECTIONS
     BSS_SECTION >RAM
     XLAT_TABLE_SECTION >RAM
 
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
     /*
      * The base address of the coherent memory section must be page-aligned (4K)
      * to guarantee that the coherent data are stored on their own pages and
@@ -112,7 +113,7 @@ SECTIONS
 
     __BSS_SIZE__ = SIZEOF(.bss);
 
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
     __COHERENT_RAM_UNALIGNED_SIZE__ =
         __COHERENT_RAM_END_UNALIGNED__ - __COHERENT_RAM_START__;
 #endif

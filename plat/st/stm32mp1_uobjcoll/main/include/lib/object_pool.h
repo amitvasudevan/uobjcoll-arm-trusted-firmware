@@ -7,6 +7,7 @@
 #ifndef OBJECT_POOL_H
 #define OBJECT_POOL_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdlib.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>

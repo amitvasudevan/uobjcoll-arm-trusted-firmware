@@ -8,6 +8,7 @@
 #ifndef RPI3_GPIO_H
 #define RPI3_GPIO_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/gpio.h>
 

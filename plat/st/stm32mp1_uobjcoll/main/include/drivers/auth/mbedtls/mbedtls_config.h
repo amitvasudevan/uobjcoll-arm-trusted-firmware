@@ -110,6 +110,7 @@
 
 #ifndef __ASSEMBLER__
 /* System headers required to build mbed TLS with the current configuration */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdlib.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/check_config.h>
 #endif

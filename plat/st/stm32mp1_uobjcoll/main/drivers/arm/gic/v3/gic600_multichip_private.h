@@ -7,6 +7,7 @@
 #ifndef GIC600_MULTICHIP_PRIVATE_H
 #define GIC600_MULTICHIP_PRIVATE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic600_multichip.h>
 
 #include "gicv3_private.h"

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
@@ -60,7 +61,7 @@ void mmap_add_alloc_va(mmap_region_t *mm)
 	}
 }
 
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 
 int mmap_add_dynamic_region(unsigned long long base_pa, uintptr_t base_va,
 			    size_t size, unsigned int attr)
@@ -90,7 +91,7 @@ int mmap_remove_dynamic_region(uintptr_t base_va, size_t size)
 					base_va, size);
 }
 
-#endif /* PLAT_XLAT_TABLES_DYNAMIC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__ */
 
 void __init init_xlat_tables(void)
 {
@@ -200,7 +201,7 @@ int xlat_make_tables_readonly(void)
  * region. Therefore, in this case we have to assume that the whole address
  * space size might be mapped.
  */
-#ifdef PLAT_XLAT_TABLES_DYNAMIC
+#ifdef __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 #define MAX_PHYS_ADDR	tf_xlat_ctx.pa_max_address
 #else
 #define MAX_PHYS_ADDR	tf_xlat_ctx.max_pa

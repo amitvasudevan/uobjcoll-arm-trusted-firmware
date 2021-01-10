@@ -7,6 +7,7 @@
 #ifndef TZC_COMMON_PRIVATE_H
 #define TZC_COMMON_PRIVATE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc_common.h>

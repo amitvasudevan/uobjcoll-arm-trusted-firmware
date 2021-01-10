@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -97,7 +98,7 @@ void gicv3_rdistif_base_addrs_probe(uintptr_t *rdistif_base_addrs,
 void gicv3_spis_config_defaults(uintptr_t gicd_base)
 {
 	unsigned int i, num_ints;
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	unsigned int num_eints;
 #endif
 	unsigned int typer_reg = gicd_read_typer(gicd_base);
@@ -110,7 +111,7 @@ void gicv3_spis_config_defaults(uintptr_t gicd_base)
 		gicd_write_igroupr(gicd_base, i, ~0U);
 	}
 
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	/* Check if extended SPI range is implemented */
 	if ((typer_reg & TYPER_ESPI) != 0U) {
 		/*
@@ -133,7 +134,7 @@ void gicv3_spis_config_defaults(uintptr_t gicd_base)
 		gicd_write_ipriorityr(gicd_base, i, GICD_IPRIORITYR_DEF_VAL);
 	}
 
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	for (i = MIN_ESPI_ID; i < num_eints;
 					i += (1U << IPRIORITYR_SHIFT)) {
 		gicd_write_ipriorityr(gicd_base, i, GICD_IPRIORITYR_DEF_VAL);
@@ -146,7 +147,7 @@ void gicv3_spis_config_defaults(uintptr_t gicd_base)
 		gicd_write_icfgr(gicd_base, i, 0U);
 	}
 
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	for (i = MIN_ESPI_ID; i < num_eints; i += (1U << ICFGR_SHIFT)) {
 		gicd_write_icfgr(gicd_base, i, 0U);
 	}
@@ -222,7 +223,7 @@ void gicv3_ppi_sgi_config_defaults(uintptr_t gicr_base)
 {
 	unsigned int i, ppi_regs_num, regs_num;
 
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	/* Calculate number of PPI registers */
 	ppi_regs_num = (unsigned int)((gicr_read_typer(gicr_base) >>
 			TYPER_PPI_NUM_SHIFT) & TYPER_PPI_NUM_MASK) + 1;

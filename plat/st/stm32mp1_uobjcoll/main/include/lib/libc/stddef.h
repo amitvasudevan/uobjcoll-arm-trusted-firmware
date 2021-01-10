@@ -11,6 +11,7 @@
 #ifndef STDDEF_H
 #define STDDEF_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/aarch32/stddef_.h>
 
 #ifndef _PTRDIFF_T

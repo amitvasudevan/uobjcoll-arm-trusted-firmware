@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
@@ -99,7 +100,7 @@ int ras_ea_handler(unsigned int ea_reason, uint64_t syndrome, void *cookie,
 	return (n_handled != 0U) ? 1 : 0;
 }
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 static void assert_interrupts_sorted(void)
 {
 	unsigned int i, last;
@@ -174,7 +175,7 @@ static int ras_interrupt_handler(uint32_t intr_raw, uint32_t flags,
 
 void __init ras_init(void)
 {
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/* Check RAS interrupts are sorted */
 	assert_interrupts_sorted();
 #endif

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
@@ -22,7 +23,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/std_svc.h>
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 PMF_REGISTER_SERVICE_SMC(rt_instr_svc, PMF_RT_INSTR_SVC_ID,
 	RT_INSTR_TOTAL_IDS, PMF_STORE_ENABLE)
 #endif
@@ -85,13 +86,13 @@ void bl31_setup(u_register_t arg0, u_register_t arg1, u_register_t arg2,
 	/* Perform late platform-specific setup */
 	bl31_plat_arch_setup();
 
-#if CTX_INCLUDE_PAUTH_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
 	/*
 	 * Assert that the ARMv8.3-PAuth registers are present or an access
 	 * fault will be triggered when they are being saved or restored.
 	 */
 	assert(is_armv8_3_pauth_present());
-#endif /* CTX_INCLUDE_PAUTH_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__ */
 }
 
 /*******************************************************************************
@@ -119,7 +120,7 @@ void bl31_main(void)
 	/* Initialise helper libraries */
 	bl31_lib_init();
 
-#if EL3_EXCEPTION_HANDLING
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_EL3_EXCEPTION_HANDLING__
 	INFO("BL31: Initialising Exception Handling Framework\n");
 	ehf_init();
 #endif
@@ -192,14 +193,14 @@ void __init bl31_prepare_next_image_entry(void)
 	entry_point_info_t *next_image_info;
 	uint32_t image_type;
 
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 	/*
 	 * Ensure that the build flag to save AArch32 system registers in CPU
 	 * context is not set for AArch64-only platforms.
 	 */
 	if (el_implemented(1) == EL_IMPL_A64ONLY) {
 		ERROR("EL1 supports AArch64-only. Please set build flag "
-				"CTX_INCLUDE_AARCH32_REGS = 0\n");
+				"__UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__ = 0\n");
 		panic();
 	}
 #endif

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -12,8 +13,8 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>
 
 /* Hardware handled coherency */
-#if HW_ASSISTED_COHERENCY == 0
-#error "Cortex-A55 must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
+#error "Cortex-A55 must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 	/* --------------------------------------------------
@@ -228,7 +229,7 @@ endfunc check_errata_1221012
 	 * --------------------------------------------------
 	 */
 func check_errata_1530923
-#if ERRATA_A55_1530923
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_1530923__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -239,43 +240,43 @@ endfunc check_errata_1530923
 func cortex_a55_reset_func
 	mov	x19, x30
 
-#if ERRATA_DSU_798953
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_798953__
 	bl	errata_dsu_798953_wa
 #endif
 
-#if ERRATA_DSU_936184
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_936184__
 	bl	errata_dsu_936184_wa
 #endif
 
 	bl	cpu_get_rev_var
 	mov	x18, x0
 
-#if ERRATA_A55_768277
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_768277__
 	mov	x0, x18
 	bl	errata_a55_768277_wa
 #endif
 
-#if ERRATA_A55_778703
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_778703__
 	mov	x0, x18
 	bl	errata_a55_778703_wa
 #endif
 
-#if ERRATA_A55_798797
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_798797__
 	mov	x0, x18
 	bl	errata_a55_798797_wa
 #endif
 
-#if ERRATA_A55_846532
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_846532__
 	mov	x0, x18
 	bl	errata_a55_846532_wa
 #endif
 
-#if ERRATA_A55_903758
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_903758__
 	mov	x0, x18
 	bl	errata_a55_903758_wa
 #endif
 
-#if ERRATA_A55_1221012
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_1221012__
 	mov	x0, x18
 	bl	errata_a55_1221012_wa
 #endif
@@ -312,15 +313,15 @@ func cortex_a55_errata_report
 	 * Report all errata. The revision variant information is at x8, where
 	 * "report_errata" is expecting it and it doesn't corrupt it.
 	 */
-	report_errata ERRATA_DSU_798953, cortex_a55, dsu_798953
-	report_errata ERRATA_DSU_936184, cortex_a55, dsu_936184
-	report_errata ERRATA_A55_768277, cortex_a55, 768277
-	report_errata ERRATA_A55_778703, cortex_a55, 778703
-	report_errata ERRATA_A55_798797, cortex_a55, 798797
-	report_errata ERRATA_A55_846532, cortex_a55, 846532
-	report_errata ERRATA_A55_903758, cortex_a55, 903758
-	report_errata ERRATA_A55_1221012, cortex_a55, 1221012
-	report_errata ERRATA_A55_1530923, cortex_a55, 1530923
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_798953__, cortex_a55, dsu_798953
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_936184__, cortex_a55, dsu_936184
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_768277__, cortex_a55, 768277
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_778703__, cortex_a55, 778703
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_798797__, cortex_a55, 798797
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_846532__, cortex_a55, 846532
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_903758__, cortex_a55, 903758
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_1221012__, cortex_a55, 1221012
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A55_1530923__, cortex_a55, 1530923
 
 	ldp	x8, x30, [sp], #16
 	ret

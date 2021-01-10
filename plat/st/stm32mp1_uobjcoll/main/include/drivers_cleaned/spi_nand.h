@@ -7,6 +7,7 @@
 #ifndef DRIVERS_SPI_NAND_H
 #define DRIVERS_SPI_NAND_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/nand.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/spi_mem.h>
 

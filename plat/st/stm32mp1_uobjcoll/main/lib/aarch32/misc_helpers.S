@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -138,7 +139,7 @@ endfunc zeromem
  * --------------------------------------------------------------------------
  */
 func memcpy4
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	orr	r3, r0, r1
 	tst	r3, #0x3
 	ASM_ASSERT(eq)
@@ -170,7 +171,7 @@ endfunc memcpy4
 func disable_mmu_secure
 	mov	r1, #(SCTLR_M_BIT | SCTLR_C_BIT)
 do_disable_mmu:
-#if ERRATA_A9_794073
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A9_794073__
 	stcopr	r0, BPIALL
 	dsb
 #endif

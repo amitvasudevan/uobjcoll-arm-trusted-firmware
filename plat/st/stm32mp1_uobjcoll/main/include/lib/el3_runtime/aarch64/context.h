@@ -7,6 +7,7 @@
 #ifndef CONTEXT_H
 #define CONTEXT_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*******************************************************************************
@@ -96,7 +97,7 @@
  * If the platform is AArch64-only, there is no need to save and restore these
  * AArch32 registers.
  */
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 #define CTX_SPSR_ABT		U(0xb0)	/* Align to the next 16 byte boundary */
 #define CTX_SPSR_UND		U(0xb8)
 #define CTX_SPSR_IRQ		U(0xc0)
@@ -106,13 +107,13 @@
 #define CTX_AARCH32_END		U(0xe0) /* Align to the next 16 byte boundary */
 #else
 #define CTX_AARCH32_END		U(0xb0)	/* Align to the next 16 byte boundary */
-#endif /* CTX_INCLUDE_AARCH32_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__ */
 
 /*
  * If the timer registers aren't saved and restored, we don't have to reserve
  * space for them in the context
  */
-#if NS_TIMER_SWITCH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_NS_TIMER_SWITCH__
 #define CTX_CNTP_CTL_EL0	(CTX_AARCH32_END + U(0x0))
 #define CTX_CNTP_CVAL_EL0	(CTX_AARCH32_END + U(0x8))
 #define CTX_CNTV_CTL_EL0	(CTX_AARCH32_END + U(0x10))
@@ -121,9 +122,9 @@
 #define CTX_TIMER_SYSREGS_END	(CTX_AARCH32_END + U(0x30)) /* Align to the next 16 byte boundary */
 #else
 #define CTX_TIMER_SYSREGS_END	CTX_AARCH32_END
-#endif /* NS_TIMER_SWITCH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_NS_TIMER_SWITCH__ */
 
-#if CTX_INCLUDE_MTE_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__
 #define CTX_TFSRE0_EL1		(CTX_TIMER_SYSREGS_END + U(0x0))
 #define CTX_TFSR_EL1		(CTX_TIMER_SYSREGS_END + U(0x8))
 #define CTX_RGSR_EL1		(CTX_TIMER_SYSREGS_END + U(0x10))
@@ -133,7 +134,7 @@
 #define CTX_MTE_REGS_END	(CTX_TIMER_SYSREGS_END + U(0x20))
 #else
 #define CTX_MTE_REGS_END	CTX_TIMER_SYSREGS_END
-#endif /* CTX_INCLUDE_MTE_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__ */
 
 /*
  * End of system registers.
@@ -144,7 +145,7 @@
  * EL2 register set
  */
 
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 /* For later discussion
  * ICH_AP0R<n>_EL2
  * ICH_AP1R<n>_EL2
@@ -193,7 +194,7 @@
 // Only if MTE registers in use
 #define CTX_TFSR_EL2		U(0x118)
 
-// Only if ENABLE_MPAM_FOR_LOWER_ELS==1
+// Only if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_MPAM_FOR_LOWER_ELS__==1
 #define CTX_MPAM2_EL2		U(0x120)
 #define CTX_MPAMHCR_EL2		U(0x128)
 #define CTX_MPAMVPM0_EL2	U(0x130)
@@ -240,18 +241,18 @@
 /* Align to the next 16 byte boundary */
 #define CTX_EL2_SYSREGS_END	U(0x250)
 
-#endif /* CTX_INCLUDE_EL2_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__ */
 
 /*******************************************************************************
  * Constants that allow assembler code to access members of and the 'fp_regs'
  * structure at their correct offsets.
  ******************************************************************************/
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 # define CTX_FPREGS_OFFSET	(CTX_EL2_SYSREGS_OFFSET + CTX_EL2_SYSREGS_END)
 #else
 # define CTX_FPREGS_OFFSET	(CTX_EL1_SYSREGS_OFFSET + CTX_EL1_SYSREGS_END)
 #endif
-#if CTX_INCLUDE_FPREGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__
 #define CTX_FP_Q0		U(0x0)
 #define CTX_FP_Q1		U(0x10)
 #define CTX_FP_Q2		U(0x20)
@@ -286,7 +287,7 @@
 #define CTX_FP_Q31		U(0x1f0)
 #define CTX_FP_FPSR		U(0x200)
 #define CTX_FP_FPCR		U(0x208)
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 #define CTX_FP_FPEXC32_EL2	U(0x210)
 #define CTX_FPREGS_END		U(0x220) /* Align to the next 16 byte boundary */
 #else
@@ -307,7 +308,7 @@
  * Registers related to ARMv8.3-PAuth.
  ******************************************************************************/
 #define CTX_PAUTH_REGS_OFFSET	(CTX_CVE_2018_3639_OFFSET + CTX_CVE_2018_3639_END)
-#if CTX_INCLUDE_PAUTH_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
 #define CTX_PACIAKEY_LO		U(0x0)
 #define CTX_PACIAKEY_HI		U(0x8)
 #define CTX_PACIBKEY_LO		U(0x10)
@@ -321,7 +322,7 @@
 #define CTX_PAUTH_REGS_END	U(0x50) /* Align to the next 16 byte boundary */
 #else
 #define CTX_PAUTH_REGS_END	U(0)
-#endif /* CTX_INCLUDE_PAUTH_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__ */
 
 #ifndef __ASSEMBLER__
 
@@ -342,15 +343,15 @@
 /* Constants to determine the size of individual context structures */
 #define CTX_GPREG_ALL		(CTX_GPREGS_END >> DWORD_SHIFT)
 #define CTX_EL1_SYSREGS_ALL	(CTX_EL1_SYSREGS_END >> DWORD_SHIFT)
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 # define CTX_EL2_SYSREGS_ALL	(CTX_EL2_SYSREGS_END >> DWORD_SHIFT)
 #endif
-#if CTX_INCLUDE_FPREGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__
 # define CTX_FPREG_ALL		(CTX_FPREGS_END >> DWORD_SHIFT)
 #endif
 #define CTX_EL3STATE_ALL	(CTX_EL3STATE_END >> DWORD_SHIFT)
 #define CTX_CVE_2018_3639_ALL	(CTX_CVE_2018_3639_END >> DWORD_SHIFT)
-#if CTX_INCLUDE_PAUTH_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
 # define CTX_PAUTH_REGS_ALL	(CTX_PAUTH_REGS_END >> DWORD_SHIFT)
 #endif
 
@@ -374,7 +375,7 @@ DEFINE_REG_STRUCT(el1_sysregs, CTX_EL1_SYSREGS_ALL);
  * AArch64 EL2 system register context structure for preserving the
  * architectural state during world switches.
  */
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 DEFINE_REG_STRUCT(el2_sysregs, CTX_EL2_SYSREGS_ALL);
 #endif
 
@@ -383,7 +384,7 @@ DEFINE_REG_STRUCT(el2_sysregs, CTX_EL2_SYSREGS_ALL);
  * the floating point state during switches from one security state to
  * another.
  */
-#if CTX_INCLUDE_FPREGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__
 DEFINE_REG_STRUCT(fp_regs, CTX_FPREG_ALL);
 #endif
 
@@ -397,7 +398,7 @@ DEFINE_REG_STRUCT(el3_state, CTX_EL3STATE_ALL);
 DEFINE_REG_STRUCT(cve_2018_3639, CTX_CVE_2018_3639_ALL);
 
 /* Registers associated to ARMv8.3-PAuth */
-#if CTX_INCLUDE_PAUTH_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
 DEFINE_REG_STRUCT(pauth, CTX_PAUTH_REGS_ALL);
 #endif
 
@@ -422,30 +423,30 @@ typedef struct cpu_context {
 	gp_regs_t gpregs_ctx;
 	el3_state_t el3state_ctx;
 	el1_sysregs_t el1_sysregs_ctx;
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 	el2_sysregs_t el2_sysregs_ctx;
 #endif
-#if CTX_INCLUDE_FPREGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__
 	fp_regs_t fpregs_ctx;
 #endif
 	cve_2018_3639_t cve_2018_3639_ctx;
-#if CTX_INCLUDE_PAUTH_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
 	pauth_t pauth_ctx;
 #endif
 } cpu_context_t;
 
 /* Macros to access members of the 'cpu_context_t' structure */
 #define get_el3state_ctx(h)	(&((cpu_context_t *) h)->el3state_ctx)
-#if CTX_INCLUDE_FPREGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__
 # define get_fpregs_ctx(h)	(&((cpu_context_t *) h)->fpregs_ctx)
 #endif
 #define get_el1_sysregs_ctx(h)	(&((cpu_context_t *) h)->el1_sysregs_ctx)
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 # define get_el2_sysregs_ctx(h)	(&((cpu_context_t *) h)->el2_sysregs_ctx)
 #endif
 #define get_gpregs_ctx(h)	(&((cpu_context_t *) h)->gpregs_ctx)
 #define get_cve_2018_3639_ctx(h)	(&((cpu_context_t *) h)->cve_2018_3639_ctx)
-#if CTX_INCLUDE_PAUTH_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
 # define get_pauth_ctx(h)	(&((cpu_context_t *) h)->pauth_ctx)
 #endif
 
@@ -458,11 +459,11 @@ CASSERT(CTX_GPREGS_OFFSET == __builtin_offsetof(cpu_context_t, gpregs_ctx), \
 	assert_core_context_gp_offset_mismatch);
 CASSERT(CTX_EL1_SYSREGS_OFFSET == __builtin_offsetof(cpu_context_t, el1_sysregs_ctx), \
 	assert_core_context_el1_sys_offset_mismatch);
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 CASSERT(CTX_EL2_SYSREGS_OFFSET == __builtin_offsetof(cpu_context_t, el2_sysregs_ctx), \
 	assert_core_context_el2_sys_offset_mismatch);
 #endif
-#if CTX_INCLUDE_FPREGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__
 CASSERT(CTX_FPREGS_OFFSET == __builtin_offsetof(cpu_context_t, fpregs_ctx), \
 	assert_core_context_fp_offset_mismatch);
 #endif
@@ -470,7 +471,7 @@ CASSERT(CTX_EL3STATE_OFFSET == __builtin_offsetof(cpu_context_t, el3state_ctx), 
 	assert_core_context_el3state_offset_mismatch);
 CASSERT(CTX_CVE_2018_3639_OFFSET == __builtin_offsetof(cpu_context_t, cve_2018_3639_ctx), \
 	assert_core_context_cve_2018_3639_offset_mismatch);
-#if CTX_INCLUDE_PAUTH_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
 CASSERT(CTX_PAUTH_REGS_OFFSET == __builtin_offsetof(cpu_context_t, pauth_ctx), \
 	assert_core_context_pauth_offset_mismatch);
 #endif
@@ -517,12 +518,12 @@ CASSERT(CTX_PAUTH_REGS_OFFSET == __builtin_offsetof(cpu_context_t, pauth_ctx), \
 void el1_sysregs_context_save(el1_sysregs_t *regs);
 void el1_sysregs_context_restore(el1_sysregs_t *regs);
 
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 void el2_sysregs_context_save(el2_sysregs_t *regs);
 void el2_sysregs_context_restore(el2_sysregs_t *regs);
 #endif
 
-#if CTX_INCLUDE_FPREGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__
 void fpregs_context_save(fp_regs_t *regs);
 void fpregs_context_restore(fp_regs_t *regs);
 #endif

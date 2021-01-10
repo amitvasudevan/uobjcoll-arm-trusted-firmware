@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
@@ -70,7 +71,7 @@ uint32_t plat_ic_get_pending_interrupt_type(void)
 
 	/* Assume that all secure interrupts are S-EL1 interrupts */
 	if (id < PENDING_G1_INTID) {
-#if GICV2_G0_FOR_EL3
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GICV2_G0_FOR_EL3__
 		return INTR_TYPE_EL3;
 #else
 		return INTR_TYPE_S_EL1;
@@ -105,7 +106,7 @@ uint32_t plat_ic_get_interrupt_type(uint32_t id)
 
 	/* Assume that all secure interrupts are S-EL1 interrupts */
 	return (type == GICV2_INTR_GROUP1) ? INTR_TYPE_NS :
-#if GICV2_G0_FOR_EL3
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GICV2_G0_FOR_EL3__
 		INTR_TYPE_EL3;
 #else
 		INTR_TYPE_S_EL1;
@@ -195,7 +196,7 @@ int plat_ic_has_interrupt_type(unsigned int type)
 	int has_interrupt_type = 0;
 
 	switch (type) {
-#if GICV2_G0_FOR_EL3
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GICV2_G0_FOR_EL3__
 	case INTR_TYPE_EL3:
 #else
 	case INTR_TYPE_S_EL1:
@@ -217,7 +218,7 @@ void plat_ic_set_interrupt_type(unsigned int id, unsigned int type)
 
 	/* Map canonical interrupt type to GICv2 type */
 	switch (type) {
-#if GICV2_G0_FOR_EL3
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GICV2_G0_FOR_EL3__
 	case INTR_TYPE_EL3:
 #else
 	case INTR_TYPE_S_EL1:
@@ -237,7 +238,7 @@ void plat_ic_set_interrupt_type(unsigned int id, unsigned int type)
 
 void plat_ic_raise_el3_sgi(int sgi_num, u_register_t target)
 {
-#if GICV2_G0_FOR_EL3
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GICV2_G0_FOR_EL3__
 	int id;
 
 	/* Target must be a valid MPIDR in the system */

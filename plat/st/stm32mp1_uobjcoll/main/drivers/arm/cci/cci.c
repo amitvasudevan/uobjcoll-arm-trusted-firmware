@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -30,7 +31,7 @@
 static uintptr_t cci_base;
 static const int *cci_slave_if_map;
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 static unsigned int max_master_id;
 static int cci_num_slave_ports;
 
@@ -106,7 +107,7 @@ static int get_slave_ports(unsigned int part_num)
 
 	return num_slave_ports;
 }
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 
 void __init cci_init(uintptr_t base, const int *map,
 				unsigned int num_cci_masters)
@@ -117,7 +118,7 @@ void __init cci_init(uintptr_t base, const int *map,
 	cci_base = base;
 	cci_slave_if_map = map;
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/*
 	 * Master Id's are assigned from zero, So in an array of size n
 	 * the max master id is (n - 1).

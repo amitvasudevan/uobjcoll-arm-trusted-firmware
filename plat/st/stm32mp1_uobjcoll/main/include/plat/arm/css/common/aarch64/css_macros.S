@@ -6,6 +6,7 @@
 #ifndef CSS_MACROS_S
 #define CSS_MACROS_S
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 

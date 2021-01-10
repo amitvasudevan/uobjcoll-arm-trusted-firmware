@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -14,19 +15,19 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/arm_arch_svc.h>
 
 /* Hardware handled coherency */
-#if HW_ASSISTED_COHERENCY == 0
-#error "Cortex-A76 must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
+#error "Cortex-A76 must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 /* 64-bit only core */
-#if CTX_INCLUDE_AARCH32_REGS == 1
-#error "Cortex-A76 supports only AArch64. Compile with CTX_INCLUDE_AARCH32_REGS=0"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__ == 1
+#error "Cortex-A76 supports only AArch64. Compile with __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__=0"
 #endif
 
 #define ESR_EL3_A64_SMC0	0x5e000000
 #define ESR_EL3_A32_SMC0	0x4e000000
 
-#if DYNAMIC_WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DYNAMIC_WORKAROUND_CVE_2018_3639__
 	/*
 	 * This macro applies the mitigation for CVE-2018-3639.
 	 * It implements a fast path where `SMCCC_ARCH_WORKAROUND_2`
@@ -195,7 +196,7 @@ vector_entry cortex_a76_serror_aarch32
 	apply_cve_2018_3639_wa _is_sync_exception=0 _esr_el3_val=ESR_EL3_A32_SMC0
 	b	serror_aarch32
 end_vector_entry cortex_a76_serror_aarch32
-#endif /* DYNAMIC_WORKAROUND_CVE_2018_3639 */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_DYNAMIC_WORKAROUND_CVE_2018_3639__ */
 
 	/* --------------------------------------------------
 	 * Errata Workaround for Cortex A76 Errata #1073348.
@@ -345,7 +346,7 @@ endfunc check_errata_1262888
 	 * ---------------------------------------------------
 	 */
 func check_errata_1286807
-#if ERRATA_A76_1286807
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1286807__
 	mov x0, #ERRATA_APPLIES
 	ret
 #else
@@ -396,13 +397,13 @@ func errata_a76_1262606_1275112_1868343_wa
 	mov	x17, x30
 
 /* Check for <= r3p0 cases and branch if check passes. */
-#if ERRATA_A76_1262606 || ERRATA_A76_1275112
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1262606__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1275112__
 	bl	check_errata_1262606
 	cbnz	x0, 1f
 #endif
 
 /* Check for <= r4p0 cases and branch if check fails. */
-#if ERRATA_A76_1868343
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1868343__
 	bl	check_errata_1868343
 	cbz	x0, 2f
 #endif
@@ -431,7 +432,7 @@ func check_errata_1868343
 endfunc check_errata_1868343
 
 func check_errata_cve_2018_3639
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -455,7 +456,7 @@ endfunc cortex_a76_disable_wa_cve_2018_3639
 	 * --------------------------------------------------------------
 	 */
 func check_errata_1165522
-#if ERRATA_A76_1165522
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1165522__
 	mov	x0, #ERRATA_APPLIES
 	ret
 #else
@@ -474,51 +475,51 @@ func cortex_a76_reset_func
 	bl	cpu_get_rev_var
 	mov	x18, x0
 
-#if ERRATA_A76_1073348
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1073348__
 	mov	x0, x18
 	bl	errata_a76_1073348_wa
 #endif
 
-#if ERRATA_A76_1130799
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1130799__
 	mov	x0, x18
 	bl	errata_a76_1130799_wa
 #endif
 
-#if ERRATA_A76_1220197
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1220197__
 	mov	x0, x18
 	bl	errata_a76_1220197_wa
 #endif
 
-#if ERRATA_A76_1257314
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1257314__
 	mov	x0, x18
 	bl	errata_a76_1257314_wa
 #endif
 
-#if ERRATA_A76_1262606 || ERRATA_A76_1275112 || ERRATA_A76_1868343
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1262606__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1275112__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1868343__
 	mov	x0, x18
 	bl	errata_a76_1262606_1275112_1868343_wa
 #endif
 
-#if ERRATA_A76_1262888
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1262888__
 	mov	x0, x18
 	bl	errata_a76_1262888_wa
 #endif
 
-#if ERRATA_A76_1791580
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1791580__
 	mov	x0, x18
 	bl	errata_a76_1791580_wa
 #endif
 
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	/* If the PE implements SSBS, we don't need the dynamic workaround */
 	mrs	x0, id_aa64pfr1_el1
 	lsr	x0, x0, #ID_AA64PFR1_EL1_SSBS_SHIFT
 	and	x0, x0, #ID_AA64PFR1_EL1_SSBS_MASK
-#if !DYNAMIC_WORKAROUND_CVE_2018_3639 && ENABLE_ASSERTIONS
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_DYNAMIC_WORKAROUND_CVE_2018_3639__ && __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x0, 0
 	ASM_ASSERT(ne)
 #endif
-#if DYNAMIC_WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DYNAMIC_WORKAROUND_CVE_2018_3639__
 	cbnz	x0, 1f
 	mrs	x0, CORTEX_A76_CPUACTLR2_EL1
 	orr	x0, x0, #CORTEX_A76_CPUACTLR2_EL1_DISABLE_LOAD_PASS_STORE
@@ -537,14 +538,14 @@ func cortex_a76_reset_func
 #endif /* IMAGE_BL31 */
 
 1:
-#endif /* DYNAMIC_WORKAROUND_CVE_2018_3639 */
-#endif /* WORKAROUND_CVE_2018_3639 */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_DYNAMIC_WORKAROUND_CVE_2018_3639__ */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__ */
 
-#if ERRATA_DSU_798953
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_798953__
 	bl	errata_dsu_798953_wa
 #endif
 
-#if ERRATA_DSU_936184
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_936184__
 	bl	errata_dsu_936184_wa
 #endif
 
@@ -581,20 +582,20 @@ func cortex_a76_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_A76_1073348, cortex_a76, 1073348
-	report_errata ERRATA_A76_1130799, cortex_a76, 1130799
-	report_errata ERRATA_A76_1220197, cortex_a76, 1220197
-	report_errata ERRATA_A76_1257314, cortex_a76, 1257314
-	report_errata ERRATA_A76_1262606, cortex_a76, 1262606
-	report_errata ERRATA_A76_1262888, cortex_a76, 1262888
-	report_errata ERRATA_A76_1275112, cortex_a76, 1275112
-	report_errata ERRATA_A76_1286807, cortex_a76, 1286807
-	report_errata ERRATA_A76_1791580, cortex_a76, 1791580
-	report_errata ERRATA_A76_1165522, cortex_a76, 1165522
-	report_errata ERRATA_A76_1868343, cortex_a76, 1868343
-	report_errata WORKAROUND_CVE_2018_3639, cortex_a76, cve_2018_3639
-	report_errata ERRATA_DSU_798953, cortex_a76, dsu_798953
-	report_errata ERRATA_DSU_936184, cortex_a76, dsu_936184
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1073348__, cortex_a76, 1073348
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1130799__, cortex_a76, 1130799
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1220197__, cortex_a76, 1220197
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1257314__, cortex_a76, 1257314
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1262606__, cortex_a76, 1262606
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1262888__, cortex_a76, 1262888
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1275112__, cortex_a76, 1275112
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1286807__, cortex_a76, 1286807
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1791580__, cortex_a76, 1791580
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1165522__, cortex_a76, 1165522
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A76_1868343__, cortex_a76, 1868343
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__, cortex_a76, cve_2018_3639
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_798953__, cortex_a76, dsu_798953
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_936184__, cortex_a76, dsu_936184
 
 	ldp	x8, x30, [sp], #16
 	ret

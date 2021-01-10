@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
@@ -143,7 +144,7 @@ int stm32_iwdg_init(void)
 			stm32mp_register_secure_periph_iomem(iwdg->base);
 		}
 
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 		if (stm32_iwdg_shadow_update(idx, iwdg->flags) != BSEC_OK) {
 			return -1;
 		}

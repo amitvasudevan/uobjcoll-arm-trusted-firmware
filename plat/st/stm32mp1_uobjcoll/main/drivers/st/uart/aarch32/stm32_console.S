@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/console_macros.S>
@@ -45,7 +46,7 @@ func console_stm32_core_init
 	/* Check the input base address */
 	cmp	r0, #0
 	beq	core_init_fail
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 	/* Check baud rate and uart clock for sanity */
 	cmp	r1, #0
 	beq	core_init_fail
@@ -78,7 +79,7 @@ teack_loop:
 	ldr	r3, [r0, #USART_ISR]
 	tst	r3, #USART_ISR_TEACK
 	beq	teack_loop
-#endif /* IMAGE_BL2 */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__ */
 	mov	r0, #1
 	bx	lr
 core_init_fail:
@@ -167,10 +168,10 @@ endfunc console_stm32_core_putc
 	 * ------------------------------------------------------------
 	 */
 func console_stm32_putc
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	r1, #0
 	ASM_ASSERT(ne)
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 	ldr	r1, [r1, #CONSOLE_T_BASE]
 	b	console_stm32_core_putc
 endfunc console_stm32_putc
@@ -204,10 +205,10 @@ endfunc console_stm32_core_getc
 	 * ---------------------------------------------------------------
 	 */
 func console_stm32_core_flush
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	r0, #0
 	ASM_ASSERT(ne)
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 	/* Check Transmit Data Register Empty */
 txe_loop_3:
 	ldr	r1, [r0, #USART_ISR]
@@ -226,10 +227,10 @@ endfunc console_stm32_core_flush
 	 * ------------------------------------------------------
 	 */
 func console_stm32_flush
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	r0, #0
 	ASM_ASSERT(ne)
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 	ldr	r0, [r0, #CONSOLE_T_BASE]
 	b	console_stm32_core_flush
 endfunc console_stm32_flush

@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -12,9 +13,9 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/errata_report.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>
 
-#if A53_DISABLE_NON_TEMPORAL_HINT
-#undef ERRATA_A53_836870
-#define ERRATA_A53_836870	1
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_A53_DISABLE_NON_TEMPORAL_HINT__
+#undef __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_836870__
+#define __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_836870__	1
 #endif
 
 	/* ---------------------------------------------
@@ -50,7 +51,7 @@ endfunc cortex_a53_disable_smp
 	 * ---------------------------------------------------
 	 */
 func check_errata_819472
-#if ERRATA_A53_819472
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_819472__
 	mov x0, #ERRATA_APPLIES
 	ret
 #else
@@ -67,7 +68,7 @@ endfunc check_errata_819472
 	 * ---------------------------------------------------
 	 */
 func check_errata_824069
-#if ERRATA_A53_824069
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_824069__
 	mov x0, #ERRATA_APPLIES
 	ret
 #else
@@ -112,7 +113,7 @@ endfunc check_errata_826319
 	 * ---------------------------------------------------
 	 */
 func check_errata_827319
-#if ERRATA_A53_827319
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_827319__
 	mov x0, #ERRATA_APPLIES
 	ret
 #else
@@ -245,7 +246,7 @@ endfunc check_errata_843419
 	 * --------------------------------------------------
 	 */
 func check_errata_1530924
-#if ERRATA_A53_1530924
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_1530924__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -264,17 +265,17 @@ func cortex_a53_reset_func
 	mov	x18, x0
 
 
-#if ERRATA_A53_826319
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_826319__
 	mov	x0, x18
 	bl	errata_a53_826319_wa
 #endif
 
-#if ERRATA_A53_836870
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_836870__
 	mov	x0, x18
 	bl	a53_disable_non_temporal_hint
 #endif
 
-#if ERRATA_A53_855873
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_855873__
 	mov	x0, x18
 	bl	errata_a53_855873_wa
 #endif
@@ -365,15 +366,15 @@ func cortex_a53_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_A53_819472, cortex_a53, 819472
-	report_errata ERRATA_A53_824069, cortex_a53, 824069
-	report_errata ERRATA_A53_826319, cortex_a53, 826319
-	report_errata ERRATA_A53_827319, cortex_a53, 827319
-	report_errata ERRATA_A53_835769, cortex_a53, 835769
-	report_errata ERRATA_A53_836870, cortex_a53, disable_non_temporal_hint
-	report_errata ERRATA_A53_843419, cortex_a53, 843419
-	report_errata ERRATA_A53_855873, cortex_a53, 855873
-	report_errata ERRATA_A53_1530924, cortex_a53, 1530924
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_819472__, cortex_a53, 819472
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_824069__, cortex_a53, 824069
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_826319__, cortex_a53, 826319
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_827319__, cortex_a53, 827319
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_835769__, cortex_a53, 835769
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_836870__, cortex_a53, disable_non_temporal_hint
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_843419__, cortex_a53, 843419
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_855873__, cortex_a53, 855873
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_1530924__, cortex_a53, 1530924
 
 	ldp	x8, x30, [sp], #16
 	ret

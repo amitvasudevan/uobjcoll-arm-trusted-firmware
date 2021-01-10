@@ -6,6 +6,7 @@
 #ifndef COMMON_DEF_H
 #define COMMON_DEF_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -50,7 +51,7 @@
  * must be page-aligned.
  *
  * When the code and read-only data are mapped as a single atomic section
- * (i.e. when SEPARATE_CODE_AND_RODATA=0) then we treat the whole section as
+ * (i.e. when __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_CODE_AND_RODATA__=0) then we treat the whole section as
  * code by specifying the read-only data section as empty.
  *
  * BL1 is different than the other images in the sense that its read-write data
@@ -64,25 +65,25 @@
  * needs to be rounded up to the next page size in order to map the whole last
  * page of it with the right memory attributes.
  */
-#if SEPARATE_CODE_AND_RODATA
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_CODE_AND_RODATA__
 
 #define BL1_CODE_END		BL_CODE_END
 #define BL1_RO_DATA_BASE	BL_RO_DATA_BASE
 #define BL1_RO_DATA_END		round_up(BL1_ROM_END, PAGE_SIZE)
-#if BL2_IN_XIP_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_IN_XIP_MEM__
 #define BL2_CODE_END		BL_CODE_END
 #define BL2_RO_DATA_BASE	BL_RO_DATA_BASE
 #define BL2_RO_DATA_END		round_up(BL2_ROM_END, PAGE_SIZE)
-#endif /* BL2_IN_XIP_MEM */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_IN_XIP_MEM__ */
 #else
 #define BL_RO_DATA_BASE		UL(0)
 #define BL_RO_DATA_END		UL(0)
 #define BL1_CODE_END		round_up(BL1_ROM_END, PAGE_SIZE)
-#if BL2_IN_XIP_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_IN_XIP_MEM__
 #define BL2_RO_DATA_BASE	UL(0)
 #define BL2_RO_DATA_END		UL(0)
 #define BL2_CODE_END		round_up(BL2_ROM_END, PAGE_SIZE)
-#endif /* BL2_IN_XIP_MEM */
-#endif /* SEPARATE_CODE_AND_RODATA */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_IN_XIP_MEM__ */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_CODE_AND_RODATA__ */
 
 #endif /* COMMON_DEF_H */

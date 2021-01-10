@@ -22,6 +22,7 @@
 #ifndef	_SYS_TYPES_H
 #define	_SYS_TYPES_H	1
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <features.h>
 
 __BEGIN_DECLS

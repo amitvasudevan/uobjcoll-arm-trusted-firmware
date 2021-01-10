@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -170,7 +171,7 @@ static int hash_get_digest(uint8_t *digest)
 		memcpy(digest + (i * sizeof(uint32_t)), &dsg, sizeof(uint32_t));
 	}
 
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 	/*
 	 * Clean hardware context as HASH could be used later
 	 * by non-secure software
@@ -297,7 +298,7 @@ int stm32_hash_register(void)
 	for (node = dt_get_node(&hash_info, -1, DT_HASH_COMPAT);
 	     node != -FDT_ERR_NOTFOUND;
 	     node = dt_get_node(&hash_info, node, DT_HASH_COMPAT)) {
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 		if (hash_info.status != DT_DISABLED) {
 			break;
 		}

@@ -8,6 +8,7 @@
 #ifndef TLK_H
 #define TLK_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*

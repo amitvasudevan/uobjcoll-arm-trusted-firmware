@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
@@ -635,7 +636,7 @@ static int bl1_fwu_sec_image_done(void **handle, unsigned int flags)
 	assert(EP_GET_EXE(desc->ep_info.h.attr) == EXECUTABLE);
 	assert(desc->state == IMAGE_STATE_EXECUTED);
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	int rc = bl1_fwu_remove_loaded_id(sec_exec_image_id);
 	assert(rc == 0);
 #else

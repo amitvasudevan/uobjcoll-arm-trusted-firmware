@@ -7,6 +7,7 @@
 #ifndef BL_COMMON_H
 #define BL_COMMON_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/ep_info.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/param_header.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
@@ -97,7 +98,7 @@
  * Declarations of linker defined symbols to help determine memory layout of
  * BL images
  */
-#if SEPARATE_CODE_AND_RODATA
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_CODE_AND_RODATA__
 IMPORT_SYM(uintptr_t, __TEXT_START__,		BL_CODE_BASE);
 IMPORT_SYM(uintptr_t, __TEXT_END__,		BL_CODE_END);
 IMPORT_SYM(uintptr_t, __RODATA_START__,		BL_RO_DATA_BASE);
@@ -113,7 +114,7 @@ IMPORT_SYM(uintptr_t, __BL1_ROM_END__,		BL1_ROM_END);
 
 IMPORT_SYM(uintptr_t, __BL1_RAM_START__,	BL1_RAM_BASE);
 IMPORT_SYM(uintptr_t, __BL1_RAM_END__,		BL1_RAM_LIMIT);
-#elif defined(IMAGE_BL2)
+#elif defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 IMPORT_SYM(uintptr_t, __BL2_END__,		BL2_END);
 #elif defined(IMAGE_BL2U)
 IMPORT_SYM(uintptr_t, __BL2U_END__,		BL2U_END);
@@ -125,12 +126,12 @@ IMPORT_SYM(uintptr_t, __BL32_END__,		BL32_END);
 #endif /* IMAGE_BLX */
 
 /* The following symbols are only exported from the BL2 at EL3 linker script. */
-#if BL2_IN_XIP_MEM && defined(IMAGE_BL2)
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_IN_XIP_MEM__ && defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 IMPORT_SYM(uintptr_t, __BL2_ROM_END__,		BL2_ROM_END);
 
 IMPORT_SYM(uintptr_t, __BL2_RAM_START__,	BL2_RAM_BASE);
 IMPORT_SYM(uintptr_t, __BL2_RAM_END__,		BL2_RAM_END);
-#endif /* BL2_IN_XIP_MEM */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_IN_XIP_MEM__ */
 
 /*
  * The next 2 constants identify the extents of the coherent memory region.
@@ -139,7 +140,7 @@ IMPORT_SYM(uintptr_t, __BL2_RAM_END__,		BL2_RAM_END);
  * __COHERENT_RAM_START__ and __COHERENT_RAM_END__ linker symbols refer to
  * page-aligned addresses.
  */
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 IMPORT_SYM(uintptr_t, __COHERENT_RAM_START__,	BL_COHERENT_RAM_BASE);
 IMPORT_SYM(uintptr_t, __COHERENT_RAM_END__,	BL_COHERENT_RAM_END);
 #endif
@@ -158,7 +159,7 @@ typedef struct meminfo {
  ******************************************************************************/
 int load_auth_image(unsigned int image_id, image_info_t *image_data);
 
-#if TRUSTED_BOARD_BOOT && defined(DYN_DISABLE_AUTH)
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__ && defined(DYN_DISABLE_AUTH)
 /*
  * API to dynamically disable authentication. Only meant for development
  * systems.

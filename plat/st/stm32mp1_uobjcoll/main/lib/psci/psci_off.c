@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
@@ -90,12 +91,12 @@ int psci_do_cpu_off(unsigned int end_pwrlvl)
 	 */
 	psci_do_state_coordination(end_pwrlvl, &state_info);
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 	/* Update the last cpu for each level till end_pwrlvl */
 	psci_stats_update_pwr_down(end_pwrlvl, &state_info);
 #endif
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 
 	/*
 	 * Flush cache line so that even if CPU power down happens
@@ -111,7 +112,7 @@ int psci_do_cpu_off(unsigned int end_pwrlvl)
 	 */
 	psci_do_pwrdown_sequence(psci_find_max_off_lvl(&state_info));
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 	PMF_CAPTURE_TIMESTAMP(rt_instr_svc,
 		RT_INSTR_EXIT_CFLUSH,
 		PMF_NO_CACHE_MAINT);
@@ -123,7 +124,7 @@ int psci_do_cpu_off(unsigned int end_pwrlvl)
 	 */
 	psci_plat_pm_ops->pwr_domain_off(&state_info);
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 	plat_psci_stat_accounting_start(&state_info);
 #endif
 
@@ -152,7 +153,7 @@ exit:
 		psci_dsbish();
 		psci_inv_cpu_data(psci_svc_cpu_data.aff_info_state);
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 
 		/*
 		 * Update the timestamp with cache off.  We assume this

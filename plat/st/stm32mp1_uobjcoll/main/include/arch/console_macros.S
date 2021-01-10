@@ -6,6 +6,7 @@
 #ifndef CONSOLE_MACROS_S
 #define CONSOLE_MACROS_S
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 /*

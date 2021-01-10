@@ -8,6 +8,7 @@
 #ifndef A3700_CONSOLE_H
 #define A3700_CONSOLE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 /* MVEBU UART Registers */

@@ -23,10 +23,10 @@
         {"name": "A57_DISABLE_NON_TEMPORAL_HINT", "value": "1"},
         {"name": "A57_ENABLE_NONCACHEABLE_LOAD_FWD", "value": "0"},
         {"name": "ALLOW_RO_XLAT_TABLES", "value": "0"},
-        {"name": "ARMV7_SUPPORTS_GENERIC_TIMER", "value": "@@TRUE@@"},
-        {"name": "ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING", "value": "@@TRUE@@"},
-        {"name": "ARMV7_SUPPORTS_VFP", "value": "@@TRUE@@"},
-        {"name": "ARMV7_SUPPORTS_VIRTUALIZATION", "value": "@@TRUE@@"},
+        {"name": "ARMV7_SUPPORTS_GENERIC_TIMER", "value": "1"}, // @@TRUE@@
+        {"name": "ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING", "value": "1"}, // @@TRUE@@
+        {"name": "ARMV7_SUPPORTS_VFP", "value": "1"}, // @@TRUE@@
+        {"name": "ARMV7_SUPPORTS_VIRTUALIZATION", "value": "1"}, // @@TRUE@@
         {"name": "ARM_ARCH_MAJOR", "value": "7"},
         {"name": "ARM_ARCH_MINOR", "value": "0"},
         {"name": "ARM_IO_IN_DTB", "value": "0"},
@@ -42,7 +42,7 @@
         {"name": "CTX_INCLUDE_NEVE_REGS", "value": "0"},
         {"name": "CTX_INCLUDE_PAUTH_REGS", "value": "0"},
         {"name": "DEBUG", "value": "0"},
-        {"name": "DECRYPTION_SUPPORT_none", "value": "@@TRUE@@"},
+        {"name": "DECRYPTION_SUPPORT_none", "value": "1"}, // @@TRUE@@
         {"name": "DISABLE_MTPMU", "value": "0"},
         {"name": "DYNAMIC_WORKAROUND_CVE_2018_3639", "value": "0"},
         {"name": "EL3_EXCEPTION_HANDLING", "value": "0"},
@@ -136,7 +136,7 @@
         {"name": "GIC_EXT_INTID", "value": "0"},
         {"name": "HANDLE_EA_EL3_FIRST", "value": "0"},
         {"name": "HW_ASSISTED_COHERENCY", "value": "0"},
-        {"name": "IMAGE_BL2", "value": "@@TRUE@@"},
+        {"name": "IMAGE_BL2", "value": "1"}, // @@TRUE@@
         {"name": "LOG_LEVEL", "value": "2"},
         {"name": "MEASURED_BOOT", "value": "0"},
         {"name": "NAND_ONFI_DETECT", "value": "1"},
@@ -145,7 +145,7 @@
         {"name": "PL011_GENERIC_UART", "value": "0"},
         {"name": "PLAT_PARTITION_MAX_ENTRIES", "value": "3"},
         {"name": "PLAT_XLAT_TABLES_DYNAMIC", "value": "1"},
-        {"name": "PLAT_stm32mp1", "value": "@@TRUE@@"},
+        {"name": "PLAT_stm32mp1", "value": "1"}, // @@TRUE@@
         {"name": "PROGRAMMABLE_RESET_ADDRESS", "value": "0"},
         {"name": "PSCI_EXTENDED_STATE_ID", "value": "0"},
         {"name": "RAS_EXTENSION", "value": "0"},
@@ -158,10 +158,11 @@
         {"name": "SEPARATE_CODE_AND_RODATA", "value": "0"},
         {"name": "SEPARATE_NOBITS_REGION", "value": "0"},
         {"name": "SKIP_A57_L1_FLUSH_PWR_DWN", "value": "0"},
-        {"name": "SPD_none", "value": "@@TRUE@@"},
+        {"name": "SPD_none", "value": "1"}, // @@TRUE@@
         {"name": "SPIN_ON_BL1_EXIT", "value": "0"},
         {"name": "SPMD_SPM_AT_SEL2", "value": "1"},
         {"name": "SPM_MM", "value": "0"},
+        {"name": "STM32MP_SHARED_RESOURCES", "value": "@@TRUE@@"},
         {"name": "SP_MIN_WITH_SECURE_FIQ", "value": "1"},
         {"name": "STACK_PROTECTOR_ENABLED", "value": "0"},
         {"name": "STM32MP_EMMC", "value": "1"},

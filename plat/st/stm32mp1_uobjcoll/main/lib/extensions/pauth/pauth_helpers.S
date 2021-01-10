@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
@@ -33,7 +34,7 @@ func pauth_init_enable_el1
 	mrs	x0, sctlr_el1
 	orr	x0, x0, #SCTLR_EnIA_BIT
 
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	 /* Enable PAC branch type compatibility */
 	bic	x0, x0, #(SCTLR_BT0_BIT | SCTLR_BT1_BIT)
 #endif
@@ -74,7 +75,7 @@ func pauth_init_enable_el3
 	mrs	x0, sctlr_el3
 	orr	x0, x0, #SCTLR_EnIA_BIT
 
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	 /* Enable PAC branch type compatibility */
 	bic	x0, x0, #SCTLR_BT_BIT
 #endif
@@ -131,7 +132,7 @@ func pauth_load_bl1_apiakey_enable
 	mrs	x9, sctlr_el3
 	orr	x9, x9, #SCTLR_EnIA_BIT
 
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	 /* Enable PAC branch type compatibility */
 	bic	x9, x9, #SCTLR_BT_BIT
 #endif

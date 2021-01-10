@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
@@ -29,7 +30,7 @@ static const io_dev_info_t *devices[MAX_IO_DEVICES];
 static unsigned int dev_count;
 
 /* Extra validation functions only used when asserts are enabled */
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 
 /* Return a boolean value indicating whether a device connector is valid */
 static bool is_valid_dev_connector(const io_dev_connector_t *dev_con)
@@ -64,7 +65,7 @@ static bool is_valid_seek_mode(io_seek_mode_t mode)
 	return ((mode != IO_SEEK_INVALID) && (mode < IO_SEEK_MAX));
 }
 
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 /* End of extra validation functions only used when asserts are enabled */
 
 

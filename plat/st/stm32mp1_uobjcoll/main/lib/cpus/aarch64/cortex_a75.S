@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cortex_a75.h>
@@ -11,8 +12,8 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
 
 /* Hardware handled coherency */
-#if HW_ASSISTED_COHERENCY == 0
-#error "Cortex-A75 must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
+#error "Cortex-A75 must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 	/* --------------------------------------------------
@@ -80,17 +81,17 @@ func cortex_a75_reset_func
 	bl	cpu_get_rev_var
 	mov	x18, x0
 
-#if ERRATA_A75_764081
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A75_764081__
 	mov	x0, x18
 	bl	errata_a75_764081_wa
 #endif
 
-#if ERRATA_A75_790748
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A75_790748__
 	mov	x0, x18
 	bl	errata_a75_790748_wa
 #endif
 
-#if IMAGE_BL31 && WORKAROUND_CVE_2017_5715
+#if IMAGE_BL31 && __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	cpu_check_csv2	x0, 1f
 	adr	x0, wa_cve_2017_5715_bpiall_vbar
 	msr	vbar_el3, x0
@@ -98,22 +99,22 @@ func cortex_a75_reset_func
 1:
 #endif
 
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	mrs	x0, CORTEX_A75_CPUACTLR_EL1
 	orr	x0, x0, #CORTEX_A75_CPUACTLR_EL1_DISABLE_LOAD_PASS_STORE
 	msr	CORTEX_A75_CPUACTLR_EL1, x0
 	isb
 #endif
 
-#if ERRATA_DSU_798953
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_798953__
 	bl	errata_dsu_798953_wa
 #endif
 
-#if ERRATA_DSU_936184
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_936184__
 	bl	errata_dsu_936184_wa
 #endif
 
-#if ENABLE_AMU
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_AMU__
 	/* Make sure accesses from EL0/EL1 and EL2 are not trapped to EL3 */
 	mrs	x0, actlr_el3
 	orr	x0, x0, #CORTEX_A75_ACTLR_AMEN_BIT
@@ -141,7 +142,7 @@ endfunc cortex_a75_reset_func
 
 func check_errata_cve_2017_5715
 	cpu_check_csv2	x0, 1f
-#if WORKAROUND_CVE_2017_5715
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -153,7 +154,7 @@ func check_errata_cve_2017_5715
 endfunc check_errata_cve_2017_5715
 
 func check_errata_cve_2018_3639
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	mov	x0, #ERRATA_APPLIES
 #else
 	mov	x0, #ERRATA_MISSING
@@ -191,12 +192,12 @@ func cortex_a75_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_A75_764081, cortex_a75, 764081
-	report_errata ERRATA_A75_790748, cortex_a75, 790748
-	report_errata WORKAROUND_CVE_2017_5715, cortex_a75, cve_2017_5715
-	report_errata WORKAROUND_CVE_2018_3639, cortex_a75, cve_2018_3639
-	report_errata ERRATA_DSU_798953, cortex_a75, dsu_798953
-	report_errata ERRATA_DSU_936184, cortex_a75, dsu_936184
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A75_764081__, cortex_a75, 764081
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A75_790748__, cortex_a75, 790748
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__, cortex_a75, cve_2017_5715
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__, cortex_a75, cve_2018_3639
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_798953__, cortex_a75, dsu_798953
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_936184__, cortex_a75, dsu_936184
 
 	ldp	x8, x30, [sp], #16
 	ret

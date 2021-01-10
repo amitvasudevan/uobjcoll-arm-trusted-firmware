@@ -11,6 +11,7 @@
 #ifndef STDLIB_H
 #define STDLIB_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
 #define EXIT_FAILURE 1

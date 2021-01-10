@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
@@ -50,10 +51,10 @@ non_el3_sys_regs:
 		"contextidr_el1", "vbar_el1", "cntp_ctl_el0", "cntp_cval_el0",\
 		"cntv_ctl_el0", "cntv_cval_el0", "cntkctl_el1", "sp_el0", "isr_el1", ""
 
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 aarch32_regs:
 	.asciz	"dacr32_el2", "ifsr32_el2", ""
-#endif /* CTX_INCLUDE_AARCH32_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__ */
 
 panic_msg:
 	.asciz "PANIC in EL3.\nx30"
@@ -353,7 +354,7 @@ do_crash_reporting:
 	/* Report x30 first from the crash buf */
 	ldr	x4, [x0, #REGSZ * 7]
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* Demangle address */
 	xpaci	x4
 #endif
@@ -444,13 +445,13 @@ print_el3_sys_regs:
 	mrs	x8, isr_el1
 	bl	str_in_crash_buf_print
 
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 	/* Print the AArch32 registers */
 	adr	x6, aarch32_regs
 	mrs	x8, dacr32_el2
 	mrs	x9, ifsr32_el2
 	bl	str_in_crash_buf_print
-#endif /* CTX_INCLUDE_AARCH32_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__ */
 
 	/* Get the cpu specific registers to report */
 	bl	do_cpu_reg_dump

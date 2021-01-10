@@ -6,6 +6,7 @@
 #ifndef ARM_SPM_DEF_H
 #define ARM_SPM_DEF_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 
@@ -19,7 +20,7 @@
 /* The maximum size of the S-EL0 payload can be 3MB */
 #define ARM_SP_IMAGE_SIZE		ULL(0x300000)
 
-#ifdef IMAGE_BL2
+#ifdef __UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__
 /* SPM Payload memory. Mapped as RW in BL2. */
 #define ARM_SP_IMAGE_MMAP		MAP_REGION_FLAT(			\
 						ARM_SP_IMAGE_BASE,		\

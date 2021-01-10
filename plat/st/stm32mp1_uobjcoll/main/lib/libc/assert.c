@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
@@ -14,7 +15,7 @@
 
 /*
  * Only print the output if PLAT_LOG_LEVEL_ASSERT is higher or equal to
- * LOG_LEVEL_INFO, which is the default value for builds with DEBUG=1.
+ * LOG_LEVEL_INFO, which is the default value for builds with __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__=1.
  */
 
 #if PLAT_LOG_LEVEL_ASSERT >= LOG_LEVEL_VERBOSE

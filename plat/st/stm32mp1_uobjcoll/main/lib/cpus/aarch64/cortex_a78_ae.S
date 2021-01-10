@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -12,15 +13,15 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>
 
 /* Hardware handled coherency */
-#if HW_ASSISTED_COHERENCY == 0
-#error "cortex_a78_ae must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
+#error "cortex_a78_ae must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 	/* -------------------------------------------------
 	 * The CPU Ops reset function for Cortex-A78-AE
 	 * -------------------------------------------------
 	 */
-#if ENABLE_AMU
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_AMU__
 func cortex_a78_ae_reset_func
 	/* Make sure accesses from EL0/EL1 and EL2 are not trapped to EL3 */
 	mrs	x0, actlr_el3
@@ -89,7 +90,7 @@ func cortex_a78_ae_cpu_reg_dump
 	ret
 endfunc cortex_a78_ae_cpu_reg_dump
 
-#if ENABLE_AMU
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_AMU__
 #define A78_AE_RESET_FUNC cortex_a78_ae_reset_func
 #else
 #define A78_AE_RESET_FUNC CPU_NO_RESET_FUNC

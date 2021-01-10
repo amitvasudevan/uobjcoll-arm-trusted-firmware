@@ -6,6 +6,7 @@
 #ifndef ARM_DEF_H
 #define ARM_DEF_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/interrupt_props.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
@@ -250,10 +251,10 @@
 					MT_MEMORY | MT_RW | MT_SECURE)
 
 /*
- * If SEPARATE_CODE_AND_RODATA=1 we define a region for each section
+ * If __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_CODE_AND_RODATA__=1 we define a region for each section
  * otherwise one region is defined containing both.
  */
-#if SEPARATE_CODE_AND_RODATA
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_CODE_AND_RODATA__
 #define ARM_MAP_BL_RO			MAP_REGION_FLAT(			\
 						BL_CODE_BASE,			\
 						BL_CODE_END - BL_CODE_BASE,	\
@@ -269,14 +270,14 @@
 						BL_CODE_END - BL_CODE_BASE,	\
 						MT_CODE | MT_SECURE)
 #endif
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 #define ARM_MAP_BL_COHERENT_RAM		MAP_REGION_FLAT(			\
 						BL_COHERENT_RAM_BASE,		\
 						BL_COHERENT_RAM_END		\
 							- BL_COHERENT_RAM_BASE, \
 						MT_DEVICE | MT_RW | MT_SECURE)
 #endif
-#if USE_ROMLIB
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_ROMLIB__
 #define ARM_MAP_ROMLIB_CODE		MAP_REGION_FLAT(			\
 						ROMLIB_RO_BASE,			\
 						ROMLIB_RO_LIMIT	- ROMLIB_RO_BASE,\
@@ -401,7 +402,7 @@
 /*******************************************************************************
  * BL2 specific defines.
  ******************************************************************************/
-#if BL2_AT_EL3
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__
 /* Put BL2 towards the middle of the Trusted SRAM */
 #define BL2_BASE			(ARM_TRUSTED_SRAM_BASE + \
 						(PLAT_ARM_TRUSTED_SRAM_SIZE >> 1) + 0x2000)
@@ -418,7 +419,7 @@
 /*******************************************************************************
  * BL31 specific defines.
  ******************************************************************************/
-#if ARM_BL31_IN_DRAM || SEPARATE_NOBITS_REGION
+#if ARM_BL31_IN_DRAM || __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_NOBITS_REGION__
 /*
  * Put BL31 at the bottom of TZC secured DRAM
  */
@@ -426,17 +427,17 @@
 #define BL31_LIMIT			(ARM_AP_TZC_DRAM1_BASE +	\
 						PLAT_ARM_MAX_BL31_SIZE)
 /*
- * For SEPARATE_NOBITS_REGION, BL31 PROGBITS are loaded in TZC secured DRAM.
+ * For __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_NOBITS_REGION__, BL31 PROGBITS are loaded in TZC secured DRAM.
  * And BL31 NOBITS are loaded in Trusted SRAM such that BL2 is overwritten.
  */
-#if SEPARATE_NOBITS_REGION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_NOBITS_REGION__
 #define BL31_NOBITS_BASE		BL2_BASE
 #define BL31_NOBITS_LIMIT		BL2_LIMIT
-#endif /* SEPARATE_NOBITS_REGION */
-#elif (RESET_TO_BL31)
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_SEPARATE_NOBITS_REGION__ */
+#elif (__UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_BL31__)
 /* Ensure Position Independent support (PIE) is enabled for this config.*/
-# if !ENABLE_PIE
-#  error "BL31 must be a PIE if RESET_TO_BL31=1."
+# if !__UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PIE__
+#  error "BL31 must be a PIE if __UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_BL31__=1."
 #endif
 /*
  * Since this is PIE, we can define BL31_BASE to 0x0 since this macro is solely
@@ -450,10 +451,10 @@
 						- PLAT_ARM_MAX_BL31_SIZE)
 #define BL31_PROGBITS_LIMIT		BL2_BASE
 /*
- * For BL2_AT_EL3 make sure the BL31 can grow up until BL2_BASE. This is
- * because in the BL2_AT_EL3 configuration, BL2 is always resident.
+ * For __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__ make sure the BL31 can grow up until BL2_BASE. This is
+ * because in the __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__ configuration, BL2 is always resident.
  */
-#if BL2_AT_EL3
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__
 #define BL31_LIMIT			BL2_BASE
 #else
 #define BL31_LIMIT			(ARM_BL_RAM_BASE + ARM_BL_RAM_SIZE)
@@ -464,7 +465,7 @@
 /*******************************************************************************
  * BL32 specific defines for EL3 runtime in AArch32 mode
  ******************************************************************************/
-# if RESET_TO_SP_MIN && !JUNO_AARCH32_EL3_RUNTIME
+# if __UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_SP_MIN__ && !JUNO_AARCH32_EL3_RUNTIME
 /*
  * SP_MIN is the only BL image in SRAM. Allocate the whole of SRAM (excluding
  * the page reserved for fw_configs) to BL32
@@ -477,7 +478,7 @@
 						- PLAT_ARM_MAX_BL32_SIZE)
 #  define BL32_PROGBITS_LIMIT		BL2_BASE
 #  define BL32_LIMIT			(ARM_BL_RAM_BASE + ARM_BL_RAM_SIZE)
-# endif /* RESET_TO_SP_MIN && !JUNO_AARCH32_EL3_RUNTIME */
+# endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_RESET_TO_SP_MIN__ && !JUNO_AARCH32_EL3_RUNTIME */
 
 #else
 /*******************************************************************************
@@ -488,7 +489,7 @@
  * Trusted DRAM (if available) or the DRAM region secured by the TrustZone
  * controller.
  */
-# if SPM_MM
+# if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPM_MM__
 #  define TSP_SEC_MEM_BASE		(ARM_AP_TZC_DRAM1_BASE + ULL(0x200000))
 #  define TSP_SEC_MEM_SIZE		(ARM_AP_TZC_DRAM1_SIZE - ULL(0x200000))
 #  define BL32_BASE			(ARM_AP_TZC_DRAM1_BASE + ULL(0x200000))
@@ -537,9 +538,9 @@
  * SPD and no SPM-MM, as they are the only ones that can be used as BL32.
  */
 #if defined(__aarch64__) && !JUNO_AARCH32_EL3_RUNTIME
-# if defined(SPD_none) && !SPM_MM
+# if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_SPD_NONE__) && !__UBERSPARK_UOBJCOLL_CONFIGDEF_SPM_MM__
 #  undef BL32_BASE
-# endif /* defined(SPD_none) && !SPM_MM */
+# endif /* defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_SPD_NONE__) && !__UBERSPARK_UOBJCOLL_CONFIGDEF_SPM_MM__ */
 #endif /* defined(__aarch64__) && !JUNO_AARCH32_EL3_RUNTIME */
 
 /*******************************************************************************
@@ -573,7 +574,7 @@
 /* SGI used for SDEI signalling */
 #define ARM_SDEI_SGI			ARM_IRQ_SEC_SGI_0
 
-#if SDEI_IN_FCONF
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SDEI_IN_FCONF__
 /* ARM SDEI dynamic private event max count */
 #define ARM_SDEI_DP_EVENT_MAX_CNT	3
 
@@ -600,6 +601,6 @@
 	SDEI_SHARED_EVENT(ARM_SDEI_DS_EVENT_0, SDEI_DYN_IRQ, SDEI_MAPF_DYNAMIC), \
 	SDEI_SHARED_EVENT(ARM_SDEI_DS_EVENT_1, SDEI_DYN_IRQ, SDEI_MAPF_DYNAMIC), \
 	SDEI_SHARED_EVENT(ARM_SDEI_DS_EVENT_2, SDEI_DYN_IRQ, SDEI_MAPF_DYNAMIC)
-#endif /* SDEI_IN_FCONF */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_SDEI_IN_FCONF__ */
 
 #endif /* ARM_DEF_H */

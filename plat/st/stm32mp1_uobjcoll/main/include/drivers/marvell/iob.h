@@ -10,6 +10,7 @@
 #ifndef IOB_H
 #define IOB_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/addr_map.h>
 
 enum target_ids_iob {

@@ -7,6 +7,7 @@
 #ifndef STM32MP1_DEF_H
 #define STM32MP1_DEF_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_rcc.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/clock/stm32mp1-clks.h>
@@ -117,7 +118,7 @@ enum ddr_type {
 #define STM32MP_OPTEE_SIZE		(STM32MP_DTB_BASE -  \
 					 STM32MP_OPTEE_BASE)
 #else
-#if STACK_PROTECTOR_ENABLED
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STACK_PROTECTOR_ENABLED__
 #define STM32MP_BL32_SIZE		U(0x00012000)	/* 72 KB for BL32 */
 #else
 #define STM32MP_BL32_SIZE		U(0x00011000)	/* 68 KB for BL32 */
@@ -129,13 +130,13 @@ enum ddr_type {
 					 STM32MP_BL32_SIZE)
 
 #ifdef AARCH32_SP_OPTEE
-#if STACK_PROTECTOR_ENABLED
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STACK_PROTECTOR_ENABLED__
 #define STM32MP_BL2_SIZE		U(0x0001A000)	/* 100 KB for BL2 */
 #else
 #define STM32MP_BL2_SIZE		U(0x00018000)	/* 92 KB for BL2 */
 #endif
 #else
-#if STACK_PROTECTOR_ENABLED
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STACK_PROTECTOR_ENABLED__
 #define STM32MP_BL2_SIZE		U(0x00019000)	/* 96 KB for BL2 */
 #else
 #define STM32MP_BL2_SIZE		U(0x00017000)	/* 88 KB for BL2 */
@@ -152,7 +153,7 @@ enum ddr_type {
  * MAX_MMAP_REGIONS is usually:
  * BL stm32mp1_mmap size + mmap regions in *_plat_arch_setup
  */
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
   #define MAX_MMAP_REGIONS		11
 #endif
 #if defined(IMAGE_BL32)

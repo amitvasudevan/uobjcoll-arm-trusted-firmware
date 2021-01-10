@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl1/bl1.h>
@@ -52,7 +53,7 @@ func bl1_aarch32_smc_handler
 	mov	r0, r1
 	bl	bl1_print_next_bl_ep_info
 
-#if SPIN_ON_BL1_EXIT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPIN_ON_BL1_EXIT__
 	bl	print_debug_loop_message
 debug_loop:
 	b	debug_loop

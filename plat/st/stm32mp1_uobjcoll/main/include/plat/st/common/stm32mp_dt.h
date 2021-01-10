@@ -8,6 +8,7 @@
 #ifndef STM32MP_DT_H
 #define STM32MP_DT_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #define DT_DISABLED		U(0)

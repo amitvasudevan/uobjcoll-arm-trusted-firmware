@@ -22,6 +22,7 @@
 #ifndef	_SYS_STAT_H
 #define	_SYS_STAT_H	1
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <features.h>
 
 #include <bits/types.h>		/* For __mode_t and __dev_t.  */

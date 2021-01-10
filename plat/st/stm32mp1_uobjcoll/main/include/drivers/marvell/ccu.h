@@ -11,6 +11,7 @@
 #define CCU_H
 
 #ifndef __ASSEMBLER__
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/addr_map.h>
 #endif
 

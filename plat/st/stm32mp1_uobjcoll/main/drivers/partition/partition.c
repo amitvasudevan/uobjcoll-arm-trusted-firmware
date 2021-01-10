@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
@@ -18,7 +19,7 @@
 static uint8_t mbr_sector[PLAT_PARTITION_BLOCK_SIZE];
 static partition_entry_list_t list;
 
-#if LOG_LEVEL >= LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE
 static void dump_entries(int num)
 {
 	char name[EFI_NAMELEN];
@@ -97,10 +98,10 @@ static int load_gpt_header(uintptr_t image_handle)
 		return -EINVAL;
 	}
 
-	/* partition numbers can't exceed PLAT_PARTITION_MAX_ENTRIES */
+	/* partition numbers can't exceed __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_PARTITION_MAX_ENTRIES__ */
 	list.entry_count = header.list_num;
-	if (list.entry_count > PLAT_PARTITION_MAX_ENTRIES) {
-		list.entry_count = PLAT_PARTITION_MAX_ENTRIES;
+	if (list.entry_count > __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_PARTITION_MAX_ENTRIES__) {
+		list.entry_count = __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_PARTITION_MAX_ENTRIES__;
 	}
 	return 0;
 }

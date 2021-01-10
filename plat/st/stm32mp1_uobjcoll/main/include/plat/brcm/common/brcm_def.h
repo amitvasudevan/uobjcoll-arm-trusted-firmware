@@ -7,6 +7,7 @@
 #ifndef BRCM_DEF_H
 #define BRCM_DEF_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/tbbr/tbbr_img_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
@@ -114,7 +115,7 @@
 #endif
 
 #if BRCM_BL31_IN_DRAM
-#if IMAGE_BL2
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__
 #define BRCM_MAP_BL31_SEC_DRAM		MAP_REGION_FLAT(		\
 						BL31_BASE,		\
 						PLAT_BRCM_MAX_BL31_SIZE,\
@@ -144,7 +145,7 @@
  * The number of regions like RO(code), coherent and data required by
  * different BL stages which need to be mapped in the MMU.
  */
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 #define BRCM_BL_REGIONS			3
 #else
 #define BRCM_BL_REGIONS			2

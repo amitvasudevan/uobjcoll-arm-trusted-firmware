@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
@@ -12,7 +13,7 @@
 
 #include "scmi_private.h"
 
-#if HW_ASSISTED_COHERENCY
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 #define scmi_lock_init(lock)
 #define scmi_lock_get(lock)		spin_lock(lock)
 #define scmi_lock_release(lock)		spin_unlock(lock)

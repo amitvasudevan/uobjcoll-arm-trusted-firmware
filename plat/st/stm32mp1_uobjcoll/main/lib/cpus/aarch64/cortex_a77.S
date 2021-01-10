@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -12,13 +13,13 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>
 
 /* Hardware handled coherency */
-#if HW_ASSISTED_COHERENCY == 0
-#error "Cortex-A77 must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
+#error "Cortex-A77 must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 /* 64-bit only core */
-#if CTX_INCLUDE_AARCH32_REGS == 1
-#error "Cortex-A77 supports only AArch64. Compile with CTX_INCLUDE_AARCH32_REGS=0"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__ == 1
+#error "Cortex-A77 supports only AArch64. Compile with __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__=0"
 #endif
 
 	/* --------------------------------------------------
@@ -124,12 +125,12 @@ func cortex_a77_reset_func
 	bl	cpu_get_rev_var
 	mov	x18, x0
 
-#if ERRATA_A77_1508412
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A77_1508412__
 	mov	x0, x18
 	bl	errata_a77_1508412_wa
 #endif
 
-#if ERRATA_A77_1925769
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A77_1925769__
 	mov	x0, x18
 	bl	errata_a77_1925769_wa
 #endif
@@ -167,8 +168,8 @@ func cortex_a77_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_A77_1508412, cortex_a77, 1508412
-	report_errata ERRATA_A77_1925769, cortex_a77, 1925769
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A77_1508412__, cortex_a77, 1508412
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A77_1925769__, cortex_a77, 1925769
 
 	ldp	x8, x30, [sp], #16
 	ret

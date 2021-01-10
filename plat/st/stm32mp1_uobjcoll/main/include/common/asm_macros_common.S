@@ -38,7 +38,7 @@
 	.cfi_startproc
 	.align \_align
 	\_name:
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 	/* When Branch Target Identification is enabled, insert "bti jc"
 	 * instruction to enable indirect calls and branches
 	 */
@@ -56,10 +56,10 @@
 
 	/*
 	 * Theses macros are used to create function labels for deprecated
-	 * APIs. If ERROR_DEPRECATED is non zero, the callers of these APIs
+	 * APIs. If __UBERSPARK_UOBJCOLL_CONFIGDEF_ERROR_DEPRECATED__ is non zero, the callers of these APIs
 	 * will fail to link and cause build failure.
 	 */
-#if ERROR_DEPRECATED
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERROR_DEPRECATED__
 	.macro func_deprecated _name
 	func deprecated\_name
 	.endm

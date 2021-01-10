@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
@@ -12,13 +13,13 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/rainier.h>
 
 /* Hardware handled coherency */
-#if HW_ASSISTED_COHERENCY == 0
-#error "Rainier CPU must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
+#error "Rainier CPU must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 /* 64-bit only core */
-#if CTX_INCLUDE_AARCH32_REGS == 1
-#error "Rainier CPU supports only AArch64. Compile with CTX_INCLUDE_AARCH32_REGS=0"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__ == 1
+#error "Rainier CPU supports only AArch64. Compile with __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__=0"
 #endif
 
 #if ERRATA_RAINIER_IC_TRAP
@@ -95,12 +96,12 @@ func rainier_reset_func
 	bl	cpu_get_rev_var
 	mov	x18, x0
 
-#if ERRATA_N1_1542419
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1542419__
 	mov	x0, x18
 	bl	errata_n1_1542419_wa
 #endif
 
-#if ENABLE_AMU
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_AMU__
 	/* Make sure accesses from EL0/EL1 and EL2 are not trapped to EL3 */
 	mrs	x0, actlr_el3
 	orr	x0, x0, #RAINIER_ACTLR_AMEN_BIT
@@ -150,7 +151,7 @@ func rainier_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_N1_1542419, rainier, 1542419
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1542419__, rainier, 1542419
 
 	ldp	x8, x30, [sp], #16
 	ret
@@ -179,7 +180,7 @@ func rainier_errata_ic_trap_handler
 	ldp	x4, x5, [sp, #CTX_GPREGS_OFFSET + CTX_GPREG_X4]
 	ldr	x30, [sp, #CTX_GPREGS_OFFSET + CTX_GPREG_LR]
 
-#if IMAGE_BL31 && RAS_EXTENSION
+#if IMAGE_BL31 && __UBERSPARK_UOBJCOLL_CONFIGDEF_RAS_EXTENSION__
 	/*
 	 * Issue Error Synchronization Barrier to synchronize SErrors before
 	 * exiting EL3. We're running with EAs unmasked, so any synchronized

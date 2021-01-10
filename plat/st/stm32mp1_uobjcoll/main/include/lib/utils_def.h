@@ -8,6 +8,7 @@
 #ifndef UTILS_DEF_H
 #define UTILS_DEF_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/export/lib/utils_def_exp.h>
 
 /* Compute the number of elements in the given array */
@@ -130,8 +131,8 @@
  * expected.
  */
 #define ARM_ARCH_AT_LEAST(_maj, _min) \
-	((ARM_ARCH_MAJOR > (_maj)) || \
-	 ((ARM_ARCH_MAJOR == (_maj)) && (ARM_ARCH_MINOR >= (_min))))
+	((__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ > (_maj)) || \
+	 ((__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == (_maj)) && (__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MINOR__ >= (_min))))
 
 /*
  * Import an assembly or linker symbol as a C expression with the specified

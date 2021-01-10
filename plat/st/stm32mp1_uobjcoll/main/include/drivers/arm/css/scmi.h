@@ -7,6 +7,7 @@
 #ifndef SCMI_H
 #define SCMI_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
@@ -120,7 +121,7 @@ typedef struct scmi_channel_plat_info {
 } scmi_channel_plat_info_t;
 
 
-#if HW_ASSISTED_COHERENCY
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 typedef spinlock_t scmi_lock_t;
 #else
 typedef bakery_lock_t scmi_lock_t;

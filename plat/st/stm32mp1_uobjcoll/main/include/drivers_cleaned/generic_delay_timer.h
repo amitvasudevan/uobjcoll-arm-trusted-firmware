@@ -7,6 +7,7 @@
 #ifndef GENERIC_DELAY_TIMER_H
 #define GENERIC_DELAY_TIMER_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 void generic_delay_timer_init_args(uint32_t mult, uint32_t div);

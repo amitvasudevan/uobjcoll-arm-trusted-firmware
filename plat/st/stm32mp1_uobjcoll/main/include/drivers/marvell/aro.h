@@ -21,6 +21,7 @@ enum hws_freq {
 	DDR_FREQ_SAR
 };
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu_def.h>
 
 enum cpu_clock_freq_mode {

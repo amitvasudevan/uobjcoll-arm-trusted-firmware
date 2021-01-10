@@ -9,6 +9,7 @@
 #define __LITTLE_ENDIAN_BITFIELD
 #endif
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <linux/types.h>
 #include <linux/swab.h>
 

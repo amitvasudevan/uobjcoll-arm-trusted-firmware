@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -97,7 +98,7 @@ func bl2u_entrypoint
 	 * any C code is called.
 	 * ---------------------------------------------
 	 */
-#if STACK_PROTECTOR_ENABLED
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STACK_PROTECTOR_ENABLED__
 	bl	update_stack_protector_canary
 #endif
 

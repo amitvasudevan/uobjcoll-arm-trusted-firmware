@@ -7,6 +7,7 @@
 #ifndef PSCI_H
 #define PSCI_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>	/* for PLAT_NUM_PWR_DOMAINS */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -72,7 +73,7 @@
 /*
  * Number of PSCI calls (above) implemented
  */
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 #define PSCI_NUM_CALLS			U(22)
 #else
 #define PSCI_NUM_CALLS			U(18)
@@ -96,7 +97,7 @@
  ******************************************************************************/
 #define PSTATE_ID_SHIFT		U(0)
 
-#if PSCI_EXTENDED_STATE_ID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PSCI_EXTENDED_STATE_ID__
 #define PSTATE_VALID_MASK	U(0xB0000000)
 #define PSTATE_TYPE_SHIFT	U(30)
 #define PSTATE_ID_MASK		U(0xfffffff)
@@ -126,7 +127,7 @@
 #define FF_PSTATE_SHIFT		U(1)
 #define FF_PSTATE_ORIG		U(0)
 #define FF_PSTATE_EXTENDED	U(1)
-#if PSCI_EXTENDED_STATE_ID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PSCI_EXTENDED_STATE_ID__
 #define FF_PSTATE		FF_PSTATE_EXTENDED
 #else
 #define FF_PSTATE		FF_PSTATE_ORIG

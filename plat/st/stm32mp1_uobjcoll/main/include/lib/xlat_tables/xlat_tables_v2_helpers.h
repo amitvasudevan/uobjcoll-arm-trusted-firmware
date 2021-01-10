@@ -18,6 +18,7 @@
 
 #ifndef __ASSEMBLER__
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
@@ -78,9 +79,9 @@ struct xlat_ctx {
 	 * Keep track of how many regions are mapped in each table. The base
 	 * table can't be unmapped so it isn't needed to keep track of it.
 	 */
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 	int *tables_mapped_regions;
-#endif /* PLAT_XLAT_TABLES_DYNAMIC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__ */
 
 	int next_table;
 
@@ -112,7 +113,7 @@ struct xlat_ctx {
 	int xlat_regime;
 };
 
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 #define XLAT_ALLOC_DYNMAP_STRUCT(_ctx_name, _xlat_tables_count)		\
 	static int _ctx_name##_mapped_regions[_xlat_tables_count];
 
@@ -124,7 +125,7 @@ struct xlat_ctx {
 
 #define XLAT_REGISTER_DYNMAP_STRUCT(_ctx_name)				\
 	/* do nothing */
-#endif /* PLAT_XLAT_TABLES_DYNAMIC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__ */
 
 #if PLAT_RO_XLAT_TABLES
 #define XLAT_CTX_INIT_TABLE_ATTR()					\

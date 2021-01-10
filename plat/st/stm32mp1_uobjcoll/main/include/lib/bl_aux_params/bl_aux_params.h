@@ -6,6 +6,7 @@
 #ifndef LIB_BL_AUX_PARAMS_H
 #define LIB_BL_AUX_PARAMS_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 

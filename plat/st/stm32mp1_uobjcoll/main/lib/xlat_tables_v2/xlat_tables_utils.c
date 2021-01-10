@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
@@ -20,7 +21,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/lib/xlat_tables_v2/xlat_tables_private.h>
 
-#if LOG_LEVEL < LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ < LOG_LEVEL_VERBOSE
 
 void xlat_mmap_print(__unused const mmap_region_t *mmap)
 {
@@ -32,7 +33,7 @@ void xlat_tables_print(__unused xlat_ctx_t *ctx)
 	/* Empty */
 }
 
-#else /* if LOG_LEVEL >= LOG_LEVEL_VERBOSE */
+#else /* if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE */
 
 void xlat_mmap_print(const mmap_region_t *mmap)
 {
@@ -78,7 +79,7 @@ static void xlat_desc_print(const xlat_ctx_t *ctx, uint64_t desc)
 		 *   EL0 can access that memory region, so can EL1, with the
 		 *   same permissions.
 		 */
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 		uint64_t xn_mask = xlat_arch_regime_get_xn_desc(EL1_EL0_REGIME);
 		uint64_t xn_perm = desc & xn_mask;
 
@@ -226,7 +227,7 @@ void xlat_tables_print(xlat_ctx_t *ctx)
 	VERBOSE("  Entries @initial lookup level: %u\n",
 		ctx->base_table_entries);
 
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 	used_page_tables = 0;
 	for (int i = 0; i < ctx->tables_num; ++i) {
 		if (ctx->tables_mapped_regions[i] != 0)
@@ -243,7 +244,7 @@ void xlat_tables_print(xlat_ctx_t *ctx)
 				   ctx->base_table_entries, ctx->base_level);
 }
 
-#endif /* LOG_LEVEL >= LOG_LEVEL_VERBOSE */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE */
 
 /*
  * Do a translation table walk to find the block or page descriptor that maps
@@ -370,11 +371,11 @@ static int xlat_get_mem_attributes_internal(const xlat_ctx_t *ctx,
 
 	desc = *entry;
 
-#if LOG_LEVEL >= LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE
 	VERBOSE("Attributes: ");
 	xlat_desc_print(ctx, desc);
 	printf("\n");
-#endif /* LOG_LEVEL >= LOG_LEVEL_VERBOSE */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE */
 
 	assert(attributes != NULL);
 	*attributes = 0U;
@@ -551,7 +552,7 @@ int xlat_change_mem_attributes_ctx(const xlat_ctx_t *ctx, uintptr_t base_va,
 		 * before writing the new descriptor.
 		 */
 		*entry = INVALID_DESC;
-#if !HW_ASSISTED_COHERENCY
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 		dccvac((uintptr_t)entry);
 #endif
 		/* Invalidate any cached copy of this mapping in the TLBs. */
@@ -562,7 +563,7 @@ int xlat_change_mem_attributes_ctx(const xlat_ctx_t *ctx, uintptr_t base_va,
 
 		/* Write new descriptor */
 		*entry = xlat_desc(ctx, new_attr, addr_pa, level);
-#if !HW_ASSISTED_COHERENCY
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 		dccvac((uintptr_t)entry);
 #endif
 		base_va += PAGE_SIZE;

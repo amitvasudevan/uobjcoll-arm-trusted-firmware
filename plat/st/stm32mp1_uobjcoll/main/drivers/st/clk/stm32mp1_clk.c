@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0+ OR BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -2041,7 +2042,7 @@ static void stm32mp1_osc_init(void)
 	}
 }
 
-#ifdef STM32MP_SHARED_RESOURCES
+#ifdef __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SHARED_RESOURCES__
 /*
  * Get the parent ID of the target parent clock, for tagging as secure
  * shared clock dependencies.
@@ -2198,7 +2199,7 @@ void stm32mp1_register_clock_parents_secure(unsigned long clock_id)
 		break;
 	}
 }
-#endif /* STM32MP_SHARED_RESOURCES */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SHARED_RESOURCES__ */
 
 static void sync_earlyboot_clocks_state(void)
 {

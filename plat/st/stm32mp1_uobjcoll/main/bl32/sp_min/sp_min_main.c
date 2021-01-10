@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -30,7 +31,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/bl32/sp_min/sp_min_private.h>
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 PMF_REGISTER_SERVICE_SMC(rt_instr_svc, PMF_RT_INSTR_SVC_ID,
 	RT_INSTR_TOTAL_IDS, PMF_STORE_ENABLE)
 #endif
@@ -232,7 +233,7 @@ void sp_min_warm_boot(void)
 	isb();
 }
 
-#if SP_MIN_WITH_SECURE_FIQ
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SP_MIN_WITH_SECURE_FIQ__
 /******************************************************************************
  * This function is invoked on secure interrupts. By construction of the
  * SP_MIN, secure interrupts can only be handled when core executes in non
@@ -246,4 +247,4 @@ void sp_min_fiq(void)
 	sp_min_plat_fiq_handler(id);
 	plat_ic_end_of_interrupt(id);
 }
-#endif /* SP_MIN_WITH_SECURE_FIQ */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_SP_MIN_WITH_SECURE_FIQ__ */

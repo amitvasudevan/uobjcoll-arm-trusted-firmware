@@ -7,6 +7,7 @@
 #ifndef PSCI_PRIVATE_H
 #define PSCI_PRIVATE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -158,7 +159,7 @@ typedef struct cpu_pwr_domain_node {
 /*******************************************************************************
  * The following are helpers and declarations of locks.
  ******************************************************************************/
-#if HW_ASSISTED_COHERENCY
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 /*
  * On systems where participant CPUs are cache-coherent, we can use spinlocks
  * instead of bakery locks.
@@ -198,7 +199,7 @@ static inline void psci_lock_release(non_cpu_pd_node_t *non_cpu_pd_node)
 	spin_unlock(&psci_locks[non_cpu_pd_node->lock_index]);
 }
 
-#else /* if HW_ASSISTED_COHERENCY == 0 */
+#else /* if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0 */
 /*
  * Use bakery locks for state coordination as not all PSCI participants are
  * cache coherent.
@@ -236,7 +237,7 @@ static inline void psci_lock_release(non_cpu_pd_node_t *non_cpu_pd_node)
 	bakery_lock_release(&psci_locks[non_cpu_pd_node->lock_index]);
 }
 
-#endif /* HW_ASSISTED_COHERENCY */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ */
 
 static inline void psci_lock_init(non_cpu_pd_node_t *non_cpu_pd_node,
 				  unsigned char idx)
@@ -291,7 +292,7 @@ int psci_spd_migrate_info(u_register_t *mpidr);
 void psci_do_pwrdown_sequence(unsigned int power_level);
 
 /*
- * CPU power down is directly called only when HW_ASSISTED_COHERENCY is
+ * CPU power down is directly called only when __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ is
  * available. Otherwise, this needs post-call stack maintenance, which is
  * handled in assembly.
  */

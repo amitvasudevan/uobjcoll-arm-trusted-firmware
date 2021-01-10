@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
@@ -112,7 +113,7 @@ int plat_get_enc_key_info(enum fw_enc_status_t fw_enc_status, uint8_t *key,
 void __init setup_page_tables(const mmap_region_t *bl_regions,
 			      const mmap_region_t *plat_regions)
 {
-#if LOG_LEVEL >= LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE
 	const mmap_region_t *regions = bl_regions;
 
 	while (regions->size != 0U) {

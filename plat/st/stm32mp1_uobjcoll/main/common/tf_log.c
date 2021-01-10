@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdarg.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
@@ -11,8 +12,8 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-/* Set the default maximum log level to the `LOG_LEVEL` build flag */
-static unsigned int max_log_level = LOG_LEVEL;
+/* Set the default maximum log level to the `__UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__` build flag */
+static unsigned int max_log_level = __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__;
 
 /*
  * The common log function which is invoked by TF-A code.
@@ -51,7 +52,7 @@ void tf_log(const char *fmt, ...)
 
 /*
  * The helper function to set the log level dynamically by platform. The
- * maximum log level is determined by `LOG_LEVEL` build flag at compile time
+ * maximum log level is determined by `__UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__` build flag at compile time
  * and this helper can set a lower (or equal) log level than the one at compile.
  */
 void tf_log_set_max_level(unsigned int log_level)
@@ -60,6 +61,6 @@ void tf_log_set_max_level(unsigned int log_level)
 	assert((log_level % 10U) == 0U);
 
 	/* Cap log_level to the compile time maximum. */
-	if (log_level <= (unsigned int)LOG_LEVEL)
+	if (log_level <= (unsigned int)__UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__)
 		max_log_level = log_level;
 }

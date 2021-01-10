@@ -7,15 +7,16 @@
 #ifndef PARTITION_H
 #define PARTITION_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
 
-#if !PLAT_PARTITION_MAX_ENTRIES
-# define PLAT_PARTITION_MAX_ENTRIES	128
-#endif	/* PLAT_PARTITION_MAX_ENTRIES */
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_PARTITION_MAX_ENTRIES__
+# define __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_PARTITION_MAX_ENTRIES__	128
+#endif	/* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_PARTITION_MAX_ENTRIES__ */
 
-CASSERT(PLAT_PARTITION_MAX_ENTRIES <= 128, assert_plat_partition_max_entries);
+CASSERT(__UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_PARTITION_MAX_ENTRIES__ <= 128, assert_plat_partition_max_entries);
 
 #if !PLAT_PARTITION_BLOCK_SIZE
 # define PLAT_PARTITION_BLOCK_SIZE	512
@@ -36,7 +37,7 @@ typedef struct partition_entry {
 } partition_entry_t;
 
 typedef struct partition_entry_list {
-	partition_entry_t	list[PLAT_PARTITION_MAX_ENTRIES];
+	partition_entry_t	list[__UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_PARTITION_MAX_ENTRIES__];
 	int			entry_count;
 } partition_entry_list_t;
 

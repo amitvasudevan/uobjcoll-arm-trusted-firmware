@@ -7,6 +7,7 @@
 #ifndef BL_COMMON_LD_H
 #define BL_COMMON_LD_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #ifdef __aarch64__
@@ -112,7 +113,7 @@
 		__RELA_END__ = .;			\
 	}
 
-#if !(defined(IMAGE_BL31) && RECLAIM_INIT_CODE)
+#if !(defined(IMAGE_BL31) && __UBERSPARK_UOBJCOLL_CONFIGDEF_RECLAIM_INIT_CODE__)
 #define STACK_SECTION					\
 	stacks (NOLOAD) : {				\
 		__STACKS_START__ = .;			\
@@ -144,7 +145,7 @@
  * The compiler will allocate enough memory for one CPU's bakery locks,
  * the remaining cache lines are allocated by the linker script
  */
-#if !USE_COHERENT_MEM
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 #define BAKERY_LOCK_NORMAL				\
 	. = ALIGN(CACHE_WRITEBACK_GRANULE);		\
 	__BAKERY_LOCK_START__ = .;			\

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -45,8 +46,8 @@ func bl1_entrypoint
 */
 	el3_entrypoint_common					\
 		_init_sctlr=1					\
-		_warm_boot_mailbox=!PROGRAMMABLE_RESET_ADDRESS	\
-		_secondary_cold_boot=!COLD_BOOT_SINGLE_CPU	\
+		_warm_boot_mailbox=!__UBERSPARK_UOBJCOLL_CONFIGDEF_PROGRAMMABLE_RESET_ADDRESS__	\
+		_secondary_cold_boot=!__UBERSPARK_UOBJCOLL_CONFIGDEF_COLD_BOOT_SINGLE_CPU__	\
 		_init_memory=1					\
 		_init_c_runtime=1				\
 		_exception_vectors=bl1_vector_table

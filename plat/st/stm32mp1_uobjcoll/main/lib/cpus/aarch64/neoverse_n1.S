@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpuamu.h>
@@ -12,13 +13,13 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/neoverse_n1.h>
 
 /* Hardware handled coherency */
-#if HW_ASSISTED_COHERENCY == 0
-#error "Neoverse N1 must be compiled with HW_ASSISTED_COHERENCY enabled"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
+#error "Neoverse N1 must be compiled with __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled"
 #endif
 
 /* 64-bit only core */
-#if CTX_INCLUDE_AARCH32_REGS == 1
-#error "Neoverse-N1 supports only AArch64. Compile with CTX_INCLUDE_AARCH32_REGS=0"
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__ == 1
+#error "Neoverse-N1 supports only AArch64. Compile with __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__=0"
 #endif
 
 	.global neoverse_n1_errata_ic_trap_handler
@@ -421,72 +422,72 @@ func neoverse_n1_reset_func
 	bl	cpu_get_rev_var
 	mov	x18, x0
 
-#if ERRATA_N1_1043202
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1043202__
 	mov	x0, x18
 	bl	errata_n1_1043202_wa
 #endif
 
-#if ERRATA_N1_1073348
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1073348__
 	mov	x0, x18
 	bl	errata_n1_1073348_wa
 #endif
 
-#if ERRATA_N1_1130799
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1130799__
 	mov	x0, x18
 	bl	errata_n1_1130799_wa
 #endif
 
-#if ERRATA_N1_1165347
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1165347__
 	mov	x0, x18
 	bl	errata_n1_1165347_wa
 #endif
 
-#if ERRATA_N1_1207823
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1207823__
 	mov	x0, x18
 	bl	errata_n1_1207823_wa
 #endif
 
-#if ERRATA_N1_1220197
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1220197__
 	mov	x0, x18
 	bl	errata_n1_1220197_wa
 #endif
 
-#if ERRATA_N1_1257314
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1257314__
 	mov	x0, x18
 	bl	errata_n1_1257314_wa
 #endif
 
-#if ERRATA_N1_1262606
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1262606__
 	mov	x0, x18
 	bl	errata_n1_1262606_wa
 #endif
 
-#if ERRATA_N1_1262888
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1262888__
 	mov	x0, x18
 	bl	errata_n1_1262888_wa
 #endif
 
-#if ERRATA_N1_1275112
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1275112__
 	mov	x0, x18
 	bl	errata_n1_1275112_wa
 #endif
 
-#if ERRATA_N1_1315703
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1315703__
 	mov	x0, x18
 	bl	errata_n1_1315703_wa
 #endif
 
-#if ERRATA_N1_1542419
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1542419__
 	mov	x0, x18
 	bl	errata_n1_1542419_wa
 #endif
 
-#if ERRATA_N1_1868343
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1868343__
 	mov	x0, x18
 	bl	errata_n1_1868343_wa
 #endif
 
-#if ENABLE_AMU
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_AMU__
 	/* Make sure accesses from EL0/EL1 and EL2 are not trapped to EL3 */
 	mrs	x0, actlr_el3
 	orr	x0, x0, #NEOVERSE_N1_ACTLR_AMEN_BIT
@@ -502,14 +503,14 @@ func neoverse_n1_reset_func
 	msr	CPUAMCNTENSET_EL0, x0
 #endif
 
-#if NEOVERSE_Nx_EXTERNAL_LLC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_NEOVERSE_NX_EXTERNAL_LLC__
 	/* Some system may have External LLC, core needs to be made aware */
 	mrs     x0, NEOVERSE_N1_CPUECTLR_EL1
 	orr     x0, x0, NEOVERSE_N1_CPUECTLR_EL1_EXTLLC_BIT
 	msr     NEOVERSE_N1_CPUECTLR_EL1, x0
 #endif
 
-#if ERRATA_DSU_936184
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_936184__
 	bl	errata_dsu_936184_wa
 #endif
 
@@ -547,20 +548,20 @@ func neoverse_n1_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_N1_1043202, neoverse_n1, 1043202
-	report_errata ERRATA_N1_1073348, neoverse_n1, 1073348
-	report_errata ERRATA_N1_1130799, neoverse_n1, 1130799
-	report_errata ERRATA_N1_1165347, neoverse_n1, 1165347
-	report_errata ERRATA_N1_1207823, neoverse_n1, 1207823
-	report_errata ERRATA_N1_1220197, neoverse_n1, 1220197
-	report_errata ERRATA_N1_1257314, neoverse_n1, 1257314
-	report_errata ERRATA_N1_1262606, neoverse_n1, 1262606
-	report_errata ERRATA_N1_1262888, neoverse_n1, 1262888
-	report_errata ERRATA_N1_1275112, neoverse_n1, 1275112
-	report_errata ERRATA_N1_1315703, neoverse_n1, 1315703
-	report_errata ERRATA_N1_1542419, neoverse_n1, 1542419
-	report_errata ERRATA_N1_1868343, neoverse_n1, 1868343
-	report_errata ERRATA_DSU_936184, neoverse_n1, dsu_936184
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1043202__, neoverse_n1, 1043202
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1073348__, neoverse_n1, 1073348
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1130799__, neoverse_n1, 1130799
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1165347__, neoverse_n1, 1165347
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1207823__, neoverse_n1, 1207823
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1220197__, neoverse_n1, 1220197
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1257314__, neoverse_n1, 1257314
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1262606__, neoverse_n1, 1262606
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1262888__, neoverse_n1, 1262888
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1275112__, neoverse_n1, 1275112
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1315703__, neoverse_n1, 1315703
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1542419__, neoverse_n1, 1542419
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_N1_1868343__, neoverse_n1, 1868343
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_DSU_936184__, neoverse_n1, dsu_936184
 
 	ldp	x8, x30, [sp], #16
 	ret
@@ -589,7 +590,7 @@ func neoverse_n1_errata_ic_trap_handler
 	ldp	x4, x5, [sp, #CTX_GPREGS_OFFSET + CTX_GPREG_X4]
 	ldr	x30, [sp, #CTX_GPREGS_OFFSET + CTX_GPREG_LR]
 
-#if IMAGE_BL31 && RAS_EXTENSION
+#if IMAGE_BL31 && __UBERSPARK_UOBJCOLL_CONFIGDEF_RAS_EXTENSION__
 	/*
 	 * Issue Error Synchronization Barrier to synchronize SErrors before
 	 * exiting EL3. We're running with EAs unmasked, so any synchronized

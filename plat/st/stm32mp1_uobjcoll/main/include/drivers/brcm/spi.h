@@ -7,6 +7,7 @@
 #ifndef SPI_H
 #define SPI_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #define SPI_XFER_BEGIN (1 << 0)	/* Assert CS before transfer */

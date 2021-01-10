@@ -7,6 +7,7 @@
 #ifndef FCONF_NV_CNTR_GETTER_H
 #define FCONF_NV_CNTR_GETTER_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/nv_cntr_ids.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
 

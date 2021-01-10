@@ -28,7 +28,7 @@
 /* PPIs INTIDs 16-31 */
 #define MAX_PPI_ID		U(31)
 
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 
 /* GICv3.1 extended PPIs INTIDs 1056-1119 */
 #define MIN_EPPI_ID		U(1056)
@@ -74,7 +74,7 @@
 /* SPIs: 32-1019 */
 #define	IS_SPI(id)		(((id) >= MIN_SPI_ID) && ((id) <= MAX_SPI_ID))
 
-#endif	/* GIC_EXT_INTID */
+#endif	/* __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__ */
 
 /*******************************************************************************
  * GICv3 and 3.1 specific Distributor interface register offsets and constants
@@ -304,6 +304,7 @@
 
 #ifndef __ASSEMBLER__
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 

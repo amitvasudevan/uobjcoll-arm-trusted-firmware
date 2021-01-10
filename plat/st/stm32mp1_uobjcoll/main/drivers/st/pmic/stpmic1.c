@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
@@ -692,7 +693,7 @@ int stpmic1_register_write(uint8_t register_id, uint8_t value)
 				     I2C_MEMADD_SIZE_8BIT, &value,
 				     1, I2C_TIMEOUT_MS);
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	if (status != 0) {
 		return status;
 	}

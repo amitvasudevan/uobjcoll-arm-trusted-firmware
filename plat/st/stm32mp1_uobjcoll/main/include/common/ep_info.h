@@ -7,6 +7,7 @@
 #ifndef EP_INFO_H
 #define EP_INFO_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/param_header.h>
 
 #ifndef __ASSEMBLER__

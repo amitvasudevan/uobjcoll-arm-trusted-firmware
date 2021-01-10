@@ -7,6 +7,7 @@
 #ifndef EL3_COMMON_MACROS_S
 #define EL3_COMMON_MACROS_S
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -99,13 +100,13 @@
          *  soft-float toolchain as "vmsr" instruction will not be recognized.
 	 * ---------------------------------------------------------------------
 	 */
-#if ((ARM_ARCH_MAJOR > 7) || defined(ARMV7_SUPPORTS_VFP)) && !(__SOFTFP__)
+#if ((__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ > 7) || defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_VFP__)) && !(__SOFTFP__)
 	ldr	r0, =(FPEXC_RESET_VAL | FPEXC_EN_BIT)
 	vmsr	FPEXC, r0
 	isb
 #endif
 
-#if (ARM_ARCH_MAJOR > 7)
+#if (__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ > 7)
 	/* ---------------------------------------------------------------------
 	 * Initialise SDCR, setting all the fields rather than relying on hw.
 	 *
@@ -206,7 +207,7 @@
 		_init_memory, _init_c_runtime, _exception_vectors
 
 	/* Make sure we are in Secure Mode */
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	ldcopr	r0, SCR
 	tst	r0, #SCR_NS_BIT
 	ASM_ASSERT(eq)
@@ -242,7 +243,7 @@
 	cps	#MODE32_mon
 	isb
 
-#if DISABLE_MTPMU
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DISABLE_MTPMU__
 	bl	mtpmu_disable
 #endif
 
@@ -318,7 +319,7 @@
 	 * ---------------------------------------------------------------------
 	 */
 	.if \_init_c_runtime
-#if defined(IMAGE_BL32) || (defined(IMAGE_BL2) && BL2_AT_EL3)
+#if defined(IMAGE_BL32) || (defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__) && __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__)
 		/* -----------------------------------------------------------------
 		 * Invalidate the RW memory used by the image. This
 		 * includes the data and NOBITS sections. This is done to
@@ -342,7 +343,7 @@
 		ldr	r1, =__BSS_SIZE__
 		bl	zeromem
 
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 		ldr	r0, =__COHERENT_RAM_START__
 		ldr	r1, =__COHERENT_RAM_UNALIGNED_SIZE__
 		bl	zeromem
@@ -351,7 +352,7 @@
 		/* Restore r12 */
 		mov	r12, r7
 
-#if defined(IMAGE_BL1) || (defined(IMAGE_BL2) && BL2_AT_EL3 && BL2_IN_XIP_MEM)
+#if defined(IMAGE_BL1) || (defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__) && __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__ && __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_IN_XIP_MEM__)
 		/* -----------------------------------------------------
 		 * Copy data from ROM to RAM.
 		 * -----------------------------------------------------
@@ -372,7 +373,7 @@
 	 */
 	bl	plat_set_my_stack
 
-#if STACK_PROTECTOR_ENABLED
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STACK_PROTECTOR_ENABLED__
 	.if \_init_c_runtime
 	bl	update_stack_protector_canary
 	.endif /* _init_c_runtime */

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
@@ -38,7 +39,7 @@ static uintptr_t dummy_dev_spec;
 static uintptr_t image_dev_handle;
 static uintptr_t storage_dev_handle;
 
-#if STM32MP_SDMMC || STM32MP_EMMC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SDMMC__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_EMMC__
 static io_block_spec_t gpt_block_spec = {
 	.offset = 0,
 	.length = 34 * MMC_BLOCK_SIZE, /* Size of GPT table */
@@ -60,9 +61,9 @@ static const io_block_dev_spec_t mmc_block_dev_spec = {
 };
 
 static const io_dev_connector_t *mmc_dev_con;
-#endif /* STM32MP_SDMMC || STM32MP_EMMC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SDMMC__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_EMMC__ */
 
-#if STM32MP_SPI_NOR
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NOR__
 static io_mtd_dev_spec_t spi_nor_dev_spec = {
 	.ops = {
 		.init = spi_nor_init,
@@ -71,7 +72,7 @@ static io_mtd_dev_spec_t spi_nor_dev_spec = {
 };
 #endif
 
-#if STM32MP_RAW_NAND
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_RAW_NAND__
 static io_mtd_dev_spec_t nand_dev_spec = {
 	.ops = {
 		.init = nand_raw_init,
@@ -82,7 +83,7 @@ static io_mtd_dev_spec_t nand_dev_spec = {
 static const io_dev_connector_t *nand_dev_con;
 #endif
 
-#if STM32MP_SPI_NAND
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NAND__
 static io_mtd_dev_spec_t spi_nand_dev_spec = {
 	.ops = {
 		.init = spi_nand_init,
@@ -91,7 +92,7 @@ static io_mtd_dev_spec_t spi_nand_dev_spec = {
 };
 #endif
 
-#if STM32MP_SPI_NAND || STM32MP_SPI_NOR
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NAND__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NOR__
 static const io_dev_connector_t *spi_dev_con;
 #endif
 
@@ -210,7 +211,7 @@ static const struct plat_io_policy policies[] = {
 		.image_spec = (uintptr_t)&bl33_partition_spec,
 		.check = open_image
 	},
-#if STM32MP_SDMMC || STM32MP_EMMC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SDMMC__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_EMMC__
 	[GPT_IMAGE_ID] = {
 		.dev_handle = &storage_dev_handle,
 		.image_spec = (uintptr_t)&gpt_block_spec,
@@ -268,7 +269,7 @@ static void print_boot_device(boot_api_context_t *boot_context)
 	}
 }
 
-#if STM32MP_SDMMC || STM32MP_EMMC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SDMMC__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_EMMC__
 static void boot_mmc(enum mmc_device_type mmc_dev_type,
 		     uint16_t boot_interface_instance)
 {
@@ -358,9 +359,9 @@ static void boot_mmc(enum mmc_device_type mmc_dev_type,
 				&image_dev_handle);
 	assert(io_result == 0);
 }
-#endif /* STM32MP_SDMMC || STM32MP_EMMC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SDMMC__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_EMMC__ */
 
-#if STM32MP_SPI_NOR
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NOR__
 static void boot_spi_nor(boot_api_context_t *boot_context)
 {
 	int io_result __unused;
@@ -411,9 +412,9 @@ static void boot_spi_nor(boot_api_context_t *boot_context)
 				&image_dev_handle);
 	assert(io_result == 0);
 }
-#endif /* STM32MP_SPI_NOR */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NOR__ */
 
-#if STM32MP_RAW_NAND
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_RAW_NAND__
 static void boot_fmc2_nand(boot_api_context_t *boot_context)
 {
 	int io_result __unused;
@@ -464,9 +465,9 @@ static void boot_fmc2_nand(boot_api_context_t *boot_context)
 				&image_dev_handle);
 	assert(io_result == 0);
 }
-#endif /* STM32MP_RAW_NAND */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_RAW_NAND__ */
 
-#if STM32MP_SPI_NAND
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NAND__
 static void boot_spi_nand(boot_api_context_t *boot_context)
 {
 	int io_result __unused;
@@ -518,7 +519,7 @@ static void boot_spi_nand(boot_api_context_t *boot_context)
 				&image_dev_handle);
 	assert(io_result == 0);
 }
-#endif /* STM32MP_SPI_NAND */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NAND__ */
 
 void stm32mp_io_setup(void)
 {
@@ -542,31 +543,31 @@ void stm32mp_io_setup(void)
 	assert(io_result == 0);
 
 	switch (boot_context->boot_interface_selected) {
-#if STM32MP_SDMMC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SDMMC__
 	case BOOT_API_CTX_BOOT_INTERFACE_SEL_FLASH_SD:
 		dmbsy();
 		boot_mmc(MMC_IS_SD, boot_context->boot_interface_instance);
 		break;
 #endif
-#if STM32MP_EMMC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_EMMC__
 	case BOOT_API_CTX_BOOT_INTERFACE_SEL_FLASH_EMMC:
 		dmbsy();
 		boot_mmc(MMC_IS_EMMC, boot_context->boot_interface_instance);
 		break;
 #endif
-#if STM32MP_SPI_NOR
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NOR__
 	case BOOT_API_CTX_BOOT_INTERFACE_SEL_FLASH_NOR_QSPI:
 		dmbsy();
 		boot_spi_nor(boot_context);
 		break;
 #endif
-#if STM32MP_RAW_NAND
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_RAW_NAND__
 	case BOOT_API_CTX_BOOT_INTERFACE_SEL_FLASH_NAND_FMC:
 		dmbsy();
 		boot_fmc2_nand(boot_context);
 		break;
 #endif
-#if STM32MP_SPI_NAND
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NAND__
 	case BOOT_API_CTX_BOOT_INTERFACE_SEL_FLASH_NAND_QSPI:
 		dmbsy();
 		boot_spi_nand(boot_context);

@@ -7,6 +7,7 @@
 #ifndef TZC_DMC620_H
 #define TZC_DMC620_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* DMC-620 memc register offsets */

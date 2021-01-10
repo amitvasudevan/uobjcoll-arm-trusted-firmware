@@ -7,6 +7,7 @@
 #ifndef PMF_HELPERS_H
 #define PMF_HELPERS_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -43,7 +44,7 @@ typedef struct pmf_svc_desc {
 	pmf_svc_get_ts_t get_ts;
 } pmf_svc_desc_t;
 
-#if ENABLE_PMF
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PMF__
 /*
  * Convenience macros for capturing time-stamp.
  */
@@ -143,7 +144,7 @@ typedef struct pmf_svc_desc {
 #define PMF_GET_TIMESTAMP_BY_MPIDR(_name, _tid, _mpidr, _flags, _tsval)
 #define PMF_GET_TIMESTAMP_BY_INDEX(_name, _tid, _cpuid, _flags, _tsval)
 
-#endif /* ENABLE_PMF */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PMF__ */
 
 /*
  * Convenience macro to allocate memory for a PMF service.

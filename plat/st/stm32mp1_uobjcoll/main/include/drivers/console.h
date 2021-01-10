@@ -7,6 +7,7 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #define CONSOLE_T_NEXT			(U(0) * REGSZ)

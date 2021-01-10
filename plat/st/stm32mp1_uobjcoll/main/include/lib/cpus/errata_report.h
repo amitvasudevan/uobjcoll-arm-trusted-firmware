@@ -9,12 +9,13 @@
 
 #ifndef __ASSEMBLER__
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
-#if DEBUG
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 void print_errata_status(void);
 #else
 static inline void print_errata_status(void) {}

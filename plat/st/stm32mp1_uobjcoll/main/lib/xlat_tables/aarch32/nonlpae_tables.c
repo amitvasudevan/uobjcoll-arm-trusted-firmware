@@ -7,6 +7,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
@@ -22,8 +23,8 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/lib/xlat_tables_v2/xlat_tables_private.h>
 
-#ifdef ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING
-#error "ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING flag is set. \
+#ifdef __UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING__
+#error "__UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING__ flag is set. \
 This module is to be used when LPAE is not supported"
 #endif
 
@@ -151,7 +152,7 @@ static mmap_region_t mmap[MAX_MMAP_REGIONS + 1];
 
 void print_mmap(void)
 {
-#if LOG_LEVEL >= LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE
 	mmap_region_t *mm = mmap;
 
 	printf("init xlat - l1:%p  l2:%p (%d)\n",
@@ -202,7 +203,7 @@ void mmap_add_region(unsigned long long base_pa, uintptr_t base_va,
 	assert((base_pa + (unsigned long long)size - 1ULL) <=
 					(PLAT_PHY_ADDR_SPACE_SIZE - 1U));
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 
 	/* Check for PAs and VAs overlaps with all other regions */
 	for (mm = mmap; mm->size; ++mm) {
@@ -247,7 +248,7 @@ void mmap_add_region(unsigned long long base_pa, uintptr_t base_va,
 
 	mm = mmap; /* Restore pointer to the start of the array */
 
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 
 	/* Find correct place in mmap to insert new region */
 	while ((mm->base_va < base_va) && (mm->size != 0U)) {
@@ -330,7 +331,7 @@ static uint32_t mmap_desc(unsigned attr, unsigned int addr_pa,
 	default:
 		panic();
 	}
-#if LOG_LEVEL >= LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE
 	/* dump only the non-lpae level 2 tables */
 	if (level == 2U) {
 		printf(attr & MT_MEMORY ? "MEM" : "dev");
@@ -415,7 +416,7 @@ static mmap_region_t *init_xlation_table_inner(mmap_region_t *mm,
 			++mm;
 			continue;
 		}
-#if LOG_LEVEL >= LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE
 		/* dump only non-lpae level 2 tables content */
 		if (level == 2U) {
 			printf("      0x%lx %x " + 6 - 2 * level,
@@ -473,7 +474,7 @@ static mmap_region_t *init_xlation_table_inner(mmap_region_t *mm,
 						(uint32_t *)xlat_table,
 						level + 1);
 		}
-#if LOG_LEVEL >= LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE
 		/* dump only non-lpae level 2 tables content */
 		if (level == 2U) {
 			printf("\n");
@@ -549,7 +550,7 @@ void enable_mmu_svc_mon(unsigned int flags)
 
 	sctlr = read_sctlr();
 	sctlr |= SCTLR_M_BIT;
-#ifdef ARMV7_SUPPORTS_VIRTUALIZATION
+#ifdef __UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_VIRTUALIZATION__
 	sctlr |= SCTLR_WXN_BIT;
 #endif
 

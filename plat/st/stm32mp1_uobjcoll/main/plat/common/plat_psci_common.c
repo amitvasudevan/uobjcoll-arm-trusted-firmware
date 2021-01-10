@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -13,7 +14,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#if ENABLE_PSCI_STAT && ENABLE_PMF
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__ && __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PMF__
 #pragma weak plat_psci_stat_accounting_start
 #pragma weak plat_psci_stat_accounting_stop
 #pragma weak plat_psci_stat_get_residency
@@ -131,7 +132,7 @@ u_register_t plat_psci_stat_get_residency(unsigned int lvl,
 
 	return calc_stat_residency(pwrup_ts, pwrdn_ts);
 }
-#endif /* ENABLE_PSCI_STAT && ENABLE_PMF */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__ && __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PMF__ */
 
 /*
  * The PSCI generic code uses this API to let the platform participate in state

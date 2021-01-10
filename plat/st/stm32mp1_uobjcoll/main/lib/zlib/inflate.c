@@ -319,6 +319,7 @@ struct inflate_state FAR *state;
 }
 
 #ifdef MAKEFIXED
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
 
 /*

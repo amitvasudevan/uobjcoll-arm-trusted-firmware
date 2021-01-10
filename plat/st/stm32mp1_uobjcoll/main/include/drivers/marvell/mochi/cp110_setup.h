@@ -10,6 +10,7 @@
 #ifndef CP110_SETUP_H
 #define CP110_SETUP_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mvebu_def.h>

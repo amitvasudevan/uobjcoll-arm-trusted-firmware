@@ -2,6 +2,7 @@
 #ifndef _LINUX_SWAB_H
 #define _LINUX_SWAB_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <linux/types.h>
 
 #include <asm/swab.h>

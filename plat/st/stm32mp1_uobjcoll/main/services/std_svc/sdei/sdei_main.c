@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch_helpers.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
@@ -105,7 +106,7 @@ static void sdei_class_init(sdei_class_t class)
 	/* Sanity check and configuration of shared events */
 	ev_num_so_far = -1;
 	for_each_shared_map(i, map) {
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 		/* Ensure mappings are sorted */
 		assert((ev_num_so_far < 0) || (map->ev_num > ev_num_so_far));
 
@@ -148,7 +149,7 @@ static void sdei_class_init(sdei_class_t class)
 	/* Sanity check and configuration of private events for this CPU */
 	ev_num_so_far = -1;
 	for_each_private_map(i, map) {
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 		/* Ensure mappings are sorted */
 		assert((ev_num_so_far < 0) || (map->ev_num > ev_num_so_far));
 

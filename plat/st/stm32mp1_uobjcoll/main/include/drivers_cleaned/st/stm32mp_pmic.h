@@ -7,6 +7,7 @@
 #ifndef STM32MP_PMIC_H
 #define STM32MP_PMIC_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>

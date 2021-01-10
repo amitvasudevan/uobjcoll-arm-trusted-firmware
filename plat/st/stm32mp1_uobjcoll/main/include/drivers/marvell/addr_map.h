@@ -10,6 +10,7 @@
 #ifndef ADDR_MAP_H
 #define ADDR_MAP_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 struct addr_map_win {

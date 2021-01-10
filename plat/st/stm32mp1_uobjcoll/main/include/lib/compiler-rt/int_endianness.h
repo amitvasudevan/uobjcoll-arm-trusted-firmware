@@ -31,6 +31,7 @@
 #else /* Compilers other than Clang or GCC. */
 
 #if defined(__SVR4) && defined(__sun)
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/sys/byteorder.h>
 
 #if defined(_BIG_ENDIAN)

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
@@ -46,7 +47,7 @@ static int32_t std_svc_setup(void)
 		ret = 1;
 	}
 
-#if SPM_MM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPM_MM__
 	if (spm_mm_setup() != 0) {
 		ret = 1;
 	}
@@ -86,7 +87,7 @@ static uintptr_t std_svc_smc_handler(uint32_t smc_fid,
 	if (is_psci_fid(smc_fid)) {
 		uint64_t ret;
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 
 		/*
 		 * Flush cache line so that even if CPU power down happens
@@ -101,7 +102,7 @@ static uintptr_t std_svc_smc_handler(uint32_t smc_fid,
 		ret = psci_smc_handler(smc_fid, x1, x2, x3, x4,
 		    cookie, handle, flags);
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 		PMF_CAPTURE_TIMESTAMP(rt_instr_svc,
 		    RT_INSTR_EXIT_PSCI,
 		    PMF_NO_CACHE_MAINT);
@@ -110,7 +111,7 @@ static uintptr_t std_svc_smc_handler(uint32_t smc_fid,
 		SMC_RET1(handle, ret);
 	}
 
-#if SPM_MM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPM_MM__
 	/*
 	 * Dispatch SPM calls to SPM SMC handler and return its return
 	 * value

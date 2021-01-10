@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -21,7 +22,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/lib/xlat_tables_v2/xlat_tables_private.h>
 
-#if LOG_LEVEL >= LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE
 #define LVL0_SPACER ""
 #define LVL1_SPACER "  "
 #define LVL2_SPACER "    "
@@ -57,7 +58,7 @@ static mmap_region_t mmap[MAX_MMAP_REGIONS + 1];
 
 void print_mmap(void)
 {
-#if LOG_LEVEL >= LOG_LEVEL_VERBOSE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_VERBOSE
 	debug_print("mmap:\n");
 	mmap_region_t *mm = mmap;
 	while (mm->size != 0U) {
@@ -93,7 +94,7 @@ void mmap_add_region(unsigned long long base_pa, uintptr_t base_va,
 	assert((base_pa + (unsigned long long)size - 1ULL) <=
 					(PLAT_PHY_ADDR_SPACE_SIZE - 1U));
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 
 	/* Check for PAs and VAs overlaps with all other regions */
 	for (mm = mmap; mm->size; ++mm) {
@@ -138,7 +139,7 @@ void mmap_add_region(unsigned long long base_pa, uintptr_t base_va,
 
 	mm = mmap; /* Restore pointer to the start of the array */
 
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 
 	/* Find correct place in mmap to insert new region */
 	while ((mm->base_va < base_va) && (mm->size != 0U))

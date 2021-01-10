@@ -7,6 +7,7 @@
 #ifndef STM32_UART_REGS_H
 #define STM32_UART_REGS_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 #define USART_CR1		U(0x00)

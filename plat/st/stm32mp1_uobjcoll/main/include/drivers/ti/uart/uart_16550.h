@@ -7,6 +7,7 @@
 #ifndef UART_16550_H
 #define UART_16550_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 
 /* UART16550 Registers */

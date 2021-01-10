@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/nand.h>
@@ -16,7 +17,7 @@
 #define SZ_512		0x200U
 #define SZ_64M		0x4000000U
 
-#if STM32MP_RAW_NAND || STM32MP_SPI_NAND
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_RAW_NAND__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NAND__
 static int get_data_from_otp(struct nand_device *nand_dev, bool is_slc)
 {
 	int result;
@@ -124,9 +125,9 @@ ecc:
 
 	return 0;
 }
-#endif /* STM32MP_RAW_NAND || STM32MP_SPI_NAND */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_RAW_NAND__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NAND__ */
 
-#if STM32MP_RAW_NAND
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_RAW_NAND__
 int plat_get_raw_nand_data(struct rawnand_device *device)
 {
 	device->nand_dev->ecc.mode = NAND_ECC_HW;
@@ -136,7 +137,7 @@ int plat_get_raw_nand_data(struct rawnand_device *device)
 }
 #endif
 
-#if STM32MP_SPI_NAND
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NAND__
 int plat_get_spi_nand_data(struct spinand_device *device)
 {
 	zeromem(&device->spi_read_cache_op, sizeof(struct spi_mem_op));
@@ -153,7 +154,7 @@ int plat_get_spi_nand_data(struct spinand_device *device)
 }
 #endif
 
-#if STM32MP_SPI_NOR
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SPI_NOR__
 int plat_get_nor_data(struct nor_device *device)
 {
 	device->size = SZ_64M;

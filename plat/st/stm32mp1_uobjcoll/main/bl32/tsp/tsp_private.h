@@ -22,6 +22,7 @@
 
 #ifndef __ASSEMBLER__
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/platform_def.h> /* For CACHE_WRITEBACK_GRANULE */

@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -41,7 +42,7 @@ func console_pl011_core_init
 	/* Check the input base address */
 	cmp	r0, #0
 	beq	core_init_fail
-#if !PL011_GENERIC_UART
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_PL011_GENERIC_UART__
 	/* Check baud rate and uart clock for sanity */
 	cmp	r1, #0
 	beq	core_init_fail
@@ -54,7 +55,7 @@ func console_pl011_core_init
 	/* Program the baudrate */
 	/* Divisor =  (Uart clock * 4) / baudrate */
 	lsl	r1, r1, #2
-#if (ARM_ARCH_MAJOR == 7) && !defined(ARMV7_SUPPORTS_VIRTUALIZATION)
+#if (__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7) && !defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_VIRTUALIZATION__)
 	push	{r0,r3}
 	softudiv	r0,r1,r2,r3
 	mov	r2, r0
@@ -169,10 +170,10 @@ endfunc console_pl011_core_putc
 	 * -------------------------------------------------------
 	 */
 func console_pl011_putc
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	r1, #0
 	ASM_ASSERT(ne)
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 	ldr	r1, [r1, #CONSOLE_T_BASE]
 	b	console_pl011_core_putc
 endfunc console_pl011_putc
@@ -213,10 +214,10 @@ endfunc console_pl011_core_getc
 	 * ------------------------------------------------
 	 */
 func console_pl011_getc
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	r0, #0
 	ASM_ASSERT(ne)
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 	ldr	r0, [r0, #CONSOLE_T_BASE]
 	b	console_pl011_core_getc
 endfunc console_pl011_getc
@@ -231,10 +232,10 @@ endfunc console_pl011_getc
 	 * ---------------------------------------------
 	 */
 func console_pl011_core_flush
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	r0, #0
 	ASM_ASSERT(ne)
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 
 1:
 	/* Loop while the transmit FIFO is busy */
@@ -255,10 +256,10 @@ endfunc console_pl011_core_flush
 	 * ---------------------------------------------
 	 */
 func console_pl011_flush
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	r0, #0
 	ASM_ASSERT(ne)
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 	ldr	r0, [r0, #CONSOLE_T_BASE]
 	b	console_pl011_core_flush
 endfunc console_pl011_flush

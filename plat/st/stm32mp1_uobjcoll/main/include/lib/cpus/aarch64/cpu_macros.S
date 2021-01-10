@@ -6,6 +6,7 @@
 #ifndef CPU_MACROS_S
 #define CPU_MACROS_S
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/errata_report.h>
@@ -29,7 +30,7 @@
  * Whether errata status needs reporting. Errata status is printed in debug
  * builds for both BL1 and BL31 images.
  */
-#if (defined(IMAGE_BL1) || defined(IMAGE_BL31)) && DEBUG
+#if (defined(IMAGE_BL1) || defined(IMAGE_BL31)) && __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 # define REPORT_ERRATA	1
 #else
 # define REPORT_ERRATA	0
@@ -280,7 +281,7 @@
 	 *
 	 * Only apply mitigations if the value of this field is 0.
 	 */
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	\_reg, #3 /* Only values 0 to 2 are expected */
 	ASM_ASSERT(lo)
 #endif

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -57,7 +58,7 @@ static bool is_address_readable(uintptr_t addr)
 {
 	unsigned int el = get_current_el();
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/*
 	 * When pointer authentication is enabled, the LR value saved on the
 	 * stack contains a PAC. It must be stripped to retrieve the return
@@ -209,7 +210,7 @@ static void unwind_stack(struct frame_record *fr, uintptr_t current_pc,
 		 */
 		call_site = fr->return_addr - 4U;
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 		/*
 		 * When pointer authentication is enabled, the LR value saved on
 		 * the stack contains a PAC. It must be stripped to retrieve the
@@ -252,7 +253,7 @@ static void unwind_stack(struct frame_record *fr, uintptr_t current_pc,
  *
  * WARNING: In case of corrupted stack, this function could display security
  * sensitive information past the beginning of the stack so it must not be used
- * in production build. This function is only compiled in when ENABLE_BACKTRACE
+ * in production build. This function is only compiled in when __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BACKTRACE__
  * is set to 1.
  */
 void backtrace(const char *cookie)

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
@@ -22,7 +23,7 @@
 /* Pointer to the tzc_dmc620_config_data structure populated by the platform */
 static const tzc_dmc620_config_data_t *g_plat_config_data;
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 /*
  * Helper function to check if the DMC-620 instance is present at the
  * base address provided by the platform and also check if at least
@@ -156,7 +157,7 @@ void arm_tzc_dmc620_setup(const tzc_dmc620_config_data_t *plat_config_data)
 	 */
 	assert(plat_config_data->acc_addr_count <= DMC620_ACC_ADDR_COUNT);
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/* Validates the information passed by platform */
 	tzc_dmc620_validate_plat_driver_data(plat_config_data->plat_drv_data);
 #endif

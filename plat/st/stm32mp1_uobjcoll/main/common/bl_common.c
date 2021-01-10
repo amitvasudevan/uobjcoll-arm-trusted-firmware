@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
@@ -19,7 +20,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
-#if TRUSTED_BOARD_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__
 # ifdef DYN_DISABLE_AUTH
 static int disable_auth;
 
@@ -45,7 +46,7 @@ static int dyn_is_auth_disabled(void)
 	return 0;
 # endif
 }
-#endif /* TRUSTED_BOARD_BOOT */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__ */
 
 uintptr_t page_align(uintptr_t value, unsigned dir)
 {
@@ -162,7 +163,7 @@ static int load_image_flush(unsigned int image_id,
 }
 
 
-#if TRUSTED_BOARD_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__
 /*
  * This function uses recursion to authenticate the parent images up to the root
  * of trust.
@@ -214,12 +215,12 @@ static int load_auth_image_recursive(unsigned int image_id,
 
 	return 0;
 }
-#endif /* TRUSTED_BOARD_BOOT */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__ */
 
 static int load_auth_image_internal(unsigned int image_id,
 				    image_info_t *image_data)
 {
-#if TRUSTED_BOARD_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__
 	if (dyn_is_auth_disabled() == 0) {
 		return load_auth_image_recursive(image_id, image_data, 0);
 	}

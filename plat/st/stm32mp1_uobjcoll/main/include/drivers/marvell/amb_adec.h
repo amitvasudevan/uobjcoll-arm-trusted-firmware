@@ -10,6 +10,7 @@
 #ifndef AMB_ADEC_H
 #define AMB_ADEC_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 enum amb_attribute_ids {

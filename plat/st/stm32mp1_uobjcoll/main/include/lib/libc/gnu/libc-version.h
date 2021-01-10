@@ -19,6 +19,7 @@
 #ifndef _GNU_LIBC_VERSION_H
 #define	_GNU_LIBC_VERSION_H	1
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <features.h>
 
 __BEGIN_DECLS

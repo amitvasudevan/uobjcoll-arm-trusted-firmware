@@ -7,6 +7,7 @@
 #ifndef CONTEXT_MGMT_H
 #define CONTEXT_MGMT_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -36,7 +37,7 @@ void cm_setup_context(cpu_context_t *ctx, const struct entry_point_info *ep);
 void cm_prepare_el3_exit(uint32_t security_state);
 
 #ifdef __aarch64__
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 void cm_el2_sysregs_context_save(uint32_t security_state);
 void cm_el2_sysregs_context_restore(uint32_t security_state);
 #endif
@@ -61,7 +62,7 @@ u_register_t cm_get_scr_el3(uint32_t security_state);
  ******************************************************************************/
 static inline void cm_set_next_context(void *context)
 {
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	uint64_t sp_mode;
 
 	/*
@@ -72,7 +73,7 @@ static inline void cm_set_next_context(void *context)
 			 : "=r" (sp_mode));
 
 	assert(sp_mode == MODE_SP_EL0);
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 
 	__asm__ volatile("msr	spsel, #1\n"
 			 "mov	sp, %0\n"

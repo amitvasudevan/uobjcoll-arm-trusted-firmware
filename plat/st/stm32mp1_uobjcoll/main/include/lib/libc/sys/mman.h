@@ -19,6 +19,7 @@
 #ifndef	_SYS_MMAN_H
 #define	_SYS_MMAN_H	1
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <features.h>
 #include <bits/types.h>
 #define __need_size_t

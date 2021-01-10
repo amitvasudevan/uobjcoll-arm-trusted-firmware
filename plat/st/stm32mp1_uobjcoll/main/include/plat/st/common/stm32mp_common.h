@@ -7,6 +7,7 @@
 #ifndef STM32MP_COMMON_H
 #define STM32MP_COMMON_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
@@ -39,7 +40,7 @@ uint32_t stm32_iwdg_get_instance(uintptr_t base);
 /* Return bitflag mask for expected IWDG configuration from OTP content */
 uint32_t stm32_iwdg_get_otp_config(uint32_t iwdg_inst);
 
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 /* Update OTP shadow registers with IWDG configuration from device tree */
 uint32_t stm32_iwdg_shadow_update(uint32_t iwdg_inst, uint32_t flags);
 #endif

@@ -7,10 +7,11 @@
 #ifndef STM32MP_SHARED_RESOURCES_H
 #define STM32MP_SHARED_RESOURCES_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
-#ifdef STM32MP_SHARED_RESOURCES
+#ifdef __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SHARED_RESOURCES__
 enum stm32mp_shres;
 
 /* Return true if @clock_id is shared by secure and non-secure worlds */
@@ -54,5 +55,5 @@ static inline void stm32mp_register_non_secure_gpio(unsigned int bank __unused,
 						    unsigned int pin __unused)
 {
 }
-#endif /* STM32MP_SHARED_RESOURCES */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_STM32MP_SHARED_RESOURCES__ */
 #endif /* STM32MP_SHARED_RESOURCES_H */

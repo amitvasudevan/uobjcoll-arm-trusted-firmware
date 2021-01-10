@@ -10,6 +10,7 @@
 #ifndef IO_WIN_H
 #define IO_WIN_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/marvell/addr_map.h>
 
 int init_io_win(int ap_index);

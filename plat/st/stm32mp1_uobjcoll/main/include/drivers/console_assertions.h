@@ -7,6 +7,7 @@
 #ifndef CONSOLE_ASSERTIONS_H
 #define CONSOLE_ASSERTIONS_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
 
 /*

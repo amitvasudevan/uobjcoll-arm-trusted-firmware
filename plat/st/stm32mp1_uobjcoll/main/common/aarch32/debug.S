@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
@@ -20,12 +21,12 @@
 /* The offset to add to get ascii for numerals '0 - 9' */
 #define ASCII_OFFSET_NUM	'0'
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 .section .rodata.assert_str, "aS"
 assert_msg1:
 	.asciz "ASSERT: File "
 assert_msg2:
-#if ARM_ARCH_MAJOR == 7 && !defined(ARMV7_SUPPORTS_VIRTUALIZATION)
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7 && !defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_VIRTUALIZATION__)
 	/******************************************************************
 	 * Virtualization comes with the UDIV/SDIV instructions. If missing
 	 * write file line number in hexadecimal format.
@@ -65,10 +66,10 @@ dec_print_loop:
  * ---------------------------------------------------------------------------
  */
 func asm_assert
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 	/*
-	 * Only print the output if LOG_LEVEL is higher or equal to
-	 * LOG_LEVEL_INFO, which is the default value for builds with DEBUG=1.
+	 * Only print the output if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ is higher or equal to
+	 * LOG_LEVEL_INFO, which is the default value for builds with __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__=1.
 	 */
 	/* Stash the parameters already in r0 and r1 */
 	mov	r5, r0
@@ -95,7 +96,7 @@ func asm_assert
 	bne	_assert_loop
 	mov	r4, r6
 
-#if ARM_ARCH_MAJOR == 7 && !defined(ARMV7_SUPPORTS_VIRTUALIZATION)
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7 && !defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_VIRTUALIZATION__)
 	/******************************************************************
 	 * Virtualization comes with the UDIV/SDIV instructions. If missing
 	 * write file line number in hexadecimal format.
@@ -106,10 +107,10 @@ func asm_assert
 #endif
 	bl	plat_crash_console_flush
 _assert_loop:
-#endif /* LOG_LEVEL >= LOG_LEVEL_INFO */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO */
 	no_ret	plat_panic_handler
 endfunc asm_assert
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 
 /*
  * This function prints a string from address in r4

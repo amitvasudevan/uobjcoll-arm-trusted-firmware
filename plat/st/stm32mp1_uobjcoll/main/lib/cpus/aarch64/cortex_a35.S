@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
@@ -73,7 +74,7 @@ func cortex_a35_reset_func
 	mov	x19, x30
 	bl	cpu_get_rev_var
 
-#if ERRATA_A35_855472
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A35_855472__
 	bl	errata_a35_855472_wa
 #endif
 
@@ -163,7 +164,7 @@ func cortex_a35_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_A35_855472, cortex_a35, 855472
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A35_855472__, cortex_a35, 855472
 
 	ldp	x8, x30, [sp], #16
 	ret

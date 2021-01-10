@@ -7,6 +7,7 @@
 #ifndef ARCH_HELPERS_H
 #define ARCH_HELPERS_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/cdefs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -195,7 +196,7 @@ DEFINE_SYSOP_TYPE_FUNC(dmb, sy)
 DEFINE_SYSOP_TYPE_FUNC(dmb, st)
 
 /* dmb ld is not valid for armv7/thumb machines */
-#if ARM_ARCH_MAJOR != 7
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ != 7
 DEFINE_SYSOP_TYPE_FUNC(dmb, ld)
 #endif
 
@@ -335,7 +336,7 @@ DEFINE_BPIOP_FUNC(allis, BPIALLIS)
  */
 DEFINE_DCOP_PARAM_FUNC(civac, DCCIMVAC)
 DEFINE_DCOP_PARAM_FUNC(ivac, DCIMVAC)
-#if ERRATA_A53_819472 || ERRATA_A53_824069 || ERRATA_A53_827319
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_819472__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_824069__ || __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_827319__
 DEFINE_DCOP_PARAM_FUNC(cvac, DCCIMVAC)
 #else
 DEFINE_DCOP_PARAM_FUNC(cvac, DCCMVAC)
@@ -351,7 +352,7 @@ DEFINE_COPROCR_RW_FUNCS(clusterpwrdn, CLUSTERPWRDN)
 #define dmb()			dmbsy()
 
 /* dmb ld is not valid for armv7/thumb machines, so alias it to dmb */
-#if ARM_ARCH_MAJOR == 7
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7
 #define	dmbld()			dmb()
 #endif
 

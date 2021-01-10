@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -48,7 +49,7 @@
 
 func tsp_entrypoint _align=3
 
-#if ENABLE_PIE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PIE__
 		/*
 		 * ------------------------------------------------------------
 		 * If PIE is enabled fixup the Global descriptor Table only
@@ -64,7 +65,7 @@ func tsp_entrypoint _align=3
 		mov_imm	x1, (BL32_LIMIT - BL32_BASE)
 		add	x1, x1, x0
 		bl	fixup_gdt_reloc
-#endif /* ENABLE_PIE */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PIE__ */
 
 	/* ---------------------------------------------
 	 * Set the exception vector to something sane.
@@ -118,7 +119,7 @@ func tsp_entrypoint _align=3
 	ldr	x1, =__BSS_SIZE__
 	bl	zeromem
 
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 	ldr	x0, =__COHERENT_RAM_START__
 	ldr	x1, =__COHERENT_RAM_UNALIGNED_SIZE__
 	bl	zeromem
@@ -139,7 +140,7 @@ func tsp_entrypoint _align=3
 	 * any C code is called.
 	 * ---------------------------------------------
 	 */
-#if STACK_PROTECTOR_ENABLED
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STACK_PROTECTOR_ENABLED__
 	bl	update_stack_protector_canary
 #endif
 
@@ -149,14 +150,14 @@ func tsp_entrypoint _align=3
 	 */
 	bl	tsp_setup
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* ---------------------------------------------
 	 * Program APIAKey_EL1
 	 * and enable pointer authentication
 	 * ---------------------------------------------
 	 */
 	bl	pauth_init_enable_el1
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 
 	/* ---------------------------------------------
 	 * Jump to main function.
@@ -282,14 +283,14 @@ func tsp_cpu_on_entry
 	mov	x0, #0
 	bl	bl32_plat_enable_mmu
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* ---------------------------------------------
 	 * Program APIAKey_EL1
 	 * and enable pointer authentication
 	 * ---------------------------------------------
 	 */
 	bl	pauth_init_enable_el1
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 
 	/* ---------------------------------------------
 	 * Enter C runtime to perform any remaining
@@ -342,7 +343,7 @@ endfunc tsp_cpu_suspend_entry
 	 * ------------------------------------------------
 	 */
 func	tsp_sel1_intr_entry
-#if DEBUG
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 	mov_imm	x2, TSP_HANDLE_SEL1_INTR_AND_RETURN
 	cmp	x0, x2
 	b.ne	tsp_sel1_int_entry_panic

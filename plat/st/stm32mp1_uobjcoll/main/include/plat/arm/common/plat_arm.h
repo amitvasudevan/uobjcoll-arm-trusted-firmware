@@ -6,6 +6,7 @@
 #ifndef PLAT_ARM_H
 #define PLAT_ARM_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
@@ -39,7 +40,7 @@ typedef struct arm_tzc_regions_info {
  *   - Region 1 with secure access only;
  *   - the remaining DRAM regions access from the given Non-Secure masters.
  ******************************************************************************/
-#if SPM_MM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPM_MM__
 #define ARM_TZC_REGIONS_DEF						\
 	{ARM_AP_TZC_DRAM1_BASE, ARM_EL3_TZC_DRAM1_END,			\
 		TZC_REGION_S_RDWR, 0},					\
@@ -78,7 +79,7 @@ void arm_setup_romlib(void);
 #define ARM_INSTANTIATE_LOCK	static DEFINE_BAKERY_LOCK(arm_lock)
 #define ARM_LOCK_GET_INSTANCE	(&arm_lock)
 
-#if !HW_ASSISTED_COHERENCY
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 #define ARM_SCMI_INSTANTIATE_LOCK	DEFINE_BAKERY_LOCK(arm_scmi_lock)
 #else
 #define ARM_SCMI_INSTANTIATE_LOCK	spinlock_t arm_scmi_lock
@@ -116,7 +117,7 @@ void arm_setup_romlib(void);
 /* Macros to construct the composite power state */
 
 /* Make composite power state parameter till power level 0 */
-#if PSCI_EXTENDED_STATE_ID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PSCI_EXTENDED_STATE_ID__
 
 #define arm_make_pwrstate_lvl0(lvl0_state, pwr_lvl, type) \
 		(((lvl0_state) << PSTATE_ID_SHIFT) | ((type) << PSTATE_TYPE_SHIFT))
@@ -233,7 +234,7 @@ void arm_bl2_dyn_cfg_init(void);
 void arm_bl1_set_mbedtls_heap(void);
 int arm_get_mbedtls_heap(void **heap_addr, size_t *heap_size);
 
-#if MEASURED_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__
 /* Measured boot related functions */
 void arm_bl1_set_bl2_hash(const image_desc_t *image_desc);
 void arm_bl2_get_hash(void *data);
@@ -248,7 +249,7 @@ int arm_set_nt_fw_info(uintptr_t config_base,
 			uintptr_t log_addr,
 #endif
 			size_t log_size, uintptr_t *ns_log_addr);
-#endif /* MEASURED_BOOT */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__ */
 
 /*
  * Free the memory storing initialization code only used during an images boot

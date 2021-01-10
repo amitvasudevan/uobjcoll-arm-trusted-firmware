@@ -7,6 +7,7 @@
 #ifndef FCONF_H
 #define FCONF_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /* Public API */

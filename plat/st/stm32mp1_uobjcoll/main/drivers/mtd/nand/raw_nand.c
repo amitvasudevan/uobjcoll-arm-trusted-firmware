@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
@@ -221,7 +222,7 @@ int nand_wait_ready(unsigned int delay_ms)
 	return -ETIMEDOUT;
 }
 
-#if NAND_ONFI_DETECT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_NAND_ONFI_DETECT__
 static uint16_t nand_check_crc(uint16_t crc, uint8_t *data_in,
 			       unsigned int data_len)
 {
@@ -423,7 +424,7 @@ int nand_raw_init(unsigned long long *size, unsigned int *erase_size)
 		return -ENODEV;
 	}
 
-#if NAND_ONFI_DETECT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_NAND_ONFI_DETECT__
 	if (detect_onfi() != 0) {
 		WARN("Detect ONFI failed\n");
 	}

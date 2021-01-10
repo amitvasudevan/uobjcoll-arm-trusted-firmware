@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
@@ -109,7 +110,7 @@ uint64_t spmd_spm_core_sync_entry(spmd_spm_core_context_t *spmc_ctx)
 
 	/* Restore the context assigned above */
 	cm_el1_sysregs_context_restore(SECURE);
-#if SPMD_SPM_AT_SEL2
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPMD_SPM_AT_SEL2__
 	cm_el2_sysregs_context_restore(SECURE);
 #endif
 	cm_set_next_eret_context(SECURE);
@@ -119,7 +120,7 @@ uint64_t spmd_spm_core_sync_entry(spmd_spm_core_context_t *spmc_ctx)
 
 	/* Save secure state */
 	cm_el1_sysregs_context_save(SECURE);
-#if SPMD_SPM_AT_SEL2
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPMD_SPM_AT_SEL2__
 	cm_el2_sysregs_context_save(SECURE);
 #endif
 
@@ -212,7 +213,7 @@ static int spmd_spmc_init(void *pm_addr)
 	     spmc_attrs.minor_version);
 
 	VERBOSE("SPM Core run time EL%x.\n",
-	     SPMD_SPM_AT_SEL2 ? MODE_EL2 : MODE_EL1);
+	     __UBERSPARK_UOBJCOLL_CONFIGDEF_SPMD_SPM_AT_SEL2__ ? MODE_EL2 : MODE_EL1);
 
 	/* Validate the SPMC ID, Ensure high bit is set */
 	if (((spmc_attrs.spmc_id >> SPMC_SECURE_ID_SHIFT) &
@@ -232,7 +233,7 @@ static int spmd_spmc_init(void *pm_addr)
 	VERBOSE("%s%x.\n", "SPM Core execution state 0x",
 		spmc_attrs.exec_state);
 
-#if SPMD_SPM_AT_SEL2
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPMD_SPM_AT_SEL2__
 	/* Ensure manifest has not requested AArch32 state in S-EL2 */
 	if (spmc_attrs.exec_state == MODE_RW_32) {
 		WARN("AArch32 state at S-EL2 is not supported.\n");
@@ -247,7 +248,7 @@ static int spmd_spmc_init(void *pm_addr)
 		WARN("SPM Core run time S-EL2 is not supported.\n");
 		return -EINVAL;
 	}
-#endif /* SPMD_SPM_AT_SEL2 */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_SPMD_SPM_AT_SEL2__ */
 
 	/* Initialise an entrypoint to set up the CPU context */
 	ep_attr = SECURE | EP_ST_ENABLE;
@@ -269,7 +270,7 @@ static int spmd_spmc_init(void *pm_addr)
 						 DAIF_ABT_BIT);
 	} else {
 
-#if SPMD_SPM_AT_SEL2
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPMD_SPM_AT_SEL2__
 		static const uint32_t runtime_el = MODE_EL2;
 #else
 		static const uint32_t runtime_el = MODE_EL1;
@@ -348,13 +349,13 @@ static uint64_t spmd_smc_forward(uint32_t smc_fid,
 
 	/* Save incoming security state */
 	cm_el1_sysregs_context_save(secure_state_in);
-#if SPMD_SPM_AT_SEL2
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPMD_SPM_AT_SEL2__
 	cm_el2_sysregs_context_save(secure_state_in);
 #endif
 
 	/* Restore outgoing security state */
 	cm_el1_sysregs_context_restore(secure_state_out);
-#if SPMD_SPM_AT_SEL2
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPMD_SPM_AT_SEL2__
 	cm_el2_sysregs_context_restore(secure_state_out);
 #endif
 	cm_set_next_eret_context(secure_state_out);

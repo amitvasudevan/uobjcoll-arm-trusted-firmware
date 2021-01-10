@@ -5,6 +5,7 @@
  */
 
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -94,7 +95,7 @@ func enter_lower_el_sync_ea
 	 */
 	bl	save_gp_pmcr_pauth_regs
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* Load and program APIAKey firmware key */
 	bl	pauth_load_bl31_apiakey
 #endif
@@ -140,7 +141,7 @@ func enter_lower_el_async_ea
 	 */
 	bl	save_gp_pmcr_pauth_regs
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* Load and program APIAKey firmware key */
 	bl	pauth_load_bl31_apiakey
 #endif
@@ -164,7 +165,7 @@ endfunc enter_lower_el_async_ea
  * x1: EA syndrome
  */
 func delegate_sync_ea
-#if RAS_EXTENSION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_RAS_EXTENSION__
 	/*
 	 * Check for Uncontainable error type. If so, route to the platform
 	 * fatal error handler rather than the generic EA one.
@@ -194,7 +195,7 @@ endfunc delegate_sync_ea
  * x1: EA syndrome
  */
 func delegate_async_ea
-#if RAS_EXTENSION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_RAS_EXTENSION__
 	/*
 	 * Check for Implementation Defined Syndrome. If so, skip checking
 	 * Uncontainable error type from the syndrome as the format is unknown.
@@ -271,13 +272,13 @@ func ea_proceed
 	mov	sp, x5
 
 	mov	x29, x30
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/* Stash the stack pointer */
 	mov	x28, sp
 #endif
 	bl	plat_ea_handler
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/*
 	 * Error handling flows might involve long jumps; so upon returning from
 	 * the platform error handler, validate that the we've completely
@@ -301,7 +302,7 @@ func ea_proceed
 	msr	scr_el3, x3
 	msr	esr_el3, x4
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x4, xzr
 	ASM_ASSERT(ne)
 #endif

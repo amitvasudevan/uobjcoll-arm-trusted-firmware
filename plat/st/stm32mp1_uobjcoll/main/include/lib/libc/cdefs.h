@@ -14,7 +14,7 @@
 #define __unused	__attribute__((__unused__))
 #define __aligned(x)	__attribute__((__aligned__(x)))
 #define __section(x)	__attribute__((__section__(x)))
-#if RECLAIM_INIT_CODE
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_RECLAIM_INIT_CODE__
 /*
  * Add each function to a section that is unique so the functions can still
  * be garbage collected

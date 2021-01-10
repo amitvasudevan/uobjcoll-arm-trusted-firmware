@@ -4,14 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 
 	.globl	spin_lock
 	.globl	spin_unlock
 
-#if USE_SPINLOCK_CAS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_SPINLOCK_CAS__
 #if !ARM_ARCH_AT_LEAST(8, 1)
-#error USE_SPINLOCK_CAS option requires at least an ARMv8.1 platform
+#error __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_SPINLOCK_CAS__ option requires at least an ARMv8.1 platform
 #endif
 
 /*
@@ -40,7 +41,7 @@ func spin_lock
 	ret
 endfunc spin_lock
 
-#else /* !USE_SPINLOCK_CAS */
+#else /* !__UBERSPARK_UOBJCOLL_CONFIGDEF_USE_SPINLOCK_CAS__ */
 
 /*
  * Acquire lock using load-/store-exclusive instruction pair.
@@ -58,7 +59,7 @@ l2:	ldaxr	w1, [x0]
 	ret
 endfunc spin_lock
 
-#endif /* USE_SPINLOCK_CAS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_SPINLOCK_CAS__ */
 
 /*
  * Release lock previously acquired by spin_lock.

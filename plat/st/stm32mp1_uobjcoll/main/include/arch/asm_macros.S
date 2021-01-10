@@ -6,6 +6,7 @@
 #ifndef ASM_MACROS_S
 #define ASM_MACROS_S
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/asm_macros_common.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
@@ -14,7 +15,7 @@
  * TLBI instruction with type specifier that implements the workaround for
  * errata 813419 of Cortex-A57.
  */
-#if ERRATA_A57_813419
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A57_813419__
 #define TLB_INVALIDATE(_reg, _coproc) \
 	stcopr	_reg, _coproc; \
 	dsb	ish; \
@@ -93,7 +94,7 @@
 	ldr r0, =(\_name + \_size)
 	.endm
 
-#if ARM_ARCH_MAJOR == 7 && !defined(ARMV7_SUPPORTS_VIRTUALIZATION)
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7 && !defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_VIRTUALIZATION__)
 	/*
 	 * Macro for mitigating against speculative execution.
 	 * ARMv7 cores without Virtualization extension do not support the
@@ -121,7 +122,7 @@
 	.endm
 #endif
 
-#if (ARM_ARCH_MAJOR == 7)
+#if (__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7)
 	/* ARMv7 does not support stl instruction */
 	.macro stl _reg, _write_lock
 	dmb
@@ -158,7 +159,7 @@
 	 */
 	.macro no_ret _func:req, skip_nop=0
 	bl	\_func
-#if DEBUG
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 	.ifeq \skip_nop
 	nop
 	.endif

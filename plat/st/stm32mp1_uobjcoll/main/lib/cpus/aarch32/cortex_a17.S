@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -11,7 +12,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
 
 	.macro assert_cache_enabled
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 		ldcopr	r0, SCTLR
 		tst	r0, #SCTLR_C_BIT
 		ASM_ASSERT(eq)
@@ -92,7 +93,7 @@ func check_errata_852423
 endfunc check_errata_852423
 
 func check_errata_cve_2017_5715
-#if WORKAROUND_CVE_2017_5715
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	mov	r0, #ERRATA_APPLIES
 #else
 	mov	r0, #ERRATA_MISSING
@@ -114,9 +115,9 @@ func cortex_a17_errata_report
 	 * Report all errata. The revision-variant information is passed to
 	 * checking functions of each errata.
 	 */
-	report_errata ERRATA_A17_852421, cortex_a17, 852421
-	report_errata ERRATA_A17_852423, cortex_a17, 852423
-	report_errata WORKAROUND_CVE_2017_5715, cortex_a17, cve_2017_5715
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A17_852421__, cortex_a17, 852421
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A17_852423__, cortex_a17, 852423
+	report_errata __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__, cortex_a17, cve_2017_5715
 
 	pop	{r12, lr}
 	bx	lr
@@ -128,17 +129,17 @@ func cortex_a17_reset_func
 	bl	cpu_get_rev_var
 	mov	r4, r0
 
-#if ERRATA_A17_852421
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A17_852421__
 	mov	r0, r4
 	bl	errata_a17_852421_wa
 #endif
 
-#if ERRATA_A17_852423
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A17_852423__
 	mov	r0, r4
 	bl	errata_a17_852423_wa
 #endif
 
-#if IMAGE_BL32 && WORKAROUND_CVE_2017_5715
+#if IMAGE_BL32 && __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	ldr	r0, =workaround_bpiall_runtime_exceptions
 	stcopr	r0, VBAR
 	stcopr	r0, MVBAR

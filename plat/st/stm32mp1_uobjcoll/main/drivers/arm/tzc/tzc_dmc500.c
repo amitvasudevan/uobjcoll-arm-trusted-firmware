@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
@@ -236,7 +237,7 @@ void tzc_dmc500_set_action(unsigned int action)
 static void validate_plat_driver_data(
 			const tzc_dmc500_driver_data_t *plat_driver_data)
 {
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	int i;
 	unsigned int dmc_id;
 	uintptr_t dmc_base;
@@ -252,7 +253,7 @@ static void validate_plat_driver_data(
 		dmc_id = _tzc_read_peripheral_id(dmc_base);
 		assert(dmc_id == DMC500_PERIPHERAL_ID);
 	}
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 }
 
 

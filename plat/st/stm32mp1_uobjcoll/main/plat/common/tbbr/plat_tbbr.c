@@ -4,12 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_mod.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
-#if USE_TBBR_DEFS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_TBBR_DEFS__
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/tbbr_oid.h>
 #else
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_oid.h>

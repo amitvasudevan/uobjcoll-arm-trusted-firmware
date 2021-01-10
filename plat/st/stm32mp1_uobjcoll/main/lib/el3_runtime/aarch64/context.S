@@ -4,20 +4,21 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/el3_common_macros.S>
 
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 	.global	el2_sysregs_context_save
 	.global	el2_sysregs_context_restore
 #endif
 
 	.global	el1_sysregs_context_save
 	.global	el1_sysregs_context_restore
-#if CTX_INCLUDE_FPREGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__
 	.global	fpregs_context_save
 	.global	fpregs_context_restore
 #endif
@@ -26,7 +27,7 @@
 	.global save_and_update_ptw_el1_sys_regs
 	.global	el3_exit
 
-#if CTX_INCLUDE_EL2_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__
 
 /* -----------------------------------------------------
  * The following function strictly follows the AArch64
@@ -66,7 +67,7 @@ func el2_sysregs_context_save
 	stp	x17, x9, [x0, #CTX_CNTVOFF_EL2]
 
 	mrs	x11, elr_el2
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 	mrs	x10, dbgvcr32_el2
 	stp	x10, x11, [x0, #CTX_DBGVCR32_EL2]
 #else
@@ -94,7 +95,7 @@ func el2_sysregs_context_save
 	stp	x13, x14, [x0, #CTX_ICH_VMCR_EL2]
 
 	mrs	x15, mdcr_el2
-#if ENABLE_SPE_FOR_LOWER_ELS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_SPE_FOR_LOWER_ELS__
 	mrs	x16, PMSCR_EL2
 	stp	x15, x16, [x0, #CTX_MDCR_EL2]
 #else
@@ -124,12 +125,12 @@ func el2_sysregs_context_save
 	mrs	x9, vttbr_el2
 	str	x9, [x0, #CTX_VTTBR_EL2]
 
-#if CTX_INCLUDE_MTE_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__
 	mrs	x10, TFSR_EL2
 	str	x10, [x0, #CTX_TFSR_EL2]
 #endif
 
-#if ENABLE_MPAM_FOR_LOWER_ELS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_MPAM_FOR_LOWER_ELS__
 	mrs	x9, MPAM2_EL2
 	mrs	x10, MPAMHCR_EL2
 	stp	x9, x10, [x0, #CTX_MPAM2_EL2]
@@ -193,7 +194,7 @@ func el2_sysregs_context_save
 	mrs	x9, contextidr_el2
 	stp	x17, x9, [x0, #CTX_CNTHV_TVAL_EL2]
 
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 	mrs	x10, sder32_el2
 	str	x10, [x0, #CTX_SDER32_EL2]
 #endif
@@ -204,7 +205,7 @@ func el2_sysregs_context_save
 	mrs	x12, vdisr_el2
 	str	x12, [x0, #CTX_VDISR_EL2]
 
-#if CTX_INCLUDE_NEVE_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_NEVE_REGS__
 	mrs	x13, vncr_el2
 	str	x13, [x0, #CTX_VNCR_EL2]
 #endif
@@ -267,7 +268,7 @@ func el2_sysregs_context_restore
 	msr	cntvoff_el2, x17
 	msr	cptr_el2, x9
 
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 	ldp	x10, x11, [x0, #CTX_DBGVCR32_EL2]
 	msr	dbgvcr32_el2, x10
 #else
@@ -295,7 +296,7 @@ func el2_sysregs_context_restore
 	msr	ICH_VMCR_EL2, x13
 	msr	mair_el2, x14
 
-#if ENABLE_SPE_FOR_LOWER_ELS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_SPE_FOR_LOWER_ELS__
 	ldp	x15, x16, [x0, #CTX_MDCR_EL2]
 	msr	PMSCR_EL2, x16
 #else
@@ -326,12 +327,12 @@ func el2_sysregs_context_restore
 	ldr	x17, [x0, #CTX_VTTBR_EL2]
 	msr	vttbr_el2, x17
 
-#if CTX_INCLUDE_MTE_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__
 	ldr	x9, [x0, #CTX_TFSR_EL2]
 	msr	TFSR_EL2, x9
 #endif
 
-#if ENABLE_MPAM_FOR_LOWER_ELS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_MPAM_FOR_LOWER_ELS__
 	ldp	x10, x11, [x0, #CTX_MPAM2_EL2]
 	msr	MPAM2_EL2, x10
 	msr	MPAMHCR_EL2, x11
@@ -394,7 +395,7 @@ func el2_sysregs_context_restore
 	msr	cnthv_tval_el2, x9
 	msr	contextidr_el2, x10
 
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 	ldr	x11, [x0, #CTX_SDER32_EL2]
 	msr	sder32_el2, x11
 #endif
@@ -405,7 +406,7 @@ func el2_sysregs_context_restore
 	ldr	x13, [x0, #CTX_VDISR_EL2]
 	msr	vdisr_el2, x13
 
-#if CTX_INCLUDE_NEVE_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_NEVE_REGS__
 	ldr	x14, [x0, #CTX_VNCR_EL2]
 	msr	vncr_el2, x14
 #endif
@@ -431,7 +432,7 @@ func el2_sysregs_context_restore
 	ret
 endfunc el2_sysregs_context_restore
 
-#endif /* CTX_INCLUDE_EL2_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_EL2_REGS__ */
 
 /* ------------------------------------------------------------------
  * The following function strictly follows the AArch64 PCS to use
@@ -446,7 +447,7 @@ func el1_sysregs_context_save
 	mrs	x10, elr_el1
 	stp	x9, x10, [x0, #CTX_SPSR_EL1]
 
-#if !ERRATA_SPECULATIVE_AT
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_SPECULATIVE_AT__
 	mrs	x15, sctlr_el1
 	mrs	x16, tcr_el1
 	stp	x15, x16, [x0, #CTX_SCTLR_EL1]
@@ -489,7 +490,7 @@ func el1_sysregs_context_save
 	stp	x17, x9, [x0, #CTX_CONTEXTIDR_EL1]
 
 	/* Save AArch32 system registers if the build has instructed so */
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 	mrs	x11, spsr_abt
 	mrs	x12, spsr_und
 	stp	x11, x12, [x0, #CTX_SPSR_ABT]
@@ -504,7 +505,7 @@ func el1_sysregs_context_save
 #endif
 
 	/* Save NS timer registers if the build has instructed so */
-#if NS_TIMER_SWITCH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_NS_TIMER_SWITCH__
 	mrs	x10, cntp_ctl_el0
 	mrs	x11, cntp_cval_el0
 	stp	x10, x11, [x0, #CTX_CNTP_CTL_EL0]
@@ -518,7 +519,7 @@ func el1_sysregs_context_save
 #endif
 
 	/* Save MTE system registers if the build has instructed so */
-#if CTX_INCLUDE_MTE_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__
 	mrs	x15, TFSRE0_EL1
 	mrs	x16, TFSR_EL1
 	stp	x15, x16, [x0, #CTX_TFSRE0_EL1]
@@ -545,7 +546,7 @@ func el1_sysregs_context_restore
 	msr	spsr_el1, x9
 	msr	elr_el1, x10
 
-#if !ERRATA_SPECULATIVE_AT
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_SPECULATIVE_AT__
 	ldp	x15, x16, [x0, #CTX_SCTLR_EL1]
 	msr	sctlr_el1, x15
 	msr	tcr_el1, x16
@@ -588,7 +589,7 @@ func el1_sysregs_context_restore
 	msr	vbar_el1, x9
 
 	/* Restore AArch32 system registers if the build has instructed so */
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 	ldp	x11, x12, [x0, #CTX_SPSR_ABT]
 	msr	spsr_abt, x11
 	msr	spsr_und, x12
@@ -602,7 +603,7 @@ func el1_sysregs_context_restore
 	msr	ifsr32_el2, x16
 #endif
 	/* Restore NS timer registers if the build has instructed so */
-#if NS_TIMER_SWITCH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_NS_TIMER_SWITCH__
 	ldp	x10, x11, [x0, #CTX_CNTP_CTL_EL0]
 	msr	cntp_ctl_el0, x10
 	msr	cntp_cval_el0, x11
@@ -615,7 +616,7 @@ func el1_sysregs_context_restore
 	msr	cntkctl_el1, x14
 #endif
 	/* Restore MTE system registers if the build has instructed so */
-#if CTX_INCLUDE_MTE_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__
 	ldp	x11, x12, [x0, #CTX_TFSRE0_EL1]
 	msr	TFSRE0_EL1, x11
 	msr	TFSR_EL1, x12
@@ -643,7 +644,7 @@ endfunc el1_sysregs_context_restore
  * TODO: Revisit when VFP is used in secure world
  * ------------------------------------------------------------------
  */
-#if CTX_INCLUDE_FPREGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__
 func fpregs_context_save
 	stp	q0, q1, [x0, #CTX_FP_Q0]
 	stp	q2, q3, [x0, #CTX_FP_Q2]
@@ -668,7 +669,7 @@ func fpregs_context_save
 	mrs	x10, fpcr
 	str	x10, [x0, #CTX_FP_FPCR]
 
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 	mrs	x11, fpexc32_el2
 	str	x11, [x0, #CTX_FP_FPEXC32_EL2]
 #endif
@@ -713,7 +714,7 @@ func fpregs_context_restore
 	ldr	x10, [x0, #CTX_FP_FPCR]
 	msr	fpcr, x10
 
-#if CTX_INCLUDE_AARCH32_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_AARCH32_REGS__
 	ldr	x11, [x0, #CTX_FP_FPEXC32_EL2]
 	msr	fpexc32_el2, x11
 #endif
@@ -725,7 +726,7 @@ func fpregs_context_restore
 
 	ret
 endfunc fpregs_context_restore
-#endif /* CTX_INCLUDE_FPREGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_FPREGS__ */
 
 /* ------------------------------------------------------------------
  * The following function is used to save and restore all the general
@@ -788,7 +789,7 @@ func save_gp_pmcr_pauth_regs
 	msr	pmcr_el0, x9
 	isb
 1:
-#if CTX_INCLUDE_PAUTH_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
 	/* ----------------------------------------------------------
  	 * Save the ARMv8.3-PAuth keys as they are not banked
  	 * by exception level
@@ -812,7 +813,7 @@ func save_gp_pmcr_pauth_regs
 	stp	x24, x25, [x19, #CTX_PACDAKEY_LO]
 	stp	x26, x27, [x19, #CTX_PACDBKEY_LO]
 	stp	x28, x29, [x19, #CTX_PACGAKEY_LO]
-#endif /* CTX_INCLUDE_PAUTH_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__ */
 
 	ret
 endfunc save_gp_pmcr_pauth_regs
@@ -824,7 +825,7 @@ endfunc save_gp_pmcr_pauth_regs
  * ------------------------------------------------------------------
  */
 func restore_gp_pmcr_pauth_regs
-#if CTX_INCLUDE_PAUTH_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
  	/* Restore the ARMv8.3 PAuth keys */
 	add	x10, sp, #CTX_PAUTH_REGS_OFFSET
 
@@ -844,7 +845,7 @@ func restore_gp_pmcr_pauth_regs
 	msr	APDBKeyHi_EL1, x7
 	msr	APGAKeyLo_EL1, x8
 	msr	APGAKeyHi_EL1, x9
-#endif /* CTX_INCLUDE_PAUTH_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__ */
 
 	/* ----------------------------------------------------------
 	 * Restore PMCR_EL0 when returning to Non-secure state if
@@ -890,7 +891,7 @@ func restore_gp_pmcr_pauth_regs
 endfunc restore_gp_pmcr_pauth_regs
 
 /*
- * In case of ERRATA_SPECULATIVE_AT, save SCTLR_EL1 and TCR_EL1
+ * In case of __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_SPECULATIVE_AT__, save SCTLR_EL1 and TCR_EL1
  * registers and update EL1 registers to disable stage1 and stage2
  * page table walk
  */
@@ -938,7 +939,7 @@ endfunc save_and_update_ptw_el1_sys_regs
  * ------------------------------------------------------------------
  */
 func el3_exit
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	/* el3_exit assumes SP_EL0 on entry */
 	mrs	x17, spsel
 	cmp	x17, #MODE_SP_EL0
@@ -965,7 +966,7 @@ func el3_exit
 	msr	spsr_el3, x16
 	msr	elr_el3, x17
 
-#if IMAGE_BL31 && DYNAMIC_WORKAROUND_CVE_2018_3639
+#if IMAGE_BL31 && __UBERSPARK_UOBJCOLL_CONFIGDEF_DYNAMIC_WORKAROUND_CVE_2018_3639__
 	/* ----------------------------------------------------------
 	 * Restore mitigation state as it was on entry to EL3
 	 * ----------------------------------------------------------
@@ -986,7 +987,7 @@ func el3_exit
 	bl	restore_gp_pmcr_pauth_regs
 	ldr	x30, [sp, #CTX_GPREGS_OFFSET + CTX_GPREG_LR]
 
-#if IMAGE_BL31 && RAS_EXTENSION
+#if IMAGE_BL31 && __UBERSPARK_UOBJCOLL_CONFIGDEF_RAS_EXTENSION__
 	/* ----------------------------------------------------------
 	 * Issue Error Synchronization Barrier to synchronize SErrors
 	 * before exiting EL3. We're running with EAs unmasked, so

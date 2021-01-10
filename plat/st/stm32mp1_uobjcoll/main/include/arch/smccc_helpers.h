@@ -7,6 +7,7 @@
 #ifndef SMCCC_HELPERS_H
 #define SMCCC_HELPERS_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/smccc.h>
 
 /* These are offsets to registers in smc_ctx_t */

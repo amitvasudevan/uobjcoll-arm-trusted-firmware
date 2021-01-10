@@ -7,6 +7,7 @@
 #ifndef CORTEX_A35_H
 #define CORTEX_A35_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* Cortex-A35 Main ID register for revision 0 */

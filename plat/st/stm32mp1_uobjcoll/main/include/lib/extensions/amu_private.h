@@ -7,6 +7,7 @@
 #ifndef AMU_PRIVATE_H
 #define AMU_PRIVATE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 uint64_t amu_group0_cnt_read_internal(unsigned int idx);

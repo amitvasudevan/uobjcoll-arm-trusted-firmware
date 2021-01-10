@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/features.h>
@@ -84,13 +85,13 @@ void tsp_setup(void)
 	/* Perform late platform-specific setup */
 	tsp_plat_arch_setup();
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/*
 	 * Assert that the ARMv8.3-PAuth registers are present or an access
 	 * fault will be triggered when they are being saved or restored.
 	 */
 	assert(is_armv8_3_pauth_present());
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 }
 
 /*******************************************************************************
@@ -118,7 +119,7 @@ uint64_t tsp_main(void)
 	tsp_stats[linear_id].eret_count++;
 	tsp_stats[linear_id].cpu_on_count++;
 
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 	spin_lock(&console_lock);
 	INFO("TSP: cpu 0x%lx: %d smcs, %d erets %d cpu on requests\n",
 	     read_mpidr(),
@@ -147,7 +148,7 @@ tsp_args_t *tsp_cpu_on_main(void)
 	tsp_stats[linear_id].eret_count++;
 	tsp_stats[linear_id].cpu_on_count++;
 
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 	spin_lock(&console_lock);
 	INFO("TSP: cpu 0x%lx turned on\n", read_mpidr());
 	INFO("TSP: cpu 0x%lx: %d smcs, %d erets %d cpu on requests\n",
@@ -188,7 +189,7 @@ tsp_args_t *tsp_cpu_off_main(uint64_t arg0,
 	tsp_stats[linear_id].eret_count++;
 	tsp_stats[linear_id].cpu_off_count++;
 
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 	spin_lock(&console_lock);
 	INFO("TSP: cpu 0x%lx off request\n", read_mpidr());
 	INFO("TSP: cpu 0x%lx: %d smcs, %d erets %d cpu off requests\n",
@@ -231,7 +232,7 @@ tsp_args_t *tsp_cpu_suspend_main(uint64_t arg0,
 	tsp_stats[linear_id].eret_count++;
 	tsp_stats[linear_id].cpu_suspend_count++;
 
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 	spin_lock(&console_lock);
 	INFO("TSP: cpu 0x%lx: %d smcs, %d erets %d cpu suspend requests\n",
 		read_mpidr(),
@@ -269,7 +270,7 @@ tsp_args_t *tsp_cpu_resume_main(uint64_t max_off_pwrlvl,
 	tsp_stats[linear_id].eret_count++;
 	tsp_stats[linear_id].cpu_resume_count++;
 
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 	spin_lock(&console_lock);
 	INFO("TSP: cpu 0x%lx resumed. maximum off power level %lld\n",
 	     read_mpidr(), max_off_pwrlvl);
@@ -303,7 +304,7 @@ tsp_args_t *tsp_system_off_main(uint64_t arg0,
 	tsp_stats[linear_id].smc_count++;
 	tsp_stats[linear_id].eret_count++;
 
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 	spin_lock(&console_lock);
 	INFO("TSP: cpu 0x%lx SYSTEM_OFF request\n", read_mpidr());
 	INFO("TSP: cpu 0x%lx: %d smcs, %d erets requests\n", read_mpidr(),
@@ -335,7 +336,7 @@ tsp_args_t *tsp_system_reset_main(uint64_t arg0,
 	tsp_stats[linear_id].smc_count++;
 	tsp_stats[linear_id].eret_count++;
 
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 	spin_lock(&console_lock);
 	INFO("TSP: cpu 0x%lx SYSTEM_RESET request\n", read_mpidr());
 	INFO("TSP: cpu 0x%lx: %d smcs, %d erets requests\n", read_mpidr(),
@@ -373,7 +374,7 @@ tsp_args_t *tsp_smc_handler(uint64_t func,
 	tsp_stats[linear_id].smc_count++;
 	tsp_stats[linear_id].eret_count++;
 
-#if LOG_LEVEL >= LOG_LEVEL_INFO
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__ >= LOG_LEVEL_INFO
 	spin_lock(&console_lock);
 	INFO("TSP: cpu 0x%lx received %s smc 0x%llx\n", read_mpidr(),
 		((func >> 31) & 1) == 1 ? "fast" : "yielding",
@@ -396,7 +397,7 @@ tsp_args_t *tsp_smc_handler(uint64_t func,
 	service_arg0 = (uint64_t)service_args;
 	service_arg1 = (uint64_t)(service_args >> 64U);
 
-#if CTX_INCLUDE_MTE_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_MTE_REGS__
 	/*
 	 * Write a dummy value to an MTE register, to simulate usage in the
 	 * secure world

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
@@ -34,7 +35,7 @@
 					 BOARD_ID_VARFG_SHIFT)
 #define BOARD_ID2BOM(_id)		((_id) & BOARD_ID_BOM_MASK)
 
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 #define MAP_SEC_SYSRAM	MAP_REGION_FLAT(STM32MP_SYSRAM_BASE, \
 					STM32MP_SYSRAM_SIZE, \
 					MT_MEMORY | \
@@ -72,7 +73,7 @@
 					MT_SECURE | \
 					MT_EXECUTE_NEVER)
 
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 static const mmap_region_t stm32mp1_mmap[] = {
 	MAP_SEC_SYSRAM,
 	MAP_DEVICE1,
@@ -398,7 +399,7 @@ uint32_t stm32_iwdg_get_otp_config(uint32_t iwdg_inst)
 	uint32_t iwdg_cfg = 0U;
 	uint32_t otp_value;
 
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 	if (bsec_shadow_register(HW2_OTP) != BSEC_OK) {
 		panic();
 	}
@@ -423,7 +424,7 @@ uint32_t stm32_iwdg_get_otp_config(uint32_t iwdg_inst)
 	return iwdg_cfg;
 }
 
-#if defined(IMAGE_BL2)
+#if defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__)
 uint32_t stm32_iwdg_shadow_update(uint32_t iwdg_inst, uint32_t flags)
 {
 	uint32_t otp;

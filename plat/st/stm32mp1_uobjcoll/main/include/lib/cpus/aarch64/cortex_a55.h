@@ -7,6 +7,7 @@
 #ifndef CORTEX_A55_H
 #define CORTEX_A55_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /* Cortex-A55 MIDR for revision 0 */

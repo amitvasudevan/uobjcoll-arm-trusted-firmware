@@ -7,6 +7,7 @@
 #ifndef CORTEX_A78_AE_H
 #define CORTEX_A78_AE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cortex_a78.h>
 
 #define CORTEX_A78_AE_MIDR U(0x410FD420)

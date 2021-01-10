@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
@@ -28,7 +29,7 @@ static inline __attribute__((unused)) void xlat_clean_dcache_range(uintptr_t add
 		clean_dcache_range(addr, size);
 }
 
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 
 /*
  * The following functions assume that they will be called using subtables only.
@@ -89,7 +90,7 @@ static bool xlat_table_is_empty(const xlat_ctx_t *ctx, const uint64_t *table)
 	return ctx->tables_mapped_regions[xlat_table_get_index(ctx, table)] == 0;
 }
 
-#else /* PLAT_XLAT_TABLES_DYNAMIC */
+#else /* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__ */
 
 /* Returns a pointer to the first empty translation table. */
 static uint64_t *xlat_table_get_empty(xlat_ctx_t *ctx)
@@ -99,7 +100,7 @@ static uint64_t *xlat_table_get_empty(xlat_ctx_t *ctx)
 	return ctx->tables[ctx->next_table++];
 }
 
-#endif /* PLAT_XLAT_TABLES_DYNAMIC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__ */
 
 /*
  * Returns a block/page table descriptor for the given level and attributes.
@@ -207,7 +208,7 @@ uint64_t xlat_desc(const xlat_ctx_t *ctx, uint32_t attr,
 			}
 
 			/* Check if Branch Target Identification is enabled */
-#if ENABLE_BTI
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_BTI__
 			/* Set GP bit for block and page code entries
 			 * if BTI mechanism is implemented.
 			 */
@@ -284,7 +285,7 @@ static inline unsigned int  xlat_tables_va_to_index(const uintptr_t table_base_v
 	return (unsigned int)((va - table_base_va) >> XLAT_ADDR_SHIFT(level));
 }
 
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 
 /*
  * From the given arguments, it decides which action to take when unmapping the
@@ -396,7 +397,7 @@ static void xlat_tables_unmap_region(xlat_ctx_t *ctx, mmap_region_t *mm,
 			xlat_tables_unmap_region(ctx, mm, table_idx_va,
 						 subtable, XLAT_TABLE_ENTRIES,
 						 level + 1U);
-#if !(HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY)
+#if !(__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY)
 			xlat_clean_dcache_range((uintptr_t)subtable,
 				XLAT_TABLE_ENTRIES * sizeof(uint64_t));
 #endif
@@ -425,7 +426,7 @@ static void xlat_tables_unmap_region(xlat_ctx_t *ctx, mmap_region_t *mm,
 		xlat_table_dec_regions_count(ctx, table_base);
 }
 
-#endif /* PLAT_XLAT_TABLES_DYNAMIC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__ */
 
 /*
  * From the given arguments, it decides which action to take when mapping the
@@ -585,7 +586,7 @@ static uintptr_t xlat_tables_map_region(xlat_ctx_t *ctx, mmap_region_t *mm,
 	table_idx_va = xlat_tables_find_start_va(mm, table_base_va, level);
 	table_idx = xlat_tables_va_to_index(table_base_va, table_idx_va, level);
 
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 	if (level > ctx->base_level)
 		xlat_table_inc_regions_count(ctx, table_base);
 #endif
@@ -623,7 +624,7 @@ static uintptr_t xlat_tables_map_region(xlat_ctx_t *ctx, mmap_region_t *mm,
 			end_va = xlat_tables_map_region(ctx, mm, table_idx_va,
 					       subtable, XLAT_TABLE_ENTRIES,
 					       level + 1U);
-#if !(HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY)
+#if !(__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY)
 			xlat_clean_dcache_range((uintptr_t)subtable,
 				XLAT_TABLE_ENTRIES * sizeof(uint64_t));
 #endif
@@ -639,7 +640,7 @@ static uintptr_t xlat_tables_map_region(xlat_ctx_t *ctx, mmap_region_t *mm,
 			end_va = xlat_tables_map_region(ctx, mm, table_idx_va,
 					       subtable, XLAT_TABLE_ENTRIES,
 					       level + 1U);
-#if !(HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY)
+#if !(__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY)
 			xlat_clean_dcache_range((uintptr_t)subtable,
 				XLAT_TABLE_ENTRIES * sizeof(uint64_t));
 #endif
@@ -732,11 +733,11 @@ static int mmap_add_region_check(const xlat_ctx_t *ctx, const mmap_region_t *mm)
 		 */
 		if (fully_overlapped_va) {
 
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 			if (((mm->attr & MT_DYNAMIC) != 0U) ||
 			    ((mm_cursor->attr & MT_DYNAMIC) != 0U))
 				return -EPERM;
-#endif /* PLAT_XLAT_TABLES_DYNAMIC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__ */
 			if ((mm_cursor->base_va - mm_cursor->base_pa) !=
 							(base_va - base_pa))
 				return -EPERM;
@@ -944,7 +945,7 @@ void mmap_add_ctx(xlat_ctx_t *ctx, const mmap_region_t *mm)
 	}
 }
 
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 
 int mmap_add_dynamic_region_ctx(xlat_ctx_t *ctx, mmap_region_t *mm)
 {
@@ -1001,7 +1002,7 @@ int mmap_add_dynamic_region_ctx(xlat_ctx_t *ctx, mmap_region_t *mm)
 		end_va = xlat_tables_map_region(ctx, mm_cursor,
 				0U, ctx->base_table, ctx->base_table_entries,
 				ctx->base_level);
-#if !(HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY)
+#if !(__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY)
 		xlat_clean_dcache_range((uintptr_t)ctx->base_table,
 				   ctx->base_table_entries * sizeof(uint64_t));
 #endif
@@ -1030,7 +1031,7 @@ int mmap_add_dynamic_region_ctx(xlat_ctx_t *ctx, mmap_region_t *mm)
 			xlat_tables_unmap_region(ctx, &unmap_mm, 0U,
 				ctx->base_table, ctx->base_table_entries,
 				ctx->base_level);
-#if !(HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY)
+#if !(__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY)
 			xlat_clean_dcache_range((uintptr_t)ctx->base_table,
 				ctx->base_table_entries * sizeof(uint64_t));
 #endif
@@ -1116,7 +1117,7 @@ int mmap_remove_dynamic_region_ctx(xlat_ctx_t *ctx, uintptr_t base_va,
 		xlat_tables_unmap_region(ctx, mm, 0U, ctx->base_table,
 					 ctx->base_table_entries,
 					 ctx->base_level);
-#if !(HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY)
+#if !(__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY)
 		xlat_clean_dcache_range((uintptr_t)ctx->base_table,
 			ctx->base_table_entries * sizeof(uint64_t));
 #endif
@@ -1180,7 +1181,7 @@ void xlat_setup_dynamic_ctx(xlat_ctx_t *ctx, unsigned long long pa_max,
 	ctx->initialized = 0;
 }
 
-#endif /* PLAT_XLAT_TABLES_DYNAMIC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__ */
 
 void __init init_xlat_tables_ctx(xlat_ctx_t *ctx)
 {
@@ -1206,7 +1207,7 @@ void __init init_xlat_tables_ctx(xlat_ctx_t *ctx)
 		ctx->base_table[i] = INVALID_DESC;
 
 	for (int j = 0; j < ctx->tables_num; j++) {
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 		ctx->tables_mapped_regions[j] = 0;
 #endif
 		for (unsigned int i = 0U; i < XLAT_TABLE_ENTRIES; i++)
@@ -1217,7 +1218,7 @@ void __init init_xlat_tables_ctx(xlat_ctx_t *ctx)
 		uintptr_t end_va = xlat_tables_map_region(ctx, mm, 0U,
 				ctx->base_table, ctx->base_table_entries,
 				ctx->base_level);
-#if !(HW_ASSISTED_COHERENCY || WARMBOOT_ENABLE_DCACHE_EARLY)
+#if !(__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ || WARMBOOT_ENABLE_DCACHE_EARLY)
 		xlat_clean_dcache_range((uintptr_t)ctx->base_table,
 				   ctx->base_table_entries * sizeof(uint64_t));
 #endif

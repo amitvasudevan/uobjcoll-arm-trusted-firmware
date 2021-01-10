@@ -8,6 +8,7 @@
 #ifndef PLAT_MARVELL_H
 #define PLAT_MARVELL_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
@@ -43,7 +44,7 @@ void marvell_setup_page_tables(uintptr_t total_base,
 			       uintptr_t code_limit,
 			       uintptr_t rodata_start,
 			       uintptr_t rodata_limit
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 			     , uintptr_t coh_start,
 			       uintptr_t coh_limit
 #endif

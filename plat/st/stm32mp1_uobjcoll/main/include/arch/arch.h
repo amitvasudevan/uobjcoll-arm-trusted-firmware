@@ -7,6 +7,7 @@
 #ifndef ARCH_H
 #define ARCH_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /*******************************************************************************
@@ -71,7 +72,7 @@
 /* Data Cache set/way op type defines */
 #define DC_OP_ISW			U(0x0)
 #define DC_OP_CISW			U(0x1)
-#if ERRATA_A53_827319
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ERRATA_A53_827319__
 #define DC_OP_CSW			DC_OP_CISW
 #else
 #define DC_OP_CSW			U(0x2)
@@ -138,7 +139,7 @@
 /* SCTLR definitions */
 #define SCTLR_RES1_DEF		((U(1) << 23) | (U(1) << 22) | (U(1) << 4) | \
 				 (U(1) << 3))
-#if ARM_ARCH_MAJOR == 7
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7
 #define SCTLR_RES1		SCTLR_RES1_DEF
 #else
 #define SCTLR_RES1		(SCTLR_RES1_DEF | (U(1) << 11))

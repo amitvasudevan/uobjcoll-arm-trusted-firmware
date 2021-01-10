@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
@@ -24,7 +25,7 @@ u_register_t  __attribute__((section(".data.stack_protector_canary")))
  */
 void __dead2 __stack_chk_fail(void)
 {
-#if DEBUG
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DEBUG__
 	ERROR("Stack corruption detected\n");
 #endif
 	panic();

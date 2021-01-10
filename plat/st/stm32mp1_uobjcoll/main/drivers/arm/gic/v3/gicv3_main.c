@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -64,7 +65,7 @@ static bool is_sgi_ppi(unsigned int id);
 		}							\
 	} while (false)
 
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 #define RESTORE_GICD_EREGS(base, ctx, intr_num, reg, REG)		\
 	do {								\
 		for (unsigned int int_id = MIN_ESPI_ID; int_id < (intr_num);\
@@ -86,7 +87,7 @@ static bool is_sgi_ppi(unsigned int id);
 #else
 #define SAVE_GICD_EREGS(base, ctx, intr_num, reg, REG)
 #define RESTORE_GICD_EREGS(base, ctx, intr_num, reg, REG)
-#endif /* GIC_EXT_INTID */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__ */
 
 /*******************************************************************************
  * This function initialises the ARM GICv3 driver in EL3 with provided platform
@@ -149,7 +150,7 @@ void __init gicv3_driver_init(const gicv3_driver_data_t *plat_driver_data)
 						   plat_driver_data->rdistif_num,
 						   plat_driver_data->gicr_base,
 						   plat_driver_data->mpidr_to_core_pos);
-#if !HW_ASSISTED_COHERENCY
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 		/*
 		 * Flush the rdistif_base_addrs[] contents linked to the GICv3 driver.
 		 */
@@ -165,9 +166,9 @@ void __init gicv3_driver_init(const gicv3_driver_data_t *plat_driver_data)
 	 * enabled. When the secondary CPU boots up, it initializes the
 	 * GICC/GICR interface with the caches disabled. Hence flush the
 	 * driver data to ensure coherency. This is not required if the
-	 * platform has HW_ASSISTED_COHERENCY enabled.
+	 * platform has __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ enabled.
 	 */
-#if !HW_ASSISTED_COHERENCY
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 	flush_dcache_range((uintptr_t)&gicv3_driver_data,
 		sizeof(gicv3_driver_data));
 	flush_dcache_range((uintptr_t)gicv3_driver_data,
@@ -551,7 +552,7 @@ void gicv3_rdistif_save(unsigned int proc_num,
 
 	gicr_base = gicv3_driver_data->rdistif_base_addrs[proc_num];
 
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	/* Calculate number of PPI registers */
 	ppi_regs_num = (unsigned int)((gicr_read_typer(gicr_base) >>
 			TYPER_PPI_NUM_SHIFT) & TYPER_PPI_NUM_MASK) + 1;
@@ -626,7 +627,7 @@ void gicv3_rdistif_init_restore(unsigned int proc_num,
 
 	gicr_base = gicv3_driver_data->rdistif_base_addrs[proc_num];
 
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	/* Calculate number of PPI registers */
 	ppi_regs_num = (unsigned int)((gicr_read_typer(gicr_base) >>
 			TYPER_PPI_NUM_SHIFT) & TYPER_PPI_NUM_MASK) + 1;
@@ -727,7 +728,7 @@ void gicv3_rdistif_init_restore(unsigned int proc_num,
 void gicv3_distif_save(gicv3_dist_ctx_t * const dist_ctx)
 {
 	unsigned int typer_reg, num_ints;
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	unsigned int num_eints;
 #endif
 
@@ -748,7 +749,7 @@ void gicv3_distif_save(gicv3_dist_ctx_t * const dist_ctx)
 		num_ints = MAX_SPI_ID + 1U;
 	}
 
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	/* Check if extended SPI range is implemented */
 	if ((typer_reg & TYPER_ESPI) != 0U) {
 		/*
@@ -837,7 +838,7 @@ void gicv3_distif_save(gicv3_dist_ctx_t * const dist_ctx)
 void gicv3_distif_init_restore(const gicv3_dist_ctx_t * const dist_ctx)
 {
 	unsigned int typer_reg, num_ints;
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	unsigned int num_eints;
 #endif
 
@@ -872,7 +873,7 @@ void gicv3_distif_init_restore(const gicv3_dist_ctx_t * const dist_ctx)
 		num_ints = MAX_SPI_ID + 1U;
 	}
 
-#if GIC_EXT_INTID
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_GIC_EXT_INTID__
 	/* Check if extended SPI range is implemented */
 	if ((typer_reg & TYPER_ESPI) != 0U) {
 		/*
@@ -1347,10 +1348,10 @@ int gicv3_rdistif_probe(const uintptr_t gicr_frame)
 
 	/*
 	 * Flush the driver data to ensure coherency. This is
-	 * not required if platform has HW_ASSISTED_COHERENCY
+	 * not required if platform has __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 	 * enabled.
 	 */
-#if !HW_ASSISTED_COHERENCY
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__
 	/*
 	 * Flush the rdistif_base_addrs[] contents linked to the GICv3 driver.
 	 */

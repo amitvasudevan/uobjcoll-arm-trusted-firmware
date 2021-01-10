@@ -12,6 +12,7 @@
  * ===----------------------------------------------------------------------===
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/int_lib.h>
 
 /* Effects: if rem != 0, *rem = a % b

@@ -7,6 +7,7 @@
 #ifndef FCONF_DYN_CFG_GETTER_H
 #define FCONF_DYN_CFG_GETTER_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/fconf/fconf.h>
 
 /* Dynamic configuration related getter */

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -11,7 +12,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
 
 	.macro assert_cache_enabled
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 		ldcopr	r0, SCTLR
 		tst	r0, #SCTLR_C_BIT
 		ASM_ASSERT(eq)

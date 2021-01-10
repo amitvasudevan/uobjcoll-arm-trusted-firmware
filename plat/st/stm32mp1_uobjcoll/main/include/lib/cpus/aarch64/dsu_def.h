@@ -7,6 +7,7 @@
 #ifndef DSU_DEF_H
 #define DSU_DEF_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
 /********************************************************************

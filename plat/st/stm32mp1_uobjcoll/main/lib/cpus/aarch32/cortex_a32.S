@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -52,7 +53,7 @@ func cortex_a32_core_pwr_dwn
 	push	{r12, lr}
 
 	/* Assert if cache is enabled */
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	ldcopr	r0, SCTLR
 	tst	r0, #SCTLR_C_BIT
 	ASM_ASSERT(eq)
@@ -83,7 +84,7 @@ func cortex_a32_cluster_pwr_dwn
 	push	{r12, lr}
 
 	/* Assert if cache is enabled */
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	ldcopr	r0, SCTLR
 	tst	r0, #SCTLR_C_BIT
 	ASM_ASSERT(eq)

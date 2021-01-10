@@ -7,6 +7,7 @@
 #ifndef DRIVERS_SPI_NOR_H
 #define DRIVERS_SPI_NOR_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/spi_mem.h>
 
 /* OPCODE */

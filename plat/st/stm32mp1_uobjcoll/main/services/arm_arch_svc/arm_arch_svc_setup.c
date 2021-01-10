@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/runtime_svc.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/errata_report.h>
@@ -27,16 +28,16 @@ static int32_t smccc_arch_features(u_register_t arg1)
 		return SMC_ARCH_CALL_SUCCESS;
 	case SMCCC_ARCH_SOC_ID:
 		return plat_is_smccc_feature_available(arg1);
-#if WORKAROUND_CVE_2017_5715
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	case SMCCC_ARCH_WORKAROUND_1:
 		if (check_wa_cve_2017_5715() == ERRATA_NOT_APPLIES)
 			return 1;
 		return 0; /* ERRATA_APPLIES || ERRATA_MISSING */
 #endif
 
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	case SMCCC_ARCH_WORKAROUND_2: {
-#if DYNAMIC_WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DYNAMIC_WORKAROUND_CVE_2018_3639__
 		unsigned long long ssbs;
 
 		/*
@@ -113,7 +114,7 @@ static uintptr_t arm_arch_svc_smc_handler(uint32_t smc_fid,
 		SMC_RET1(handle, smccc_arch_features(x1));
 	case SMCCC_ARCH_SOC_ID:
 		SMC_RET1(handle, smccc_arch_id(x1));
-#if WORKAROUND_CVE_2017_5715
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2017_5715__
 	case SMCCC_ARCH_WORKAROUND_1:
 		/*
 		 * The workaround has already been applied on affected PEs
@@ -122,7 +123,7 @@ static uintptr_t arm_arch_svc_smc_handler(uint32_t smc_fid,
 		 */
 		SMC_RET0(handle);
 #endif
-#if WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_WORKAROUND_CVE_2018_3639__
 	case SMCCC_ARCH_WORKAROUND_2:
 		/*
 		 * The workaround has already been applied on affected PEs

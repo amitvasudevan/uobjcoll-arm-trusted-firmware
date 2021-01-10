@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -11,7 +12,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
 
-#if defined(IMAGE_BL1) || defined(IMAGE_BL32) || (defined(IMAGE_BL2) && BL2_AT_EL3)
+#if defined(IMAGE_BL1) || defined(IMAGE_BL32) || (defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__) && __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__)
 	/*
 	 * The reset handler common to all platforms.  After a matching
 	 * cpu_ops structure entry is found, the correponding reset_handler
@@ -30,7 +31,7 @@ func reset_handler
 	/* Get the matching cpu_ops pointer (clobbers: r0 - r5) */
 	bl	get_cpu_ops_ptr
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	r0, #0
 	ASM_ASSERT(ne)
 #endif
@@ -69,7 +70,7 @@ func prepare_cpu_pwr_dwn
 	pop	{r2, lr}
 
 	ldr	r0, [r0, #CPU_DATA_CPU_OPS_PTR]
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	r0, #0
 	ASM_ASSERT(ne)
 #endif
@@ -95,7 +96,7 @@ func init_cpu_ops
 	cmp	r1, #0
 	bne	1f
 	bl	get_cpu_ops_ptr
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	r0, #0
 	ASM_ASSERT(ne)
 #endif

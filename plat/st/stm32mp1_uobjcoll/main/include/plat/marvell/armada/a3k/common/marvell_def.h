@@ -8,6 +8,7 @@
 #ifndef MARVELL_DEF_H
 #define MARVELL_DEF_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
@@ -92,7 +93,7 @@
  * The number of regions like RO(code), coherent and data required by
  * different BL stages which need to be mapped in the MMU.
  */
-#if USE_COHERENT_MEM
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_USE_COHERENT_MEM__
 #define MARVELL_BL_REGIONS		3
 #else
 #define MARVELL_BL_REGIONS		2
@@ -181,8 +182,8 @@
 #define BL32_BASE		PLAT_MARVELL_TRUSTED_RAM_BASE
 #define BL32_LIMIT		(BL32_BASE + PLAT_MARVELL_TRUSTED_RAM_SIZE)
 
-#ifdef SPD_none
+#ifdef __UBERSPARK_UOBJCOLL_CONFIGDEF_SPD_NONE__
 #undef BL32_BASE
-#endif /* SPD_none */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_SPD_NONE__ */
 
 #endif /* MARVELL_DEF_H */

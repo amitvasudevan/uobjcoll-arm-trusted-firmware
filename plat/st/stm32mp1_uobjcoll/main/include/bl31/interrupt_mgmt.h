@@ -7,6 +7,7 @@
 #ifndef INTERRUPT_MGMT_H
 #define INTERRUPT_MGMT_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 
@@ -107,7 +108,7 @@ static inline int32_t validate_ns_interrupt_rm(uint32_t x)
 
 static inline int32_t validate_el3_interrupt_rm(uint32_t x)
 {
-#if EL3_EXCEPTION_HANDLING
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_EL3_EXCEPTION_HANDLING__
 	/*
 	 * With EL3 exception handling, EL3 interrupts are always routed to EL3
 	 * from both Secure and Non-secure, and therefore INTR_EL3_VALID_RM1 is

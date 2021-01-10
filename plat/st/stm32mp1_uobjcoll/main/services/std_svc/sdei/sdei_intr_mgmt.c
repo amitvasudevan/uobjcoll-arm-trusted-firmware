@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
@@ -37,7 +38,7 @@ typedef struct sdei_dispatch_context {
 	uint64_t elr_el3;
 	uint64_t spsr_el3;
 
-#if DYNAMIC_WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DYNAMIC_WORKAROUND_CVE_2018_3639__
 	/* CVE-2018-3639 mitigation state */
 	uint64_t disable_cve_2018_3639;
 #endif
@@ -192,7 +193,7 @@ static void restore_event_ctx(const sdei_dispatch_context_t *disp_ctx, void *tgt
 	write_ctx_reg(tgt_el3, CTX_SPSR_EL3, disp_ctx->spsr_el3);
 	write_ctx_reg(tgt_el3, CTX_ELR_EL3, disp_ctx->elr_el3);
 
-#if DYNAMIC_WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DYNAMIC_WORKAROUND_CVE_2018_3639__
 	cve_2018_3639_t *tgt_cve_2018_3639;
 	tgt_cve_2018_3639 = get_cve_2018_3639_ctx(tgt_ctx);
 
@@ -266,7 +267,7 @@ static void setup_ns_dispatch(sdei_ev_map_t *map, sdei_entry_t *se,
 			SPSR_64(sdei_client_el(), MODE_SP_ELX,
 				DISABLE_ALL_EXCEPTIONS));
 
-#if DYNAMIC_WORKAROUND_CVE_2018_3639
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_DYNAMIC_WORKAROUND_CVE_2018_3639__
 	cve_2018_3639_t *tgt_cve_2018_3639;
 	tgt_cve_2018_3639 = get_cve_2018_3639_ctx(ctx);
 

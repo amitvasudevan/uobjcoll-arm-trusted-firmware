@@ -7,6 +7,7 @@
 #ifndef SCMI_PRIVATE_H
 #define SCMI_PRIVATE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
 
 /*

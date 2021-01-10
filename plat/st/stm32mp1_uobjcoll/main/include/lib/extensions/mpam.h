@@ -7,6 +7,7 @@
 #ifndef MPAM_H
 #define MPAM_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 bool mpam_supported(void);

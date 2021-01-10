@@ -7,13 +7,14 @@
 #ifndef XLAT_TABLES_PRIVATE_H
 #define XLAT_TABLES_PRIVATE_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 
-#if PLAT_XLAT_TABLES_DYNAMIC
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__
 /*
  * Private shifts and masks to access fields of an mmap attribute
  */
@@ -36,7 +37,7 @@
 #define MT_STATIC	(U(0) << MT_DYN_SHIFT)
 #define MT_DYNAMIC	(U(1) << MT_DYN_SHIFT)
 
-#endif /* PLAT_XLAT_TABLES_DYNAMIC */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_XLAT_TABLES_DYNAMIC__ */
 
 extern uint64_t mmu_cfg_params[MMU_CFG_PARAM_MAX];
 

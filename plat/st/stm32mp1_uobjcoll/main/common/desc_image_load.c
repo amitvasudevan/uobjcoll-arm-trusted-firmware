@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
@@ -319,7 +320,7 @@ void bl31_params_parse_helper(u_register_t param,
 	bl_params_node_t *node;
 	bl_params_t *v2 = (void *)(uintptr_t)param;
 
-#if !ERROR_DEPRECATED
+#if !__UBERSPARK_UOBJCOLL_CONFIGDEF_ERROR_DEPRECATED__
 	if (v2->h.version == PARAM_VERSION_1) {
 		struct { /* Deprecated version 1 parameter structure. */
 			param_header_t h;
@@ -336,7 +337,7 @@ void bl31_params_parse_helper(u_register_t param,
 			*bl33_ep_info_out = *v1->bl33_ep_info;
 		return;
 	}
-#endif /* !ERROR_DEPRECATED */
+#endif /* !__UBERSPARK_UOBJCOLL_CONFIGDEF_ERROR_DEPRECATED__ */
 
 	assert(v2->h.version == PARAM_VERSION_2);
 	assert(v2->h.type == PARAM_BL_PARAMS);

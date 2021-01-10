@@ -7,6 +7,7 @@
 #ifndef XLAT_TABLES_DEFS_H
 #define XLAT_TABLES_DEFS_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_mmu_helpers.h>
@@ -78,7 +79,7 @@
 #define PAGE_SIZE_MASK		(PAGE_SIZE - UL(1))
 #define IS_PAGE_ALIGNED(addr)	(((addr) & PAGE_SIZE_MASK) == U(0))
 
-#if (ARM_ARCH_MAJOR == 7) && !ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING
+#if (__UBERSPARK_UOBJCOLL_CONFIGDEF_ARM_ARCH_MAJOR__ == 7) && !__UBERSPARK_UOBJCOLL_CONFIGDEF_ARMV7_SUPPORTS_LARGE_PAGE_ADDRESSING__
 #define XLAT_ENTRY_SIZE_SHIFT	U(2)	/* Each MMU table entry is 4 bytes */
 #else
 #define XLAT_ENTRY_SIZE_SHIFT	U(3)	/* Each MMU table entry is 8 bytes */

@@ -9,6 +9,7 @@
  * the Makefile of the platform. It is not included in the common Makefile.
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
 

@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
@@ -14,7 +15,7 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
 
  /* Reset fn is needed in BL at reset vector */
-#if defined(IMAGE_BL1) || defined(IMAGE_BL31) || (defined(IMAGE_BL2) && BL2_AT_EL3)
+#if defined(IMAGE_BL1) || defined(IMAGE_BL31) || (defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__) && __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__)
 	/*
 	 * The reset handler common to all platforms.  After a matching
 	 * cpu_ops structure entry is found, the correponding reset_handler
@@ -30,7 +31,7 @@ func reset_handler
 
 	/* Get the matching cpu_ops pointer */
 	bl	get_cpu_ops_ptr
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x0, #0
 	ASM_ASSERT(ne)
 #endif
@@ -69,7 +70,7 @@ func prepare_cpu_pwr_dwn
 
 	mrs	x1, tpidr_el3
 	ldr	x0, [x1, #CPU_DATA_CPU_OPS_PTR]
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x0, #0
 	ASM_ASSERT(ne)
 #endif
@@ -78,7 +79,7 @@ func prepare_cpu_pwr_dwn
 	mov	x1, #CPU_PWR_DWN_OPS
 	add	x1, x1, x2, lsl #3
 	ldr	x1, [x0, x1]
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x1, #0
 	ASM_ASSERT(ne)
 #endif
@@ -99,7 +100,7 @@ func init_cpu_ops
 	cbnz	x0, 1f
 	mov	x10, x30
 	bl	get_cpu_ops_ptr
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x0, #0
 	ASM_ASSERT(ne)
 #endif
@@ -185,7 +186,7 @@ func get_cpu_ops_ptr
 
 	/* Subtract the increment and offset to get the cpu-ops pointer */
 	sub	x0, x4, #(CPU_OPS_SIZE + CPU_MIDR)
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x0, #0
 	ASM_ASSERT(ne)
 #endif
@@ -314,12 +315,12 @@ func print_errata_status
 	 * turn.
 	 */
 	mrs	x0, tpidr_el3
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x0, #0
 	ASM_ASSERT(ne)
 #endif
 	ldr	x1, [x0, #CPU_DATA_CPU_OPS_PTR]
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x1, #0
 	ASM_ASSERT(ne)
 #endif
@@ -367,12 +368,12 @@ endfunc print_errata_status
 	.globl	check_wa_cve_2017_5715
 func check_wa_cve_2017_5715
 	mrs	x0, tpidr_el3
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x0, #0
 	ASM_ASSERT(ne)
 #endif
 	ldr	x0, [x0, #CPU_DATA_CPU_OPS_PTR]
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x0, #0
 	ASM_ASSERT(ne)
 #endif
@@ -404,12 +405,12 @@ endfunc check_wa_cve_2017_5715
 	.globl	wa_cve_2018_3639_get_disable_ptr
 func wa_cve_2018_3639_get_disable_ptr
 	mrs	x0, tpidr_el3
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x0, #0
 	ASM_ASSERT(ne)
 #endif
 	ldr	x0, [x0, #CPU_DATA_CPU_OPS_PTR]
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	cmp	x0, #0
 	ASM_ASSERT(ne)
 #endif

@@ -47,11 +47,11 @@ typedef struct crypto_lib_desc_s {
 	int (*verify_hash)(void *data_ptr, unsigned int data_len,
 			   void *digest_info_ptr, unsigned int digest_info_len);
 
-#if MEASURED_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__
 	/* Calculate a hash. Return hash value */
 	int (*calc_hash)(unsigned int alg, void *data_ptr,
 			 unsigned int data_len, unsigned char *output);
-#endif /* MEASURED_BOOT */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__ */
 
 	/*
 	 * Authenticated decryption. Return one of the
@@ -78,7 +78,7 @@ int crypto_mod_auth_decrypt(enum crypto_dec_algo dec_algo, void *data_ptr,
 			    unsigned int iv_len, const void *tag,
 			    unsigned int tag_len);
 
-#if MEASURED_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__
 int crypto_mod_calc_hash(unsigned int alg, void *data_ptr,
 			 unsigned int data_len, unsigned char *output);
 
@@ -103,7 +103,7 @@ int crypto_mod_calc_hash(unsigned int alg, void *data_ptr,
 		.verify_hash = _verify_hash, \
 		.auth_decrypt = _auth_decrypt \
 	}
-#endif	/* MEASURED_BOOT */
+#endif	/* __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__ */
 
 extern const crypto_lib_desc_t crypto_lib_desc;
 

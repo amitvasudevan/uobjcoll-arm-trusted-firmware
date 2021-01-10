@@ -22,6 +22,7 @@
 #ifndef	_FCNTL_H
 #define	_FCNTL_H	1
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <features.h>
 
 /* This must be early so <bits/fcntl.h> can define types winningly.  */

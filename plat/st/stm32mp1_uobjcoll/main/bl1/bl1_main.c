@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
@@ -26,7 +27,7 @@
 
 static void bl1_load_bl2(void);
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 uint64_t bl1_apiakey[2];
 #endif
 
@@ -62,13 +63,13 @@ void bl1_setup(void)
 	/* Perform late platform-specific setup */
 	bl1_plat_arch_setup();
 
-#if CTX_INCLUDE_PAUTH_REGS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__
 	/*
 	 * Assert that the ARMv8.3-PAuth registers are present or an access
 	 * fault will be triggered when they are being saved or restored.
 	 */
 	assert(is_armv8_3_pauth_present());
-#endif /* CTX_INCLUDE_PAUTH_REGS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_CTX_INCLUDE_PAUTH_REGS__ */
 }
 
 /*******************************************************************************
@@ -89,7 +90,7 @@ void bl1_main(void)
 
 	print_errata_status();
 
-#if ENABLE_ASSERTIONS
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__
 	u_register_t val;
 	/*
 	 * Ensure that MMU/Caches and coherency are turned on
@@ -116,24 +117,24 @@ void bl1_main(void)
 		assert(CACHE_WRITEBACK_GRANULE == SIZE_FROM_LOG2_WORDS(val));
 	else
 		assert(CACHE_WRITEBACK_GRANULE <= MAX_CACHE_LINE_SIZE);
-#endif /* ENABLE_ASSERTIONS */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__ */
 
 	/* Perform remaining generic architectural setup from EL3 */
 	bl1_arch_setup();
 
-#if TRUSTED_BOARD_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__
 	/* Initialize authentication module */
 	auth_mod_init();
-#endif /* TRUSTED_BOARD_BOOT */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__ */
 
 	/* Perform platform setup in BL1. */
 	bl1_platform_setup();
 
-#if ENABLE_PAUTH
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__
 	/* Store APIAKey_EL1 key */
 	bl1_apiakey[0] = read_apiakeylo_el1();
 	bl1_apiakey[1] = read_apiakeyhi_el1();
-#endif /* ENABLE_PAUTH */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PAUTH__ */
 
 	/* Get the image id of next image to load and run. */
 	image_id = bl1_plat_get_next_image_id();
@@ -209,7 +210,7 @@ void bl1_print_next_bl_ep_info(const entry_point_info_t *bl_ep_info)
 	print_entry_point_info(bl_ep_info);
 }
 
-#if SPIN_ON_BL1_EXIT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_SPIN_ON_BL1_EXIT__
 void print_debug_loop_message(void)
 {
 	NOTICE("BL1: Debug loop, spinning forever\n");
@@ -235,7 +236,7 @@ u_register_t bl1_smc_handler(unsigned int smc_fid,
 		0x67, 0x15, 0xd6, 0xf4, 0xbb, 0x4a);
 
 
-#if TRUSTED_BOARD_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__
 	/*
 	 * Dispatch FWU calls to FWU SMC handler and return its return
 	 * value

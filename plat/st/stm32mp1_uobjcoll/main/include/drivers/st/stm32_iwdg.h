@@ -7,6 +7,7 @@
 #ifndef STM32_IWDG_H
 #define STM32_IWDG_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #define IWDG_HW_ENABLED			BIT(0)

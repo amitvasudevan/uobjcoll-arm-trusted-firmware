@@ -7,6 +7,7 @@
 #ifndef PLATFORM_H
 #define PLATFORM_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
@@ -62,7 +63,7 @@ unsigned int plat_my_core_pos(void);
 int plat_core_pos_by_mpidr(u_register_t mpidr);
 int plat_get_mbedtls_heap(void **heap_addr, size_t *heap_size);
 
-#if STACK_PROTECTOR_ENABLED
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_STACK_PROTECTOR_ENABLED__
 /*
  * Return a new value to be used for the stack protection's canary.
  *
@@ -70,7 +71,7 @@ int plat_get_mbedtls_heap(void **heap_addr, size_t *heap_size);
  * attacker.
  */
 u_register_t plat_get_stack_protector_canary(void);
-#endif /* STACK_PROTECTOR_ENABLED */
+#endif /* __UBERSPARK_UOBJCOLL_CONFIGDEF_STACK_PROTECTOR_ENABLED__ */
 
 /*******************************************************************************
  * Mandatory interrupt management functions
@@ -175,7 +176,7 @@ __dead2 void bl1_plat_fwu_done(void *client_cookie, void *reserved);
 int bl1_plat_handle_pre_image_load(unsigned int image_id);
 int bl1_plat_handle_post_image_load(unsigned int image_id);
 
-#if MEASURED_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__
 /*
  * Calculates and writes BL2 hash data to the platform's defined location.
  * For ARM platforms the data are written to TB_FW_CONFIG DTB.
@@ -201,13 +202,13 @@ int bl2_plat_handle_post_image_load(unsigned int image_id);
 /*******************************************************************************
  * Optional BL2 functions (may be overridden)
  ******************************************************************************/
-#if MEASURED_BOOT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_MEASURED_BOOT__
 /* Read TCG_DIGEST_SIZE bytes of BL2 hash data */
 void bl2_plat_get_hash(void *data);
 #endif
 
 /*******************************************************************************
- * Mandatory BL2 at EL3 functions: Must be implemented if BL2_AT_EL3 image is
+ * Mandatory BL2 at EL3 functions: Must be implemented if __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__ image is
  * supported
  ******************************************************************************/
 void bl2_el3_early_platform_setup(u_register_t arg0, u_register_t arg1,

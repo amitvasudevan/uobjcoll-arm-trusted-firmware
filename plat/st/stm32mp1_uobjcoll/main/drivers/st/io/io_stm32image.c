@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
@@ -246,7 +247,7 @@ static int stm32image_partition_size(io_entity_t *entity, size_t *length)
 static int stm32image_partition_read(io_entity_t *entity, uintptr_t buffer,
 				     size_t length, size_t *length_read)
 {
-	int result;
+	int result = 0; // initializing to prevent compiler errors, pls don't break anything
 	uint8_t *local_buffer;
 	boot_api_image_header_t *header =
 		(boot_api_image_header_t *)first_lba_buffer;

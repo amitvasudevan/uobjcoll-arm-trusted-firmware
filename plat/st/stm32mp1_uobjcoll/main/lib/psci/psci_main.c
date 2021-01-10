@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
@@ -95,11 +96,11 @@ int psci_cpu_suspend(unsigned int power_state,
 		cpu_pd_state = state_info.pwr_domain_state[PSCI_CPU_PWR_LVL];
 		psci_set_cpu_local_state(cpu_pd_state);
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 		plat_psci_stat_accounting_start(&state_info);
 #endif
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 		PMF_CAPTURE_TIMESTAMP(rt_instr_svc,
 		    RT_INSTR_ENTER_HW_LOW_PWR,
 		    PMF_NO_CACHE_MAINT);
@@ -110,13 +111,13 @@ int psci_cpu_suspend(unsigned int power_state,
 		/* Upon exit from standby, set the state back to RUN. */
 		psci_set_cpu_local_state(PSCI_LOCAL_STATE_RUN);
 
-#if ENABLE_RUNTIME_INSTRUMENTATION
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 		PMF_CAPTURE_TIMESTAMP(rt_instr_svc,
 		    RT_INSTR_EXIT_HW_LOW_PWR,
 		    PMF_NO_CACHE_MAINT);
 #endif
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 		plat_psci_stat_accounting_stop(&state_info);
 
 		/* Update PSCI stats */
@@ -453,7 +454,7 @@ u_register_t psci_smc_handler(uint32_t smc_fid,
 			ret = (u_register_t)psci_features(r1);
 			break;
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 		case PSCI_STAT_RESIDENCY_AARCH32:
 			ret = psci_stat_residency(r1, r2);
 			break;
@@ -515,7 +516,7 @@ u_register_t psci_smc_handler(uint32_t smc_fid,
 			ret = (u_register_t)psci_system_suspend(x1, x2);
 			break;
 
-#if ENABLE_PSCI_STAT
+#if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__
 		case PSCI_STAT_RESIDENCY_AARCH64:
 			ret = psci_stat_residency(x1, (unsigned int) x2);
 			break;

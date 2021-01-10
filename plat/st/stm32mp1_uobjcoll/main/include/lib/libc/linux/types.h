@@ -2,6 +2,7 @@
 #ifndef _LINUX_TYPES_H
 #define _LINUX_TYPES_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <asm/types.h>
 
 #ifndef __ASSEMBLY__
