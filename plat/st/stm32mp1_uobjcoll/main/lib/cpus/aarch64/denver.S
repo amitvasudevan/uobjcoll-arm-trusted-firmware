@@ -7,11 +7,11 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/assert_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/denver.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/aarch32/cpu_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat_macros.S>
 
 	/* -------------------------------------------------

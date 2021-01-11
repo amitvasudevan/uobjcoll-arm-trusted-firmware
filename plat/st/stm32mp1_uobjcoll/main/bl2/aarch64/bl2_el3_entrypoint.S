@@ -8,9 +8,9 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/el3_common_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/el3_common_macros.S>
 
 	.globl	bl2_entrypoint
 	.globl	bl2_el3_run_image

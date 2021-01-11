@@ -6,8 +6,8 @@
 #include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/aem_generic.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/aarch32/cpu_macros.S>
 
 func aem_generic_core_pwr_dwn
 	/* ---------------------------------------------

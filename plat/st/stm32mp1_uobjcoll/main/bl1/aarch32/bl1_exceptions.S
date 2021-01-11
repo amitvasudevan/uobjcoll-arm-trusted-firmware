@@ -6,13 +6,13 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl1/bl1.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/smccc_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_macros.S>
 
 	.globl	bl1_aarch32_smc_handler
 

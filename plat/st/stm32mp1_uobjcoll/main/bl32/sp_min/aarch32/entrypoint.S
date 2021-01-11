@@ -6,17 +6,17 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/runtime_svc.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/el3_common_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/el3_common_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/pmf/aarch32/pmf_asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/runtime_instr.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_defs.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/smccc_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_macros.S>
 
 	.globl	sp_min_vector_table
 	.globl	sp_min_entrypoint

@@ -9,8 +9,8 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/assert_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/assert_macros.S>
 
 	/*
 	 * Helper macro to initialise EL3 registers we care about.

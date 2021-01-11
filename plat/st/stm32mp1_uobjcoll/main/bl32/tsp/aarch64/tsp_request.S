@@ -5,7 +5,7 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl32/tsp/tsp.h>
 
 	.globl tsp_get_magic

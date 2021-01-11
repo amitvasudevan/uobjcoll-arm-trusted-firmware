@@ -6,12 +6,12 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/el3_common_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/el3_common_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/smccc_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_macros.S>
 
 	.globl	bl1_vector_table
 	.globl	bl1_entrypoint

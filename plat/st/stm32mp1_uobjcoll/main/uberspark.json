@@ -29,6 +29,7 @@
 		"include/lib/libc/stdio.h",
 		"include/lib/libc/string.h",
 		// asm
+		"include/lib/compiler-rt/assembly.h",
 		//
 		"include/lib/compiler-rt/int_lib.h",
 		"include/lib/compiler-rt/int_types.h",
@@ -48,6 +49,7 @@
 "bl32/sp_min/sp_min_private.h",
 "drivers/arm/gic/v2/gicv2_private.h",
 "include/lib/cassert.h",
+"include/lib/cpus/aarch32/cortex_a7.h",
 		// arch
 		"include/arch/arch.h",
 		"include/arch/arch_helpers.h",
@@ -352,8 +354,13 @@
 		"stm32mp1_topology.c"
 	],
 	"uberspark.uobj.source_asm_files": [
-		// "include/arch/asm_macros.S",
-		// "include/common/asm_macros_common.S",
+		"include/arch/asm_macros.S",
+		"include/arch/assert_macros.S",
+		"include/arch/el3_common_macros.S",
+		"include/arch/console_macros.S",
+		"include/arch/smccc_macros.S",
+		"include/common/asm_macros_common.S",
+		"include/lib/cpus/aarch32/cpu_macros.S",
 		// "common/aarch32/debug.S",
 		// "lib/aarch32/cache_helpers.S",
 		// "lib/aarch32/misc_helpers.S",

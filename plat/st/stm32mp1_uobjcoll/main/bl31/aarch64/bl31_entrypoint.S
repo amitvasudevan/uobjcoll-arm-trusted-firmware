@@ -9,7 +9,7 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/el3_common_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/el3_common_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/pmf/aarch64/pmf_asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/runtime_instr.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_mmu_helpers.h>

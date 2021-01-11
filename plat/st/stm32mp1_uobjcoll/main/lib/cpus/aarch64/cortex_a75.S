@@ -6,10 +6,10 @@
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cortex_a75.h>
 #include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpuamu.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/cpu_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/aarch32/cpu_macros.S>
 
 /* Hardware handled coherency */
 #if __UBERSPARK_UOBJCOLL_CONFIGDEF_HW_ASSISTED_COHERENCY__ == 0
