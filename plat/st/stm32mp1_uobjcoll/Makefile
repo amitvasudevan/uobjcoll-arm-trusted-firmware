@@ -8,6 +8,7 @@ REPO_ROOT = ../../../
 MAKE_HELPERS_DIRECTORY := ${REPO_ROOT}make_helpers/
 TF_PLATFORM_ROOT = ${REPO_ROOT}plat/
 BUILD_PLAT = ./_build
+.DEFAULT_GOAL := all
 
 include ${MAKE_HELPERS_DIRECTORY}build_macros.mk
 include ${MAKE_HELPERS_DIRECTORY}build_env.mk
@@ -293,10 +294,10 @@ $(if ${BL2}, $(eval $(call TOOL_ADD_IMG,bl2,--${FIP_BL2_ARGS})),\
 ######################################################
 
 .PHONY: all
-all: stage dtbs bl2
+all: stage dtbs bl2 u-boot
 	@echo building stm32 collection...
 	uberspark staging switch stm32mp1 
-	uberspark uobjcoll build -v --platform=st --arch=armv8_32 --cpu=generic .
+	uberspark uobjcoll build -v --platform=st --arch=armv7_32 --cpu=generic .
 	@echo built stm32 collection successfully!
 
 .PHONY: stage
@@ -305,20 +306,15 @@ stage:
 	uberspark staging create stm32mp1 
 	# uberspark staging config-set --setting-name=uobjcoll_binary_image_load_address --setting-value=0x06200000
 	# uberspark staging config-set --setting-name=uobj_binary_image_size --setting-value=0x14900000
-	uberspark staging config-set --root-dir=/home/yeeb16 --setting-name=bridge_cc_bridge --setting-value=container/amd64/cc-bridge/armv8_32/generic/gcc/v5.4.0
-	uberspark staging config-set --root-dir=/home/yeeb16 --setting-name=as_bridge_namespace --setting-value=uberspark/bridges/container/amd64/as-bridge/armv8_32/generic/gnu-as/v2.26.1
-	uberspark staging config-set --root-dir=/home/yeeb16 --setting-name=ld_bridge_namespace --setting-value=uberspark/bridges/container/amd64/ld-bridge/armv8_32/generic/gnu-ld/v2.26.1
+	uberspark staging config-set --setting-name=cc_bridge_namespace --setting-value=uberspark/bridges/container/amd64/cc-bridge/armv7_32/generic/gcc/v5.4.0
+	uberspark staging config-set --setting-name=as_bridge_namespace --setting-value=uberspark/bridges/container/amd64/as-bridge/armv7_32/generic/gnu-as/v2.26.1
+	uberspark staging config-set --setting-name=ld_bridge_namespace --setting-value=uberspark/bridges/container/amd64/ld-bridge/armv7_32/generic/gnu-ld/v2.26.1
 	@echo staging created successfully!
 
-.PHONY: debug_native
-debug_native: dtbs bl2
-
-# _build:
-# 	mkdir _build
-
-# bl2.bin:
-
-# u-boot.stm32:
+u-boot:
+	git clone https://github.com/STMicroelectronics/u-boot ${BUILD_PLAT}/u-boot
+	$(MAKE) -C ${BUILD_PLAT}/u-boot stm32mp15_trusted_defconfig
+	$(MAKE) -C ${BUILD_PLAT}/u-boot DEVICE_TREE=stm32mp157c-ev1 all
 
 .PHONY: clean
 clean: 

@@ -211,7 +211,7 @@ endif
 .PHONY: check_dtc_version stm32image clean_stm32image
 .SUFFIXES:
 
-all: check_dtc_version stm32image ${STM32_TF_STM32}
+# all: check_dtc_version stm32image ${STM32_TF_STM32}
 
 distclean realclean: clean_stm32image
 
