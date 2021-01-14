@@ -97,10 +97,24 @@ $(eval $(call add_defines,\
 )))
 
 # Include paths and source files
-PLAT_INCLUDES		:=	-Iplat/st/common/include/
-PLAT_INCLUDES		+=	-Iplat/st/stm32mp1/include/
+PLAT_INCLUDES		:=	-I${REPO_ROOT}plat/st/common/include/
+PLAT_INCLUDES		+=	-I${REPO_ROOT}plat/st/stm32mp1/include/
 
-include lib/libfdt/libfdt.mk
+# include ${REPO_ROOT}lib/libfdt/libfdt.mk
+LIBFDT_SRCS	:=	$(addprefix ${REPO_ROOT}lib/libfdt/,	\
+			fdt.c				\
+			fdt_addresses.c			\
+			fdt_empty_tree.c		\
+			fdt_ro.c			\
+			fdt_rw.c			\
+			fdt_strerror.c			\
+			fdt_sw.c			\
+			fdt_wip.c)			\
+
+INCLUDES	+=	-I${REPO_ROOT}include/lib/libfdt
+
+$(eval $(call MAKE_LIB,fdt))
+
 
 PLAT_BL_COMMON_SOURCES	:=	common/fdt_wrappers.c					\
 				plat/st/common/stm32mp_common.c				\
@@ -112,7 +126,7 @@ ifneq (${ENABLE_STACK_PROTECTOR},0)
 PLAT_BL_COMMON_SOURCES	+=	plat/st/stm32mp1/stm32mp1_stack_protector.c
 endif
 
-include lib/xlat_tables_v2/xlat_tables.mk
+include ${REPO_ROOT}lib/xlat_tables_v2/xlat_tables.mk
 PLAT_BL_COMMON_SOURCES	+=	${XLAT_TABLES_LIB_SRCS}
 
 PLAT_BL_COMMON_SOURCES	+=	lib/cpus/aarch32/cortex_a7.S
@@ -199,7 +213,7 @@ endif
 
 all: check_dtc_version stm32image ${STM32_TF_STM32}
 
-distclean realclean clean: clean_stm32image
+distclean realclean: clean_stm32image
 
 stm32image: ${STM32IMAGE}
 
