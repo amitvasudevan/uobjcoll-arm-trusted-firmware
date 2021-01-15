@@ -3,12 +3,17 @@
 #   author: ethan joseph <ethanj217@gmail.com>
 #
 
-# REPO_ROOT = $(addsuffix /, $(realpath ../../../))
+.DEFAULT_GOAL := everything
 REPO_ROOT = ../../../
 MAKE_HELPERS_DIRECTORY := ${REPO_ROOT}make_helpers/
 TF_PLATFORM_ROOT = ${REPO_ROOT}plat/
 BUILD_PLAT = ./_build
-.DEFAULT_GOAL := uobjcoll
+CROSS_COMPILE := arm-linux-gnueabihf-
+export CROSS_COMPILE
+
+DOCKER_TAG := stm32mp1:build
+SRCROOTDIR := $(abspath ${REPO_ROOT})
+SRCDIR_MOUNT := /home/uberspark/uobjcoll-arm-trusted-firmware/
 
 include ${MAKE_HELPERS_DIRECTORY}build_macros.mk
 include ${MAKE_HELPERS_DIRECTORY}build_env.mk
@@ -49,7 +54,7 @@ INCLUDES		+=	-I${REPO_ROOT}include				\
 ##############################
 
 include ${MAKE_HELPERS_DIRECTORY}plat_helpers.mk
-include ./main/platform.mk
+include ./bl32/platform.mk
 include ${MAKE_HELPERS_DIRECTORY}armv7-a-cpus.mk
 include ${REPO_ROOT}lib/cpus/cpu-ops.mk
 
@@ -293,9 +298,39 @@ $(if ${BL2}, $(eval $(call TOOL_ADD_IMG,bl2,--${FIP_BL2_ARGS})),\
 
 ######################################################
 
-.PHONY: all
-all: uobjcoll
-# all: stage dtbs bl2 u-boot
+define docker_run
+	docker run --rm \
+		-e D_CMD="$(2)" \
+		-e D_UID="$(3)" \
+		-e D_GID="$(4)" \
+		-e MAKE="make" \
+		-v $(SRCROOTDIR):$(SRCDIR_MOUNT) \
+		-t $(1) 
+endef
+
+.PHONY: everything  # can't use all because build_macros.mk adds a prereq to all
+everything: docker_build uobjcoll  
+
+
+.PHONY: build_bridge
+build_bridge: 
+	docker build -t $(DOCKER_TAG) .
+
+.PHONY: docker_build
+docker_build: build_bridge
+	$(call docker_run, $(DOCKER_TAG), cd $(SRCDIR_MOUNT)plat/st/stm32mp1_uobjcoll && make -w docker_targets, $(shell id -u), $(shell id -g))
+
+
+.PHONY: docker_targets
+docker_targets: dtbs bl2 _build/u-boot/u-boot.stm32 # dtbs and bl2 generated above
+
+
+_build/u-boot/u-boot.stm32:
+	rm -rf ${BUILD_PLAT}/u-boot
+	git clone https://github.com/STMicroelectronics/u-boot ${BUILD_PLAT}/u-boot
+	$(MAKE) -C ${BUILD_PLAT}/u-boot stm32mp15_trusted_defconfig
+	$(MAKE) -C ${BUILD_PLAT}/u-boot DEVICE_TREE=stm32mp157c-ev1 all
+
 
 .PHONY: uobjcoll
 uobjcoll: stage
@@ -314,11 +349,6 @@ stage:
 	uberspark staging config-set --setting-name=as_bridge_namespace --setting-value=uberspark/bridges/container/amd64/as-bridge/armv7_32/cortex-a7/gnu-as/v2.34
 	uberspark staging config-set --setting-name=ld_bridge_namespace --setting-value=uberspark/bridges/container/amd64/ld-bridge/armv7_32/generic/gnu-ld/v2.34
 	@echo staging created successfully!
-
-u-boot:
-	git clone https://github.com/STMicroelectronics/u-boot ${BUILD_PLAT}/u-boot
-	$(MAKE) -C ${BUILD_PLAT}/u-boot stm32mp15_trusted_defconfig
-	$(MAKE) -C ${BUILD_PLAT}/u-boot DEVICE_TREE=stm32mp157c-ev1 all
 
 .PHONY: clean
 clean: 

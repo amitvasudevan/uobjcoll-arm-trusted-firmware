@@ -186,7 +186,7 @@
     "uberspark.uobjcoll.uobjs": {
         "master": "",
         "templars": [
-            "uberspark/uobjcoll/platform/st/stm32mp1/main"
+            "uberspark/uobjcoll/platform/st/stm32mp1/bl32"
         ]
     },
 
@@ -202,7 +202,7 @@
 
     /* uobjcoll public methods */
     "uberspark.uobjcoll.public_methods": {
-        "uberspark/uobjcoll/platform/st/stm32mp1/main": {
+        "uberspark/uobjcoll/platform/st/stm32mp1/bl32": {
             "main": [
                 "generic/generic/any/call"
             ]
