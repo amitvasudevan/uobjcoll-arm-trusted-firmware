@@ -7,6 +7,8 @@
 #ifndef CRYPTO_MOD_H
 #define CRYPTO_MOD_H
 
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
+
 /* Return values */
 enum crypto_ret_value {
 	CRYPTO_SUCCESS = 0,

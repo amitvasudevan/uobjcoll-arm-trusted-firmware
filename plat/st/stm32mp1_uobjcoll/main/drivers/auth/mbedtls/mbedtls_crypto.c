@@ -4,23 +4,23 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stddef.h>
-#include <string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
 /* mbed TLS headers */
-#include <mbedtls/gcm.h>
-#include <mbedtls/md.h>
-#include <mbedtls/memory_buffer_alloc.h>
-#include <mbedtls/oid.h>
-#include <mbedtls/platform.h>
-#include <mbedtls/x509.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/gcm.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/md.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/memory_buffer_alloc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/oid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/x509.h>
 
-#include <common/debug.h>
-#include <drivers/auth/crypto_mod.h>
-#include <drivers/auth/mbedtls/mbedtls_common.h>
-#include <drivers/auth/mbedtls/mbedtls_config.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/crypto_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/mbedtls/mbedtls_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/mbedtls/mbedtls_config.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 #define LIB_NAME		"mbed TLS"
 

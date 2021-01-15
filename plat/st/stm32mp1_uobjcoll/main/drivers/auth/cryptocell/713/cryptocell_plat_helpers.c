@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stddef.h>
-#include <string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
-#include <plat/common/platform.h>
-#include <tools_share/tbbr_oid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/tbbr_oid.h>
 
-#include <lib/libc/endian.h>
-#include <drivers/arm/cryptocell/713/bsv_api.h>
-#include <drivers/arm/cryptocell/713/bsv_error.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/endian.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/713/bsv_api.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/713/bsv_error.h>
 
 /*
  * Return the ROTPK hash

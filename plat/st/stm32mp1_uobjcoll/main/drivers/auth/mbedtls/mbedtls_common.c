@@ -4,17 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
 /* mbed TLS headers */
-#include <mbedtls/memory_buffer_alloc.h>
-#include <mbedtls/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/memory_buffer_alloc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/mbedtls/platform.h>
 
-#include <common/debug.h>
-#include <drivers/auth/mbedtls/mbedtls_common.h>
-#include <drivers/auth/mbedtls/mbedtls_config.h>
-#include <plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/mbedtls/mbedtls_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/mbedtls/mbedtls_config.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
 
 static void cleanup(void)
 {

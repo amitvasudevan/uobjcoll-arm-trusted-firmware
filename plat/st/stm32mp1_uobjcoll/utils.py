@@ -118,4 +118,4 @@ if __name__ == "__main__":
     # print("\n".join(get_includes()))
     # modify_includes(path="main/services/std_svc")
     # print("\n".join(get_include_refs()))
-    modify_includes(path="main/drivers/auth")
+    modify_includes(path="main/plat/arm")

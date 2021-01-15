@@ -8,7 +8,7 @@ REPO_ROOT = ../../../
 MAKE_HELPERS_DIRECTORY := ${REPO_ROOT}make_helpers/
 TF_PLATFORM_ROOT = ${REPO_ROOT}plat/
 BUILD_PLAT = ./_build
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := uobjcoll
 
 include ${MAKE_HELPERS_DIRECTORY}build_macros.mk
 include ${MAKE_HELPERS_DIRECTORY}build_env.mk

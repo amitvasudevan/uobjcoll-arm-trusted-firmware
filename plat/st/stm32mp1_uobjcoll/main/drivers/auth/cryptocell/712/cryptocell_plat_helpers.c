@@ -4,19 +4,19 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <assert.h>
-#include <stddef.h>
-#include <string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <plat/common/platform.h>
-#include <tools_share/tbbr_oid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/tbbr_oid.h>
 
-#include <common/debug.h>
-#include <drivers/arm/cryptocell/712/sbrom_bsv_api.h>
-#include <drivers/arm/cryptocell/712/nvm.h>
-#include <drivers/arm/cryptocell/712/nvm_otp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/712/sbrom_bsv_api.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/712/nvm.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/cryptocell/712/nvm_otp.h>
 
 /*
  * Return the ROTPK hash

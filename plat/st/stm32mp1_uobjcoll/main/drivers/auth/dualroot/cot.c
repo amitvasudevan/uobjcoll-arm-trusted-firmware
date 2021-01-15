@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
 
-#include <platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
 
-#include <drivers/auth/mbedtls/mbedtls_config.h>
-#include <drivers/auth/auth_mod.h>
-#include <tools_share/dualroot_oid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/mbedtls/mbedtls_config.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/auth/auth_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/dualroot_oid.h>
 
 /*
  * Allocate static buffers to store the authentication parameters extracted from
