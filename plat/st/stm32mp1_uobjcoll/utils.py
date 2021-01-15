@@ -83,20 +83,20 @@ def get_include_refs():
     sources.sort()
     return sources
 
-def modify_configdefs(path="."):
-    with open("uberspark.json", "r") as f:
-        parser = JsonComment(json)
-        manifest = parser.loads(f.read())
-    keys = [x['name'] for x in manifest["uberspark.uobjcoll.configdefs"]]
-    keys_reg = '|'.join([re.escape(x) for x in keys])
+# def modify_configdefs(path="."):
+#     with open("uberspark.json", "r") as f:
+#         parser = JsonComment(json)
+#         manifest = parser.loads(f.read())
+#     keys = [x['name'] for x in manifest["uberspark.uobjcoll.configdefs"]]
+#     keys_reg = '|'.join([re.escape(x) for x in keys])
 
-    files = get_files(path=path)
+#     files = get_files(path=path)
     
-    for path in tqdm(files):
-        with open(path, "r") as f:
-            replace = re.sub(r"\b(" + keys_reg + r")\b", lambda match: "__UBERSPARK_UOBJCOLL_CONFIGDEF_" + match.group(1).upper() + "__", f.read())
-        with open(path, "w") as f:
-            f.write(replace)
+#     for path in tqdm(files):
+#         with open(path, "r") as f:
+#             replace = re.sub(r"\b(" + keys_reg + r")\b", lambda match: "__UBERSPARK_UOBJCOLL_CONFIGDEF_" + match.group(1).upper() + "__", f.read())
+#         with open(path, "w") as f:
+#             f.write(replace)
 
 def modify_configdefs(path="."):
     with open("uberspark.json", "r") as f:
@@ -118,4 +118,4 @@ if __name__ == "__main__":
     # print("\n".join(get_includes()))
     # modify_includes(path="main/services/std_svc")
     # print("\n".join(get_include_refs()))
-    modify_configdefs()
+    modify_includes(path="main/drivers/auth")

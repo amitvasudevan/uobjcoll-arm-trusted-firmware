@@ -64,8 +64,8 @@
  * Kernel and boot environment can't use normal headers,
  * so use the equivalent system headers.
  */
-#  include <limits.h>
-#  include <stdint.h>
+#  include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/limits.h>
+#  include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
 
 /* Include the commonly used internal type definitions. */
 #include "int_types.h"
