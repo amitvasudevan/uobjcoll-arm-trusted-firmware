@@ -7,8 +7,8 @@
 #ifndef CONSOLE_ASSERTIONS_H
 #define CONSOLE_ASSERTIONS_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cassert.h>
 
 /*
  * This file contains some separate assertions about console_t, moved here to

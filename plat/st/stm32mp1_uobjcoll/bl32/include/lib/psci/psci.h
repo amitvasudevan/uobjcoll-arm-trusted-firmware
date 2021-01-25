@@ -7,13 +7,13 @@
 #ifndef PSCI_H
 #define PSCI_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>	/* for PLAT_NUM_PWR_DOMAINS */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>	/* for PLAT_NUM_PWR_DOMAINS */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/bakery_lock.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_lib.h>	/* To maintain compatibility for SPDs */
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/bakery_lock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/psci/psci_lib.h>	/* To maintain compatibility for SPDs */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
 
 /*******************************************************************************
  * Number of power domains whose state this PSCI implementation can track
@@ -169,7 +169,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
 
 /* Function to help build the psci capabilities bitfield */
 

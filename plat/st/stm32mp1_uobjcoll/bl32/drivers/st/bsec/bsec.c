@@ -4,19 +4,19 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/limits.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/limits.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libfdt/libfdt.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/bsec.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/spinlock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/bsec.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/spinlock.h>
 
 #define BSEC_IP_VERSION_1_0	0x10
 #define BSEC_COMPAT		"st,stm32mp15-bsec"

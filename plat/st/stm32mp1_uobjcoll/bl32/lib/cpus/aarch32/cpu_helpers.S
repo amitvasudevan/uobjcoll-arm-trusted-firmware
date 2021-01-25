@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/assert_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/aarch32/cpu_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/assert_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cpus/aarch32/cpu_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/cpu_data.h>
 
 #if defined(IMAGE_BL1) || defined(IMAGE_BL32) || (defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__) && __UBERSPARK_UOBJCOLL_CONFIGDEF_BL2_AT_EL3__)
 	/*

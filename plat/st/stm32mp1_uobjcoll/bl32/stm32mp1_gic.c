@@ -4,17 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libfdt/libfdt.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv2.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/interrupt-controller/arm-gic.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/arm/gicv2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/dt-bindings/interrupt-controller/arm-gic.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
 
 struct stm32_gic_instance {
 	uint32_t cells;

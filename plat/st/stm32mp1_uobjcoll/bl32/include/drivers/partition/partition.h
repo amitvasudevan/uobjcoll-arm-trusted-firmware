@@ -7,10 +7,10 @@
 #ifndef PARTITION_H
 #define PARTITION_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cassert.h>
 
 #if !__UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_PARTITION_MAX_ENTRIES__
 # define __UBERSPARK_UOBJCOLL_CONFIGDEF_PLAT_PARTITION_MAX_ENTRIES__	128

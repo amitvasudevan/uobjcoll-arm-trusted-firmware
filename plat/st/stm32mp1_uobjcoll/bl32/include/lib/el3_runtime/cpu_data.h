@@ -7,10 +7,10 @@
 #ifndef CPU_DATA_H
 #define CPU_DATA_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>	/* CACHE_WRITEBACK_GRANULE required */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>	/* CACHE_WRITEBACK_GRANULE required */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl31/ehf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/bl31/ehf.h>
 
 /* Size of psci_cpu_data structure */
 #define PSCI_CPU_DATA_SIZE		12
@@ -66,11 +66,11 @@
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cassert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
 
 /* Offsets for the cpu_data structure */
 #define CPU_DATA_PSCI_LOCK_OFFSET	__builtin_offsetof\

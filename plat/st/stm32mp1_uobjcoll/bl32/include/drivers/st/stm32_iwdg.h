@@ -7,8 +7,8 @@
 #ifndef STM32_IWDG_H
 #define STM32_IWDG_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
 
 #define IWDG_HW_ENABLED			BIT(0)
 #define IWDG_DISABLE_ON_STOP		BIT(1)

@@ -4,20 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/string.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/context_mgmt.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/extensions/amu.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/aarch32/context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/context_mgmt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/extensions/amu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils.h>
 
 /*******************************************************************************
  * Context management library initialisation routine. This library is used by

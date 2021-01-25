@@ -4,19 +4,19 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/runtime_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/scmi-msg.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/uuid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/runtime_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/scmi-msg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/tools_share/uuid.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/stm32mp1_smc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/stm32mp1_smc.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/bsec_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/services/bsec_svc.h>
 
 /* STM32 SiP Service UUID */
 DEFINE_SVC_UUID2(stm32_sip_svc_uid,

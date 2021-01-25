@@ -12,8 +12,8 @@
  * ===----------------------------------------------------------------------===
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/int_lib.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/compiler-rt/int_lib.h>
 
 /* Returns: a / b */
 

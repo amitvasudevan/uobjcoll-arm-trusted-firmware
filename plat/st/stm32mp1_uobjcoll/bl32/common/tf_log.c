@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdarg.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdarg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdio.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
 
 /* Set the default maximum log level to the `__UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__` build flag */
 static unsigned int max_log_level = __UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__;

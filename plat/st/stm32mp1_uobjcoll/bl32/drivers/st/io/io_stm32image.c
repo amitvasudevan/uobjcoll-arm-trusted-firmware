@@ -4,20 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/string.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_driver.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_storage.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/io_stm32image.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/io/io_driver.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/io/io_storage.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/io_stm32image.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
 
 static uintptr_t backend_dev_handle;
 static uintptr_t backend_image_spec;

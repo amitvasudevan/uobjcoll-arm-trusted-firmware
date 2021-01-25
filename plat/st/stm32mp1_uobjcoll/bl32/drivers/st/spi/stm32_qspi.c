@@ -4,20 +4,20 @@
  * SPDX-License-Identifier: GPL-2.0+ OR BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libfdt/libfdt.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/fdt_wrappers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/spi_mem.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_gpio.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_qspi.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp_reset.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/fdt_wrappers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/spi_mem.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32_gpio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32_qspi.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32mp_reset.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
 
 /* Timeout for device interface reset */
 #define TIMEOUT_US_1_MS			1000U

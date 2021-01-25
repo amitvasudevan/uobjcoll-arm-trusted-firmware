@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/limits.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/limits.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_private.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/psci/psci_private.h>
 
 u_register_t psci_mem_protect(unsigned int enable)
 {

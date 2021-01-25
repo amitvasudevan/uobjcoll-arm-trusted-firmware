@@ -336,7 +336,7 @@ _build/u-boot/u-boot.stm32:
 uobjcoll: stage
 	@echo building stm32 collection...
 	uberspark staging switch stm32mp1 
-	uberspark uobjcoll build -v --platform=st --arch=armv8_32 --cpu=generic .
+	uberspark uobjcoll build -v --platform=st --arch=armv7_32 --cpu=generic .
 	@echo built stm32 collection successfully!
 
 .PHONY: stage
@@ -353,3 +353,5 @@ stage:
 .PHONY: clean
 clean: 
 	rm -rf _build
+	uberspark staging switch default
+	uberspark staging remove stm32mp1

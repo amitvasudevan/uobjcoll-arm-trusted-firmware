@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdio.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/console.h>
 
 int putchar(int c)
 {

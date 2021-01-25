@@ -4,20 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/errno.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libfdt/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libfdt/libfdt.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/delay_timer.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_i2c.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp_pmic.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stpmic1.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32_i2c.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32mp_pmic.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stpmic1.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
 
 #define STPMIC1_LDO12356_OUTPUT_MASK	(uint8_t)(GENMASK(6, 2))
 #define STPMIC1_LDO12356_OUTPUT_SHIFT	2

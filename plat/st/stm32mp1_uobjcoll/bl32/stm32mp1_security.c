@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc400.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_clk.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/clock/stm32mp1-clks.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/arm/tzc400.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32mp1_clk.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/dt-bindings/clock/stm32mp1-clks.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/mmio.h>
 
 #define TZC_REGION_NSEC_ALL_ACCESS_RDWR \
 	TZC_REGION_ACCESS_RDWR(STM32MP1_TZC_A7_ID) | \

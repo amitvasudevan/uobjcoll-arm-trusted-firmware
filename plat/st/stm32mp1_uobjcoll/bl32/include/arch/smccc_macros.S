@@ -6,8 +6,8 @@
 #ifndef SMCCC_MACROS_S
 #define SMCCC_MACROS_S
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch.h>
 
 /*
  * Macro to save the General purpose registers (r0 - r12), the banked

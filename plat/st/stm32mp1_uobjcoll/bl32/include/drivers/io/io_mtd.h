@@ -7,11 +7,11 @@
 #ifndef IO_MTD_H
 #define IO_MTD_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdio.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/io/io_storage.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/io/io_storage.h>
 
 /* MTD devices ops */
 typedef struct io_mtd_ops {

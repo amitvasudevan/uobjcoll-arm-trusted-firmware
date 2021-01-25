@@ -7,7 +7,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/compiler-rt/assembly.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/compiler-rt/assembly.h>
 
 // struct { int64_t quot, int64_t rem}
 //        __aeabi_ldivmod(int64_t numerator, int64_t denominator) {

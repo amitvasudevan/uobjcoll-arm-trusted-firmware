@@ -4,20 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stddef.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/context_mgmt.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/errata_report.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/aarch32/context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/context_mgmt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/cpu_data.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cpus/errata_report.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci_private.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/psci/psci_private.h>
 
 /*******************************************************************************
  * Per cpu non-secure contexts used to program the architectural state prior

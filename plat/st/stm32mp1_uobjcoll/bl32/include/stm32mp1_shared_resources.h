@@ -7,8 +7,8 @@
 #ifndef STM32MP1_SHARED_RESOURCES_H
 #define STM32MP1_SHARED_RESOURCES_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/st/common/stm32mp_shared_resources.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/st/common/stm32mp_shared_resources.h>
 
 #define STM32MP1_SHRES_GPIOZ(i)		(STM32MP1_SHRES_GPIOZ_0 + (i))
 

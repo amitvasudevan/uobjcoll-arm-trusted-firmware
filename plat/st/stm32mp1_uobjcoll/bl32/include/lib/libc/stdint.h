@@ -11,8 +11,8 @@
 #ifndef STDINT_H
 #define STDINT_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/limits.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/limits.h>
 
 #define INT8_MAX  CHAR_MAX
 #define INT8_MIN  CHAR_MIN

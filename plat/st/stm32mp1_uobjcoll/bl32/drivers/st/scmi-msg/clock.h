@@ -7,10 +7,10 @@
 #ifndef SCMI_MSG_CLOCK_H
 #define SCMI_MSG_CLOCK_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
 
 #define SCMI_PROTOCOL_VERSION_CLOCK	0x20000U
 

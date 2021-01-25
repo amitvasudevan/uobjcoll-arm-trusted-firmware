@@ -4,17 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_compat.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/arm_arch_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/firmware_encrypted.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/xlat_tables/xlat_tables_compat.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/services/arm_arch_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/smccc_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/tools_share/firmware_encrypted.h>
 
 /*
  * The following platform functions are weakly defined. The Platforms

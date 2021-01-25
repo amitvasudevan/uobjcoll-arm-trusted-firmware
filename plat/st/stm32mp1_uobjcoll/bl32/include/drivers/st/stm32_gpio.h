@@ -7,8 +7,8 @@
 #ifndef STM32_GPIO_H
 #define STM32_GPIO_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
 
 #define GPIO_MODE_OFFSET	U(0x00)
 #define GPIO_TYPE_OFFSET	U(0x04)
@@ -47,7 +47,7 @@
 #define GPIO_PULL_MASK		U(0x03)
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
 
 int dt_set_pinctrl_config(int node);
 void set_gpio(uint32_t bank, uint32_t pin, uint32_t mode, uint32_t speed,

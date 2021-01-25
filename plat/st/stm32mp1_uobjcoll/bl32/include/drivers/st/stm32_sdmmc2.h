@@ -7,10 +7,10 @@
 #ifndef STM32_SDMMC2_H
 #define STM32_SDMMC2_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdbool.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/mmc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/mmc.h>
 
 struct stm32_sdmmc2_params {
 	uintptr_t		reg_base;

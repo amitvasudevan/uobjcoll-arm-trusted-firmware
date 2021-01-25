@@ -34,9 +34,9 @@
  * All rights reserved.
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stddef.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/string.h>
 
 char *
 strchr(const char *p, int ch)

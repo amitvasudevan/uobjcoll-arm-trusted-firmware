@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/runtime_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/errata_report.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/wa_cve_2017_5715.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cpus/wa_cve_2018_3639.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/smccc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/arm_arch_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/runtime_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cpus/errata_report.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cpus/wa_cve_2017_5715.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cpus/wa_cve_2018_3639.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/smccc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/services/arm_arch_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/smccc_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
 
 static int32_t smccc_version(void)
 {

@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/console.h>
 
 console_t *console_list;
 uint8_t console_state = CONSOLE_FLAG_BOOT;

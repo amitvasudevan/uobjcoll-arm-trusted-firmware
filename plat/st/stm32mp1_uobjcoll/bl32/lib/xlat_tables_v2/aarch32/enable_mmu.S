@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/asm_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/assert_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/assert_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/xlat_tables/xlat_tables_v2.h>
 
 	.global	enable_mmu_direct_svc_mon
 	.global	enable_mmu_direct_hyp

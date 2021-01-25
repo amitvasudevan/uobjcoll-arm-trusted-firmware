@@ -7,8 +7,8 @@
 #ifndef STM32MP1_PWR_H
 #define STM32MP1_PWR_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
 
 #define PWR_CR1			U(0x00)
 #define PWR_CR2			U(0x08)

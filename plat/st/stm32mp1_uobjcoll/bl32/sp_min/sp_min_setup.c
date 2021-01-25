@@ -4,32 +4,32 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/string.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/aarch32/context.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gicv2.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/tzc400.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/generic_delay_timer.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/bsec.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/etzpc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_console.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_gpio.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32_iwdg.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/st/stm32mp1_clk.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/dt-bindings/clock/stm32mp1-clks.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/context_mgmt.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/mmio.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/xlat_tables/xlat_tables_v2.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/aarch32/context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/arm/gicv2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/arm/tzc400.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/generic_delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/bsec.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/etzpc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32_console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32_gpio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32_iwdg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32mp1_clk.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/dt-bindings/clock/stm32mp1-clks.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/context_mgmt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/xlat_tables/xlat_tables_v2.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/bl32/sp_min/platform_sp_min.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/sp_min/platform_sp_min.h>
 
 /******************************************************************************
  * Placeholder variables for copying the arguments that have been passed to

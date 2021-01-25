@@ -4,22 +4,22 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/common/runtime_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/el3_runtime/cpu_data.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/pmf/pmf.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/psci/psci.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/runtime_instr.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/sdei.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/spm_mm_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/spmd_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/services/std_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/smccc_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/uuid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/runtime_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/cpu_data.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/pmf/pmf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/runtime_instr.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/services/sdei.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/services/spm_mm_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/services/spmd_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/services/std_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/smccc_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/tools_share/uuid.h>
 
 /* Standard Service UUID */
 static uuid_t arm_svc_uid = {

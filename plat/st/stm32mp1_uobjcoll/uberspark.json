@@ -12,7 +12,7 @@
     /* üobjcoll declarations */
     "uberspark.uobjcoll.namespace": "uberspark/uobjcoll/platform/st/stm32mp1",
     "uberspark.uobjcoll.platform": "st",
-    "uberspark.uobjcoll.arch": "armv8_32",
+    "uberspark.uobjcoll.arch": "armv7_32",
     "uberspark.uobjcoll.cpu": "generic",
     "uberspark.uobjcoll.hpl": "any", 
     "uberspark.uobjcoll.sentinels_intra_uobjcoll": [
@@ -191,7 +191,7 @@
     },
 
     //   "uberspark.uobjcoll.init_method" : {
-    //     "uobj_namespace" : "uberspark/uobjcoll/platform/st/stm32mp1/main",
+    //     "uobj_namespace" : "uberspark/uobjcoll/platform/st/stm32mp1/bl32",
     //     "public_method" : "entry",
     //     "sentinels" : [
     //         {

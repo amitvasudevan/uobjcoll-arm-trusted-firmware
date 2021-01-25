@@ -7,11 +7,11 @@
 #ifndef PLATFORM_DEF_H
 #define PLATFORM_DEF_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/drivers/arm/gic_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/utils_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/plat/common/common_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/arm/gic_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/common_def.h>
 
 #include "stm32mp1_def.h"
 

@@ -7,8 +7,8 @@
 #ifndef SMCCC_HELPERS_H
 #define SMCCC_HELPERS_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/smccc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/smccc.h>
 
 /* These are offsets to registers in smc_ctx_t */
 #define SMC_CTX_GPREG_R0	U(0x0)
@@ -27,9 +27,9 @@
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/cassert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cassert.h>
 
 /*
  * The generic structure to save arguments and callee saved registers during

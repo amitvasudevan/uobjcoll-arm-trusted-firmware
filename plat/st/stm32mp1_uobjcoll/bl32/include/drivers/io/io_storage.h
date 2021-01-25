@@ -7,12 +7,12 @@
 #ifndef IO_STORAGE_H
 #define IO_STORAGE_H
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/errno.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdint.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/lib/libc/stdio.h> /* For ssize_t */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdio.h> /* For ssize_t */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/main/include/tools_share/uuid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/tools_share/uuid.h>
 
 /* Device type which can be used to enable policy decisions about which device
  * to access */
