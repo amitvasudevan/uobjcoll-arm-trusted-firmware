@@ -64,7 +64,7 @@ ASFLAGS			+= -DBL32_BIN_PATH=\"${BUILD_PLAT}/bl32.bin\"
 endif
 
 # Variables for use with stm32image
-STM32IMAGEPATH		?= tools/stm32image
+STM32IMAGEPATH	?= ${REPO_ROOT}tools/stm32image
 STM32IMAGE		?= ${STM32IMAGEPATH}/stm32image${BIN_EXT}
 
 # Enable flags for C files
@@ -211,7 +211,7 @@ endif
 .PHONY: check_dtc_version stm32image clean_stm32image
 .SUFFIXES:
 
-# all: check_dtc_version stm32image ${STM32_TF_STM32}
+all: check_dtc_version stm32image ${STM32_TF_STM32}
 
 distclean realclean: clean_stm32image
 

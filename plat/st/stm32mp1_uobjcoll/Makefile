@@ -308,9 +308,29 @@ define docker_run
 		-t $(1) 
 endef
 
-.PHONY: everything  # can't use all because build_macros.mk adds a prereq to all
-everything: docker_build uobjcoll  
+define NATIVE_BUILD_OPTS
+	CROSS_COMPILE=$(CROSS_COMPILE) \
+	PLAT=$(PLAT) \
+	ARCH=$(ARCH) \
+	ARM_ARCH_MAJOR=$(ARM_ARCH_MAJOR) \
+	AARCH32_SP=$(AARCH32_SP) \
+	STM32MP_SDMMC=$(STM32MP_SDMMC) \
+	STM32MP_EMMC=$(STM32MP_EMMC) \
+	STM32MP_RAW_NAND=$(STM32MP_RAW_NAND) \
+	STM32MP_SPI_NAND=$(STM32MP_SPI_NAND) \
+	STM32MP_SPI_NOR=$(STM32MP_SPI_NOR) \
+	DTB_FILE_NAME=$(DTB_FILE_NAME)
+endef
 
+.PHONY: everything  # can't use all because build_macros.mk adds a prereq to all
+everything: docker_build uobjcoll
+
+.PHONY: native
+native: build_bridge
+	$(call docker_run, $(DOCKER_TAG), cd $(SRCDIR_MOUNT) && make $(NATIVE_BUILD_OPTS), $(shell id -u), $(shell id -g))
+	$(call docker_run, $(DOCKER_TAG), cd $(SRCDIR_MOUNT)plat/st/stm32mp1_uobjcoll && make -w _build/u-boot/u-boot.stm32, $(shell id -u), $(shell id -g))
+	mv $(REPO_ROOT)build/$(PLAT)/release/* _build/
+	rm -rf $(REPO_ROOT)build/
 
 .PHONY: build_bridge
 build_bridge: 
@@ -320,10 +340,8 @@ build_bridge:
 docker_build: build_bridge
 	$(call docker_run, $(DOCKER_TAG), cd $(SRCDIR_MOUNT)plat/st/stm32mp1_uobjcoll && make -w docker_targets, $(shell id -u), $(shell id -g))
 
-
 .PHONY: docker_targets
 docker_targets: dtbs bl2 _build/u-boot/u-boot.stm32 # dtbs and bl2 generated above
-
 
 _build/u-boot/u-boot.stm32:
 	rm -rf ${BUILD_PLAT}/u-boot
@@ -353,5 +371,6 @@ stage:
 .PHONY: clean
 clean: 
 	rm -rf _build
+	rm -rf $(REPO_ROOT)build
 	uberspark staging switch default
 	uberspark staging remove stm32mp1
