@@ -354,7 +354,7 @@ _build/u-boot/u-boot.stm32:
 uobjcoll: stage
 	@echo building stm32 collection...
 	uberspark staging switch stm32mp1 
-	uberspark uobjcoll build -v 
+	uberspark build -v 
 	@echo built stm32 collection successfully!
 
 .PHONY: stage
