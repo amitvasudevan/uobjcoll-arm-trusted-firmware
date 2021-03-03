@@ -5,12 +5,12 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/scmi-msg.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/scmi.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/st/scmi-msg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/st/scmi.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/drivers/st/scmi-msg/common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/drivers/st/scmi-msg/common.h>
 
 void scmi_status_response(struct scmi_msg *msg, int32_t status)
 {

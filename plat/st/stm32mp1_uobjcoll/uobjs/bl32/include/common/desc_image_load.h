@@ -7,7 +7,7 @@
 #define DESC_IMAGE_LOAD_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/bl_common.h>
 
 /* Following structure is used to store BL ep/image info. */
 typedef struct bl_mem_params_node {

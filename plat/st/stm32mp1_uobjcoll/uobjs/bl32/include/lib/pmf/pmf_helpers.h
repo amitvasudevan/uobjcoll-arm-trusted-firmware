@@ -8,13 +8,13 @@
 #define PMF_HELPERS_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stddef.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/plat/common/platform.h>
 
 /*
  * Prototype for PMF service functions.

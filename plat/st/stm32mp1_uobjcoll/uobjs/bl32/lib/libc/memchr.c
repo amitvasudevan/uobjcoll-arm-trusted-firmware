@@ -5,8 +5,8 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stddef.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/string.h>
 
 void *memchr(const void *src, int c, size_t len)
 {

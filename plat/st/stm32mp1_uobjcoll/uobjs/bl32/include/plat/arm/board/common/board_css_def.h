@@ -8,10 +8,10 @@
 #define BOARD_CSS_DEF_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/arm/board/common/v2m_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/arm/soc/common/soc_css_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/common_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/plat/arm/board/common/v2m_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/plat/arm/soc/common/soc_css_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/plat/common/common_def.h>
 
 /*
  * Definitions common to all ARM CSS-based development platforms
@@ -32,7 +32,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/mmio.h>
 
 #define BOARD_CSS_GET_PLAT_TYPE(addr)					\
 	((mmio_read_32(addr) & BOARD_CSS_PLAT_ID_REG_ID_MASK)		\

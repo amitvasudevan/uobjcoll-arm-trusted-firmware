@@ -5,12 +5,12 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libfdt/libfdt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libfdt/libfdt.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/spi_mem.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/spi_mem.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
 
 #define SPI_MEM_DEFAULT_SPEED_HZ 100000U
 

@@ -5,9 +5,9 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/asm_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/psci/psci.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/platform_def.h>
 
 	.globl	psci_do_pwrdown_cache_maintenance
 	.globl	psci_do_pwrup_cache_maintenance

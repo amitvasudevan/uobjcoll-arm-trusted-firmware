@@ -8,7 +8,7 @@
 #define FCONF_DYN_CFG_GETTER_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/fconf/fconf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/fconf/fconf.h>
 
 /* Dynamic configuration related getter */
 #define dyn_cfg__dtb_getter(id)	dyn_cfg_dtb_info_getter(id)

@@ -11,9 +11,9 @@
 #define CP110_SETUP_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/mmio.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/mvebu_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/mvebu_def.h>
 
 #define MVEBU_DEVICE_ID_REG		(MVEBU_CP_DFX_OFFSET + 0x40)
 #define MVEBU_DEVICE_ID_OFFSET		(0)

@@ -21,7 +21,7 @@
 #ifndef __ASSEMBLER__
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/cdefs.h>
 
 /* Jump buffer hosting x18 - x30 and sp_el0 registers */
 typedef uint64_t jmp_buf[JMP_SIZE] __aligned(16);

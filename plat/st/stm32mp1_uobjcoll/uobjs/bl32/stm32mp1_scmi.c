@@ -4,17 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/scmi-msg.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/scmi.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32mp1_clk.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/stm32mp_reset.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/dt-bindings/clock/stm32mp1-clks.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/dt-bindings/reset/stm32mp1-resets.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/st/scmi-msg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/st/scmi.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/st/stm32mp1_clk.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/st/stm32mp_reset.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/dt-bindings/clock/stm32mp1-clks.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/dt-bindings/reset/stm32mp1-resets.h>
 
 #define TIMEOUT_US_1MS		1000U
 

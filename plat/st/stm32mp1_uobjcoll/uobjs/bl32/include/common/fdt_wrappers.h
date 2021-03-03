@@ -10,7 +10,7 @@
 #define FDT_WRAPPERS_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libfdt/libfdt_env.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libfdt/libfdt_env.h>
 
 /* Number of cells, given total length in bytes. Each cell is 4 bytes long */
 #define NCELLS(len) ((len) / 4U)

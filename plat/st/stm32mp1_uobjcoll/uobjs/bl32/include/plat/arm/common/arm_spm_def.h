@@ -7,8 +7,8 @@
 #define ARM_SPM_DEF_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/xlat_tables/xlat_tables_defs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/xlat_tables/xlat_tables_defs.h>
 
 /*
  * If BL31 is placed in DRAM, place the Secure Partition in DRAM right after the

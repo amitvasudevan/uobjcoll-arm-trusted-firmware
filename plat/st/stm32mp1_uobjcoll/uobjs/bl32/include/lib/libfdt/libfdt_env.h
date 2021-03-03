@@ -8,12 +8,12 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdbool.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stddef.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdlib.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/string.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/limits.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdlib.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/limits.h>
 
 #ifdef __CHECKER__
 #define FDT_FORCE __attribute__((force))
@@ -68,7 +68,7 @@ static inline fdt64_t cpu_to_fdt64(uint64_t x)
 #undef EXTRACT_BYTE
 
 #ifdef __APPLE__
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/AvailabilityMacros.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/AvailabilityMacros.h>
 
 /* strnlen() is not available on Mac OS < 10.7 */
 # if !defined(MAC_OS_X_VERSION_10_7) || (MAC_OS_X_VERSION_MAX_ALLOWED < \

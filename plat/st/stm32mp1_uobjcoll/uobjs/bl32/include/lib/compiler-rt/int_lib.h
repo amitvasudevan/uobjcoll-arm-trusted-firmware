@@ -64,8 +64,8 @@
  * Kernel and boot environment can't use normal headers,
  * so use the equivalent system headers.
  */
-#  include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/limits.h>
-#  include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#  include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/limits.h>
+#  include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 
 /* Include the commonly used internal type definitions. */
 #include "int_types.h"
@@ -87,7 +87,7 @@ COMPILER_RT_ABI tu_int __udivmodti4(tu_int a, tu_int b, tu_int* rem);
 /* Definitions for builtins unavailable on MSVC */
 #if defined(_MSC_VER) && !defined(__clang__)
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/intrin.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/intrin.h>
 
 uint32_t __inline __builtin_ctz(uint32_t value) {
   unsigned long trailing_zero = 0;

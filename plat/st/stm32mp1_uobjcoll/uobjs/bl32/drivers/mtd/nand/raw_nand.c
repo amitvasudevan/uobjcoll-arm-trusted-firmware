@@ -5,16 +5,16 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/errno.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/errno.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stddef.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/delay_timer.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/raw_nand.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/raw_nand.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils.h>
 
 #define ONFI_SIGNATURE_ADDR	0x20U
 

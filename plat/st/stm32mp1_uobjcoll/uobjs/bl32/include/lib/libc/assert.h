@@ -8,11 +8,11 @@
 #define ASSERT_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/cdefs.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/debug.h>
 
 #ifndef PLAT_LOG_LEVEL_ASSERT
 #define PLAT_LOG_LEVEL_ASSERT	__UBERSPARK_UOBJCOLL_CONFIGDEF_LOG_LEVEL__

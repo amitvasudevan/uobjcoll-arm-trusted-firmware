@@ -8,8 +8,8 @@
 #define TZC400_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/arm/tzc_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/arm/tzc_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
 
 #define BUILD_CONFIG_OFF			U(0x000)
 #define GATE_KEEPER_OFF				U(0x008)
@@ -96,8 +96,8 @@
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/cdefs.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 
 /*******************************************************************************
  * Function & variable prototypes

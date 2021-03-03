@@ -5,9 +5,9 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/asm_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/debug.h>
 
 	.globl	asm_print_str
 	.globl	asm_print_hex

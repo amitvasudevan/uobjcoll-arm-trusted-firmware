@@ -8,7 +8,7 @@
 #define IMG_PARSER_MOD_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/auth/auth_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/auth/auth_common.h>
 
 /*
  * Return values

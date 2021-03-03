@@ -5,11 +5,11 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/asm_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/assert_macros.S>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cpus/aarch32/cortex_a7.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cpus/aarch32/cpu_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/asm_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/assert_macros.S>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/cpus/aarch32/cortex_a7.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/cpus/aarch32/cpu_macros.S>
 
 	.macro assert_cache_enabled
 #if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_ASSERTIONS__

@@ -6,16 +6,16 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_features.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/delay_timer.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/generic_delay_timer.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch_features.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/generic_delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/plat/common/platform.h>
 
 static timer_ops_t ops;
 

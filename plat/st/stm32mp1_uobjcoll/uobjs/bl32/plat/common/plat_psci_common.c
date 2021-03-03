@@ -6,13 +6,13 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/pmf/pmf.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/psci/psci.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/pmf/pmf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/plat/common/platform.h>
 
 #if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PSCI_STAT__ && __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_PMF__
 #pragma weak plat_psci_stat_accounting_start

@@ -6,14 +6,14 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/string.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/bakery_lock.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/cpu_data.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/bakery_lock.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/el3_runtime/cpu_data.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/plat/common/platform.h>
 
 /*
  * Functions in this file implement Bakery Algorithm for mutual exclusion with the

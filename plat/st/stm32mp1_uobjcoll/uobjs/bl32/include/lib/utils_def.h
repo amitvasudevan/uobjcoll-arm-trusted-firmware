@@ -9,7 +9,7 @@
 #define UTILS_DEF_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/export/lib/utils_def_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/export/lib/utils_def_exp.h>
 
 /* Compute the number of elements in the given array */
 #define ARRAY_SIZE(a)				\

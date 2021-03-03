@@ -9,7 +9,7 @@
 #define FIRMWARE_ENCRYPTED_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 
 /* This is used as a signature to validate the encryption header */
 #define ENC_HEADER_MAGIC		0xAA640001U

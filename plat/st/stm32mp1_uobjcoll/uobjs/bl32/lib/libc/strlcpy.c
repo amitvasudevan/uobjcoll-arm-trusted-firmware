@@ -19,8 +19,8 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/string.h>
 
 /*
  * Copy string src to buffer dst of size dsize.  At most dsize-1

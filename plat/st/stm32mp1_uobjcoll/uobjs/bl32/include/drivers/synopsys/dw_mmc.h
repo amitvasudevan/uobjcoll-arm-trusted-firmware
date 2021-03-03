@@ -8,7 +8,7 @@
 #define DW_MMC_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/mmc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/mmc.h>
 
 typedef struct dw_mmc_params {
 	uintptr_t	reg_base;

@@ -8,17 +8,17 @@
 #define BL_COMMON_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/ep_info.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/param_header.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/ep_info.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/param_header.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stddef.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
 #endif /* __ASSEMBLER__ */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/export/common/bl_common_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/export/common/bl_common_exp.h>
 
 #define UP	U(1)
 #define DOWN	U(0)

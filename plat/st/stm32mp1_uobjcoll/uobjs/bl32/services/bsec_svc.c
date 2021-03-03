@@ -5,14 +5,14 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/bsec.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/st/bsec.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/stm32mp1_smc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/stm32mp1_smc.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/services/bsec_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/services/bsec_svc.h>
 
 uint32_t bsec_main(uint32_t x1, uint32_t x2, uint32_t x3,
 		   uint32_t *ret_otp_value)

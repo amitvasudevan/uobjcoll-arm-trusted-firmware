@@ -10,7 +10,7 @@
 #ifndef __ASSEMBLER__
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 
 #if defined(BCM_ELOG) && (defined(__UBERSPARK_UOBJCOLL_CONFIGDEF_IMAGE_BL2__) || defined(IMAGE_BL31))
 int bcm_elog_init(void *base, uint32_t size, unsigned int level);

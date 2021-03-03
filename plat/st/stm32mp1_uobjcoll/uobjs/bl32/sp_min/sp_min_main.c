@@ -5,31 +5,31 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stddef.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/string.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/string.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/platform_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/platform_def.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/runtime_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/aarch32/context.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/console.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/el3_runtime/context_mgmt.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/pmf/pmf.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/psci/psci.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/runtime_instr.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/platform.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/sp_min/platform_sp_min.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/services/std_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/smccc_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/runtime_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/el3_runtime/aarch32/context.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/el3_runtime/context_mgmt.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/pmf/pmf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/runtime_instr.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/plat/common/platform.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/sp_min/platform_sp_min.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/services/std_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/smccc_helpers.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/sp_min/sp_min_private.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/sp_min/sp_min_private.h>
 
 #if __UBERSPARK_UOBJCOLL_CONFIGDEF_ENABLE_RUNTIME_INSTRUMENTATION__
 PMF_REGISTER_SERVICE_SMC(rt_instr_svc, PMF_RT_INSTR_SVC_ID,

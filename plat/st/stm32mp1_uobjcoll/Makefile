@@ -33,7 +33,7 @@ DTB_FILE_NAME := stm32mp157c-ev1.dtb
 
 include ${REPO_ROOT}lib/compiler-rt/compiler-rt.mk
 
-BL_COMMON_SOURCES	+=	common/bl_common.c			\
+BL_COMMON_SOURCES	+= common/bl_common.c			\
 				common/tf_log.c				\
 				common/${ARCH}/debug.S			\
 				drivers/console/multi_console.c		\
@@ -54,7 +54,7 @@ INCLUDES		+=	-I${REPO_ROOT}include				\
 ##############################
 
 include ${MAKE_HELPERS_DIRECTORY}plat_helpers.mk
-include ./bl32/platform.mk
+include ./uobjs/bl32/platform.mk
 include ${MAKE_HELPERS_DIRECTORY}armv7-a-cpus.mk
 include ${REPO_ROOT}lib/cpus/cpu-ops.mk
 

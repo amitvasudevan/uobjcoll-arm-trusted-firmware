@@ -8,8 +8,8 @@
 #define IO_STM32IMAGE_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/io/io_driver.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/partition/partition.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/io/io_driver.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/partition/partition.h>
 
 #define MAX_LBA_SIZE		512
 #define MAX_PART_NAME_SIZE	(EFI_NAMELEN + 1)

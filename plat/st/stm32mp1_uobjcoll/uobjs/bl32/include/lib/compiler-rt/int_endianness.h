@@ -32,7 +32,7 @@
 
 #if defined(__SVR4) && defined(__sun)
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/sys/byteorder.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/sys/byteorder.h>
 
 #if defined(_BIG_ENDIAN)
 #define _YUGA_LITTLE_ENDIAN 0
@@ -50,7 +50,7 @@
 
 #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__) ||   \
     defined(__minix)
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/sys/endian.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/sys/endian.h>
 
 #if _BYTE_ORDER == _BIG_ENDIAN
 #define _YUGA_LITTLE_ENDIAN 0
@@ -63,7 +63,7 @@
 #endif /* *BSD */
 
 #if defined(__OpenBSD__) || defined(__Bitrig__)
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/machine/endian.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/machine/endian.h>
 
 #if _BYTE_ORDER == _BIG_ENDIAN
 #define _YUGA_LITTLE_ENDIAN 0

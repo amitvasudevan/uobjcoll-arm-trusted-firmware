@@ -5,18 +5,18 @@
  */
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdbool.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/debug.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/runtime_svc.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/st/scmi-msg.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/psci/psci.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/tools_share/uuid.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/debug.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/runtime_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/st/scmi-msg.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/psci/psci.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/tools_share/uuid.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/stm32mp1_smc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/stm32mp1_smc.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/services/bsec_svc.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/services/bsec_svc.h>
 
 /* STM32 SiP Service UUID */
 DEFINE_SVC_UUID2(stm32_sip_svc_uid,

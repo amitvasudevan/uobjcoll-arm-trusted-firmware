@@ -8,9 +8,9 @@
 #define CSS_DEF_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/interrupt_props.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/arm/gic_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/arm/tzc400.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/interrupt_props.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/arm/gic_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/arm/tzc400.h>
 
 /*************************************************************************
  * Definitions common to all ARM Compute SubSystems (CSS)

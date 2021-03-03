@@ -7,14 +7,14 @@
 #define ARM_DEF_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/interrupt_props.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/tbbr/tbbr_img_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/arm/gic_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/xlat_tables/xlat_tables_defs.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/arm/common/smccc_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/plat/common/common_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/interrupt_props.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/tbbr/tbbr_img_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/arm/gic_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/xlat_tables/xlat_tables_defs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/plat/arm/common/smccc_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/plat/common/common_def.h>
 
 /******************************************************************************
  * Definitions common to all ARM standard platforms

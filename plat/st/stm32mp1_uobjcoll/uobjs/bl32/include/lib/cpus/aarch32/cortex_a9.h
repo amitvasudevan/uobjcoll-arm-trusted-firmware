@@ -8,7 +8,7 @@
 #define CORTEX_A9_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
 
 /*******************************************************************************
  * Cortex-A9 midr with version/revision set to 0
@@ -27,7 +27,7 @@
 #define PCR		p15, 0, c15, c0, 0
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/arch_helpers.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/arch_helpers.h>
 DEFINE_COPROCR_RW_FUNCS(pcr, PCR)
 #endif
 

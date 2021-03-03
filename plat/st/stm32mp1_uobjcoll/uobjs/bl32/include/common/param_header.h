@@ -8,13 +8,13 @@
 #define PARAM_HEADER_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdbool.h>
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 #endif /*__ASSEMBLER__*/
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/export/common/param_header_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/export/common/param_header_exp.h>
 
 #define VERSION_1	PARAM_VERSION_1
 #define VERSION_2	PARAM_VERSION_2

@@ -9,10 +9,10 @@
 #define ARMADA_COMMON_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/marvell/amb_adec.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/marvell/ccu.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/marvell/io_win.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/marvell/iob.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/marvell/amb_adec.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/marvell/ccu.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/marvell/io_win.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/marvell/iob.h>
 
 /*
  * This struct supports skip image request

@@ -8,9 +8,9 @@
 #define FCONF_TBBR_GETTER_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/fconf/fconf.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/fconf/fconf.h>
 
 /* TBBR related getter */
 #define tbbr__cot_getter(id) __extension__ ({	\

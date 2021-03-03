@@ -12,7 +12,7 @@
 #define STDDEF_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/aarch32/stddef_.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/aarch32/stddef_.h>
 
 #ifndef _PTRDIFF_T
 typedef long ptrdiff_t;

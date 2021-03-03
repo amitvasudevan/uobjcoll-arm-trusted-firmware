@@ -8,7 +8,7 @@
 #define CONSOLE_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
 
 #define CONSOLE_T_NEXT			(U(0) * REGSZ)
 #define CONSOLE_T_FLAGS			(U(1) * REGSZ)
@@ -33,7 +33,7 @@
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 
 typedef struct console {
 	struct console *next;
@@ -50,7 +50,7 @@ typedef struct console {
 } console_t;
 
 /* offset macro assertions for console_t */
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/console_assertions.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/console_assertions.h>
 
 /*
  * Add a console_t instance to the console list. This should only be called by

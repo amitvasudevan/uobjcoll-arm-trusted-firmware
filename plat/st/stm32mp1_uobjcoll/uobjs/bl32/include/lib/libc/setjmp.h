@@ -8,11 +8,11 @@
 #define SETJMP_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/setjmp_.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/setjmp_.h>
 
 #ifndef __ASSEMBLER__
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/cdefs.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/cdefs.h>
 
 int setjmp(jmp_buf env);
 __dead2 void longjmp(jmp_buf env, int val);

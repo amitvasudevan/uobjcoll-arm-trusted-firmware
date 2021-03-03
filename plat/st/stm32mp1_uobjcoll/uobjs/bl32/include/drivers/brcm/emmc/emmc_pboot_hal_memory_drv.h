@@ -8,7 +8,7 @@
 #define PBOOT_HAL_MEMORY_EMMC_DRV_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/delay_timer.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/delay_timer.h>
 
 #include "emmc_chal_types.h"
 #include "emmc_chal_sd.h"

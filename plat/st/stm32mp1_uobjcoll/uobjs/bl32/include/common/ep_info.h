@@ -8,14 +8,14 @@
 #define EP_INFO_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/param_header.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/param_header.h>
 
 #ifndef __ASSEMBLER__
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cassert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/cassert.h>
 #endif /* __ASSEMBLER__ */
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/export/common/ep_info_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/export/common/ep_info_exp.h>
 
 #define SECURE		EP_SECURE
 #define NON_SECURE	EP_NON_SECURE

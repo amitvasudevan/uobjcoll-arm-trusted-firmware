@@ -51,13 +51,13 @@ def modify_includes(path="."):
     
     for path in tqdm(files):
         with open(path, "r") as f:
-            replace = re.sub(r"(?<=#include <)(.*)(?=>\n)", r"uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/\1", f.read())
+            replace = re.sub(r"(?<=#include <)(.*)(?=>\n)", r"uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/\1", f.read())
         with open(path, "w") as f:
             f.write(replace)
 
     for path in tqdm(files):
         with open(path, "r") as f:
-            replace = re.sub(r"(?<=#include <).*(" + stdh_reg + r").*(?=>\n)", r"uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/\1", f.read())
+            replace = re.sub(r"(?<=#include <).*(" + stdh_reg + r").*(?=>\n)", r"uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/\1", f.read())
         with open(path, "w") as f:
             f.write(replace)
 

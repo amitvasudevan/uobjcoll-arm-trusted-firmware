@@ -11,7 +11,7 @@
 #define AMB_ADEC_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 
 enum amb_attribute_ids {
 	AMB_SPI0_CS0_ID = 0x1E,

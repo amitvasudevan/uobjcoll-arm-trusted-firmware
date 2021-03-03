@@ -8,7 +8,7 @@
 #define	CHAL_SD_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stddef.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stddef.h>
 
 #define BASE_CLK_FREQ   (200 * 1000 * 1000)
 #define INIT_CLK_FREQ   (400 * 1000)

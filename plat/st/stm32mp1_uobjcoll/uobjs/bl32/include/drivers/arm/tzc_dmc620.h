@@ -8,7 +8,7 @@
 #define TZC_DMC620_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
 
 /* DMC-620 memc register offsets */
 #define DMC620_MEMC_STATUS	U(0x0000)

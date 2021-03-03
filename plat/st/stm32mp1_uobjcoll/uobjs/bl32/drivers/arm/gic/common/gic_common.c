@@ -7,12 +7,12 @@
 #pragma message __FILE__ " is deprecated, use gicv2.mk instead"
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/assert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/assert.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/arm/gic_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/mmio.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/arm/gic_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/mmio.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/drivers/arm/gic/common/gic_common_private.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/drivers/arm/gic/common/gic_common_private.h>
 
 /*******************************************************************************
  * GIC Distributor interface accessors for reading entire registers

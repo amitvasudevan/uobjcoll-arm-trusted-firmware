@@ -11,7 +11,7 @@
 #define GWIN_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/marvell/addr_map.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/marvell/addr_map.h>
 
 int init_gwin(int ap_index);
 void gwin_temp_win_insert(int ap_index, struct addr_map_win *win, int size);

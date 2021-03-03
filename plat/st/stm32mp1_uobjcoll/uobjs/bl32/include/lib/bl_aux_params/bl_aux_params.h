@@ -7,10 +7,10 @@
 #define LIB_BL_AUX_PARAMS_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdbool.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/libc/stdint.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdbool.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/libc/stdint.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/export/lib/bl_aux_params/bl_aux_params_exp.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/export/lib/bl_aux_params/bl_aux_params_exp.h>
 
 /*
  * Handler function that handles an individual aux parameter. Return true if

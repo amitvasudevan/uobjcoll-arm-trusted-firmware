@@ -10,12 +10,12 @@
 #if __UBERSPARK_UOBJCOLL_CONFIGDEF_TRUSTED_BOARD_BOOT__
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/tbbr/cot_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/tbbr/tbbr_img_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/auth/auth_common.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/auth/img_parser_mod.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/tbbr/cot_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/tbbr/tbbr_img_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/auth/auth_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/auth/img_parser_mod.h>
 
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
 
 /*
  * Image flags

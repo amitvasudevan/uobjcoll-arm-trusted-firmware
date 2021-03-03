@@ -12,7 +12,7 @@
 
 #ifndef __ASSEMBLER__
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/marvell/addr_map.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/marvell/addr_map.h>
 #endif
 
 /* CCU registers definitions */

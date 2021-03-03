@@ -7,7 +7,7 @@
 #define CONSOLE_MACROS_S
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/console.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/console.h>
 
 /*
  * This macro encapsulates the common setup that has to be done at the end of

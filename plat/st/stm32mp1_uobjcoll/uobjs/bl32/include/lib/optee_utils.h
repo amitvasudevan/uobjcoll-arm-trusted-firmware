@@ -8,7 +8,7 @@
 #define OPTEE_UTILS_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/bl_common.h>
 
 int parse_optee_header(entry_point_info_t *header_ep,
 	image_info_t *pager_image_info,

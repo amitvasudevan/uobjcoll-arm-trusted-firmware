@@ -9,7 +9,7 @@
 #define MARVELL_PLAT_PRIV_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils.h>
 
 /*****************************************************************************
  * Function and variable prototypes

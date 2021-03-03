@@ -11,7 +11,7 @@
 #define IOB_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/marvell/addr_map.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/marvell/addr_map.h>
 
 enum target_ids_iob {
 	INTERNAL_TID	= 0x0,

@@ -8,7 +8,7 @@
 #define DRIVERS_SPI_NOR_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/drivers/spi_mem.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/drivers/spi_mem.h>
 
 /* OPCODE */
 #define SPI_NOR_OP_WREN		0x06U	/* Write enable */

@@ -8,10 +8,10 @@
 #define RUNTIME_SVC_H
 
 #include <uberspark/uobjcoll/platform/st/stm32mp1/include/uobjcoll.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/common/bl_common.h>		/* to include exception types */
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/cassert.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/lib/utils_def.h>
-#include <uberspark/uobjcoll/platform/st/stm32mp1/bl32/include/arch/smccc_helpers.h>	/* to include SMCCC definitions */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/common/bl_common.h>		/* to include exception types */
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/cassert.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/lib/utils_def.h>
+#include <uberspark/uobjcoll/platform/st/stm32mp1/uobjs/bl32/include/arch/smccc_helpers.h>	/* to include SMCCC definitions */
 
 /*******************************************************************************
  * Structure definition, typedefs & constants for the runtime service framework
