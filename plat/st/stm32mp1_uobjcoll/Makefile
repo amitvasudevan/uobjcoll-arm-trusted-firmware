@@ -33,7 +33,7 @@ DTB_FILE_NAME := stm32mp157c-ev1.dtb
 
 include ${REPO_ROOT}lib/compiler-rt/compiler-rt.mk
 
-BL_COMMON_SOURCES	+=	common/bl_common.c			\
+BL_COMMON_SOURCES	+= common/bl_common.c			\
 				common/tf_log.c				\
 				common/${ARCH}/debug.S			\
 				drivers/console/multi_console.c		\
@@ -54,7 +54,7 @@ INCLUDES		+=	-I${REPO_ROOT}include				\
 ##############################
 
 include ${MAKE_HELPERS_DIRECTORY}plat_helpers.mk
-include ./bl32/platform.mk
+include ./uobjs/bl32/platform.mk
 include ${MAKE_HELPERS_DIRECTORY}armv7-a-cpus.mk
 include ${REPO_ROOT}lib/cpus/cpu-ops.mk
 
@@ -308,6 +308,16 @@ define docker_run
 		-t $(1) 
 endef
 
+define docker_run_interactive
+	docker run --rm -i \
+		-e D_CMD="$(2)" \
+		-e D_UID="$(3)" \
+		-e D_GID="$(4)" \
+		-e MAKE="make" \
+		-v $(SRCROOTDIR):$(SRCDIR_MOUNT) \
+		-t $(1) 
+endef
+
 define NATIVE_BUILD_OPTS
 	CROSS_COMPILE=$(CROSS_COMPILE) \
 	PLAT=$(PLAT) \
@@ -324,6 +334,11 @@ endef
 
 .PHONY: everything  # can't use all because build_macros.mk adds a prereq to all
 everything: docker_build uobjcoll
+
+.PHONY: dbgshell
+dbgshell: 
+	$(call docker_run_interactive, $(DOCKER_TAG), cd $(SRCDIR_MOUNT) && /bin/bash, $(shell id -u), $(shell id -g))
+
 
 .PHONY: native
 native: build_bridge
@@ -354,7 +369,7 @@ _build/u-boot/u-boot.stm32:
 uobjcoll: stage
 	@echo building stm32 collection...
 	uberspark staging switch stm32mp1 
-	uberspark uobjcoll build -v --platform=st --arch=armv7_32 --cpu=generic .
+	uberspark build -v 
 	@echo built stm32 collection successfully!
 
 .PHONY: stage
