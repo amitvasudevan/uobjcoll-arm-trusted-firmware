@@ -46,7 +46,7 @@ RUN addgroup --system uberspark &&\
 ##############################################################################
 
 RUN apt-get update -y && \
-    apt-get -yqq install make autoconf build-essential \
+    apt-get -yqq install libssl-dev make autoconf build-essential \
     git libssl-dev bc \
     device-tree-compiler flex bison \
     gcc-10-arm-linux-gnueabihf \

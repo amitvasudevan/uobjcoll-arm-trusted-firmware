@@ -308,6 +308,16 @@ define docker_run
 		-t $(1) 
 endef
 
+define docker_run_interactive
+	docker run --rm -i \
+		-e D_CMD="$(2)" \
+		-e D_UID="$(3)" \
+		-e D_GID="$(4)" \
+		-e MAKE="make" \
+		-v $(SRCROOTDIR):$(SRCDIR_MOUNT) \
+		-t $(1) 
+endef
+
 define NATIVE_BUILD_OPTS
 	CROSS_COMPILE=$(CROSS_COMPILE) \
 	PLAT=$(PLAT) \
@@ -324,6 +334,11 @@ endef
 
 .PHONY: everything  # can't use all because build_macros.mk adds a prereq to all
 everything: docker_build uobjcoll
+
+.PHONY: dbgshell
+dbgshell: 
+	$(call docker_run_interactive, $(DOCKER_TAG), cd $(SRCDIR_MOUNT) && /bin/bash, $(shell id -u), $(shell id -g))
+
 
 .PHONY: native
 native: build_bridge
