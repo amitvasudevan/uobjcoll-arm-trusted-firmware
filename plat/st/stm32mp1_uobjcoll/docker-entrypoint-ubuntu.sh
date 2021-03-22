@@ -3,7 +3,7 @@
 # author: Amit Vasudevan <amitvasudevan@acm.org>
 
 # turn off command echo; use -x for debugging
-set +x
+set -x
 
 # if we are running as root then drop to user uberspark
 if [ "$(id -u)" = "0" ]; then
@@ -12,17 +12,17 @@ if [ "$(id -u)" = "0" ]; then
     gid=$2
 
     #debug
-        #uname=`id -u -n`
-        #echo "ROOT; username: $uname"
-        #echo "parameters: $@"
-        #echo "UID to set= $uid"
-        #echo "GID to set= $gid"
+        uname=`id -u -n`
+        echo "ROOT; username: $uname"
+        echo "parameters: $@"
+        echo "UID to set= $uid"
+        echo "GID to set= $gid"
 
     # revise parameters by removing the uid and gid from command line
     shift 2
 
     #debug
-        #echo "revised parameters: $@"
+        echo "revised parameters: $@"
 
     
     # get rid of existing uberspark user
@@ -42,7 +42,7 @@ else
     temp=$@
 
     #debug
-        #echo "temporary value: $temp"
+        echo "temporary value: $temp"
 
     # remove leading and trailing double quotes if any
     # this can happen when we pass environment variables via exec system calls
@@ -52,9 +52,10 @@ else
     #parm=$temp
 
     #debug
-        #uname=`id -u -n`
-        #echo "NON-ROOT; username: $uname"
-        #echo "parameters: $parm"
+        my_uid=`id -u`
+        uname=`id -u -n`
+        echo "NON-ROOT; username: $uname"
+        echo "parameters: $parm"
 
     opam_present=`command -v opam`
     if [ -z "$opam_present" ]

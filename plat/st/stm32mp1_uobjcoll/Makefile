@@ -310,6 +310,7 @@ endef
 
 define docker_run_interactive
 	docker run --rm -i \
+		-u 1000:1000 \
 		-e D_CMD="$(2)" \
 		-e D_UID="$(3)" \
 		-e D_GID="$(4)" \
