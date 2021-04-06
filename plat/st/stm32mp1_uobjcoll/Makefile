@@ -29,10 +29,10 @@ ARCH := aarch32
 ARM_ARCH_MAJOR := 7
 AARCH32_SP := sp_min
 STM32MP_SDMMC := 1
-#STM32MP_EMMC := 1
-#STM32MP_RAW_NAND := 1
-#STM32MP_SPI_NAND := 1
-#STM32MP_SPI_NOR := 1
+STM32MP_EMMC := 1
+STM32MP_RAW_NAND := 1
+STM32MP_SPI_NAND := 1
+STM32MP_SPI_NOR := 1
 DTB_FILE_NAME := stm32mp157c-dk2.dtb
 
 ######
@@ -325,21 +325,6 @@ define docker_run_interactive
 		-t $(1) 
 endef
 
-#define NATIVE_BUILD_OPTS
-#	CROSS_COMPILE=$(CROSS_COMPILE) \
-#	PLAT=$(PLAT) \
-#	ARCH=$(ARCH) \
-#	ARM_ARCH_MAJOR=$(ARM_ARCH_MAJOR) \
-#	AARCH32_SP=$(AARCH32_SP) \
-#	STM32MP_SDMMC=$(STM32MP_SDMMC) \
-#	STM32MP_EMMC=$(STM32MP_EMMC) \
-#	STM32MP_RAW_NAND=$(STM32MP_RAW_NAND) \
-#	STM32MP_SPI_NAND=$(STM32MP_SPI_NAND) \
-#	STM32MP_SPI_NOR=$(STM32MP_SPI_NOR) \
-#	DTB_FILE_NAME=$(DTB_FILE_NAME)
-#endef
-
-# only have support for sdcard boot for now
 define NATIVE_BUILD_OPTS
 	CROSS_COMPILE=$(CROSS_COMPILE) \
 	PLAT=$(PLAT) \
@@ -347,8 +332,23 @@ define NATIVE_BUILD_OPTS
 	ARM_ARCH_MAJOR=$(ARM_ARCH_MAJOR) \
 	AARCH32_SP=$(AARCH32_SP) \
 	STM32MP_SDMMC=$(STM32MP_SDMMC) \
+	STM32MP_EMMC=$(STM32MP_EMMC) \
+	STM32MP_RAW_NAND=$(STM32MP_RAW_NAND) \
+	STM32MP_SPI_NAND=$(STM32MP_SPI_NAND) \
+	STM32MP_SPI_NOR=$(STM32MP_SPI_NOR) \
 	DTB_FILE_NAME=$(DTB_FILE_NAME)
 endef
+
+# only have support for sdcard boot for now
+#define NATIVE_BUILD_OPTS
+#	CROSS_COMPILE=$(CROSS_COMPILE) \
+#	PLAT=$(PLAT) \
+#	ARCH=$(ARCH) \
+#	ARM_ARCH_MAJOR=$(ARM_ARCH_MAJOR) \
+#	AARCH32_SP=$(AARCH32_SP) \
+#	STM32MP_SDMMC=$(STM32MP_SDMMC) \
+#	DTB_FILE_NAME=$(DTB_FILE_NAME)
+#endef
 
 
 
@@ -383,7 +383,7 @@ _build/u-boot/u-boot.stm32:
 	rm -rf ${BUILD_PLAT}/u-boot
 	git clone https://github.com/STMicroelectronics/u-boot ${BUILD_PLAT}/u-boot
 	$(MAKE) -C ${BUILD_PLAT}/u-boot stm32mp15_trusted_defconfig
-	$(MAKE) -C ${BUILD_PLAT}/u-boot DEVICE_TREE=stm32mp157c-ev1 all
+	$(MAKE) -C ${BUILD_PLAT}/u-boot DEVICE_TREE=stm32mp157c-dk2 all
 
 
 .PHONY: uobjcoll
