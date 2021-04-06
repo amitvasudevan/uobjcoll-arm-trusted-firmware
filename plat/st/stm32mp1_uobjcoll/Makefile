@@ -360,6 +360,13 @@ everything: docker_build uobjcoll
 dbgshell: 
 	$(call docker_run_interactive, $(DOCKER_TAG), cd $(SRCDIR_MOUNT) && /bin/bash, $(shell id -u), $(shell id -g))
 
+.PHONY: native_nouboot
+native_nouboot: build_bridge
+	$(call docker_run, $(DOCKER_TAG), cd $(SRCDIR_MOUNT) && make $(NATIVE_BUILD_OPTS), $(shell id -u), $(shell id -g))
+	mkdir -p _build
+	mv $(REPO_ROOT)build/$(PLAT)/release/* _build/
+	rm -rf $(REPO_ROOT)build/
+
 
 .PHONY: native
 native: build_bridge

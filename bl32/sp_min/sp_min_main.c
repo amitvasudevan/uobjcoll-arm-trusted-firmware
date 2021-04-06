@@ -174,6 +174,8 @@ uintptr_t get_arm_std_svc_args(unsigned int svc_mask)
  *****************************************************************************/
 void sp_min_main(void)
 {
+	NOTICE("!!SP_MIN_CHANGED!!\n");
+	NOTICE("!!SP_MIN_CHANGED!!\n");
 	NOTICE("SP_MIN: %s\n", version_string);
 	NOTICE("SP_MIN: %s\n", build_message);
 
