@@ -16,6 +16,7 @@
     "uberspark.uobjcoll.sentinels_intra_uobjcoll": [
         "generic/generic/any/call"
     ],
+    "uberspark.uobjcoll.configdefs_verbatim" : false,
     "uberspark.uobjcoll.configdefs": [
         {"name": "A53_DISABLE_NON_TEMPORAL_HINT", "value": "1"},
         {"name": "A57_DISABLE_NON_TEMPORAL_HINT", "value": "1"},
