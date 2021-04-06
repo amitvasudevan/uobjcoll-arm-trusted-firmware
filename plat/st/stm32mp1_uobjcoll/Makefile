@@ -19,17 +19,23 @@ include ${MAKE_HELPERS_DIRECTORY}build_macros.mk
 include ${MAKE_HELPERS_DIRECTORY}build_env.mk
 
 include ${MAKE_HELPERS_DIRECTORY}defaults.mk
+
+######
+# high-level build options; only support sd-card for now
+######
+
 PLAT := stm32mp1
 ARCH := aarch32
 ARM_ARCH_MAJOR := 7
 AARCH32_SP := sp_min
 STM32MP_SDMMC := 1
-STM32MP_EMMC := 1
-STM32MP_RAW_NAND := 1
-STM32MP_SPI_NAND := 1
-STM32MP_SPI_NOR := 1
-DTB_FILE_NAME := stm32mp157c-ev1.dtb
-#############################################
+#STM32MP_EMMC := 1
+#STM32MP_RAW_NAND := 1
+#STM32MP_SPI_NAND := 1
+#STM32MP_SPI_NOR := 1
+DTB_FILE_NAME := stm32mp157c-dk2.dtb
+
+######
 
 include ${REPO_ROOT}lib/compiler-rt/compiler-rt.mk
 
@@ -319,6 +325,21 @@ define docker_run_interactive
 		-t $(1) 
 endef
 
+#define NATIVE_BUILD_OPTS
+#	CROSS_COMPILE=$(CROSS_COMPILE) \
+#	PLAT=$(PLAT) \
+#	ARCH=$(ARCH) \
+#	ARM_ARCH_MAJOR=$(ARM_ARCH_MAJOR) \
+#	AARCH32_SP=$(AARCH32_SP) \
+#	STM32MP_SDMMC=$(STM32MP_SDMMC) \
+#	STM32MP_EMMC=$(STM32MP_EMMC) \
+#	STM32MP_RAW_NAND=$(STM32MP_RAW_NAND) \
+#	STM32MP_SPI_NAND=$(STM32MP_SPI_NAND) \
+#	STM32MP_SPI_NOR=$(STM32MP_SPI_NOR) \
+#	DTB_FILE_NAME=$(DTB_FILE_NAME)
+#endef
+
+# only have support for sdcard boot for now
 define NATIVE_BUILD_OPTS
 	CROSS_COMPILE=$(CROSS_COMPILE) \
 	PLAT=$(PLAT) \
@@ -326,12 +347,11 @@ define NATIVE_BUILD_OPTS
 	ARM_ARCH_MAJOR=$(ARM_ARCH_MAJOR) \
 	AARCH32_SP=$(AARCH32_SP) \
 	STM32MP_SDMMC=$(STM32MP_SDMMC) \
-	STM32MP_EMMC=$(STM32MP_EMMC) \
-	STM32MP_RAW_NAND=$(STM32MP_RAW_NAND) \
-	STM32MP_SPI_NAND=$(STM32MP_SPI_NAND) \
-	STM32MP_SPI_NOR=$(STM32MP_SPI_NOR) \
 	DTB_FILE_NAME=$(DTB_FILE_NAME)
 endef
+
+
+
 
 .PHONY: everything  # can't use all because build_macros.mk adds a prereq to all
 everything: docker_build uobjcoll
