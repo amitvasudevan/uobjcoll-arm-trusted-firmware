@@ -60,10 +60,10 @@ vector_base sp_min_vector_table
 // DEBUG breakpoint related
 //////
 
-.section .data
-.global my_flag
-my_flag: 
-	.long 	0
+//.section .data
+//.global my_flag
+//my_flag: 
+//	.long 	0
 
 //////
 //////
@@ -80,11 +80,11 @@ func sp_min_entrypoint
 	//////
 	// we can use r9		
 
-	dbgloop:
-	ldr r9, =my_flag
-	ldr r9, [r9]
-	cmp r9, #0
-	beq dbgloop
+	//dbgloop:
+	//ldr r9, =my_flag
+	//ldr r9, [r9]
+	//cmp r9, #0
+	//beq dbgloop
 
 	//////
 	//////
