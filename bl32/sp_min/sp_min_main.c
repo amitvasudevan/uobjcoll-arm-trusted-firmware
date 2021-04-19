@@ -172,19 +172,8 @@ uintptr_t get_arm_std_svc_args(unsigned int svc_mask)
  * The SP_MIN main function. Do the platform and PSCI Library setup. Also
  * initialize the runtime service framework.
  *****************************************************************************/
-static volatile unsigned char myflag=0;
-static unsigned int addr_of_myflag = 0xdeadbeef;
-
 void sp_min_main(void)
 {
-	NOTICE("!!SP_MIN_CHANGED!!\n");
-	NOTICE("!!SP_MIN_CHANGED!!\n");
-	NOTICE("!!Going into a loopty loop. Attach Debugger and test...!!\n");
-
-	while(myflag == 0){
-		addr_of_myflag = (unsigned int)&myflag;
-	}
-
 	NOTICE("SP_MIN: %s\n", version_string);
 	NOTICE("SP_MIN: %s\n", build_message);
 
