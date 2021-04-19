@@ -19,6 +19,11 @@ include ${MAKE_HELPERS_DIRECTORY}build_macros.mk
 include ${MAKE_HELPERS_DIRECTORY}build_env.mk
 
 include ${MAKE_HELPERS_DIRECTORY}defaults.mk
+
+######
+# high-level build options; only support sd-card for now
+######
+
 PLAT := stm32mp1
 ARCH := aarch32
 ARM_ARCH_MAJOR := 7
@@ -28,8 +33,9 @@ STM32MP_EMMC := 1
 STM32MP_RAW_NAND := 1
 STM32MP_SPI_NAND := 1
 STM32MP_SPI_NOR := 1
-DTB_FILE_NAME := stm32mp157c-ev1.dtb
-#############################################
+DTB_FILE_NAME := stm32mp157c-dk2.dtb
+
+######
 
 include ${REPO_ROOT}lib/compiler-rt/compiler-rt.mk
 
@@ -310,6 +316,7 @@ endef
 
 define docker_run_interactive
 	docker run --rm -i \
+		-u 1000:1000 \
 		-e D_CMD="$(2)" \
 		-e D_UID="$(3)" \
 		-e D_GID="$(4)" \
@@ -332,12 +339,33 @@ define NATIVE_BUILD_OPTS
 	DTB_FILE_NAME=$(DTB_FILE_NAME)
 endef
 
+# only have support for sdcard boot for now
+#define NATIVE_BUILD_OPTS
+#	CROSS_COMPILE=$(CROSS_COMPILE) \
+#	PLAT=$(PLAT) \
+#	ARCH=$(ARCH) \
+#	ARM_ARCH_MAJOR=$(ARM_ARCH_MAJOR) \
+#	AARCH32_SP=$(AARCH32_SP) \
+#	STM32MP_SDMMC=$(STM32MP_SDMMC) \
+#	DTB_FILE_NAME=$(DTB_FILE_NAME)
+#endef
+
+
+
+
 .PHONY: everything  # can't use all because build_macros.mk adds a prereq to all
 everything: docker_build uobjcoll
 
 .PHONY: dbgshell
 dbgshell: 
 	$(call docker_run_interactive, $(DOCKER_TAG), cd $(SRCDIR_MOUNT) && /bin/bash, $(shell id -u), $(shell id -g))
+
+.PHONY: native_nouboot
+native_nouboot: build_bridge
+	$(call docker_run, $(DOCKER_TAG), cd $(SRCDIR_MOUNT) && make $(NATIVE_BUILD_OPTS), $(shell id -u), $(shell id -g))
+	mkdir -p _build
+	mv $(REPO_ROOT)build/$(PLAT)/release/* _build/
+	rm -rf $(REPO_ROOT)build/
 
 
 .PHONY: native
@@ -362,7 +390,7 @@ _build/u-boot/u-boot.stm32:
 	rm -rf ${BUILD_PLAT}/u-boot
 	git clone https://github.com/STMicroelectronics/u-boot ${BUILD_PLAT}/u-boot
 	$(MAKE) -C ${BUILD_PLAT}/u-boot stm32mp15_trusted_defconfig
-	$(MAKE) -C ${BUILD_PLAT}/u-boot DEVICE_TREE=stm32mp157c-ev1 all
+	$(MAKE) -C ${BUILD_PLAT}/u-boot DEVICE_TREE=stm32mp157c-dk2 all
 
 
 .PHONY: uobjcoll

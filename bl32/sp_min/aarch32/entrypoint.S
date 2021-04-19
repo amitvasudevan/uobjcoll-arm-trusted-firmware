@@ -56,11 +56,40 @@ vector_base sp_min_vector_table
 	b	sp_min_handle_fiq	/* FIQ */
 
 
+//////
+// DEBUG breakpoint related
+//////
+
+//.section .data
+//.global my_flag
+//my_flag: 
+//	.long 	0
+
+//////
+//////
+
+
+
 /*
  * The Cold boot/Reset entrypoint for SP_MIN
  */
 func sp_min_entrypoint
 #if !RESET_TO_SP_MIN
+	//////
+	// DEBUG breakpoint related
+	//////
+	// we can use r9		
+
+	//dbgloop:
+	//ldr r9, =my_flag
+	//ldr r9, [r9]
+	//cmp r9, #0
+	//beq dbgloop
+
+	//////
+	//////
+
+
 	/* ---------------------------------------------------------------
 	 * Preceding bootloader has populated r0 with a pointer to a
 	 * 'bl_params_t' structure & r1 with a pointer to platform
