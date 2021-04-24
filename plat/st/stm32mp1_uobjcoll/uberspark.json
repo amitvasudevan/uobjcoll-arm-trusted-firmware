@@ -9,7 +9,7 @@
     "uberspark.manifest.version_max": "any",
     /* üobjcoll declarations */
     "uberspark.uobjcoll.namespace": "uberspark/uobjcoll/platform/st/stm32mp1",
-    "uberspark.uobjcoll.platform": "st",
+    "uberspark.uobjcoll.platform": "uberspark/platforms/stm32mp157c-dk2/armv7a/32-bit/cortex-a7",
     "uberspark.uobjcoll.arch": "armv7_32",
     "uberspark.uobjcoll.cpu": "generic",
     "uberspark.uobjcoll.hpl": "any", 
