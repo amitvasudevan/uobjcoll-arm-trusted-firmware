@@ -404,8 +404,8 @@ uobjcoll: stage
 stage:
 	@echo creating staging
 	uberspark staging create stm32mp1 
-	# uberspark staging config-set --setting-name=uobjcoll_binary_image_load_address --setting-value=0x06200000
-	# uberspark staging config-set --setting-name=uobj_binary_image_size --setting-value=0x14900000
+	# uberspark staging config-set --setting-name=uobjcoll_image_load_address --setting-value=0x06200000
+	# uberspark staging config-set --setting-name=uobj_image_size --setting-value=0x14900000
 	uberspark staging config-set --setting-name=cc_bridge_namespace --setting-value=uberspark/bridges/container/amd64/cc-bridge/armv7_32/generic/gcc/v10.2
 	uberspark staging config-set --setting-name=as_bridge_namespace --setting-value=uberspark/bridges/container/amd64/as-bridge/armv7_32/cortex-a7/gnu-as/v2.34
 	uberspark staging config-set --setting-name=ld_bridge_namespace --setting-value=uberspark/bridges/container/amd64/ld-bridge/armv7_32/generic/gnu-ld/v2.34
