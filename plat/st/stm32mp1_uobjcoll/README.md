@@ -11,6 +11,10 @@ make clean
 make
 ```
 
+Note: If we just want to build the uobjcoll without
+building u-boot, then we just use make uobjcoll above
+instead of make
+
 ## Building native:
 Run the following commands from this folder.
 ```sh
