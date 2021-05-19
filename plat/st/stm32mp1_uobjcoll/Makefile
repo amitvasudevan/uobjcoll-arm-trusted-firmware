@@ -394,26 +394,13 @@ _build/u-boot/u-boot.stm32:
 
 
 .PHONY: uobjcoll
-uobjcoll: stage
+uobjcoll: 
 	@echo building stm32 collection...
-	uberspark staging switch stm32mp1 
 	uberspark build -v 
 	@echo built stm32 collection successfully!
 
-.PHONY: stage
-stage:
-	@echo creating staging
-	uberspark staging create stm32mp1 
-	# uberspark staging config-set --setting-name=uobjcoll_binary_image_load_address --setting-value=0x06200000
-	# uberspark staging config-set --setting-name=uobj_binary_image_size --setting-value=0x14900000
-	uberspark staging config-set --setting-name=cc_bridge_namespace --setting-value=uberspark/bridges/container/amd64/cc-bridge/armv7_32/generic/gcc/v10.2
-	uberspark staging config-set --setting-name=as_bridge_namespace --setting-value=uberspark/bridges/container/amd64/as-bridge/armv7_32/cortex-a7/gnu-as/v2.34
-	uberspark staging config-set --setting-name=ld_bridge_namespace --setting-value=uberspark/bridges/container/amd64/ld-bridge/armv7_32/generic/gnu-ld/v2.34
-	@echo staging created successfully!
 
 .PHONY: clean
 clean: 
 	rm -rf _build
 	rm -rf $(REPO_ROOT)build
-	uberspark staging switch default
-	uberspark staging remove stm32mp1
